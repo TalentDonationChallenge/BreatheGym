@@ -98,7 +98,6 @@
 						<li class="divider"></li>
 						<li><a href="#">크로스핏 자료실</a></li>
 						<li><a href="#">크로스핏 동작들</a></li>
-						<li><a href="#">크로스핏 회원기록</a></li>
 						</ul>
 					</li>
 					<li><a href="#">운동관리</a></li>
