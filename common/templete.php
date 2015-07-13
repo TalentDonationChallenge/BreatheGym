@@ -6,13 +6,8 @@
 	<meta http-equiv="content-type" content="text/html; charset=UTF-8">
 	<meta charset="utf-8">
 	<title><?=$title?></title>
-	<meta name="generator" content="Bootply" />
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-	<!--[if lt IE 9]>
-	<script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
-	<![endif]-->
 	<link rel="stylesheet" href="/common/css/bootstrap.min.css">
-	<link rel="stylesheet" href="/common/css/navigation.css">
 	<?php 
 		if(isset($cssFiles)){
 			foreach ($cssFiles as $cssFile): ?>
@@ -112,7 +107,7 @@
 					</li>
 					</ul>
 					<ul class="nav navbar-nav navbar-right">
-					<li><a href="admin/index.html">관리자메뉴</a></li>
+					<li><a href="admin/index.php">관리자메뉴</a></li>
 					<li><a class="login" href="#">로그인</a></li>
 					</ul>
 				</div>
@@ -124,7 +119,6 @@
 	function scripts($jsFiles) { ?>
 		<script src="/common/js/jquery-1.11.1.min.js"></script>
 		<script src="/common/js/bootstrap.min.js"></script>
-		<script src="/common/js/navigation.js"></script>
 		<?php 
 		if(isset($jsFiles)){
 			foreach ($jsFiles as $jsFile): ?>
