@@ -114,6 +114,22 @@
 			</div>
 		</nav>
 	<?php } 
+	/* 관리자메뉴 header */
+	function adminHeader() { ?>
+		<header class="header black-bg">
+			<div class="sidebar-toggle-box">
+				<div class="fa fa-bars tooltips" data-placement="right" data-original-title="메뉴 보이기/끄기"></div>
+			</div>
+			<!--logo start-->
+			<a href="index.html" class="logo"><b>관리자메뉴</b></a>
+			<!--logo end-->
+			<div class="top-menu">
+				<ul class="nav pull-right top-menu">
+				<li><a class="logout" href="/">로그아웃</a></li>
+				</ul>
+			</div>
+		</header>
+	<?php } 
 	/* footer */
 	/* 자바스크립트 */
 	function scripts($jsFiles) { ?>
