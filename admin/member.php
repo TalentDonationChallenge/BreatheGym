@@ -21,7 +21,7 @@
 	<?php adminHeader(); ?>
 	<!--header end-->
 	<!--sidebar start-->
-	<?php adminSidebar("index"); ?>
+	<?php adminSidebar("member"); ?>
 	<!--sidebar end-->
 	<script src="/common/js/jquery-1.11.1.min.js"></script>
 	<script src="/common/js/bootstrap.min.js"></script>
