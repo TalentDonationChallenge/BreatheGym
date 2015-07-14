@@ -127,11 +127,11 @@
         margin: 0px !important;
         top: -50px !important;
     }
-
+/*
     .fc-state-active, .fc-state-active .fc-button-inner, .fc-state-hover, .fc-state-hover .fc-button-inner {
         background: none !important;
         color: #FFFFFF !important;
-    }
+    }*/
 
     .fc-state-default, .fc-state-default .fc-button-inner {
         background: none !important;

@@ -1,4 +1,4 @@
-var Script = function () {
+$(document).ready(function () {
 
 
     /* initialize the external events
@@ -32,7 +32,6 @@ var Script = function () {
     var d = date.getDate();
     var m = date.getMonth();
     var y = date.getFullYear();
-
     $('#calendar').fullCalendar({
         header: {
             left: 'prev,next today',
@@ -65,52 +64,65 @@ var Script = function () {
 
         },
         events: [
-            {
-                title: 'All Day Event',
-                start: new Date(y, m, 1)
-            },
-            {
-                title: 'Long Event',
-                start: new Date(y, m, d-5),
-                end: new Date(y, m, d-2)
-            },
-            {
-                id: 999,
-                title: 'Repeating Event',
-                start: new Date(y, m, d-3, 16, 0),
-                allDay: false
-            },
-            {
-                id: 999,
-                title: 'Repeating Event',
-                start: new Date(y, m, d+4, 16, 0),
-                allDay: false
-            },
-            {
-                title: 'Meeting',
-                start: new Date(y, m, d, 10, 30),
-                allDay: false
-            },
-            {
-                title: 'Lunch',
-                start: new Date(y, m, d, 12, 0),
-                end: new Date(y, m, d, 14, 0),
-                allDay: false
-            },
-            {
-                title: 'Birthday Party',
-                start: new Date(y, m, d+1, 19, 0),
-                end: new Date(y, m, d+1, 22, 30),
-                allDay: false
-            },
-            {
-                title: 'Click for Google',
-                start: new Date(y, m, 28),
-                end: new Date(y, m, 29),
-                url: 'http://google.com/'
-            }
+            // {
+            //     title: 'All Day Event',
+            //     start: new Date(y, m, 1)
+            // },
+            // {
+            //     title: 'Long Event',
+            //     start: new Date(y, m, d-5),
+            //     end: new Date(y, m, d-2)
+            // },
+            // {
+            //     id: 999,
+            //     title: 'Repeating Event',
+            //     start: new Date(y, m, d-3, 16, 0),
+            //     allDay: false
+            // },
+            // {
+            //     id: 999,
+            //     title: 'Repeating Event',
+            //     start: new Date(y, m, d+4, 16, 0),
+            //     allDay: false
+            // },
+            // {
+            //     title: 'Meeting',
+            //     start: new Date(y, m, d, 10, 30),
+            //     allDay: false
+            // },
+            // {
+            //     title: 'Lunch',
+            //     start: new Date(y, m, d, 12, 0),
+            //     end: new Date(y, m, d, 14, 0),
+            //     allDay: false
+            // },
+            // {
+            //     title: 'Birthday Party',
+            //     start: new Date(y, m, d+1, 19, 0),
+            //     end: new Date(y, m, d+1, 22, 30),
+            //     allDay: false
+            // },
+            // {
+            //     title: 'Click for Google',
+            //     start: new Date(y, m, 28),
+            //     end: new Date(y, m, 29),
+            //     url: 'http://google.com/'
+            // }
         ]
     });
+    $("#add-exercise-form").focusin(function () {
+        event.stopPropagation();
+        $("#exercise-spec").removeClass("hidden");
+    });
+    $("#add-exercise-form").click(function () {
+        event.stopPropagation();
+    });
+    $("body").click(function () {
+        $("#exercise-spec").addClass("hidden");
+    });
+    $("input[name='exercise-type']").click(function () {
+       $("#time-spec").toggleClass("hidden");
+       $("#set-spec").toggleClass("hidden");
+    });
 
-
-}();
+});
