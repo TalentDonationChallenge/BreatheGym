@@ -127,11 +127,19 @@
         margin: 0px !important;
         top: -50px !important;
     }
+<<<<<<< HEAD
 
     .fc-state-active, .fc-state-active .fc-button-inner, .fc-state-hover, .fc-state-hover .fc-button-inner {
         background: none !important;
         color: #FFFFFF !important;
     }
+=======
+/*
+    .fc-state-active, .fc-state-active .fc-button-inner, .fc-state-hover, .fc-state-hover .fc-button-inner {
+        background: none !important;
+        color: #FFFFFF !important;
+    }*/
+>>>>>>> e57f807f28f680c7dc240a5c0b5fa601556295e8
 
     .fc-state-default, .fc-state-default .fc-button-inner {
         background: none !important;
