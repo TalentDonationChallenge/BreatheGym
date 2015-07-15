@@ -3,7 +3,7 @@ create table member(
 	password varchar(50),
 	name varchar(30) not null unique,
 	phone varchar(12),
-	barcode varchar(30) foreign key,
+	barcode varchar(30),
 	birthday date,
 	facebook int(1) not null,
 	sex int(1) not null,
@@ -62,13 +62,19 @@ create table counsel(
 );
 
 create table breatheBoard(
-
+	name varchar(30) not null,
+	title varchar(50) not null,
+	content varchar(500) not null	
 );
 
 create table freeBoard(
-
+	name varchar(30) not null,
+	title varchar(50) not null,
+	content varchar(500) not null
 );
 
 create table diaryBoard(
-
+	name varchar(30) not null,
+	title varchar(50) not null,
+	content varchar(500) not null
 );

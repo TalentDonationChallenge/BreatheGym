@@ -1,5 +1,6 @@
 <?php 
 	require_once(__DIR__.'/../framework/framework.php');
+	$handler = getInstance();
 ?>
 <!DOCTYPE html>
 <html>
@@ -25,11 +26,11 @@
 	<!-- Main content start -->
 	<section id="main-content">
 		<section class="wrapper">
-			<h3><i class="fa fa-angle-right"></i> 운동관리</h3>
+			<h3><i class="fa fa-angle-right"></i> 기록관리</h3>
 			<!-- page start-->
 			<div class="row mt">
 				<aside class="col-lg-3 mt">
-					<h4><i class="fa fa-angle-right"></i> 운동종류</h4>
+					<h4><i class="fa fa-angle-right"></i> 회원명단</h4>
 					<div id="add-exercise-form">
 						<div class="input-group">
 							<input id="exercise-name" type="text" class="form-control" placeholder="운동이름">
