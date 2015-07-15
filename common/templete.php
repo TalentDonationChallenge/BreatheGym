@@ -167,6 +167,12 @@
 						<i class='fa fa-tasks'></i>
 						<span>상담</span>
 					</a>
+				</li> 
+				<li class='sub-menu'>
+					<a <?=$active==='record'?"class='active'":""?>
+					href='record.php' >
+						<i></i>
+						<span>기록관리</span>
 				</li>
 				</ul>
 			<!-- sidebar menu end-->
