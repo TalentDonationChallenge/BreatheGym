@@ -161,12 +161,7 @@
 						<i class='fa fa-book'></i>
 						<span>운동관리</span>
 					</a>
-				</li>
-				<li class='sub-menu'>
-					<a <?=$active==='consulting'?"class='active'":""?> href='consulting.php' >
-						<i class='fa fa-tasks'></i>
-						<span>상담</span>
-					</a>
+
 				</li>
 				<li class='sub-menu'>
 					<a <?=$active==='record'?"class='active'":""?> href='record.php' >
@@ -174,6 +169,13 @@
 						<span>기록관리</span>
 					</a>
 				</li>
+				<li class='sub-menu'>
+					<a <?=$active==='consulting'?"class='active'":""?> href='consulting.php' >
+						<i class='fa fa-tasks'></i>
+						<span>상담</span>
+					</a>
+				</li>
+				
 				</ul>
 			<!-- sidebar menu end-->
 			</div>
