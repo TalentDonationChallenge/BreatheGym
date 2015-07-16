@@ -39,7 +39,7 @@ create table exerciseRecord(
 	timeRecord time,
 	countRecord int(3),
 	date date
-) DEFAULT CHARSET=utf8;;
+) DEFAULT CHARSET=utf8;
 
 create table attendance(
 	barcode varchar(30) primary key,
