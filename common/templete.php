@@ -179,6 +179,65 @@
 			</div>
 		</aside>
 	<?php }
+	/* 관리자메뉴 header */
+	function memberHeader($active,$active2) { ?>
+		<header class='header black-bg'>
+			<div class='sidebar-toggle-box'>
+				<div class='fa fa-bars tooltips' data-placement='right' data-original-title='메뉴 보이기/끄기'></div>
+			</div>
+			<!--logo start-->
+			<a href=<?=$active2.'.php'?> class='logo'><b><?=$active?></b></a>
+			<!--logo end-->
+			<div class='top-menu'>
+				<ul class='nav pull-right top-menu'>
+				<li><a class='logout' href='/'>로그아웃</a></li>
+				</ul>
+			</div>
+		</header>
+	<?php } 
+	function memberSidebar($active) { ?>
+		<aside>
+			<div id='sidebar'  class='nav-collapse '>
+			<!-- sidebar menu start-->
+				<ul class='sidebar-menu' id='nav-accordion'>
+				<li class='mt'>
+					<a <?=$active==='index'?"class='active'":""?> href='index.php'>
+						<i class='fa fa-dashboard'></i>
+						<span>대쉬보드</span>
+					</a>
+				</li>
+
+				<li class='sub-menu'>
+					<a <?=$active==='member'?"class='active'":""?> href='/' >
+						<i class='fa fa-desktop'></i>
+						<span>HOME</span>
+					</a>
+				</li>
+
+				<li class='sub-menu'>
+					<a <?=$active==='analysis'?"class='active'":""?> href='boxing.php' >
+						<i class='fa fa-cogs'></i>
+						<span>복싱</span>
+					</a>
+				</li>
+				<li class='sub-menu'>
+					<a <?=$active==='exercise'?"class='active'":""?> href='crossfit.php' >
+						<i class='fa fa-book'></i>
+						<span>크로스핏</span>
+					</a>
+				</li>
+				<li class='sub-menu'>
+					<a <?=$active==='consulting'?"class='active'":""?> href='mypage.php' >
+						<i class='fa fa-tasks'></i>
+						<span>MyPage?</span>
+					</a>
+				</li>
+				
+				</ul>
+			<!-- sidebar menu end-->
+			</div>
+		</aside>
+	<?php }
 	/* footer */
 	/* 자바스크립트 */
 	function scripts($jsFiles) { ?>

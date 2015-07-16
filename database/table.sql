@@ -1,3 +1,15 @@
+drop table if exists member;
+drop table if exists gymMember;
+drop table if exists exerciseRecord;
+drop table if exists attendance;
+drop table if exists achievement;
+drop table if exists exerciseList;
+drop table if exists exerciseSchedule;
+drop table if exists counsel;
+drop table if exists breatheBoard;
+drop table if exists freeBoard;
+drop table if exists diaryBoard;
+
 create table member(
 	email varchar(50) not null primary key,
 	password varchar(50),
@@ -10,7 +22,7 @@ create table member(
 	registerDate date,
 	nickname varchar(30) not null unique,
 	active int(1) not null
-);
+) DEFAULT CHARSET=utf8;
 
 create table gymMember(
 	barcode varchar(30) primary key,
@@ -18,7 +30,7 @@ create table gymMember(
 	weight int(3) not null,
 	registerDate date not null,
 	duration date not null
-);
+) DEFAULT CHARSET=utf8;
 
 create table exerciseRecord(
 	barcode varchar(30),
@@ -55,26 +67,32 @@ create table exerciseSchedule(
 	primary key(date,name,type,time,count)
 );
 
-create table counsel(
-	name varchar(30) not null,
+create table consulting(
+	no int(6) not null primary key AUTO_INCREMENT,
+	email varchar(50) not null,
 	title varchar(50) not null,
-	content varchar(500) not null
-);
+	content text not null	
+)DEFAULT CHARSET=utf8 AUTO_INCREMENT=1;
 
+-- 브리드 이야기
 create table breatheBoard(
-	name varchar(30) not null,
+	no int(6) not null primary key AUTO_INCREMENT,
+	email varchar(50) not null,
 	title varchar(50) not null,
-	content varchar(500) not null	
-);
+	content text not null	
+)DEFAULT CHARSET=utf8 AUTO_INCREMENT=1;
 
 create table freeBoard(
-	name varchar(30) not null,
+	no int(6) not null primary key AUTO_INCREMENT,
+	email varchar(50) not null,
 	title varchar(50) not null,
-	content varchar(500) not null
-);
+	content text not null	
+)DEFAULT CHARSET=utf8 AUTO_INCREMENT=1;
 
+-- 사부님의 노트
 create table diaryBoard(
-	name varchar(30) not null,
+	no int(6) not null primary key AUTO_INCREMENT,
+	email varchar(50) not null,
 	title varchar(50) not null,
-	content varchar(500) not null
-);
+	content text not null	
+)DEFAULT CHARSET=utf8 AUTO_INCREMENT=1;
