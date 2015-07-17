@@ -1,10 +1,12 @@
 $(document).ready(function () {
 
+    /* 저장된 운동목록 불러오기 */
+    
 
     /* initialize the external events
      -----------------------------------------------------------------*/
 
-    $('#external-events div.external-event').each(function() {
+    $('#exercises .exercise').each(function() {
 
         // create an Event Object (http://arshaw.com/fullcalendar/docs/event_data/Event_Object/)
         // it doesn't need to have a start or end

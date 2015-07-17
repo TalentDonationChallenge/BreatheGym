@@ -137,40 +137,40 @@
 			<!-- sidebar menu start-->
 				<ul class='sidebar-menu' id='nav-accordion'>
 				<li class='mt'>
-					<a <?=$active==='index'?"class='active'":""?> href='index.php'>
+					<a <?=$active==='index'?"class='active'":""?> href='/admin/index.php'>
 						<i class='fa fa-dashboard'></i>
 						<span>대쉬보드</span>
 					</a>
 				</li>
 
 				<li class='sub-menu'>
-					<a <?=$active==='member'?"class='active'":""?> href='member.php' >
+					<a <?=$active==='member'?"class='active'":""?> href='member/' >
 						<i class='fa fa-desktop'></i>
 						<span>회원관리</span>
 					</a>
 				</li>
 
 				<li class='sub-menu'>
-					<a <?=$active==='analysis'?"class='active'":""?> href='analysis.php' >
+					<a <?=$active==='analysis'?"class='active'":""?> href='analysis/' >
 						<i class='fa fa-cogs'></i>
 						<span>정보분석</span>
 					</a>
 				</li>
 				<li class='sub-menu'>
-					<a <?=$active==='exercise'?"class='active'":""?> href='exercise.php' >
+					<a <?=$active==='exercise'?"class='active'":""?> href='exercise/' >
 						<i class='fa fa-book'></i>
 						<span>운동관리</span>
 					</a>
 
 				</li>
 				<li class='sub-menu'>
-					<a <?=$active==='record'?"class='active'":""?> href='record.php' >
+					<a <?=$active==='record'?"class='active'":""?> href='record/' >
 						<i class='fa fa-pencil'></i>
 						<span>기록관리</span>
 					</a>
 				</li>
 				<li class='sub-menu'>
-					<a <?=$active==='consulting'?"class='active'":""?> href='consulting.php' >
+					<a <?=$active==='consulting'?"class='active'":""?> href='consulting/' >
 						<i class='fa fa-tasks'></i>
 						<span>상담</span>
 					</a>

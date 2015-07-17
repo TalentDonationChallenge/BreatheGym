@@ -1,5 +1,5 @@
 <?php 
-	require_once(__DIR__.'/../framework/framework.php');
+	require_once(__DIR__.'/../../framework/framework.php');
 ?>
 <!DOCTYPE html>
 <html>
@@ -21,11 +21,11 @@
 	<?php adminHeader(); ?>
 	<!--header end-->
 	<!--sidebar start-->
-	<?php adminSidebar("member"); ?>
+	<?php adminSidebar("analysis"); ?>
 	<!--sidebar end-->
 	<script src="/common/js/jquery-1.11.1.min.js"></script>
 	<script src="/common/js/bootstrap.min.js"></script>
-	<script src="js/jquery.dcjqaccordion.2.7.js"></script>
-	<script src="js/common-scripts.js"></script>
+	<script src="../js/jquery.dcjqaccordion.2.7.js"></script>
+	<script src="../js/common-scripts.js"></script>
 </body>
 </html>

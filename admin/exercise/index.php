@@ -1,5 +1,5 @@
 <?php 
-	require_once(__DIR__.'/../framework/framework.php');
+	require_once(__DIR__.'/../../framework/framework.php');
 ?>
 <!DOCTYPE html>
 <html>
@@ -8,8 +8,8 @@
 	array('/common/font-awesome/css/font-awesome.css',
 		'/common/css/style.css',
 		'/common/css/style-responsive.css',
-		'css/fullcalendar.min.css',
-		'css/exercise.css'));?>
+		'../css/fullcalendar.min.css',
+		'../css/exercise.css'));?>
 	<!--[if lt IE 9]>
 	<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
 	<script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
@@ -64,14 +64,14 @@
 							</div>
 						</div>
 					</div>
-					<div id="external-events">
-						<!-- <div class="external-event label label-theme">My Event 1</div>
-						<div class="external-event label label-success">My Event 2</div>
-						<div class="external-event label label-info">My Event 3</div>
-						<div class="external-event label label-warning">My Event 4</div>
-						<div class="external-event label label-danger">My Event 5</div>
-						<div class="external-event label label-default">My Event 6</div>
-						<div class="external-event label label-theme">My Event 7</div>
+					<div id="exercises">
+						<div class="exercise label label-theme">My Event 1 <span class="fa fa-minus-circle"></span></div>
+						<div class="exercise label label-success">My Event 2</div>
+						<div class="exercise label label-info">My Event 3</div>
+						<div class="exercise label label-warning">My Event 4</div>
+						<div class="exercise label label-danger">My Event 5</div>
+						<div class="exercise label label-default">My Event 6</div>
+						<!-- <div class="external-event label label-theme">My Event 7</div>
 						<div class="external-event label label-info">My Event 8</div>
 						<div class="external-event label label-success">My Event 9</div>	 -->
 					</div>
@@ -89,12 +89,12 @@
 
 	<script src="/common/js/jquery-1.11.1.min.js"></script>
 	<script src="/common/js/bootstrap.min.js"></script>
-	<script src="js/jquery.dcjqaccordion.2.7.js"></script>
-	<script src="js/jquery-ui.custom.min.js"></script>
-	<script src="js/moment.min.js"></script>
-	<script src="js/fullcalendar.min.js"></script> 
+	<script src="../js/jquery.dcjqaccordion.2.7.js"></script>
+	<script src="../js/jquery-ui.custom.min.js"></script>
+	<script src="../js/moment.min.js"></script>
+	<script src="../js/fullcalendar.min.js"></script> 
 
-	<script src="js/common-scripts.js"></script>
-	<script src="js/calendar-conf-events.js"></script>   
+	<script src="../js/common-scripts.js"></script>
+	<script src="../js/calendar-conf-events.js"></script>   
 </body>
 </html>
