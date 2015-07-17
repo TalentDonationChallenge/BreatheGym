@@ -48,7 +48,7 @@ create table exerciseRecord(
 
 create table attendance(
 	barcode varchar(30) primary key,
-	date datetime not null
+	date date not null
 ) DEFAULT CHARSET=utf8;
 
 create table achievement(
