@@ -23,10 +23,22 @@
 	<!--sidebar start-->
 	<?php adminSidebar("record"); ?>
 	<!--sidebar end-->
+	<?php
+
+		$barcodes=['ef22','fe33','fdhei2'];
+		$exercises=['pushup', 'dumbell', 'climbing'];
+		$types=[0, 0, 1];
+		$records=[['10', '10', '10:10:10'], ['20', '20', '20:20:20'], ['40', '40', '40:40:40']];
+		$date='20140210';
+		
+		AdminRecordManage::insertRecord($barcodes, $exercises, $types, $records, $date);	
+		
+		
+	?>
 	<!-- Main content start -->
 	<section id="main-content">
 		<section class="wrapper">
-			<h3><i class="fa fa-angle-right"></i> 기록관리</h3>
+			<h3><i class="fa fa-angle-right"></i> 기록관리 </h3>
 			<!-- page start-->
 			<div class="row mt">
 				<aside class="col-lg-3 mt">

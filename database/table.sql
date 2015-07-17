@@ -38,17 +38,18 @@ create table exerciseRecord(
 	type int(1),
 	timeRecord time,
 	countRecord int(3),
-	date date
+	date date,
+	primary key(barcode, name)
 ) DEFAULT CHARSET=utf8;
 
 create table attendance(
 	barcode varchar(30) primary key,
 	date datetime not null
-) DEFAULT CHARSET=utf8;;
+) DEFAULT CHARSET=utf8;
 
 create table achievement(
 	email varchar(50) primary key
-) DEFAULT CHARSET=utf8;;
+) DEFAULT CHARSET=utf8;
 
 create table exerciseList(
 	name varchar(20),
@@ -65,13 +66,13 @@ create table exerciseSchedule(
 	time time default 0,
 	count int(3) default 0,
 	primary key(date,name,type,time,count)
-) DEFAULT CHARSET=utf8;;
+) DEFAULT CHARSET=utf8;
 
 create table consulting(
 	no int(6) not null primary key AUTO_INCREMENT,
 	email varchar(50) not null,
 	title varchar(50) not null,
-	content text not null	
+	content text not null
 ) DEFAULT CHARSET=utf8 AUTO_INCREMENT=1;
 
 -- 브리드 이야기
