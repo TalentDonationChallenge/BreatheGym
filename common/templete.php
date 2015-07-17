@@ -144,33 +144,33 @@
 				</li>
 
 				<li class='sub-menu'>
-					<a <?=$active==='member'?"class='active'":""?> href='member/' >
+					<a <?=$active==='member'?"class='active'":""?> href='/admin/member/index.php' >
 						<i class='fa fa-desktop'></i>
 						<span>회원관리</span>
 					</a>
 				</li>
 
 				<li class='sub-menu'>
-					<a <?=$active==='analysis'?"class='active'":""?> href='analysis/' >
+					<a <?=$active==='analysis'?"class='active'":""?> href='/admin/analysis/index.php' >
 						<i class='fa fa-cogs'></i>
 						<span>정보분석</span>
 					</a>
 				</li>
 				<li class='sub-menu'>
-					<a <?=$active==='exercise'?"class='active'":""?> href='exercise/' >
+					<a <?=$active==='exercise'?"class='active'":""?> href='/admin/exercise/index.php' >
 						<i class='fa fa-book'></i>
 						<span>운동관리</span>
 					</a>
 
 				</li>
 				<li class='sub-menu'>
-					<a <?=$active==='record'?"class='active'":""?> href='record/' >
+					<a <?=$active==='record'?"class='active'":""?> href='/admin/record/index.php' >
 						<i class='fa fa-pencil'></i>
 						<span>기록관리</span>
 					</a>
 				</li>
 				<li class='sub-menu'>
-					<a <?=$active==='consulting'?"class='active'":""?> href='consulting/' >
+					<a <?=$active==='consulting'?"class='active'":""?> href='/admin/consulting/index.php' >
 						<i class='fa fa-tasks'></i>
 						<span>상담</span>
 					</a>
