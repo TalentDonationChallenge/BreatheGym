@@ -4,8 +4,8 @@
 	class AdminRecordManage {
 		//운동 기록 입력 함수
 		public static function insertRecord($barcodes, $exercises, $types, $records, $date) {
-			$pdo = Database::getInstance();
 			try {
+				$pdo = Database::getInstance();
 				for($i=0;$i<count($exercises);$i++){
 					for($j=0;$j<count($barcodes);$j++){
 						if($types[$i]===0){ //입력하는 운동이 횟수기록을 가질 경우
@@ -37,12 +37,30 @@
 					}
 				}
 			} catch(Exception $e){
-				echo '오류났따아아아';
+				
 			}
 		}
-		//현재 출석한 사람들 명단 받아오기
-		public static function showMembers(){ 
+		//오늘 출석한 사람들 명단 받아오기
+		public static function getTodayMembers(){
+			try{
+				$pdo = Database::getInstance();
 
+				$result = $pdo->query('SELECT barcode, name from gymMember join attendance where date == CURDATE()');
+				return $result;
+			} catch(Exception $e){
+
+			}
+		}
+		//오늘 예정된 운동 종류 받아오기
+		public static function getTodayExercises(){
+			try{
+				$pdo = Database::getInstance();
+
+				$result = $pdo->query('SELECT name, type, time, count from exerciseSchedule where date == CURDATE()');
+				return $result;
+			} catch(Exception $e){
+				
+			}
 		}
 	}
 	

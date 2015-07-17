@@ -26,6 +26,10 @@ create table member(
 
 create table gymMember(
 	barcode varchar(30) primary key,
+	name varchar(30) not null unique,
+	phone varchar(12),
+	birthday date,
+	sex int(1) not null,
 	height int(3) not null,
 	weight int(3) not null,
 	registerDate date not null,

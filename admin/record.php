@@ -1,6 +1,5 @@
 <?php 
 	require_once(__DIR__.'/../framework/framework.php');
-	
 ?>
 <!DOCTYPE html>
 <html>
@@ -23,18 +22,6 @@
 	<!--sidebar start-->
 	<?php adminSidebar("record"); ?>
 	<!--sidebar end-->
-	<?php
-
-		$barcodes=['ef22','fe33','fdhei2'];
-		$exercises=['pushup', 'dumbell', 'climbing'];
-		$types=[0, 0, 1];
-		$records=[['10', '10', '10:10:10'], ['20', '20', '20:20:20'], ['40', '40', '40:40:40']];
-		$date='20140210';
-		
-		AdminRecordManage::insertRecord($barcodes, $exercises, $types, $records, $date);	
-		
-		
-	?>
 	<!-- Main content start -->
 	<section id="main-content">
 		<section class="wrapper">
