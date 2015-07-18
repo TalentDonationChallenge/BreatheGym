@@ -65,15 +65,17 @@
 						</div>
 					</div>
 					<div id="exercises">
-						<div class="exercise label label-theme">My Event 1 <span></span></div>
-						<div class="exercise label label-success">My Event 2 <span></span></div>
-						<div class="exercise label label-info">My Event 3 <span></span></div>
-						<div class="exercise label label-warning">My Event 4 <span></span></div>
-						<div class="exercise label label-danger">My Event 5 <span></span></div>
-						<div class="exercise label label-default">My Event 6 <span></span></div>
-						<!-- <div class="external-event label label-theme">My Event 7</div>
-						<div class="external-event label label-info">My Event 8</div>
-						<div class="external-event label label-success">My Event 9</div>	 -->
+						<?php 
+						$exercises = AdminExerciseSchedule::loadExercises();
+						$colors = array('theme', 'success', 'info', 'warning', 'danger', 'default');
+						$i = 0;
+						foreach ($exercises as $exercise) { ?>
+							<div class="exercise label label-<?=$colors[$i%6]?>" no="<?=$exercise['no']?>">
+								<?=$exercise['name']?><span></span>
+							</div>		
+						<?php 
+							$i++;
+						} ?>
 					</div>
 				</aside>
 				<aside class="col-lg-9 mt">
