@@ -25,7 +25,7 @@
 						':count'=>$count
 					));
 				} else {
-					//error occur
+					
 				}
 			} catch (Exception $e) {
 				
@@ -33,6 +33,14 @@
 		}
 		public static function insertSchedule() { //운동 스케줄 추가할 때
 			
+		}
+
+		public static function loadExercises() {
+			$pdo = Database::getInstance();
+
+			try {
+				// $stmt = $pdo->prepare('SELECT ')
+			}
 		}
 	}
 

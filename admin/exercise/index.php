@@ -65,12 +65,12 @@
 						</div>
 					</div>
 					<div id="exercises">
-						<div class="exercise label label-theme">My Event 1 <span class="fa fa-minus-circle"></span></div>
-						<div class="exercise label label-success">My Event 2</div>
-						<div class="exercise label label-info">My Event 3</div>
-						<div class="exercise label label-warning">My Event 4</div>
-						<div class="exercise label label-danger">My Event 5</div>
-						<div class="exercise label label-default">My Event 6</div>
+						<div class="exercise label label-theme">My Event 1 <span></span></div>
+						<div class="exercise label label-success">My Event 2 <span></span></div>
+						<div class="exercise label label-info">My Event 3 <span></span></div>
+						<div class="exercise label label-warning">My Event 4 <span></span></div>
+						<div class="exercise label label-danger">My Event 5 <span></span></div>
+						<div class="exercise label label-default">My Event 6 <span></span></div>
 						<!-- <div class="external-event label label-theme">My Event 7</div>
 						<div class="external-event label label-info">My Event 8</div>
 						<div class="external-event label label-success">My Event 9</div>	 -->

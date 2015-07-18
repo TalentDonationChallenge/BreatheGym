@@ -1,5 +1,4 @@
 $(document).ready(function () {
-
     /* 저장된 운동목록 불러오기 */
     
 
@@ -25,6 +24,8 @@ $(document).ready(function () {
         });
 
     });
+
+    
 
 
     /* initialize the calendar
@@ -112,6 +113,8 @@ $(document).ready(function () {
             // }
         ]
     });
+
+/* 운동추가창 만들기 */
     $("#add-exercise-form").focusin(function () {
         event.stopPropagation();
         $("#exercise-spec").removeClass("hidden");
@@ -127,4 +130,14 @@ $(document).ready(function () {
        $("#set-spec").toggleClass("hidden");
     });
 
+/* 운동목록 삭제하기 */
+    $(document).on('mouseenter', '.exercise', function () {
+       $(this).find('span').addClass("fa fa-minus-circle remove");
+    });
+    $(document).on('mouseleave', '.exercise', function () {
+       $(this).find('span').removeClass("fa fa-minus-circle remove");  
+    });
+    $(document).on('click', '.remove', function () {
+       $(this).parent().remove(); 
+    });
 });
