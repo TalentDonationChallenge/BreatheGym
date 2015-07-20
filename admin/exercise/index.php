@@ -33,7 +33,9 @@
 					<div id="add-exercise-form">
 						<div class="input-group">
 							<input id="exercise-name" type="text" class="form-control" placeholder="운동이름">
-							<span class="input-group-btn"><button class="btn btn-default">추가</button></span>
+							<span class="input-group-btn">
+								<button class="btn btn-default btn-insert">추가</button>
+							</span>
 						</div>
 						<div id="exercise-spec" class="hidden">
 							<div class="raido">
@@ -42,7 +44,7 @@
 									시간
 								</label>
 								<label class="radio-inline">
-									<input type="radio" name="exercise-type" value="set">
+									<input type="radio" name="exercise-type" value="count">
 									세트수
 								</label>
 							</div>
@@ -56,10 +58,10 @@
 									<label class="control-label" for="second">초</label>
 								</div>
 							</div>
-							<div class="form-inline hidden" id="set-spec">
+							<div class="form-inline hidden" id="count-spec">
 								<div class="form-group">
-									<input type="number" class="form-control" min="0" max="1000" id="minute">
-									<label for="minute">세트</label>
+									<input type="number" class="form-control" min="0" max="1000" id="count">
+									<label for="count">세트</label>
 								</div>
 							</div>
 						</div>
