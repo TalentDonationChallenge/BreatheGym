@@ -95,7 +95,7 @@
 						<li><a href='#'>크로스핏 동작들</a></li>
 						</ul>
 					</li>
-					<li><a href='#'>운동관리</a></li>
+					<li><a href='exercise/index.php'>운동관리</a></li>
 					<li class='dropdown'>
 						<a href='#' class='dropdown-toggle' data-toggle='dropdown' role='button' aria-expanded='false'>
 							커뮤니티<span class='caret'></span>
