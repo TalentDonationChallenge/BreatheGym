@@ -29,11 +29,35 @@
                         
                             <div class = "boxprogress2">
                                 <h4><i class = "fa fa-angle-right"></i>오늘의 복싱 진도</h4>
-                                 <div class ="progress">
-                                    <div class = "progress-bar progress-bar-success" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax = "100" style="width : 20%">
-                                        <span class = "sr-only">20% complete</span>
+                                    
+                                <div class = "totalboxingpregress">
+                                     <div class ="eachboxingprogress">
+                                        <div class = "progress-bar progress-bar-success" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax = "100" style="width : 100%">
+                                            <span class = "sort">100% complete</span>
+                                        </div>
+                                    </div>
+                                    <div class ="eachboxingprogress">
+                                        <div class = "progress-bar progress-bar-info" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax = "100" style="width : 100%">
+                                            <span class = "sort">100% complete</span>
+                                        </div>
+                                    </div>
+                                     <div class ="eachboxingprogress">
+                                        <div class = "progress-bar progress-bar-warning" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax = "100" style="width : 20%">
+                                            <span class = "sort">20% complete</span>
+                                        </div>
+                                    </div>
+                                     <div class ="eachboxingprogress">
+                                        <div class = "progress-bar progress-bar-danger" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax = "100" style="width : 0%">
+                                            <span class = "sort">0% complete</span>
+                                        </div>
+                                    </div>
+                                     <div class ="eachboxingprogress">
+                                        <div class = "progress-bar progress-bar-normal" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax = "100" style="width : 0%">
+                                            <span class = "sort">0% complete</span>
+                                        </div>
                                     </div>
                                 </div>
+                            
                                  <h2>잽운동</h2>
                                  <div class = "boxingbox currentprogressimg">
                                     <img src = "/exercise/img/boxingimg.jpg" width="100%" height="100%">
