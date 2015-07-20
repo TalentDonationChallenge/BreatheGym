@@ -29,31 +29,41 @@
                         
                             <div class = "boxprogress2">
                                 <h4><i class = "fa fa-angle-right"></i>오늘의 복싱 진도</h4>
+                                 <div class ="progress">
+                                    <div class = "progress-bar progress-bar-success" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax = "100" style="width : 20%">
+                                        <span class = "sr-only">20% complete</span>
+                                    </div>
+                                </div>
                                  <h2>잽운동</h2>
-                                <div class = "boxing">
-                                    <img class = "boximg" src = "/exercise/img/boxingimg.jpg" width="100%" height="30%">
+                                 <div class = "boxingbox currentprogressimg">
+                                    <img src = "/exercise/img/boxingimg.jpg" width="100%" height="100%">
+                            
                                 </div>
                                 
-                                <div class="featurette">
+                                <div class="boxingbox currentprogressabout">
                                     <h2>연습방법</h2>
-                                    <p class="lead">저도 잘 몰라요. 그냥 열심히 하시면 됩니다.</p>
+                                      <p class="lead">저도 잘 몰라요. 그냥 열심히 하시면 됩니다.</p>
+                                      <p class="lead">근데 과연 잘 할 수 있을까요?</p>
+                                       <p class="lead">후후</p>
+                                     
                                 </div>
+                                </div>
+
+                                </div>
+                               
+                                
                             </div>
                     </div>
                     <div class = "row3">
                         
                         <div class = "boxprogress3">
-                            <h4><i class = "fa fa-angle-right"></i>현재 내 진도</h4>
+                            <h4><i class = "fa fa-angle-right"></i>이전 내 진도</h4>
                             <p>잽운동</p>
                             <div class = "boxing">
                                 <img class = "boximg" src = "/exercise/img/boxingimg.jpg" width="100%" height="30%">
                                     </div>
                             
-                            <div class ="progress">
-                                <div class = "progress-bar progress-bar-success" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax = "100" style="width : 20%">
-                                    <span class = "sr-only">20% complete</span>
-                                </div>
-                            </div>
+                           
                         </div>
                         <div class = "boxprogress4">
                             <h4><i class = "fa fa-angle-right"></i>다음 진도</h4>
@@ -62,11 +72,7 @@
                                 <img class = "boximg" src = "/exercise/img/boxingimg.jpg" width="100%" height="30%">
                                     </div>
                             
-                            <div class ="progress">
-                                <div class = "progress-bar progress-bar-success" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax = "100" style="width : 20%">
-                                    <span class = "sr-only">20% complete</span>
-                                </div>
-                            </div>
+                          
                         </div>
                     </div>
                      </div>

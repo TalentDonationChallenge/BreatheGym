@@ -2261,11 +2261,12 @@ label {
     background: #ffffff;
     padding: 15px;
     margin-top: 20px;
-    margin-left: auto;
+    margin-left: 20px;
     margin-right: auto;
     margin-bottom: 15px;
     box-shadow: 0px 3px 2px #aab2db;
-    width: 100%;
+    width: 95%;
+    overflow: hidden;
 
 
 }
@@ -2274,7 +2275,7 @@ label {
     padding: 15px;
     margin-top: 20px;
     margin-left: 20px;
-    margin-right: 20px;
+    margin-right: 24px;
     margin-bottom: 15px;
     box-shadow: 0px 3px 2px #aab2db;
     width: 45%;
@@ -2286,12 +2287,13 @@ label {
     background: #ffffff;
     padding: 15px;
     margin-top: 20px;
-    margin-left: 20px;
+    margin-left: 24px;
     margin-right: 20px;
     margin-bottom: 15px;
     box-shadow: 0px 3px 2px #aab2db;
     width: 45%;
     float:left;
+
     
     
 }
@@ -2325,7 +2327,7 @@ label {
 }
 .myrecordtable,.memberrecordtable{
     
-    margin-top:25px;
+    
     float:right;
     
 }
@@ -2357,6 +2359,14 @@ label {
         margin-right: 10px;
         float: left;
 }
+#memberrecordtable{
+    width: 70%;
+    margin-left: auto;
+    margin-right: auto;
+    
+    border: 1px solid black;
+
+}
 .indexprogress{
     background: #ffffff;
     padding: 15px;
@@ -2365,5 +2375,27 @@ label {
     margin-bottom: 15px;
     box-shadow: 0px 3px 2px #aab2db;
 }
+
+.boxingbox{
+    
+    float:left;
+    width:45%;
+    height: 300px;
+
+}
+
+.currentprogressimg{
+    margin-right: 35px;
+
+
+}
+
+.currentprogressabout{
+    margin-left: 35px;
+    margin-right: 20px;
+    
+}
+
+
 
 

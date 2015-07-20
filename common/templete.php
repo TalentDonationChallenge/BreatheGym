@@ -208,9 +208,6 @@
 						<span>대쉬보드</span>
 					</a>
 				</li>
-
-				
-
 				<li class='sub-menu'>
 					<a <?=$active==='analysis'?"class='active'":""?> href='/exercise/boxing/index.php' >
 						<i class='fa fa-cogs'></i>

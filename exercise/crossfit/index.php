@@ -190,10 +190,10 @@
                 </section>
                 <section class = "wrapper">
                     <div class="row mt">
-                        <div class="col6">
+                        <div id="memberrecordtable">
                             <div class="content-panel">
-                                <h4><i class="fa fa-angle-right"></i> A 운동</h4>
-                                <p>뭐야이거 왜 되는거지</p>
+                                <h4><i class="fa fa-angle-right"></i> 운동기록차트</h4>
+                                
                                 <div class="panel-body">
                                     <div id="hero-graph" class="graph">
                                   
@@ -201,24 +201,8 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="col6">
-                            <div class="content-panel">
-                                <h4><i class="fa fa-angle-right"></i> B 운동</h4>
-                                <p>뭐야이거 왜 안돼</p>
-                                <div class="panel-body">
-                                    <div id="hero-bar" class="graph"></div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col6">
-                            <div class="content-panel">
-                                <h4><i class="fa fa-angle-right"></i> C 운동</h4>
-                                <p>뭐야이건 또 왜 안돼</p>
-                                <div class="panel-body">
-                                    <div id="hero-graph" class="graph"></div>
-                                </div>
-                            </div>
-                        </div>
+                        
+                        
                     </div>
                 </section>
             </section>
