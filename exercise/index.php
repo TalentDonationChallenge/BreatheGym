@@ -107,6 +107,7 @@
 		</section>
 	     <script src="/exercise/js/jquery.js"></script>
         <script src="/exercise/js/bootstrap.min.js"></script>
+        <script src="/exercise/js/jquery.nicescroll.js" type="text/javascript"></script>
         <script src="/exercise/js/common-scripts.js"></script>
 </body>
 </html>
