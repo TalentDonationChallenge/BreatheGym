@@ -182,13 +182,13 @@
 		</aside>
 	<?php }
 	/* 관리자메뉴 header */
-	function memberHeader($active,$active2) { ?>
+	function memberHeader() { ?>
 		<header class='header black-bg'>
 			<div class='sidebar-toggle-box'>
 				<div class='fa fa-bars tooltips' data-placement='right' data-original-title='메뉴 보이기/끄기'></div>
 			</div>
 			<!--logo start-->
-			<a href=<?=$active2.'.php'?> class='logo'><b><?=$active?></b></a>
+			<a href='index.php' class='logo'><b>회원운동기록관리</b></a>
 			<!--logo end-->
 			<div class='top-menu'>
 				<ul class='nav pull-right top-menu'>
@@ -203,33 +203,28 @@
 			<!-- sidebar menu start-->
 				<ul class='sidebar-menu' id='nav-accordion'>
 				<li class='mt'>
-					<a <?=$active==='index'?"class='active'":""?> href='index.php'>
+					<a <?=$active==='index'?"class='active'":""?> href='/exercise/index.php'>
 						<i class='fa fa-dashboard'></i>
 						<span>대쉬보드</span>
 					</a>
 				</li>
 
-				<li class='sub-menu'>
-					<a <?=$active==='member'?"class='active'":""?> href='/' >
-						<i class='fa fa-desktop'></i>
-						<span>HOME</span>
-					</a>
-				</li>
+				
 
 				<li class='sub-menu'>
-					<a <?=$active==='analysis'?"class='active'":""?> href='boxing.php' >
+					<a <?=$active==='analysis'?"class='active'":""?> href='/exercise/boxing/index.php' >
 						<i class='fa fa-cogs'></i>
 						<span>복싱</span>
 					</a>
 				</li>
 				<li class='sub-menu'>
-					<a <?=$active==='exercise'?"class='active'":""?> href='crossfit.php' >
+					<a <?=$active==='exercise'?"class='active'":""?> href='/exercise/crossfit/index.php' >
 						<i class='fa fa-book'></i>
 						<span>크로스핏</span>
 					</a>
 				</li>
 				<li class='sub-menu'>
-					<a <?=$active==='consulting'?"class='active'":""?> href='mypage.php' >
+					<a <?=$active==='consulting'?"class='active'":""?> href='/exercise/mypage/index.php' >
 						<i class='fa fa-tasks'></i>
 						<span>MyPage?</span>
 					</a>
