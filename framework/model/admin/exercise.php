@@ -58,6 +58,16 @@
 		public static function loadSchedule($month) {
 			
 		}
+
+		public static function deleteExercise($no) {
+			$pdo = Database::getInstance();
+			$stmt = $pdo->prepare('DELETE FROM exerciseList WHERE no = :no');
+			$stmt -> execute(array(':no'=>$no));
+		}
+
+		public static function deleteSchedule($no, $date) {
+			
+		}
 	}
 
 ?>
