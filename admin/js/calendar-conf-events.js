@@ -158,9 +158,14 @@ $("#add-exercise-form .btn-insert").click(function () {
 		url:"insert.php",
 		method:"post",
 		data: insertObject
-	}).done(function(msg){
-		console.log(msg);
-		// location.reload();
+	}).done(function (msg){
+		var colors = ['theme', 'success', 'info', 'warning', 'danger', 'default'];
+		$('#exercises').append('<div>'+insertObject.name+'</div>');
+		$('#exercises>div:last-child')
+		.addClass('exercise label label-'+colors[($('.exercise').size()+1)%6]).attr('no', msg.no);
+	}).fail(function (msg) {
+		alert('서버 오류가 발생하여 운동을 추가하는데 실패하였습니다.');
+		location.reload();
 	});
 });
 

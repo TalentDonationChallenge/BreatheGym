@@ -41,7 +41,7 @@
 
 		public static function loadExercises() {
 			$pdo = Database::getInstance();
-			$stmt = $pdo->prepare('SELECT no, name FROM exerciseList');
+			$stmt = $pdo->prepare('SELECT no, name FROM exerciseList ORDER BY no ASC');
 			$stmt -> execute();
 			$rows = $stmt -> fetchAll();
 
