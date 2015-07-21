@@ -43,25 +43,48 @@
 		//오늘 출석한 사람들 명단 받아오기
 		public static function getTodayMembers(){
 			try{
-				$pdo = Database::getInstance();
+				$pdo=Database::getInstance();
 
-				$result = $pdo->query('SELECT barcode, name from gymMember join attendance where date == CURDATE()');
-				return $result;
-			} catch(Exception $e){
-
+				$stmt=$pdo->prepare('SELECT name, date from attendance join gymMember where attendance.date = CURDATE()');
+				$stmt->execute();
+				$result=$stmt->fetchAll();
+				$members = array();
+				foreach ($result as $row) {
+					$members[] = array(
+						'name' => $row['name'],
+						'date' => $row['date']
+					);
+				}
+				
+				return $members;
+			} catch(PDOException $e){
+				print "Error!: ".$e->getMessage()."<br/>";
+				die();
 			}
 		}
 		//오늘 예정된 운동 종류 받아오기
 		public static function getTodayExercises(){
 			try{
-				$pdo = Database::getInstance();
-
-				$result = $pdo->query('SELECT name, type, time, count from exerciseSchedule where date == CURDATE()');
-				return $result;
-			} catch(Exception $e){
+				$pdo=Database::getInstance();
+				$stmt=$pdo->prepare('SELECT name, type from exerciseSchedule as a join exerciseList as b on a.exerciseNo=b.no where date=CURDATE()');
+				$stmt->execute();
+				$result=$stmt->fetchAll();
+				$exercises = array();
+				foreach ($result as $row){
+					$exercises[] = array(
+						'name' => $row['name'],
+						'type' => $row['type']
+					);
+				}
 				
+				return $result;
+			} catch(PDOException $e){
+				print "Error!: ".$e->getMessage()."<br/>";
+				die();
 			}
 		}
+
+		
 	}
 	
 ?>
