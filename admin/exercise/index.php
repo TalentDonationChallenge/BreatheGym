@@ -38,7 +38,7 @@
 							</span>
 						</div>
 						<div id="exercise-spec" class="hidden">
-							<div class="raido">
+							<div class="radio-group">
 								<label class="radio-inline">
 									<input type="radio" name="exercise-type" value="time" checked>
 									시간
@@ -97,7 +97,7 @@
 	<script src="../js/jquery-ui.custom.min.js"></script>
 	<script src="../js/moment.min.js"></script>
 	<script src="../js/fullcalendar.min.js"></script> 
-
+	<script src="../js/ko.js"></script>
 	<script src="../js/common-scripts.js"></script>
 	<script src="../js/calendar-conf-events.js"></script>   
 </body>
