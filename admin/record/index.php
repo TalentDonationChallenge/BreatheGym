@@ -29,42 +29,60 @@
 			<!-- page start-->
 			<div class="row mt">
 				
-				<section class="panel">
-					<table class="record-table">
-						<colgroup>
-							<col width="20px"/>
-							<col width="10%"/>
-							<col width="20%"/>
-							<col width="30%"/>
-							<col width="30%"/>
-						</colgroup>
-						<thead>
-							<tr>
-								<th>ㅁ</th>
-								<th>이름</th>
-								<th>출석시간</th>
-								<th>운동종류</th>
-								<th>기록입력</th>
-							</tr>
-						</thead>
-						<tbody>
-							<!-- contents heare -->
-							<tr>
-								<td>ㅁ</td>
-								<td>심종규</td>
-								<td>2014-07-20 16:30:21</td>
-								<td>윗몸일으키기</td>
-								<td>12:30</td>
-							</tr>
-							<?php
-								//$members = AdminRecordManage::getTodayMemebers();
-								echo "<script>alert(\"$members\");</script>";
-								if(count($members)==0){
-									echo "<tr><td>오늘 출석자 없습니다</td></tr>";
-								}
-							?>
-						</tbody>
-					</table>
+				<section class="grey-panel">
+					<div class="table-responsive">
+						<table class="table table-striped">
+							
+							<thead>
+								<tr>
+									<td><input type="checkbox" name="allCheck"/></td>
+									<td>이름</td>
+									<td>출석시간</td>
+									<td>운동종류</td>
+									<td>기록입력</td>
+								</tr>
+							</thead>
+							<tbody>
+								<!-- contents heare -->
+								<!-- 오늘 출석 명단 보여주기 -->
+								<?php
+									$members = AdminRecordManage::getTodayMembers();
+									$exercises = AdminRecordManage::getTodayExercises();
+									if(count($members)==0){//출석자 없을시
+										echo "<tr><td colspan=\"5\">오늘 출석자 없습니다</td></tr>";
+									} else {
+										foreach($members as $index){//출석한 사람 수만큼
+											foreach($exercises as $exIndex){?><!--한 운동종류만큼-->
+												<tr>
+													<td><input type="checkbox" name="roomnum" value=""/></td>
+												<?php
+												foreach($index as $key=>$value){?><!--이름과 출석 시간 출력-->
+													<td><?=$value?></td>
+												<?php
+												}?>
+													<td><?=$exIndex['name']?></td>
+												<?php
+													if($exIndex['type']==0){?><!--횟수 재는 운동일 떄-->
+														<td><input type="text" name="countRecord" value=""/>개</td>
+													<?php
+													} else if ($exIndex['type']==1){?><!-- 시간 재는 운동일 때-->
+														<td>
+															<input type="text" name="timeRecordMinute" value=""/>분
+															<input type="text" name="timeRecordSecond" value=""/>초
+														</td>
+													<?php
+													}
+												?>
+												</tr>
+											<?php
+											}
+										}
+									}
+
+								?>
+							</tbody>
+						</table>
+					</div>
 				</section>
 				
 			</div><!-- page end-->
