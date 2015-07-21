@@ -43,10 +43,19 @@
 		//오늘 출석한 사람들 명단 받아오기
 		public static function getTodayMembers(){
 			try{
-				$pdo = Database::getInstance();
+				$pdo=Database::getInstance();
 
-				$result = $pdo->query('SELECT barcode, name from gymMember join attendance where date == CURDATE()');
-				return $result;
+				$stmt=$pdo->query('SELECT name, date from attendance where date == CURDATE()');
+				$result=$stmt->fetchAll();
+				$members = array();
+
+				foreach ($members as $row) {
+					$members[] = array(
+						'name' => $row['name'],
+						'date' => $row['date']
+					);
+				}
+				return $members;
 			} catch(Exception $e){
 
 			}
@@ -54,9 +63,10 @@
 		//오늘 예정된 운동 종류 받아오기
 		public static function getTodayExercises(){
 			try{
-				$pdo = Database::getInstance();
+				$pdo=Database::getInstance();
 
-				$result = $pdo->query('SELECT name, type, time, count from exerciseSchedule where date == CURDATE()');
+				$stmt=$pdo->query('SELECT name, type, time, count from exerciseSchedule where date == CURDATE()');
+				$result=$stmt->fetchAll();
 				return $result;
 			} catch(Exception $e){
 				
