@@ -26,8 +26,8 @@
 		<section class="wrapper">
 			<h3><i class="fa fa-angle-right"></i> 기록관리 </h3>
 			<!-- page start-->
-			<div class="row mt">
-				<section class="panel panel-default table-panel">
+			<div class="panel panel-default">
+				<section class="panel-body table-panel">
 					<div class="table-responsive">
 						<table class="table table-striped">
 							
@@ -76,15 +76,16 @@
 											}
 										}
 									}
-
 								?>
 							</tbody>
 						</table>
 					</div>
 				</section>
 				<section class="panel-footer">
-					<input type="button" value="입력" name="input"/>
-					<input type="button" value="수정" name="modify"/>
+					<div class="align-right">
+						<input type="button" value="입력" name="input"/>
+						<input type="button" value="수정" name="modify"/>
+					</div>
 				</section>
 				
 			</div><!-- page end-->
