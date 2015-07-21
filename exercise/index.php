@@ -24,10 +24,10 @@
 	<!--maincontent start-->
 	<section id = "main-content">
 				<section class = wrapper>
-					<div class = "row">
-						<div class = "main-chart">
+					<div class = "row" id ="menucontainer">
+						<div class = "main-chart" >
 							<div class = "row mtbox">
-								<div class = "col-md-2 col-sm-2 col-md-offset1 box0">
+								<div class = "infobox col-md-2 col-sm-2 col-md-offset1 box0">
                                     <div class = "box1">
 										
                                         <h3>상위</h3>
@@ -35,7 +35,7 @@
 									</div>
 									<p>당신은 상위 90%! 분발하세</p>
 								</div>
-								<div class = "col-md-2 col-sm-2 col-md-offset1 box0">
+								<div class = "infobox col-md-2 col-sm-2 col-md-offset1 box0">
 									<div class = "box1">
 										
 										<h3>진행률</h3>
@@ -43,7 +43,7 @@
 									</div>
 									<p>운동 진행률</p>
 								</div>
-								<div class = "col-md-2 col-sm-2 col-md-offset1 box0">
+								<div class = "infobox col-md-2 col-sm-2 col-md-offset1 box0">
 									<div class = "box1">
 										
 										<h3>출석률</h3>
@@ -51,7 +51,7 @@
 									</div>
 									<p>이번달 출석률 왜이럼?</p>
 								</div>
-								<div class = "col-md-2 col-sm-2 col-md-offset1 box0">
+								<div class = "infobox col-md-2 col-sm-2 col-md-offset1 box0">
 									<div class = "box1">
 										
 										<h3>등록일</h3>
