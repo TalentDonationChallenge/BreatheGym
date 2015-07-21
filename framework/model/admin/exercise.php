@@ -55,8 +55,27 @@
 			}
 			return $exercises;
 		}
-		public static function loadSchedule($month) {
-			
+		public static function loadSchedule($month, $year) {
+			$firstDate = date('Y-m-d', mktime(0,0,0,$month, 1, $year));
+			$lastDate = date('Y-m-d', mktime(0,0,0,$month, date('t', $firstDate), $year));
+			$pdo = Database::getInstance();
+			$stmt = $pdo->prepare('SELECT no, name, date FROM exerciseSchedule JOIN exerciseList 
+				ON exerciseList.no = exerciseSchedule.exerciseNo 
+				WHERE date>= :firstDate AND date <= :lastDate');
+			$stmt->execute(array(
+				':firstDate'=>$firstDate,
+				':lastDate'=>$lastDate
+			));
+			$schedules = array();
+
+			foreach ($rows as $row) {
+				$schedules[] = array(
+					'no' => $row['no'],
+					'name' => $row['name'],
+					'date' => $row['date']
+				);
+			}
+			return $schedules;
 		}
 
 		public static function deleteExercise($no) {
@@ -66,7 +85,12 @@
 		}
 
 		public static function deleteSchedule($no, $date) {
-			
+			$pdo = Database::getInstance();
+			$stmt = $pdo->prepare('DELETE FROM exerciseSchedule WHERE no = :no AND date = :date');
+			$stmt -> execute(array(
+				':no'=>$no,
+				':date'=>$date
+			));
 		}
 	}
 

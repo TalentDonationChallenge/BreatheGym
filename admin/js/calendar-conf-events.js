@@ -1,19 +1,12 @@
 $(document).ready(function () {
-/* 저장된 스케줄목록 불러오기 */
-
-
-
 /* initialize the external events
  -----------------------------------------------------------------*/
 $('#exercises .exercise').each(bindEventData);
 
 /* initialize the calendar
  -----------------------------------------------------------------*/
-var date = new Date();
-var d = date.getDate();
-var m = date.getMonth();
-var y = date.getFullYear();
 $('#calendar').fullCalendar({
+	lang : 'ko',
 	header: {
 		left: 'prev,next today',
 		center: 'title',
@@ -103,9 +96,11 @@ $("#add-exercise-form .btn-insert").click(function () {
 /* 운동목록 삭제하기 */
 $(document).on('mouseenter', '.exercise', function () {
 	$(this).find('span').addClass("fa fa-minus-circle remove");
+	$('#exercises').css({'margin-right': 0});
 });
 $(document).on('mouseleave', '.exercise', function () {
 	$(this).find('span').removeClass("fa fa-minus-circle remove");  
+	$('#exercises').css({'margin-right': '20px'});
 });
 $(document).on('click', '.exercise .remove', function () {
 	var exercise = $(this).parent();

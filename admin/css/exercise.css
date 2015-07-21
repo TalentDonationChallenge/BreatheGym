@@ -12,7 +12,8 @@
 	margin-top: 15px;
 }
 #exercises {
-	margin-top: 15px
+	margin-top: 15px;
+	margin-right: 20px;
 }
 
 /* Calendar Events - Calendar.html*/
@@ -20,7 +21,7 @@
 	cursor: pointer;
 	display: inline-block !important;
 	margin-bottom: 7px !important;
-	margin-right: 13px !important;
+	margin-right: 7px !important;
 	padding: 10px;
 }
 

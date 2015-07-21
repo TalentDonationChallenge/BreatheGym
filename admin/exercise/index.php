@@ -97,7 +97,7 @@
 	<script src="../js/jquery-ui.custom.min.js"></script>
 	<script src="../js/moment.min.js"></script>
 	<script src="../js/fullcalendar.min.js"></script> 
-
+	<script src="../js/ko.js"></script>
 	<script src="../js/common-scripts.js"></script>
 	<script src="../js/calendar-conf-events.js"></script>   
 </body>
