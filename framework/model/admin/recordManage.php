@@ -59,6 +59,7 @@
 				return $members;
 			} catch(PDOException $e){
 				print "Error!: ".$e->getMessage()."<br/>";
+				die();
 			}
 		}
 		//오늘 예정된 운동 종류 받아오기
@@ -75,11 +76,11 @@
 						'type' => $row['type']
 					);
 				}
-				var_dump($exercises);
+				
 				return $result;
 			} catch(PDOException $e){
 				print "Error!: ".$e->getMessage()."<br/>";
-				echo "<script>alert(\"".$e->getMessage()."\");</script>";
+				die();
 			}
 		}
 	}

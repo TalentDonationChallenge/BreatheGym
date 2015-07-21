@@ -8,8 +8,7 @@
 	array('/common/font-awesome/css/font-awesome.css',
 		'/common/css/style.css',
 		'/common/css/style-responsive.css',
-		'../css/fullcalendar.min.css',
-		'../css/exercise.css'));?>
+		'../css/record.css'));?>
 	<!--[if lt IE 9]>
 	<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
 	<script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
@@ -28,8 +27,7 @@
 			<h3><i class="fa fa-angle-right"></i> 기록관리 </h3>
 			<!-- page start-->
 			<div class="row mt">
-				
-				<section class="grey-panel">
+				<section class="panel panel-default table-panel">
 					<div class="table-responsive">
 						<table class="table table-striped">
 							
@@ -63,12 +61,12 @@
 													<td><?=$exIndex['name']?></td>
 												<?php
 													if($exIndex['type']==0){?><!--횟수 재는 운동일 떄-->
-														<td><input type="text" name="countRecord" value=""/>개</td>
+														<td><input type="text" name="countRecord" size="5" value=""/>개</td>
 													<?php
 													} else if ($exIndex['type']==1){?><!-- 시간 재는 운동일 때-->
 														<td>
-															<input type="text" name="timeRecordMinute" value=""/>분
-															<input type="text" name="timeRecordSecond" value=""/>초
+															<input type="text" name="timeRecordMinute" size="3" value=""/>분
+															<input type="text" name="timeRecordSecond" size="3" value=""/>초
 														</td>
 													<?php
 													}
@@ -83,6 +81,10 @@
 							</tbody>
 						</table>
 					</div>
+				</section>
+				<section class="panel-footer">
+					<input type="button" value="입력" name="input"/>
+					<input type="button" value="수정" name="modify"/>
 				</section>
 				
 			</div><!-- page end-->
