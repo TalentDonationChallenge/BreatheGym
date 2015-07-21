@@ -68,7 +68,7 @@
                             <div class = "indexprogress">
                                 <h4><i class = "fa fa-angle-right"></i>오늘의 복싱 진도</h4>
                                 <div class = "boxing">
-                                    <img src = "/exercise/img/boxingimg.jpg" width="100%" height="30%">
+                                    <img src = "/exercise/img/boxingimg.jpg" width="100%" height="260px">
                                         </div>
                                 <p>잽운동(클릭하면 상세 페이지로 넘어갑니다.)</P>
                                 <div class ="progress">
@@ -90,11 +90,15 @@
                               <div class = "indexprogress">
                                   <h4><i class = "fa fa-angle-right"></i>오늘의 크로스핏</h4>
                                   <div class = "boxing">
-                                      <img src = "/exercise/img/crossfit.jpg" width="100%" height="280px">
+                                      <img src = "/exercise/img/crossfit.jpg" width="100%" height="260px">
                                           </div>
                                   <p>(클릭하면 상세 페이지로 넘어갑니다.)</P>
+                                  <div id = "mrecord">
+                              			<h4>오늘 회원님은 상위 10%의 기록을 달성하였습니다.<h4>
+                            	  </div>
                                  
                               </div>
+
                               
                           </a>
                           
