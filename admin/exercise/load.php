@@ -10,7 +10,7 @@
 		if ($_GET['requestType'] === 'exercise') {
 			$msg['exercises'] = AdminExerciseSchedule::loadExercise();
 		} else if ($_GET['requestType'] === 'schedule') {
-
+			$msg['schedule'] = AdminExerciseSchedule::loadSchedule($_GET['start'], $_GET['end']);
 		} else {
 			new Exception('no request');
 		}

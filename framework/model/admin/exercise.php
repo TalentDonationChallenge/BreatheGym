@@ -30,10 +30,10 @@
 		}
 		public static function insertSchedule($no, $date) { //운동 스케줄 추가할 때
 			$pdo = Database::getInstance();
-			$stmt = $pdo->prepare('INSERT INTO exerciseSchedule(no,date)
-				VALUES (:name, :date) ');
+			$stmt = $pdo->prepare('INSERT INTO exerciseSchedule(exerciseNo,date)
+				VALUES (:exerciseNo, :date) ');
 			$stmt->execute(array(
-				':name'=>$name,
+				':exerciseNo'=>$no,
 				':date'=>$date
 			));
 			return $pdo->lastInsertId();
@@ -55,24 +55,22 @@
 			}
 			return $exercises;
 		}
-		public static function loadSchedule($month, $year) {
-			$firstDate = date('Y-m-d', mktime(0,0,0,$month, 1, $year));
-			$lastDate = date('Y-m-d', mktime(0,0,0,$month, date('t', $firstDate), $year));
+		public static function loadSchedule($start, $end) {
 			$pdo = Database::getInstance();
 			$stmt = $pdo->prepare('SELECT no, name, date FROM exerciseSchedule JOIN exerciseList 
 				ON exerciseList.no = exerciseSchedule.exerciseNo 
-				WHERE date>= :firstDate AND date <= :lastDate');
+				WHERE date>= :start AND date <= :end');
 			$stmt->execute(array(
-				':firstDate'=>$firstDate,
-				':lastDate'=>$lastDate
+				':start'=>$start,
+				':end'=>$end
 			));
+			$rows = $stmt -> fetchAll();
 			$schedules = array();
-
 			foreach ($rows as $row) {
 				$schedules[] = array(
 					'no' => $row['no'],
-					'name' => $row['name'],
-					'date' => $row['date']
+					'title' => $row['name'],
+					'start' => $row['date']
 				);
 			}
 			return $schedules;
@@ -86,7 +84,7 @@
 
 		public static function deleteSchedule($no, $date) {
 			$pdo = Database::getInstance();
-			$stmt = $pdo->prepare('DELETE FROM exerciseSchedule WHERE no = :no AND date = :date');
+			$stmt = $pdo->prepare('DELETE FROM exerciseSchedule WHERE exerciseNo = :no AND date = :date');
 			$stmt -> execute(array(
 				':no'=>$no,
 				':date'=>$date

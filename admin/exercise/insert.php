@@ -20,7 +20,7 @@
 				new Exception('not proper request');
 			}
 		} else if ($_POST['requestType'] === 'schedule') {
-
+			AdminExerciseSchedule::insertSchedule($_POST['no'],$_POST['date']);
 		} else {
 			new Exception('not proper request');
 		}

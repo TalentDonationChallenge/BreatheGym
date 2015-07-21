@@ -10,7 +10,7 @@
 		if ($_POST['requestType'] === 'exercise') {
 			AdminExerciseSchedule::deleteExercise($_POST['no']);
 		} else if ($_POST['requestType'] === 'schedule') {
-
+			AdminExerciseSchedule::deleteSchedule($_POST['no'], $_POST['date']);
 		} else {
 			new Exception('no request');
 		}

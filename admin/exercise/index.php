@@ -96,7 +96,7 @@
 	<script src="../js/jquery.dcjqaccordion.2.7.js"></script>
 	<script src="../js/jquery-ui.custom.min.js"></script>
 	<script src="../js/moment.min.js"></script>
-	<script src="../js/fullcalendar.min.js"></script> 
+	<script src="../js/fullcalendar.js"></script> 
 	<script src="../js/ko.js"></script>
 	<script src="../js/common-scripts.js"></script>
 	<script src="../js/calendar-conf-events.js"></script>   
