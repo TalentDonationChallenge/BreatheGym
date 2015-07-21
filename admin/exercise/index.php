@@ -38,7 +38,7 @@
 							</span>
 						</div>
 						<div id="exercise-spec" class="hidden">
-							<div class="raido">
+							<div class="radio-group">
 								<label class="radio-inline">
 									<input type="radio" name="exercise-type" value="time" checked>
 									시간
