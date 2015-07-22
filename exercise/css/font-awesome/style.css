@@ -850,6 +850,12 @@ ul.top-menu > li > a:hover, ul.top-menu > li > a:focus {
 .box1 h3 {
     text-align: center;
 }
+.box0{
+    width:200px;
+    margin-left: 45px;
+
+
+}
 
 .box0:hover .box1 {
     border-bottom: 1px solid #ffffff;
@@ -1409,13 +1415,13 @@ PANELS CONFIGURATIONS
 }
 
 /* Calendar Configuration */
-/*#calendar {
+#calendar {
     color: white;
     padding: 0px !important;
 }
 .calendar-month-header {
     background: #43b1a9;
-}*/
+}
 
 /* TODO PANEL */
 .steps{
@@ -1641,6 +1647,31 @@ PANELS CONFIGURATIONS
     padding: 15px;
     margin-bottom: 15px;
     box-shadow: 0px 3px 2px #aab2bd;
+}
+
+
+
+/* Calendar Events - Calendar.html*/
+.external-event {
+    cursor: move;
+    display: inline-block !important;
+    margin-bottom: 7px !important;
+    margin-right: 7px !important;
+    padding: 10px;
+}
+
+.drop-after {
+    padding-top: 15px;
+    margin-top: 15px;
+    border-top: 1px solid #ccc;
+}
+
+.fc-state-default, .fc-state-default .fc-button-inner {
+    background: #f2f2f2;
+}
+
+.fc-state-active .fc-button-inner {
+    background: #FFFFFF;
 }
 
 /* Gallery Configuration */
@@ -2214,7 +2245,6 @@ label {
 .site-min-height {
     min-height: 900px;
 }
-
 .boxprogress{
     background: #ffffff;
     padding: 15px;
@@ -2315,11 +2345,11 @@ label {
     border: 1px solid black;
 }
 .col7{
-    width: 60%;
+    width: 45%;
     margin-left: 20px;
     margin-right: 10px;
     float: left;
-    
+    border: 1px solid black;
     height:500px;
 }
 .col8{
@@ -2328,14 +2358,6 @@ label {
         margin-left: 20px;
         margin-right: 10px;
         float: left;
-}
-.col9{
-    width: 30%;
-    margin-left: 20px;
-    margin-right: 10px;
-    float: left;
-    
-    height:500px;
 }
 #memberrecordtable{
     width: 70%;
@@ -2403,17 +2425,6 @@ label {
 #mrecord{
     height:20px;
     margin-bottom: 20px;
-}
-#menucontainer{
-    margin-left: auto;
-    margin-right: auto;
-
-}
-.infobox{
-    margin-left: 20px;
-    margin-right: 20px;
-    width:20%;
-    float:left;
 }
 
 
