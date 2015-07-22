@@ -33,8 +33,8 @@
 							
 							<thead>
 								<tr>
-									<td><input type="checkbox" name="allCheck"/></td>
 									<td>이름</td>
+									<td>회원코드</td>
 									<td>출석시간</td>
 									<td>운동종류</td>
 									<td>기록입력</td>
@@ -51,10 +51,9 @@
 									} else {
 										foreach($members as $index){//출석한 사람 수만큼
 											foreach($exercises as $exIndex){?><!--한 운동종류만큼-->
-												<tr>
-													<td><input type="checkbox" name="roomnum" value=""/></td>
+												<tr class="recordRow">
 												<?php
-												foreach($index as $key=>$value){?><!--이름과 출석 시간 출력-->
+												foreach($index as $key=>$value){?><!--이름과 코드, 출석 시간 출력-->
 													<td><?=$value?></td>
 												<?php
 												}?>
@@ -72,7 +71,9 @@
 													}
 												?>
 												</tr>
+											
 											<?php
+											$vm = "wow";
 											}
 										}
 									}
@@ -83,8 +84,7 @@
 				</section>
 				<section class="panel-footer">
 					<div class="align-right">
-						<input type="button" value="입력" name="input"/>
-						<input type="button" value="수정" name="modify"/>
+						<input type="button" id="input" value="저장" name="input"/>
 					</div>
 				</section>
 				
@@ -97,7 +97,7 @@
 	<script src="../js/jquery.dcjqaccordion.2.7.js"></script>
 	<script src="../js/jquery-ui.custom.min.js"></script>
 	<script src="../js/moment.min.js"></script>
-
-	<script src="../js/common-scripts.js"></script>  
+	<script src="../js/common-scripts.js"></script>
+	<script src="../js/record-scripts.js"></script>
 </body>
 </html>

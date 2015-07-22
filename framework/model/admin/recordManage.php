@@ -45,13 +45,14 @@
 			try{
 				$pdo=Database::getInstance();
 
-				$stmt=$pdo->prepare('SELECT name, date from attendance join gymMember where attendance.date = CURDATE()');
+				$stmt=$pdo->prepare('SELECT name, gymMember.barcode, date from attendance join gymMember where attendance.date = CURDATE()');
 				$stmt->execute();
 				$result=$stmt->fetchAll();
 				$members = array();
 				foreach ($result as $row) {
 					$members[] = array(
 						'name' => $row['name'],
+						'barcode' => $row['barcode'],
 						'date' => $row['date']
 					);
 				}
