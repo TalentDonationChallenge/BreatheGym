@@ -204,26 +204,26 @@
 				<ul class='sidebar-menu' id='nav-accordion'>
 				<li class='mt'>
 					<a <?=$active==='index'?"class='active'":""?> href='/exercise/index.php'>
-						<i class='fa fa-dashboard'></i>
+						<i class='fa fa-th-large'></i>
 						<span>대쉬보드</span>
 					</a>
 				</li>
 				<li class='sub-menu'>
 					<a <?=$active==='analysis'?"class='active'":""?> href='/exercise/boxing/index.php' >
-						<i class='fa fa-cogs'></i>
+						<i class='fa fa-bold'></i>
 						<span>복싱</span>
 					</a>
 				</li>
 				<li class='sub-menu'>
 					<a <?=$active==='exercise'?"class='active'":""?> href='/exercise/crossfit/index.php' >
-						<i class='fa fa-book'></i>
+						<i class='fa fa-child'></i>
 						<span>크로스핏</span>
 					</a>
 				</li>
 				<li class='sub-menu'>
 					<a <?=$active==='consulting'?"class='active'":""?> href='/exercise/mypage/index.php' >
-						<i class='fa fa-tasks'></i>
-						<span>MyPage?</span>
+						<i class='fa fa-user'></i>
+						<span>MyPage</span>
 					</a>
 				</li>
 				
