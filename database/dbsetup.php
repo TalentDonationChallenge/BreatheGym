@@ -3,7 +3,7 @@
 	$pdo = Database::getInstance();
 	$pdo->exec(file_get_contents("table.sql")); 
 
-	$exercises = json_decode(file_get_contents("exerciseList.json"), :true);
+	$exercises = json_decode(file_get_contents("exerciseList.json"), true);
 
 	foreach ($exercises as $exercise) {
 		$stmt = $pdo->prepare("INSERT INTO exerciseList (name, type, time, count) 
