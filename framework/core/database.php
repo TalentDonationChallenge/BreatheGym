@@ -12,8 +12,6 @@
 		}
 
 		public static function getInstance() {
-			global $configuration;
-
 			if (self::$instance === NULL) {
 				self::$instance = new Database();
 			}

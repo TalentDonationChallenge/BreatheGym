@@ -77,7 +77,8 @@ create table consulting(
 	no int(6) not null primary key AUTO_INCREMENT,
 	email varchar(50) not null,
 	title varchar(50) not null,
-	content text not null
+	content text not null,
+	writtenTime datetime not null
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1;
 
 -- 브리드 이야기
@@ -85,14 +86,16 @@ create table breatheBoard(
 	no int(6) not null primary key AUTO_INCREMENT,
 	email varchar(50) not null,
 	title varchar(50) not null,
-	content text not null	
+	content text not null,
+	writtenTime datetime not null
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1;
 
 create table freeBoard(
 	no int(6) not null primary key AUTO_INCREMENT,
 	email varchar(50) not null,
 	title varchar(50) not null,
-	content text not null	
+	content text not null,
+	writtenTime datetime not null
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1;
 
 -- 사부님의 노트
@@ -100,5 +103,6 @@ create table diaryBoard(
 	no int(6) not null primary key AUTO_INCREMENT,
 	email varchar(50) not null,
 	title varchar(50) not null,
-	content text not null	
+	content text not null,
+	writtenTime datetime not null
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1;
