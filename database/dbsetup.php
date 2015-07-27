@@ -3,8 +3,8 @@
 	$pdo = Database::getInstance();
 	$pdo->exec(file_get_contents("table.sql")); 
 
+	//운동종류 추가하기
 	$exercises = json_decode(file_get_contents("exerciseList.json"), true);
-	print_r($exercises);
 	foreach ($exercises as $exercise) {
 		$stmt = $pdo->prepare("INSERT INTO exerciseList (name, type, time, count) 
 		VALUES (:name, :type, :time, :count)");
@@ -15,9 +15,9 @@
 			":count"=>$exercise["count"]
 		));
 	}
-
-	$gymMembers = json_decode(file_get_contents("gymMember.json"), true);
-	// print_r($gymMembers);
+	
+	//언제나 gymMember가 member보다 먼저 추가되어야 합니다
+	$gymMembers = json_decode(file_get_contents("gymMember.json"), true); 
 
 	// foreach ($gymMembers as $gymMember) {
 	// 	$stmt = $pdo->prepare('INSERT INTO gymMember
