@@ -11,20 +11,6 @@ drop table if exists diaryBoard;
 drop table if exists exerciseList;
 
 
-create table member(
-	email varchar(50) not null primary key,
-	password varchar(50),
-	name varchar(30) not null unique,
-	phone varchar(12),
-	barcode varchar(30),
-	birthday date,
-	facebook int(1) not null,
-	sex int(1) not null,
-	registerDate date,
-	nickname varchar(30) not null unique,
-	active int(1) not null
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
 create table gymMember(
 	barcode varchar(30) primary key,
 	name varchar(30) not null unique,
@@ -36,6 +22,22 @@ create table gymMember(
 	registerDate date not null,
 	duration date not null
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+create table member(
+	email varchar(50) not null primary key,
+	password varchar(50),
+	name varchar(30) not null unique,
+	phone varchar(12),
+	barcode varchar(30),
+	birthday date,
+	facebook int(1) not null,
+	sex int(1) not null,
+	registerDate date,
+	nickname varchar(30) not null unique,
+	active int(1) not null,
+	foreign key (barcode) references gymMember(barcode)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
 
 create table exerciseRecord(
 	barcode varchar(30),
