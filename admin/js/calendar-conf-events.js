@@ -53,10 +53,17 @@ $(document).ready(function () {
 		editable: true,
 		droppable: true, // this allows things to be dropped onto the calendar !!!
 		drop: function(date, allDay) { // this function is called when something is dropped
-
-			// retrieve the dropped element's stored Event Object
+			// // retrieve the dropped element's stored Event Object
 			var originalEventObject = $(this).data('eventObject');
-
+			var events = $('#calendar').fullCalendar('clientEvents', function (e) {
+				return date.format() === e.start.format();
+			});
+			for (var i in events) {
+				if (events[i].no === originalEventObject.no) {
+					alert('이미 추가한 운동입니다');
+					return;
+				}
+			}
 			$.ajax({ //스케줄을 DB에 추가하기
 				url: 'insert.php',
 				type : 'post',
@@ -78,7 +85,6 @@ $(document).ready(function () {
 					$('#calendar').fullCalendar('renderEvent', copiedEventObject, true);
 				}
 			});
-			
 		},
 		events : function (start, end, timezone, callback) {
 			$.ajax({

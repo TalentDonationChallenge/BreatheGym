@@ -2215,4 +2215,8 @@ label {
     min-height: 900px;
 }
 
+/* home버튼 */
+.home {
+    margin-top: 15px;
+}
 

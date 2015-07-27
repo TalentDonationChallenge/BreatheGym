@@ -11,20 +11,6 @@ drop table if exists diaryBoard;
 drop table if exists exerciseList;
 
 
-create table member(
-	email varchar(50) not null primary key,
-	password varchar(50),
-	name varchar(30) not null unique,
-	phone varchar(12),
-	barcode varchar(30),
-	birthday date,
-	facebook int(1) not null,
-	sex int(1) not null,
-	registerDate date,
-	nickname varchar(30) not null unique,
-	active int(1) not null
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
 create table gymMember(
 	barcode varchar(30) primary key,
 	name varchar(30) not null unique,
@@ -36,6 +22,22 @@ create table gymMember(
 	registerDate date not null,
 	duration date not null
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+create table member(
+	email varchar(50) not null primary key,
+	password varchar(50),
+	name varchar(30) not null unique,
+	phone varchar(12),
+	barcode varchar(30),
+	birthday date,
+	facebook int(1) not null,
+	sex int(1) not null,
+	registerDate date,
+	nickname varchar(30) not null unique,
+	active int(1) not null,
+	foreign key (barcode) references gymMember(barcode)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
 
 create table exerciseRecord(
 	barcode varchar(30),
@@ -75,7 +77,8 @@ create table consulting(
 	no int(6) not null primary key AUTO_INCREMENT,
 	email varchar(50) not null,
 	title varchar(50) not null,
-	content text not null
+	content text not null,
+	writtenTime datetime not null
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1;
 
 -- 브리드 이야기
@@ -83,14 +86,16 @@ create table breatheBoard(
 	no int(6) not null primary key AUTO_INCREMENT,
 	email varchar(50) not null,
 	title varchar(50) not null,
-	content text not null	
+	content text not null,
+	writtenTime datetime not null
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1;
 
 create table freeBoard(
 	no int(6) not null primary key AUTO_INCREMENT,
 	email varchar(50) not null,
 	title varchar(50) not null,
-	content text not null	
+	content text not null,
+	writtenTime datetime not null
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1;
 
 -- 사부님의 노트
@@ -98,5 +103,6 @@ create table diaryBoard(
 	no int(6) not null primary key AUTO_INCREMENT,
 	email varchar(50) not null,
 	title varchar(50) not null,
-	content text not null	
+	content text not null,
+	writtenTime datetime not null
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1;

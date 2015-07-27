@@ -125,6 +125,7 @@
 			<!--logo end-->
 			<div class='top-menu'>
 				<ul class='nav pull-right top-menu'>
+				<li><a class="home" href="/"><i class="fa fa-home"></i></a></li>
 				<li><a class='logout' href='/'>로그아웃</a></li>
 				</ul>
 			</div>
@@ -181,7 +182,7 @@
 			</div>
 		</aside>
 	<?php }
-	/* 관리자메뉴 header */
+	/* 운동관리 header */
 	function memberHeader() { ?>
 		<header class='header black-bg'>
 			<div class='sidebar-toggle-box'>
@@ -192,11 +193,13 @@
 			<!--logo end-->
 			<div class='top-menu'>
 				<ul class='nav pull-right top-menu'>
+				<li><a class="home" href="/"><i class="fa fa-home"></i></a></li>
 				<li><a class='logout' href='/'>로그아웃</a></li>
 				</ul>
 			</div>
 		</header>
 	<?php } 
+	/* 운동관리 sidebar */
 	function memberSidebar($active) { ?>
 		<aside>
 			<div id='sidebar'  class='nav-collapse '>
