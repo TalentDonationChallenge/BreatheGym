@@ -85,6 +85,27 @@
 			}
 		}
 
+		public static function getRecordRows(){
+
+			$members=AdminRecordManage::getTodayMembers();
+
+			$exercises=AdminRecordManage::getTodayExercises();
+			
+			$recordArray = array();
+			
+			foreach($members as $index){
+				foreach($exercises as $exIndex){
+					$recordArray[]=array(
+						'barcode' => $index['barcode'],
+						'date' => $index['date'],
+						'name' => $exIndex['name'],
+						'type' => $exIndex['type']
+					);
+				}
+			}
+			return $recordArray;
+		}
+
 		
 	}
 	

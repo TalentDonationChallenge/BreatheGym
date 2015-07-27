@@ -46,6 +46,9 @@
 								<?php
 									$members = AdminRecordManage::getTodayMembers();
 									$exercises = AdminRecordManage::getTodayExercises();
+									$record = AdminRecordManage::getRecordRows();
+									$json = json_encode($record);
+									print_r($json);
 									if(count($members)==0){//출석자 없을시
 										echo "<tr><td colspan=\"5\">오늘 출석자 없습니다</td></tr>";
 									} else {
@@ -71,7 +74,6 @@
 													}
 												?>
 												</tr>
-											
 											<?php
 											$vm = "wow";
 											}
