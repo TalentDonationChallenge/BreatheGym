@@ -48,19 +48,18 @@
 									$exercises = AdminRecordManage::getTodayExercises();
 									$record = AdminRecordManage::getRecordRows();
 									$json = json_encode($record);
-									print_r($json);
 									if(count($members)==0){//출석자 없을시
 										echo "<tr><td colspan=\"5\">오늘 출석자 없습니다</td></tr>";
 									} else {
 										foreach($members as $index){//출석한 사람 수만큼
 											foreach($exercises as $exIndex){?><!--한 운동종류만큼-->
-												<tr class="recordRow">
+												<tr>
 												<?php
 												foreach($index as $key=>$value){?><!--이름과 코드, 출석 시간 출력-->
-													<td><?=$value?></td>
+													<td class="recordCol"><?=$value?></td>
 												<?php
 												}?>
-													<td><?=$exIndex['name']?></td>
+													<td class="recordCol"><?=$exIndex['name']?></td>
 												<?php
 													if($exIndex['type']==0){?><!--횟수 재는 운동일 떄-->
 														<td><input type="text" name="countRecord" size="5" value=""/>개</td>
@@ -75,7 +74,7 @@
 												?>
 												</tr>
 											<?php
-											$vm = "wow";
+											
 											}
 										}
 									}

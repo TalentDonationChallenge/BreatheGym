@@ -26,7 +26,7 @@
 									':barcode'=>$barcodes[$j],
 									':name'=>$exercises[$i],
 									':type'=>1,
-									':timeRecord'=>$records[$j][$i],
+									':timeRecord'=>'00:'.$records[$j][$i]['minute'].":".$records[$j][$i]['seconde'],
 									':countRecord'=>null,
 									':dates'=>$date
 							));
