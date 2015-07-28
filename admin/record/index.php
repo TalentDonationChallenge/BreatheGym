@@ -8,6 +8,7 @@
 	array('/common/font-awesome/css/font-awesome.css',
 		'/common/css/style.css',
 		'/common/css/style-responsive.css',
+		'/common/css/table-responsive.css',
 		'../css/record.css'));?>
 	<!--[if lt IE 9]>
 	<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
@@ -28,69 +29,40 @@
 			<!-- page start-->
 			<div class="panel panel-default">
 				<section class="panel-body table-panel">
+					<ul class="nav nav-tabs">
+					<?php 
+					$exercises = AdminRecordManage::getExercises(date("Y-m-d")); //오늘의 운동 종류
+					if ($exercises !== Array()) { ?>
+						<li class="active"><a href="#"><?=$exercises[0]['name']?></a></li>
+						<li><a href="#"><?=$exercises[1]['name']?></a></li>
+						<li><a href="#"><?=$exercises[2]['name']?></a></li>
+					<?php }?>
+					</ul>
 					<div class="table-responsive">
 						<table class="table table-striped">
-							
-							<thead>
-								<tr>
-									<td>이름</td>
-									<td>회원코드</td>
-									<td>출석시간</td>
-									<td>운동종류</td>
-									<td>기록입력</td>
-								</tr>
-							</thead>
-							<tbody>
-								<!-- contents heare -->
-								<!-- 오늘 출석 명단 보여주기 -->
-								<?php
-									$members = AdminRecordManage::getTodayMembers();
-									$exercises = AdminRecordManage::getTodayExercises();
-									$record = AdminRecordManage::getRecordRows();
-									
-									if(count($members)==0){//출석자 없을시
-										echo "<tr><td colspan=\"5\">오늘 출석자 없습니다</td></tr>";
-									} else {
-										foreach($members as $index){//출석한 사람 수만큼
-											foreach($exercises as $exIndex){?><!--한 운동종류만큼-->
-												<tr>
-												<?php
-												foreach($index as $key=>$value){?><!--이름과 코드, 출석 시간 출력-->
-													<td class="recordCol"><?=$value?></td>
-												<?php
-												}?>
-													<td class="recordCol"><?=$exIndex['name']?></td>
-													<input type="hidden" 
-												<?php
-													if($exIndex['type']==0){?><!--횟수 재는 운동일 떄-->
-														<td>
-															<input type="text" name="countRecord" size="5" value=""/>개
-															<input type="hidden" name="exerciseType" value="0"/>
-														</td>
-													<?php
-													} else if ($exIndex['type']==1){?><!-- 시간 재는 운동일 때-->
-														<td>
-															<input type="text" name="timeRecordMinute" size="3" value=""/>분
-															<input type="text" name="timeRecordSecond" size="3" value=""/>초
-															<input type="hidden" name="exerciseType" value="1"/>
-														</td>
-													<?php
-													}
-												?>
-												</tr>
-											<?php
-											
-											}
-										}
-									}
-								?>
-							</tbody>
+						<thead>
+							<tr>
+								<td>이름</td>
+								<td>회원코드</td>
+								<td>출석시간</td>
+								<td>기록입력</td>
+							</tr>
+						</thead>
+						<tbody>
+						<?php 
+						$members = AdminRecordManage::getMembers(date("Y-m-d")); //(오늘 출석한 사람들 - 운동기록 입력된사람들) 명단
+						foreach ($members as $member) { ?>
+							<tr>
+								
+							</tr>
+						<?php } ?>
+						</tbody>
 						</table>
 					</div>
 				</section>
 				<section class="panel-footer">
 					<div class="align-right">
-						<input type="button" id="input" value="저장" name="input"/>
+						<button class='btn btn-primary' type='submit'>저장</button>
 					</div>
 				</section>
 				

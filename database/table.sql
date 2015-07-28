@@ -1,5 +1,3 @@
-drop table if exists member;
-drop table if exists gymMember;
 drop table if exists exerciseRecord;
 drop table if exists attendance;
 drop table if exists achievement;
@@ -8,6 +6,8 @@ drop table if exists consulting;
 drop table if exists breatheBoard;
 drop table if exists freeBoard;
 drop table if exists diaryBoard;
+drop table if exists member;
+drop table if exists gymMember;
 drop table if exists exerciseList;
 
 
@@ -20,7 +20,7 @@ create table gymMember(
 	height int(3) not null,
 	weight int(3) not null,
 	registerDate date not null,
-	duration date not null
+	duration int(3) not null
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 create table member(
@@ -38,24 +38,17 @@ create table member(
 	foreign key (barcode) references gymMember(barcode)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
-
-create table exerciseRecord(
-	barcode varchar(30),
-	name varchar(20),
-	type int(1),
-	timeRecord time,
-	countRecord int(3),
-	date date,
-	primary key(barcode, name)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
 create table attendance(
-	barcode varchar(30) primary key,
-	date datetime not null
+	barcode varchar(30) not null,
+	date datetime not null,
+	foreign key (barcode) references gymMember(barcode),
+	primary key(barcode, date)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 create table achievement(
-	email varchar(50) primary key
+	email varchar(50) primary key,
+	name varchar(50) not null,
+	foreign key (email) references member(email),
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 create table exerciseList(
@@ -64,6 +57,17 @@ create table exerciseList(
 	type int(1) not null, -- 일정시간동안 세트수 0, 일정세트 하는데 걸린시간 1
 	time time default 0,
 	count int(3) default 0
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+create table exerciseRecord(
+	barcode varchar(30) not null,
+	exerciseNo int(6) not null,
+	timeRecord time,
+	countRecord int(3),
+	date date not null,
+	foreign key (barcode) references gymMember(barcode),
+	foreign key (exerciseNo) references exerciseList(no),
+	primary key(barcode, exerciseNo, date)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 create table exerciseSchedule(
@@ -78,7 +82,8 @@ create table consulting(
 	email varchar(50) not null,
 	title varchar(50) not null,
 	content text not null,
-	writtenTime datetime not null
+	writtenTime datetime not null,
+	foreign key (email) references member(email),
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1;
 
 -- 브리드 이야기
@@ -87,7 +92,8 @@ create table breatheBoard(
 	email varchar(50) not null,
 	title varchar(50) not null,
 	content text not null,
-	writtenTime datetime not null
+	writtenTime datetime not null,
+	foreign key (email) references member(email),
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1;
 
 create table freeBoard(
@@ -95,7 +101,8 @@ create table freeBoard(
 	email varchar(50) not null,
 	title varchar(50) not null,
 	content text not null,
-	writtenTime datetime not null
+	writtenTime datetime not null,
+	foreign key (email) references member(email),
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1;
 
 -- 사부님의 노트
@@ -104,5 +111,6 @@ create table diaryBoard(
 	email varchar(50) not null,
 	title varchar(50) not null,
 	content text not null,
-	writtenTime datetime not null
+	writtenTime datetime not null,
+	foreign key (email) references member(email),
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1;
