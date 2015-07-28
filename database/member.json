@@ -1,7 +1,8 @@
 [
 	{
 		"email":"dhfje@daum.net",
-		"password":"djkhfbk1",
+		"password":"1111",
+		"name":"테일러",
 		"phone":"01012348125",
 		"barcode":"djdbffuq123",
 		"birthday":"2015-01-23",
@@ -13,7 +14,8 @@
 	},
 	{
 		"email":"kkkkk@naver.com",
-		"password":"ggggg123",
+		"password":"1111",
+		"name":"제임스",
 		"phone":"01012348125",
 		"barcode":"k4k23k5asdf",
 		"birthday":"1995-07-19",
@@ -25,7 +27,8 @@
 	},
 	{
 		"email":"kasdkbjf1@gmail.com",
-		"password":"dhf1231",
+		"password":"1111",
+		"name":"릴리",
 		"phone":"01025229822",
 		"barcode":"djfdjkfh1823",
 		"birthday":"1915-07-19",
@@ -37,20 +40,22 @@
 	},
 	{
 		"email":"asdfq12f@gmail.com",
-		"password":"wjeb!2fa",
+		"password":"1111!2fa",
+		"name":"엠마",
 		"phone":"01027932832",
 		"barcode":"dfadf7812",
 		"birthday":"1993-02-19",
 		"facebook":1,
 		"sex":0,
 		"registerDate":"2015-02-19",
-		"nickname":"뿌잉",
+		"nickname":"니엄마요리잘함",
 		"active":1
 
 	},
 	{
 		"email":"jesus@maria.net",
-		"password":"holycross",
+		"password":"1111",
+		"name":"티나",
 		"phone":"01012348125",
 		"barcode":"adsfhg1273",
 		"birthday":"2011-12-25",
@@ -62,7 +67,8 @@
 	},
 	{
 		"email":"asdfa11@adsf.net",
-		"password":"ajbfb1u",
+		"password":"1111",
+		"name":"에이미",
 		"phone":"01012421226",
 		"barcode":"qh1y345qewr",
 		"birthday":"1993-12-25",
@@ -74,7 +80,8 @@
 	},
 	{
 		"email":"ashd123@dbndf.com",
-		"password":"sjs9192",
+		"password":"1111",
+		"name":"마이클",
 		"phone":"01039143042",
 		"barcode":"ddu12h3q",
 		"birthday":"1991-12-22",
@@ -86,7 +93,8 @@
 	},
 	{
 		"email":"ahsdh12@abxgd.com",
-		"password":"dujd81812",
+		"password":"1111",
+		"name":"클라라",
 		"phone":"01012348125",
 		"barcode":"sid919ndu18",
 		"birthday":"1993-02-25",
@@ -98,7 +106,8 @@
 	},
 	{
 		"email":"ahshdu123@jdjdjf.co.kr",
-		"password":"nidi123",
+		"password":"1111",
+		"name":"라이언",
 		"phone":"01071720283",
 		"barcode":"s718du98",
 		"birthday":"1993-04-25",
@@ -106,11 +115,12 @@
 		"sex":0,
 		"registerDate":"2014-07-19",
 		"nickname":"나자렛몽키스패너",
-		"active":0
+		"active":1
 	},	
 	{
 		"email":"didu1834@daum.net",
-		"password":"s77siw929",
+		"password":"1111",
+		"name":"조지",
 		"phone":"01083899193",
 		"barcode":"juq8w9e01",
 		"birthday":"1991-07-20",
@@ -118,11 +128,12 @@
 		"sex":1,
 		"registerDate":"2015-01-19",
 		"nickname":"핸들위드",
-		"active":0
+		"active":1
 	},
 	{
 		"email":"d9d0d71@naver.com",
-		"password":"giwuwq8",
+		"password":"1111",
+		"name":"베스",
 		"phone":"01082389271",
 		"barcode":"u8w9e0rqq23",
 		"birthday":"1995-02-11",
@@ -130,11 +141,12 @@
 		"sex":1,
 		"registerDate":"2015-03-19",
 		"nickname":"타이드팟즈",
-		"active":0
+		"active":1
 	},
 	{
 		"email":"dufu1841@gmail.com",
-		"password":"dud81",
+		"password":"1111",
+		"name":"토마스",
 		"phone":"01093916372",
 		"barcode":"jd90qid9q0",
 		"birthday":"1991-07-19",
@@ -142,11 +154,12 @@
 		"sex":1,
 		"registerDate":"2015-01-11",
 		"nickname":"오션미스트",
-		"active":0
+		"active":1
 	},
 	{
 		"email":"jdud819e@gmail.com",
-		"password":"id9q93123",
+		"password":"1111",
+		"name":"메리",
 		"phone":"01073737231",
 		"barcode":"s891ie81",
 		"birthday":"1993-02-11",
@@ -159,7 +172,8 @@
 	},
 	{
 		"email":"idd81820@df91.com",
-		"password":"id88112",
+		"password":"1111",
+		"name":"파멜라",
 		"phone":"01083816374",
 		"barcode":"he77182bqqw",
 		"birthday":"1993-12-25",
@@ -167,11 +181,12 @@
 		"sex":0,
 		"registerDate":"2014-07-19",
 		"nickname":"아이이리턴트",
-		"active":0
+		"active":1
 	},
 	{
 		"email":"id818idjf@aid123.com",
-		"password":"jdi9182",
+		"password":"1111",
+		"name":"찰스",
 		"phone":"01073279382",
 		"barcode":"hd2yq7172",
 		"birthday":"1991-11-21",
@@ -179,11 +194,12 @@
 		"sex":1,
 		"registerDate":"1992-02-19",
 		"nickname":"함풀이프",
-		"active":0
+		"active":1
 	},
 	{
 		"email":"jdifqe123@naver.com",
-		"password":"jd9d1i2",
+		"password":"1111",
+		"name":"에릭",
 		"phone":"01097136462",
 		"barcode":"ud8q8e9fqs",
 		"birthday":"1991-11-22",
@@ -191,11 +207,12 @@
 		"sex":1,
 		"registerDate":"2015-01-11",
 		"nickname":"스왈로드오어",
-		"active":0
+		"active":1
 	},
 	{
 		"email":"diaif19293@naver.com",
-		"password":"kjadsf12",
+		"password":"1111",
+		"name":"해리",
 		"phone":"01073724532",
 		"barcode":"ud8q8ei9v",
 		"birthday":"1995-10-25",
@@ -203,11 +220,12 @@
 		"sex":0,
 		"registerDate":"2015-01-19",
 		"nickname":"풋인마우스",
-		"active":0
+		"active":1
 		},
 	{
 		"email":"asdfuiweh@naver.com",
-		"password":"jjdduq81",
+		"password":"1111",
+		"name":"코난",
 		"phone":"01088231203",
 		"barcode":"uduf8123aa",
 		"birthday":"1988-12-25",
@@ -215,11 +233,12 @@
 		"sex":0,
 		"registerDate":"2015-07-19",
 		"nickname":"킵아웃오브",
-		"active":0
+		"active":1
 	},
 	{
 		"email":"sdaufhsdf1@daum.net",
-		"password":"asdhh12",
+		"password":"1111",
+		"name":"김정은",
 		"phone":"01042162318",
 		"barcode":"hd7e8q8d8r",
 		"birthday":"1987-02-19",
@@ -231,7 +250,8 @@
 	},
 	{
 		"email":"jdfhaks223@naver.com",
-		"password":"dhd7172",
+		"password":"1111",
+		"name":"김정일",
 		"phone":"01023591278",
 		"barcode":"ue8e194qeb",
 		"birthday":"1995-02-11",
@@ -239,11 +259,12 @@
 		"sex":0,
 		"registerDate":"2015-05-19",
 		"nickname":"칠드런",
-		"active":0
+		"active":1
 	},
 	{
 		"email":"dkdf8134@gmail.com",
-		"password":"uduf9123",
+		"password":"1111",
+		"name":"김정숙",
 		"phone":"01074717374",
 		"barcode":"a8d8fi0f",
 		"birthday":"1993-02-28",
@@ -251,11 +272,12 @@
 		"sex":0,
 		"registerDate":"2015-05-19",
 		"nickname":"시커션온",
-		"active":0
+		"active":1
 	},
 	{
 		"email":"diff818@gmail.com",
-		"password":"jduf81",
+		"password":"1111",
+		"name":"리설주",
 		"phone":"01082816362",
 		"barcode":"jcu99o183",
 		"birthday":"1997-01-10",
@@ -263,12 +285,13 @@
 		"sex":1,
 		"registerDate":"2015-03-19",
 		"nickname":"백라벨",
-		"active":0
+		"active":1
 
 	},
 	{
 		"email":"ajsdf8981@naver.com",
-		"password":"ud71j3",
+		"password":"1111",
+		"name":"나익채",
 		"phone":"01079325231",
 		"barcode":"id8ijqw71",
 		"birthday":"1991-10-21",
@@ -276,11 +299,12 @@
 		"sex":1,
 		"registerDate":"2015-03-11",
 		"nickname":"드라이핸즈",
-		"active":0
+		"active":1
 	},
 	{
 		"email":"kdffaaa@gmail.com",
-		"password":"jdjfu12",
+		"password":"1111",
+		"name":"김가연",
 		"phone":"01044083782",
 		"barcode":"jdfq7ig0e",
 		"birthday":"1996-12-25",
@@ -288,11 +312,12 @@
 		"sex":0,
 		"registerDate":"2015-01-19",
 		"nickname":"애드팩투드럼",
-		"active":0
+		"active":1
 	},
 	{
 		"email":"jfjfu183@gmail.com",
-		"password":"kfjfiq931",
+		"password":"1111",
+		"name":"심종규",
 		"phone":"01089231257",
 		"barcode":"jfyf7q719",
 		"birthday":"1996-11-25",
@@ -300,11 +325,12 @@
 		"sex":0,
 		"registerDate":"2015-07-11",
 		"nickname":"애드클로디스",
-		"active":0
+		"active":1
 	},
 	{
 		"email":"fjf812@naver.com",
-		"password":"jdudu13",
+		"password":"1111",
+		"name":"허재",
 		"phone":"01082346237",
 		"barcode":"kas9d0q0e",
 		"birthday":"1994-11-25",
@@ -316,7 +342,8 @@
 	},
 	{
 		"email":"nhhfhfu1@gmail.com",
-		"password":"jdjfuqu11",
+		"password":"1111",
+		"name":"차진욱",
 		"phone":"01098238918",
 		"barcode":"ifu7f781",
 		"birthday":"1994-03-25",
@@ -324,11 +351,12 @@
 		"sex":0,
 		"registerDate":"2015-01-10",
 		"nickname":"애프터유즈",
-		"active":0
+		"active":1
 	},
 	{
 		"email":"jduf818@gmail.com",
-		"password":"kfii8i1",
+		"password":"1111",
+		"name":"강민호",
 		"phone":"01049123412",
 		"barcode":"jfjuef13",
 		"birthday":"1994-12-25",
@@ -336,11 +364,12 @@
 		"sex":0,
 		"registerDate":"2015-07-19",
 		"nickname":"포보스",
-		"active":0
+		"active":1
 	},
 	{
 		"email":"idiffh111@naver.com",
-		"password":"mdj1i2",
+		"password":"1111",
+		"name":"손아섭",
 		"phone":"01023522342",
 		"barcode":"8d8d8fq0fu",
 		"birthday":"1993-11-21",
@@ -348,11 +377,12 @@
 		"sex":0,
 		"registerDate":"2015-02-11",
 		"nickname":"컷히어",
-		"active":0
+		"active":1
 	},
 	{
 		"email":"dufudfu11@naver.com",
-		"password":"jdhfyuqy32",
+		"password":"1111",
+		"name":"조정훈",
 		"phone":"01025781512",
 		"barcode":"ud7df7a99",
 		"birthday":"1995-02-23",
@@ -360,6 +390,6 @@
 		"sex":0,
 		"registerDate":"2015-01-19",
 		"nickname":"식스틴팩캡슐즈",
-		"active":0
+		"active":1
 	}
 ]

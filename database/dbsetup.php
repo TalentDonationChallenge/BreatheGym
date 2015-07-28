@@ -15,34 +15,75 @@
 			":count"=>$exercise["count"]
 		));
 	}
+	//운동스케줄 만들기
+	for ($i=0; $i < 10; $i++) { 
+		$numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+		shuffle($numbers);
+		$date = date('Y-m-d', strtotime("+".$i."day"));
+		for ($j=0; $j < 3; $j++) { 
+			$stmt = $pdo->prepare("INSERT INTO exerciseSchedule(exerciseNo, date)
+				VALUES (:exerciseNo, :date)");
+			$stmt->execute(array(
+				':exerciseNo'=>array_pop($numbers),
+				':date'=>$date
+			));
+		}
+	}
 	
 	//언제나 gymMember가 member보다 먼저 추가되어야 합니다
 	$gymMembers = json_decode(file_get_contents("gymMember.json"), true); 
-
-	// foreach ($gymMembers as $gymMember) {
-	// 	$stmt = $pdo->prepare('INSERT INTO gymMember
-	// 		(barcode, name, phone, )')
-	// }
+	foreach ($gymMembers as $gymMember) {
+		$stmt = $pdo->prepare('INSERT INTO gymMember
+			(barcode, name, sex, height, weight, registerDate, duration)
+		VALUES (:barcode, :name, :sex, :height, :weight, :registerDate, :duration)');
+		$stmt->execute(array(
+			":barcode"=>$gymMember["barcode"],
+			":name"=>$gymMember["name"],
+			":sex"=>$gymMember["sex"],
+			":height"=>$gymMember["height"],
+			":weight"=>$gymMember["weight"],
+			":registerDate"=>$gymMember["registerDate"],
+			":duration"=>$gymMember["duration"]
+		));
+	}
 
 	$members = json_decode(file_get_contents("member.json"), true);
+	foreach ($members as $member) {
+		$stmt = $pdo->prepare("INSERT INTO member 
+			(email, password, name, phone, barcode, birthday, facebook, sex, registerDate, nickname, active)
+			VALUES (:email, :password, :name, :phone, :barcode, :birthday, :facebook, :sex, :registerDate, :nickname, :active)");
+		$stmt->execute(array(
+			':email'=>$member['email'],
+			':password'=>sha1($member['password']),
+			':name'=>$member['name'],
+			':phone'=>$member['phone'],
+			':barcode'=>$member['barcode'],
+			':birthday'=>$member['birthday'],
+			':facebook'=>$member['facebook'],
+			':sex'=>$member['sex'],
+			':registerDate'=>$member['registerDate'],
+			':nickname'=>$member['nickname'],
+			':active'=>$member['active']
+		));
+	}
 
-	// foreach ($members as $member) {
-	// 	$stmt = $pdo->prepare("INSERT INTO member 
-	// 		(email, password, name, phone, barcode, birthday, facebook, sex, registerDate, nickname, active)
-	// 		VALUES (:email, :password, :name, :phone, :barcode, :birthday, :facebook, :sex, :registerDate, :nickname, :active)");
-	// 	$stmt->execute(array(
-	// 		':email'=>$member['email'],
-	// 		':password'=>sha1($member['password']),
-	// 		':name'=>$member['name'],
-	// 		':phone'=>$member['phone'],
-	// 		':barcode'=>$member['barcode'],
-	// 		':birthday'=>$member['birthday'],
-	// 		':facebook'=>$member['facebook'],
-	// 		':sex'=>$member['sex'],
-	// 		':registerDate'=>$member['registerDate'],
-	// 		':nickname'=>$member['nickname'],
-	// 		':active'=>$member['active']
-	// 	));
-	// }
+	// 출석도 만들어봅시다 오늘부터 5일간 모두가 출석해버림 데헷
+
+	for ($i=0; $i < 5; $i++) { 
+		$barcodes = array();
+		foreach ($members as $member) {
+			array_push($barcodes, $member['barcode']);
+		}
+		foreach ($barcodes as $barcode) {
+			$date = date('Y-m-d', strtotime("+".$i."day"));
+			$time = mt_rand(0,23).":".mt_rand(0,59).":".mt_rand(0,59);
+			$stmt = $pdo->prepare("INSERT INTO attendance(barcode, date)
+			VALUES (:barcode, :date)");
+			$stmt->execute(array(
+				':barcode'=>$barcode,
+				':date'=>$date." ".$time
+			));
+		}
+	}
 ?>
 <a href="/index.php">gogo</a>

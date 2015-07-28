@@ -1,13 +1,8 @@
 [
 	{
-		"barcode":"aswe23f3d11",
-		"height":175,
-		"weight":70,
-		"registerDate":"2015-08-16",
-		"duration":3
-	},
-	{
 		"barcode":"djdbffuq123",
+		"name":"테일러",
+		"sex":1,
 		"height":145,
 		"weight":41,
 		"registerDate":"2015-07-19",
@@ -15,6 +10,8 @@
 	},
 	{
 		"barcode":"k4k23k5asdf",
+		"name":"제임스",
+		"sex":0,
 		"height":176,
 		"weight":65,
 		"registerDate":"2015-07-21",
@@ -22,6 +19,8 @@
 	},
 	{
 		"barcode":"djfdjkfh1823",
+		"name":"릴리",
+		"sex":1,
 		"height":160,
 		"weight":56,
 		"registerDate":"2015-07-13",
@@ -29,6 +28,8 @@
 	},
 	{
 		"barcode":"dfadf7812",
+		"name":"엠마",
+		"sex":1,
 		"height":165,
 		"weight":54,
 		"registerDate":"2015-02-19",
@@ -36,6 +37,8 @@
 	},
 	{
 		"barcode":"adsfhg1273",
+		"name":"티나",
+		"sex":1,
 		"height":159,
 		"weight":50,
 		"registerDate":"2015-03-19",
@@ -43,21 +46,26 @@
 	},
 	{
 		"barcode":"qh1y345qewr",
+		"name":"에이미",
+		"sex":1,
 		"height":160,
 		"weight":58,
 		"registerDate":"2014-07-19",
-		"nickname":"매니퓰",
 		"duration":12
 	},
 	{
 		"barcode":"ddu12h3q",
-		"height":160,
+		"name":"마이클",
+		"sex":0,
+		"height":180,
 		"weight":65,
 		"registerDate":"2015-01-12",
 		"duration":7
 	},
 	{
 		"barcode":"sid919ndu18",
+		"name":"클라라",
+		"sex":1,
 		"height":165,
 		"weight":55,
 		"registerDate":"2015-01-19",
@@ -65,6 +73,8 @@
 	},
 	{
 		"barcode":"s718du98",
+		"name":"라이언",
+		"sex":0,
 		"height":170,
 		"weight":60,
 		"registerDate":"2014-07-19",
@@ -72,6 +82,8 @@
 	},	
 	{
 		"barcode":"juq8w9e01",
+		"name":"조지",
+		"sex":0,
 		"height":167,
 		"weight":65,
 		"registerDate":"2015-01-19",
@@ -79,6 +91,8 @@
 	},
 	{
 		"barcode":"u8w9e0rqq23",
+		"name":"베스",
+		"sex":1,
 		"height":175,
 		"weight":70,
 		"registerDate":"2015-03-19",
@@ -86,6 +100,8 @@
 	},
 	{
 		"barcode":"jd90qid9q0",
+		"name":"토마스",
+		"sex":0,
 		"height":180,
 		"weight":65,
 		"registerDate":"2015-01-11",
@@ -93,6 +109,8 @@
 	},
 	{
 		"barcode":"s891ie81",
+		"name":"메리",
+		"sex":1,
 		"height":165,
 		"weight":55,
 		"registerDate":"2015-04-19",
@@ -101,6 +119,8 @@
 	},
 	{
 		"barcode":"he77182bqqw",
+		"name":"파멜라",
+		"sex":1,
 		"height":155,
 		"weight":50,
 		"registerDate":"2014-07-19",
@@ -108,6 +128,8 @@
 	},
 	{
 		"barcode":"hd2yq7172",
+		"name":"찰스",
+		"sex":0,
 		"height":175,
 		"weight":70,
 		"registerDate":"1992-02-19",
@@ -115,6 +137,8 @@
 	},
 	{
 		"barcode":"ud8q8e9fqs",
+		"name":"에릭",
+		"sex":0,
 		"height":180,
 		"weight":90,
 		"registerDate":"2015-01-11",
@@ -122,6 +146,8 @@
 	},
 	{
 		"barcode":"ud8q8ei9v",
+		"name":"해리",
+		"sex":0,
 		"height":165,
 		"weight":65,
 		"registerDate":"2015-01-19",
@@ -129,6 +155,8 @@
 		},
 	{
 		"barcode":"uduf8123aa",
+		"name":"코난",
+		"sex":0,
 		"height":170,
 		"weight":65,
 		"registerDate":"2015-07-19",
@@ -136,6 +164,8 @@
 	},		
 	{
 		"barcode":"hd7e8q8d8r",
+		"name":"김정은",
+		"sex":0,
 		"height":180,
 		"weight":80,
 		"registerDate":"2015-06-09",
@@ -143,6 +173,8 @@
 	},
 	{
 		"barcode":"ue8e194qeb",
+		"name":"김정일",
+		"sex":0,
 		"height":160,
 		"weight":65,
 		"registerDate":"2015-05-19",
@@ -150,6 +182,8 @@
 	},
 	{
 		"barcode":"a8d8fi0f",
+		"name":"김정숙",
+		"sex":1,
 		"height":165,
 		"weight":60,
 		"registerDate":"2015-05-19",
@@ -157,6 +191,8 @@
 	},
 	{
 		"barcode":"jcu99o183",
+		"name":"리설주",
+		"sex":1,
 		"height":162,
 		"weight":65,
 		"registerDate":"2015-03-19",
@@ -165,6 +201,8 @@
 	},
 	{
 		"barcode":"id8ijqw71",
+		"name":"나익채",
+		"sex":0,
 		"height":175,
 		"weight":70,
 		"registerDate":"2015-03-11",
@@ -172,6 +210,8 @@
 	},
 	{
 		"barcode":"jdfq7ig0e",
+		"name":"김가연",
+		"sex":1,
 		"height":165,
 		"weight":55,
 		"registerDate":"2015-01-19",
@@ -179,6 +219,8 @@
 	},
 	{
 		"barcode":"jfyf7q719",
+		"name":"심종규",
+		"sex":0,
 		"height":165,
 		"weight":50,
 		"registerDate":"2015-07-11",
@@ -186,6 +228,8 @@
 	},
 	{
 		"barcode":"kas9d0q0e",
+		"name":"허재",
+		"sex":0,
 		"height":155,
 		"weight":50,
 		"registerDate":"2015-07-19",
@@ -193,6 +237,8 @@
 	},
 	{
 		"barcode":"ifu7f781",
+		"name":"차진욱",
+		"sex":0,
 		"height":156,
 		"weight":49,
 		"registerDate":"2015-01-10",
@@ -200,6 +246,8 @@
 	},
 	{
 		"barcode":"jfjuef13",
+		"name":"강민호",
+		"sex":0,
 		"height":155,
 		"weight":55,
 		"registerDate":"2015-07-19",
@@ -207,6 +255,8 @@
 	},
 	{
 		"barcode":"8d8d8fq0fu",
+		"name":"손아섭",
+		"sex":0,
 		"height":158,
 		"weight":65,
 		"registerDate":"2015-02-11",
@@ -214,6 +264,8 @@
 	},
 	{
 		"barcode":"ud7df7a99",
+		"name":"조정훈",
+		"sex":0,
 		"height":165,
 		"weight":55,
 		"registerDate":"2015-01-19",

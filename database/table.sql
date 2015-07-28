@@ -14,7 +14,7 @@ drop table if exists boxingList;
 
 create table gymMember(
 	barcode varchar(30) primary key,
-	name varchar(30) not null unique,
+	name varchar(30) not null,
 	phone varchar(12),
 	birthday date,
 	sex int(1) not null,
@@ -27,7 +27,7 @@ create table gymMember(
 create table member(
 	email varchar(50) not null primary key,
 	password varchar(50),
-	name varchar(30) not null unique,
+	name varchar(30) not null,
 	phone varchar(12),
 	barcode varchar(30),
 	birthday date,
@@ -49,7 +49,7 @@ create table attendance(
 create table achievement(
 	email varchar(50) primary key,
 	name varchar(50) not null,
-	foreign key (email) references member(email),
+	foreign key (email) references member(email)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 create table exerciseList(
@@ -84,7 +84,7 @@ create table consulting(
 	title varchar(50) not null,
 	content text not null,
 	writtenTime datetime not null,
-	foreign key (email) references member(email),
+	foreign key (email) references member(email)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1;
 
 -- 브리드 이야기
@@ -94,7 +94,7 @@ create table breatheBoard(
 	title varchar(50) not null,
 	content text not null,
 	writtenTime datetime not null,
-	foreign key (email) references member(email),
+	foreign key (email) references member(email)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1;
 
 create table freeBoard(
@@ -103,7 +103,7 @@ create table freeBoard(
 	title varchar(50) not null,
 	content text not null,
 	writtenTime datetime not null,
-	foreign key (email) references member(email),
+	foreign key (email) references member(email)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1;
 
 -- 사부님의 노트
@@ -113,7 +113,7 @@ create table diaryBoard(
 	title varchar(50) not null,
 	content text not null,
 	writtenTime datetime not null,
-	foreign key (email) references member(email),
+	foreign key (email) references member(email)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1;
 
 -- 오늘의 복싱 진도
