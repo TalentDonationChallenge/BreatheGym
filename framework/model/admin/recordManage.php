@@ -31,24 +31,30 @@
 				}
 			}
 		}
-		//(오늘 출석한 사람들 - 운동기 입력된사람들) 명단 받아오기
+		//(오늘 출석한 사람들 - 운동기록 입력된사람들) 명단 받아오기
 		public static function getMembers($date, $exercise){
 			$tomorrow = date('Y-m-d',strtotime("+1day ".$date));
 			$pdo=Database::getInstance();
-			$stmt=$pdo->prepare('SELECT name, gymMember.barcode FROM attendance join gymMember 
-				ON attendance.barcode = gymMember.barcode
+			$stmt=$pdo->prepare('SELECT gymMember.name, gymMember.barcode
+				FROM(SELECT attendance.barcode, exerciseNo FROM attendance LEFT JOIN exerciseRecord
+				ON attendance.barcode = exerciseRecord.barcode
 				WHERE attendance.date >= :today AND attendance.date < :tomorrow 
-				ORDER BY attendance.date DESC');
-			$stmt->execute(array(':today'=>$date, ':tomorrow'=>$tomorrow));
+				AND (exerciseNo is null or exerciseNo != :exercise)) as A
+				JOIN gymMember ON A.barcode = gymMember.barcode');
+			$stmt->execute(array(
+				':today'=>$date, 
+				':tomorrow'=>$tomorrow,
+				':exercise'=>$exercise
+			));
 			$result=$stmt->fetchAll();
+
 			$members = array();
 			foreach ($result as $row) {
 				$members[] = array(
 					'name' => $row['name'],
-					'barcode' => $row['barcode']
+					'barcode' => $row['barcode'],
 				);
 			}
-			
 			return $members;
 		}
 		//오늘 예정된 운동 종류 받아오기
