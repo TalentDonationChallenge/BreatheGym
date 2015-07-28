@@ -1,4 +1,6 @@
 <?php
+	error_reporting(E_ALL);
+	ini_set("display_errors", 1);
 	require_once(__DIR__ . '/../framework/framework.php');
 	$pdo = Database::getInstance();
 	$pdo->exec(file_get_contents("table.sql")); 
@@ -85,5 +87,24 @@
 			));
 		}
 	}
+		// 운동기록 임시로 테이블에 저장해보
+	 $exerciseRecords= json_decode(file_get_contents("exerciseRecord.json"), true);
+	 
+	 foreach ($exerciseRecords as $exerciseRecord) {
+	 	
+	 	//echo($exerciseRecord);
+	 	$stmt = $pdo->prepare("INSERT INTO exerciseRecord 
+	 		(barcode, exerciseNo, timeRecord, countRecord, date)
+	 		VALUES (:barcode, :exerciseNo, :timeRecord, :countRecord, :date)");
+	 	$stmt->execute(array(
+	 		':barcode'=>$exerciseRecord['barcode'],
+	 		':exerciseNo'=>$exerciseRecord['exerciseNo'],
+	 		
+	 		':timeRecord'=>$exerciseRecord['timeRecord'],
+	 		':countRecord'=>$exerciseRecord['countRecord'],
+	 		':date'=>$exerciseRecord['date']
+	 		
+	 	));
+	 }
 ?>
 <a href="/index.php">gogo</a>

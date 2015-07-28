@@ -1,5 +1,8 @@
 <?php 
+	error_reporting(E_ALL);
+	ini_set("display_errors", 1);
 	require_once(__DIR__.'/../../framework/framework.php');
+	require_once(__DIR__.'/../memberRecordsFromServer.php');
 ?>
 <!DOCTYPE html>
 <html>
@@ -18,6 +21,22 @@
 </head>
 <body>
 
+	<?php
+			// 짐 전체의  랭킹을 가져옵니다.
+			$breathRanking = BreathRanking();
+			$courseAforBreathMember = $breathRanking[0];
+			$courseBforBreathMember = $breathRanking[1];
+			$courseCforBreathMember = $breathRanking[2];
+
+			//회원의 랭킹을 가져옵니다.
+			$gymMemverrecord = getUserExerciseRecord('jfyf7q719');
+			$courseAforGymMember= $gymMemverrecord[0];
+			$courseBforGymMember = $gymMemverrecord[1];
+			$courseCforGymMember = $gymMemverrecord[2];
+
+
+	?>
+
 	<!--header start-->
 	<?php memberHeader(); ?>
 	<!--header end-->
@@ -31,9 +50,9 @@
                         
                         <!-- Nav tabs -->
                             <ul class="nav nav-tabs" role="tablist">
-                                <li role="presentation" class="active"><a href="#courseA" aria-controls="courseA" role="tab" data-toggle="tab">A코스</a></li>
-                                <li role="presentation" ><a href="#courseB" aria-controls="courseB" role="tab" data-toggle="tab">B코스</a></li>
-                                <li role="presentation" ><a href="#courseC" aria-controls="courseC" role="tab" data-toggle="tab">C코스</a></li>
+                                <li role="presentation" class="active"><a href="#courseA" aria-controls="courseA" role="tab" data-toggle="tab"><?php printf($courseAforBreathMember[0]['name']) ?></a></li>
+                                <li role="presentation" ><a href="#courseBforGymMember" aria-controls="courseBforGymMember" role="tab" data-toggle="tab"><?php printf($courseBforBreathMember[0]['name']) ?></a></li>
+                                <li role="presentation" ><a href="#courseCforGymMember" aria-controls="courseCforGymMember" role="tab" data-toggle="tab"><?php printf($courseCforBreathMember[0]['name']) ?></a></li>
                                 
                             </ul>
                             <!-- Tab panes -->
@@ -54,18 +73,18 @@
 					                                <tbody>
 					                                    <tr>
 					                                        
-					                                        <td>고구마</td>
-					                                        <td>1'25</td>
+					                                        <td><?php printf($courseAforBreathMember[0]['member']) ?></td>
+					                                        <td><?php printf($courseAforBreathMember[0]['count']) ?>개</td>
 					                                        
 					                                    </tr>
 					                                    <tr>
-					                                        <td>고구미</td>
-					                                        <td>1'30</td>
+					                                        <td><?php printf($courseAforBreathMember[1]['member']) ?></td>
+					                                        <td><?php printf($courseAforBreathMember[1]['count']) ?>개</td>
 					                                        
 					                                    </tr>
 					                                    <tr>
-					                                        <td>고소미</td>
-					                                        <td>1'45</td>
+					                                        <td><?php printf($courseAforBreathMember[2]['member']) ?></td>
+					                                        <td><?php printf($courseAforBreathMember[2]['count']) ?>개</td>
 					                                       
 					                                    </tr>
 					                                </tbody>
@@ -74,7 +93,7 @@
 					                    </div><!-- /col-md-12 -->
 
                                 </div>
-                                <div role="tabpanel" class="tab-pane" id="courseB">
+                                <div role="tabpanel" class="tab-pane" id="courseBforGymMember">
                                 		<div class="memberrecordtable">
 					                        <div class="content-panel">
 					                            
@@ -90,18 +109,18 @@
 					                                <tbody>
 					                                    <tr>
 					                                        
-					                                        <td>고구미</td>
-					                                        <td>1'25</td>
+					                                         <td><?php printf($courseBforBreathMember[0]['member']) ?></td>
+					                                         <td><?php printf($courseBforBreathMember[0]['count']) ?>개</td>
 					                                        
 					                                    </tr>
 					                                    <tr>
-					                                        <td>고소미</td>
-					                                        <td>1'30</td>
+					                                          <td><?php printf($courseBforBreathMember[1]['member']) ?></td>
+					                                          <td><?php printf($courseBforBreathMember[1]['count']) ?>개</td>
 					                                        
 					                                    </tr>
 					                                    <tr>
-					                                        <td>고구마</td>
-					                                        <td>1'45</td>
+					                                         <td><?php printf($courseBforBreathMember[2]['member']) ?></td>
+					                                         <td><?php printf($courseBforBreathMember[2]['count']) ?>개</td>
 					                                       
 					                                    </tr>
 					                                </tbody>
@@ -110,7 +129,7 @@
 					                    </div><!-- /col-md-12 -->
 
                                 </div>
-                                 <div role="tabpanel" class="tab-pane" id="courseC">
+                                 <div role="tabpanel" class="tab-pane" id="courseCforGymMember">
                                 		<div class="memberrecordtable">
 					                        <div class="content-panel">
 					                            
@@ -126,18 +145,18 @@
 					                                <tbody>
 					                                    <tr>
 					                                        
-					                                        <td>고소미</td>
-					                                        <td>1'25</td>
+					                                         <td><?php printf($courseCforBreathMember[0]['member']) ?></td>
+					                                         <td><?php printf($courseCforBreathMember[0]['count']) ?></td>
 					                                        
 					                                    </tr>
 					                                    <tr>
-					                                        <td>고구마</td>
-					                                        <td>1'30</td>
+					                                        <td><?php printf($courseCforBreathMember[1]['member']) ?></td>
+					                                         <td><?php printf($courseCforBreathMember[1]['count']) ?></td>
 					                                        
 					                                    </tr>
 					                                    <tr>
-					                                        <td>고구미</td>
-					                                        <td>1'45</td>
+					                                         <td><?php printf($courseCforBreathMember[2]['member']) ?></td>
+					                                         <td><?php printf($courseCforBreathMember[2]['count']) ?></td>
 					                                       
 					                                    </tr>
 					                                </tbody>
@@ -168,18 +187,18 @@
                                 <tbody>
                                     <tr>
                                         
-                                        <td>A코스</td>
-                                        <td>25%</td>
+                                         <td><?php printf($courseAforGymMember['name'])?></td>
+                                        <td><?php echo($courseAforGymMember['ranking']."%") ?></td>
                                         
                                     </tr>
                                     <tr>
-                                        <td>B코스</td>
-                                        <td>10%</td>
+                                        <td><?php printf($courseBforGymMember['name'])?></td>
+                                        <td><?php echo($courseBforGymMember['ranking']."%")?></td>
                                         
                                     </tr>
                                     <tr>
-                                        <td>C코스</td>
-                                        <td>15%</td>
+                                        <td><?php printf($courseCforGymMember['name'])?></td>
+                                        <td><?php echo($courseCforGymMember['ranking']."%")?></td>
                                        
                                     </tr>
                                 </tbody>
