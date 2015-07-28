@@ -56,10 +56,19 @@
                                 </div>
                             
                                  <h2>잽운동</h2>
-                                 <div class = "boxingbox currentprogressimg">
+
+                                 <!-- 16:9 동영상 -->
+
+                                <div class="boxingbox currentprogressimg embed-responsive embed-responsive-16by9">
+                                    <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/CWBqwq8GgGU"></iframe>
+                                </div>
+
+                                 <!-- <div class = "boxingbox currentprogressimg">
                                     <img src = "/exercise/img/boxingimg.jpg" width="100%" height="100%">
                             
-                                </div>
+                                </div> -->
+
+                                
                                 
                                 <div class="boxingbox currentprogressabout">
                                     <h2>연습방법</h2>
