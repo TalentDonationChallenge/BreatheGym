@@ -42,7 +42,7 @@ $(document).ready(function () {
 
 	/* initialize the calendar
 	 -----------------------------------------------------------------*/
-	 var d = new Date();
+	 var newEvents = [];
 	$('#calendar').fullCalendar({
 		lang : 'ko',
 		header: {
@@ -82,7 +82,8 @@ $(document).ready(function () {
 
 					// render the event on the calendar
 					// the last `true` argument determines if the event "sticks" (http://arshaw.com/fullcalendar/docs/event_rendering/renderEvent/)
-					$('#calendar').fullCalendar('renderEvent', copiedEventObject, true);
+					var newEvent =  $('#calendar').fullCalendar('renderEvent', copiedEventObject, true);
+					newEvents.push(newEvent[0]._id);
 				}
 			});
 		},
@@ -111,6 +112,44 @@ $(document).ready(function () {
 		},
 		eventMouseout : function (event, jsEvent, view) {
 			$(this).find('i').remove();
+		},
+		eventDrop : function (event, delta, revertFunc, jsEvent, ui, view) {
+			var events = $('#calendar').fullCalendar('clientEvents', function (e) {
+				return event.start.format() === e.start.format();
+			});
+			for (var i in events) {
+				if(event._id === events[i]._id){
+					continue;
+				}
+				if (events[i].no === event.no) {
+					alert('이미 추가한 운동입니다');
+					revertFunc();
+					return;
+				}
+			}
+			var start = event.start.clone();
+
+			$.ajax({
+				url:"edit.php",
+				method:"post",
+				data: {
+					requestType: 'schedule', 
+					no : event.no,
+					originalDate : start.subtract(delta._days,'days').format(),
+					date : event.start.format()
+				}
+			}).done(function (msg){
+				newEvents.push(event._id);
+			}).fail(function (msg) {
+				alert('서버 오류가 발생하여 스케줄을 변경하는데 실패하였습니다.');
+				revertFunc();
+			});
+		},
+		viewRender : function (view, element) {
+			for(var i in newEvents) {
+				$('#calendar').fullCalendar('removeEvents', newEvents[i]);
+			}
+			newEvents = [];
 		},
 		allDayDefault : true
 	});
