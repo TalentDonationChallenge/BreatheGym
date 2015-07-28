@@ -1,5 +1,8 @@
 <?php 
+	error_reporting(E_ALL);
+	ini_set("display_errors", 1);
 	require_once(__DIR__.'/../framework/framework.php');
+	require_once(__DIR__.'/memberRecordsFromServer.php');
 ?>
 <!DOCTYPE html>
 <html>
@@ -15,6 +18,11 @@
 </head>
 <body>
 
+<!--이것은 지금 로그인 한 사람이 이름이 강민호, 바코드 djdbffuq123 인 사람이라고 생각하고 코딩한 것임 -->
+	<?php
+		$datearray = getUserDurationDate('jfyf7q719');
+		//print_r($datearray);
+	?>
 	<!--header start-->
 	<?php memberHeader();?>
 	<!--header end-->
@@ -26,6 +34,9 @@
 				<section class = wrapper>
 					<div class = "row" id ="menucontainer">
 						<div class = "main-chart" >
+							<div>
+								<p>어서오세요 <?php printf($datearray[0]) ?>회원님</p>
+							</div>
 							<div class = "row mtbox">
 								<div class = "infobox col-md-2 col-sm-2 col-md-offset1 box0">
                                     <div class = "box1">
@@ -47,7 +58,7 @@
 									<div class = "box1">
 										
 										<h3>출석률</h3>
-										<h4>25%</h4>
+										<h4><?php printf($datearray[2])?></h4>
 									</div>
 									<p>이번달 출석률 왜이럼?</p>
 								</div>
@@ -55,9 +66,9 @@
 									<div class = "box1">
 										
 										<h3>등록일</h3>
-										<h4>D-21</h4>
+										<h4><?php printf($datearray[1])?></h4>
 									</div>
-									<p>남은 21일 동안 열심히 해보자!</p>
+									<p>남은 <?php printf($datearray[3])?> 일동안 열심히 해보자!</p>
 								</div>
 							</div>
 						</div>
@@ -94,7 +105,7 @@
                                           </div>
                                   <p>(클릭하면 상세 페이지로 넘어갑니다.)</P>
                                   <div id = "mrecord">
-                              			<h4>오늘 회원님은 상위 10%의 기록을 달성하였습니다.<h4>
+                              			<h4>오늘 회원님은 상위 10%의 기록을 달성하였습니다.</h4>
                             	  </div>
                                  
                               </div>
