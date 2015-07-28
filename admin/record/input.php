@@ -10,7 +10,7 @@
 		
 		var_dump($json);
 		if ($_POST['type'] === 'time') {
-			$no = AdminRecordManage::insertRecord($_POST['name'], 0, 
+			$no = AdminRecordManage::insertRecord($_POST['name'], 0,
 				array('minute'=>$_POST['minute'], 'second'=>$_POST['second']));
 			$msg['no'] = $no;
 		} else if ($_POST['type'] ==='count') {
