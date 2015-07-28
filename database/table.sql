@@ -9,6 +9,7 @@ drop table if exists diaryBoard;
 drop table if exists member;
 drop table if exists gymMember;
 drop table if exists exerciseList;
+drop table if exists boxingList;
 
 
 create table gymMember(
@@ -113,4 +114,14 @@ create table diaryBoard(
 	content text not null,
 	writtenTime datetime not null,
 	foreign key (email) references member(email),
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1;
+
+-- 오늘의 복싱 진도
+create table boxingList(
+	no int(6) not null primary key AUTO_INCREMENT,
+	name varchar(20) not null,
+	youtubeSrc varchar(50) not null,
+	description varchar(200) not null,
+	summary varchar(100) not null,
+	photo mediumblob not null
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1;
