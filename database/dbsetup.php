@@ -75,7 +75,7 @@
 			array_push($barcodes, $member['barcode']);
 		}
 		foreach ($barcodes as $barcode) {
-			$date = date('Y-m-d', strtotime("+".$i."day"));
+			$date = date('Y-m-d', strtotime("-".$i."day"));
 			$time = mt_rand(0,23).":".mt_rand(0,59).":".mt_rand(0,59);
 			$stmt = $pdo->prepare("INSERT INTO attendance(barcode, date)
 			VALUES (:barcode, :date)");
