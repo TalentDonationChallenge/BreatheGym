@@ -20,8 +20,8 @@
 
 <!--이것은 지금 로그인 한 사람이 이름이 강민호, 바코드 djdbffuq123 인 사람이라고 생각하고 코딩한 것임 -->
 	<?php
-		$datearray = getUserDurationDate('jfyf7q719');
-		$gymMemverrecord = getUserExerciseRecord('jfyf7q719');
+		$datearray = getUserDurationDate('8d8d8fq0fu');
+		$gymMemverrecord = getUserExerciseRecord('8d8d8fq0fu');
 			$courseA = $gymMemverrecord[0]['ranking'];
 			$courseB = $gymMemverrecord[1]['ranking'];
 			$courseC = $gymMemverrecord[2]['ranking'];

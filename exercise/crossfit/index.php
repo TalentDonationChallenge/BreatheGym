@@ -29,7 +29,7 @@
 			$courseCforBreathMember = $breathRanking[2];
 
 			//회원의 랭킹을 가져옵니다.
-			$gymMemverrecord = getUserExerciseRecord('jfyf7q719');
+			$gymMemverrecord = getUserExerciseRecord('8d8d8fq0fu');
 			$courseAforGymMember= $gymMemverrecord[0];
 			$courseBforGymMember = $gymMemverrecord[1];
 			$courseCforGymMember = $gymMemverrecord[2];
@@ -44,7 +44,7 @@
 	<?php memberSidebar("crossfit"); ?>
 	<!--sidebar end-->
 		 <section id = "main-content">
-                <section class = wrapper>
+                <section class = 'wrapper'>
                     <div class = "record">
                         <div role="tabpanel">
                         
@@ -89,7 +89,7 @@
 					                                    </tr>
 					                                </tbody>
 					                            </table>
-					                        </div><! --/content-panel -->
+					                        </div><!--/content-panel -->
 					                    </div><!-- /col-md-12 -->
 
                                 </div>
@@ -125,7 +125,7 @@
 					                                    </tr>
 					                                </tbody>
 					                            </table>
-					                        </div><! --/content-panel -->
+					                        </div><!--/content-panel -->
 					                    </div><!-- /col-md-12 -->
 
                                 </div>
@@ -161,7 +161,7 @@
 					                                    </tr>
 					                                </tbody>
 					                            </table>
-					                        </div><! --/content-panel -->
+					                        </div><!--/content-panel -->
 					                    </div><!-- /col-md-12 -->
 
                                 </div>
@@ -203,7 +203,7 @@
                                     </tr>
                                 </tbody>
                             </table>
-                        </div><! --/content-panel -->
+                        </div><!--/content-panel -->
                     </div><!-- /col-md-12 -->
                     
                 </section>
