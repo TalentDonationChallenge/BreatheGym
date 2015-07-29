@@ -43,16 +43,6 @@
 							</tr>
 						</thead>
 						<tbody>
-						<!--<?php 
-						//$members = AdminRecordManage::getMembers(date("Y-m-d"), $exercises[0]['no']); //(오늘 출석한 사람들 - 운동기록 입력된사람들) 명단
-						//foreach ($members as $member) { ?> -->
-							<!-- <tr>
-								<td class='col-md-3'>김가연</td>
-								<td class='col-md-3'>1234</td>
-								<td class='col-md-3'>오늘</td>
-								<td class='form-inline'><input type='text' class='form-control col-xs-1'> 개</td>
-							</tr> -->
-						<!--<?php //} ?> -->
 						</tbody>
 						</table>
 					</div>

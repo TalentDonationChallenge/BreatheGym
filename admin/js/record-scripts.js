@@ -2,6 +2,8 @@ $(document).ready(function(){
 
 	//데이터로드 - 운동한 사람
 	var loadMembers = function () {
+		$('ul.exercises>li').removeClass('active');
+		$(this).addClass('active');
 		var info = $(this).data('info');
 		$.ajax({
 			url:'load.php',
@@ -11,7 +13,7 @@ $(document).ready(function(){
 				exerciseNo : info.exerciseNo
 			}
 		}).done(function (msg) {
-			console.log(msg);
+			$('tbody').empty();
 			if (msg.members.length === 0) {
 				$('tbody').append($('<tr><td colspan="5"> 오늘 출석한 회원이 없습니다 </td></tr>'));
 				return;
@@ -21,17 +23,20 @@ $(document).ready(function(){
 				.append($('<td />').append(msg.members[i].name))
 				.append($('<td />').append(msg.members[i].barcode))
 				.append($('<td />').append(msg.members[i].date));
-				if(msg.members[i].type === 0) {
+				if(info.exerciseType === '0') {
 					list.append(
 						$('<td />').addClass('form-inline col-md-4')
-						.append($('<input />').attr('type','text').addClass('form-control'))
+						.append($('<input />').attr('type','number').attr('name','count')
+							.addClass('form-control'))
 						.append(' 개'));
 				} else {
 					list.append(
 						$('<td />').addClass('form-inline col-md-4')
-						.append($('<input />').attr('type','text').addClass('form-control'))
+						.append($('<input />').attr('type','number').attr('name','minute')
+							.addClass('form-control'))
 						.append(' 분')
-						.append($('<input />').attr('type','text').addClass('form-control'))
+						.append($('<input />').attr('type','number').attr('name','second')
+							.addClass('form-control'))
 						.append(' 초'));
 				}
 				$('tbody').append(list);
@@ -55,44 +60,38 @@ $(document).ready(function(){
 				exerciseType : msg.exercises[i].type
 			});
 			$('ul.exercises').append(list);
-			list.click(function (e) {
-				e.preventDefault();
-				$('ul.exercises>li').removeClass('active');
-				$(this).addClass('active');
-			});
+			list.click(loadMembers);
 		}
-		$('ul.exercises>li:first-child').addClass('active').each(loadMembers);
+		$('ul.exercises>li:first-child').each(loadMembers);
 	});
 	//입력 작업 수행
-	$('button[type="submit"]').on("click", function(event){
-		var recordRow = $('.recordCol');
-		var dataArray = new Array();
-		var inputRecord = $('input:text');
-		var exerciseType = $('input:hidden');
-		alert(recordRow.length);
-		for(var i=0;i<recordRow.length;i++){
-			var objectData = new Object();
-			if(i%4==0){
-				objectData.name = recordRow[i];
-			} else if(i%4==1){
-				objectData.barcode = recordRow[i];
-			} else if(i%4==2){
-				objectData.time = recordRow[i];
-			} else if(i%4==3){
-				objectData.exercise = recordRow[i];
-
-				dataArray.push(objectData);
+	$('button[type="submit"]').click(function (e) {
+		var info = $('.exercises>li.active').data('info');
+		var memberRecords = [];
+		$('tbody').find('tr').each(function () {
+			if ($(this).find('input').val() === '' || $(this).find('input:nth-child(2)').val() === '') return;
+			var memberRecord = {
+				barcode : $(this).find('td:nth-child(2)').text()
+			};
+			if (info.exerciseType === '0') {
+				memberRecord.record = $(this).find('input[name="count"]').val();
+			} else {
+				memberRecord.record = {
+					minute : $(this).find('input[name="minute"]').val(),
+					second : $(this).find('input[name="second"]').val()
+				};
 			}
-		}
-
+			memberRecords.push(memberRecord);
+		});
 		$.ajax({
-			url : '/admin/record/input.php',
-			type : 'post',
-			data : dataArray,
-			success : function(msg){
-				alert("no");
-				location.reload();
+			url:'input.php',
+			type:'post',
+			data: {
+				members : memberRecords,
+				exercise : info
 			}
+		}).done(function (msg) {
+			$('ul.exercises>li.active').each(loadMembers);
 		});
 	});
 });

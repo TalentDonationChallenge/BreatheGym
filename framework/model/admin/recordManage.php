@@ -6,28 +6,26 @@
 		public static function insertRecord($members, $exercise, $date) {
 			$pdo = Database::getInstance();
 			foreach ($members as $member) {
-				$stmt = $pdo->prepare('INSERT INTO exerciseRecord(barcode, name, type, timeRecord, countRecord, date)
-								VALUES(:barcode, :name, :type, :timeRecord, :countRecord, :dates)');
-				if ($exercise['type'] === 0) {  //입력하는 운동이 횟수기록을 가질 경우
+				$stmt = $pdo->prepare('INSERT INTO exerciseRecord(barcode, exerciseNo, timeRecord, countRecord, date)
+								VALUES(:barcode, :exerciseNo, :timeRecord, :countRecord, :dates)');
+				if ($exercise['exerciseType'] === '0') {  //입력하는 운동이 횟수기록을 가질 경우
 					$stmt->execute(array(
 						':barcode'=>$member['barcode'],
-						':name'=>$exercise['name'],
-						':type'=>0,
+						':exerciseNo'=>$exercise['exerciseNo'],
 						':timeRecord'=>null,
-						':countRecord'=>$member['record'],//기록은 중첩어레이로 받습니다. [사람][운동]
+						':countRecord'=>$member['record'],
 						':dates'=>$date
 					));
-				} else if($exercise['type'] === 1) {  //입력하는 운동이 시간기록을 가질 경우
+				} else if($exercise['exerciseType'] === '1') {  //입력하는 운동이 시간기록을 가질 경우
 					$stmt->execute(array(
 						':barcode'=>$member['barcode'],
-						':name'=>$exercise['name'],
-						':type'=>1,
+						':exerciseNo'=>$exercise['exerciseNo'],
 						':timeRecord'=>'00:'.$member['record']['minute'].":".$member['record']['second'],
 						':countRecord'=>null,
 						':dates'=>$date
 					));
 				} else {
-					//여기론 오지마
+					new Exeception('wrong variable');
 				}
 			}
 		}
@@ -36,10 +34,11 @@
 			$tomorrow = date('Y-m-d',strtotime("+1day ".$date));
 			$pdo=Database::getInstance();
 			$stmt=$pdo->prepare('SELECT gymMember.name as name, gymMember.barcode as barcode, A.date as date
-				FROM(SELECT attendance.barcode, exerciseNo, attendance.date FROM attendance LEFT JOIN exerciseRecord
-				ON attendance.barcode = exerciseRecord.barcode
+				FROM(SELECT attendance.barcode, exerciseNo, attendance.date FROM attendance LEFT JOIN 
+					(SELECT * FROM exerciseRecord WHERE exerciseNo = :exercise) AS record
+				ON attendance.barcode = record.barcode
 				WHERE attendance.date >= :today AND attendance.date < :tomorrow 
-				AND (exerciseNo IS NULL OR exerciseNo != :exercise)) as A
+				AND exerciseNo IS NULL) as A
 				JOIN gymMember ON A.barcode = gymMember.barcode ORDER BY A.date ASC');
 			$stmt->execute(array(
 				':today'=>$date, 
