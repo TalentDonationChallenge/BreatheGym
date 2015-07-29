@@ -9,6 +9,7 @@
 		'/common/css/style.css',
 		'/common/css/style-responsive.css',
 		'/common/css/table-responsive.css',
+		'/common/css/bootstrap.min.css',
 		'../css/record.css'));?>
 	<!--[if lt IE 9]>
 	<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
@@ -29,14 +30,7 @@
 			<!-- page start-->
 			<div class="panel panel-default">
 				<section class="panel-body table-panel">
-					<ul class="nav nav-tabs">
-					<?php 
-					$exercises = AdminRecordManage::getExercises(date("Y-m-d")); //오늘의 운동 종류
-					if ($exercises !== Array()) { ?>
-						<li class="active"><a href="#"><?=$exercises[0]['name']?></a></li>
-						<li><a href="#"><?=$exercises[1]['name']?></a></li>
-						<li><a href="#"><?=$exercises[2]['name']?></a></li>
-					<?php }?>
+					<ul class="nav nav-tabs exercises">
 					</ul>
 					<div class="table-responsive">
 						<table class="table table-striped">
@@ -49,13 +43,16 @@
 							</tr>
 						</thead>
 						<tbody>
-						<?php 
-						$members = AdminRecordManage::getMembers(date("Y-m-d")); //(오늘 출석한 사람들 - 운동기록 입력된사람들) 명단
-						foreach ($members as $member) { ?>
-							<tr>
-								
-							</tr>
-						<?php } ?>
+						<!--<?php 
+						//$members = AdminRecordManage::getMembers(date("Y-m-d"), $exercises[0]['no']); //(오늘 출석한 사람들 - 운동기록 입력된사람들) 명단
+						//foreach ($members as $member) { ?> -->
+							<!-- <tr>
+								<td class='col-md-3'>김가연</td>
+								<td class='col-md-3'>1234</td>
+								<td class='col-md-3'>오늘</td>
+								<td class='form-inline'><input type='text' class='form-control col-xs-1'> 개</td>
+							</tr> -->
+						<!--<?php //} ?> -->
 						</tbody>
 						</table>
 					</div>

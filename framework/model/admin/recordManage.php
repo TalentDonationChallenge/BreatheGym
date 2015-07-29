@@ -35,12 +35,12 @@
 		public static function getMembers($date, $exercise){
 			$tomorrow = date('Y-m-d',strtotime("+1day ".$date));
 			$pdo=Database::getInstance();
-			$stmt=$pdo->prepare('SELECT gymMember.name, gymMember.barcode
-				FROM(SELECT attendance.barcode, exerciseNo FROM attendance LEFT JOIN exerciseRecord
+			$stmt=$pdo->prepare('SELECT gymMember.name as name, gymMember.barcode as barcode, A.date as date
+				FROM(SELECT attendance.barcode, exerciseNo, attendance.date FROM attendance LEFT JOIN exerciseRecord
 				ON attendance.barcode = exerciseRecord.barcode
 				WHERE attendance.date >= :today AND attendance.date < :tomorrow 
-				AND (exerciseNo is null or exerciseNo != :exercise)) as A
-				JOIN gymMember ON A.barcode = gymMember.barcode');
+				AND (exerciseNo IS NULL OR exerciseNo != :exercise)) as A
+				JOIN gymMember ON A.barcode = gymMember.barcode ORDER BY A.date ASC');
 			$stmt->execute(array(
 				':today'=>$date, 
 				':tomorrow'=>$tomorrow,
@@ -53,6 +53,7 @@
 				$members[] = array(
 					'name' => $row['name'],
 					'barcode' => $row['barcode'],
+					'date'=> $row['date']
 				);
 			}
 			return $members;
@@ -60,18 +61,21 @@
 		//오늘 예정된 운동 종류 받아오기
 		public static function getExercises($date){
 			$pdo=Database::getInstance();
-			$stmt=$pdo->prepare('SELECT name, type from exerciseSchedule as a join exerciseList as b on a.exerciseNo=b.no where date=:date');
+			$stmt=$pdo->prepare('SELECT name, type, no
+				from exerciseSchedule as a join exerciseList as b 
+				on a.exerciseNo=b.no where date=:date');
 			$stmt->execute(array(':date'=>$date));
 			$result=$stmt->fetchAll();
 			$exercises = array();
 			foreach ($result as $row){
 				$exercises[] = array(
+					'no' => $row['no'],
 					'name' => $row['name'],
 					'type' => $row['type']
 				);
 			}
 			
-			return $result;
+			return $exercises;
 		}
 	}
 	
