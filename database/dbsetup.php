@@ -21,6 +21,7 @@
 	for ($i=0; $i < 10; $i++) { 
 		$numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
 		shuffle($numbers);
+		date_default_timezone_set('Asia/Seoul');
 		$date = date('Y-m-d', strtotime("+".$i."day"));
 		for ($j=0; $j < 3; $j++) { 
 			$stmt = $pdo->prepare("INSERT INTO exerciseSchedule(exerciseNo, date)

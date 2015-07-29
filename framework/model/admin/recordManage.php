@@ -39,7 +39,7 @@
 				ON attendance.barcode = record.barcode
 				WHERE attendance.date >= :today AND attendance.date < :tomorrow 
 				AND exerciseNo IS NULL) as A
-				JOIN gymMember ON A.barcode = gymMember.barcode ORDER BY A.date ASC');
+				JOIN gymMember ON A.barcode = gymMember.barcode ORDER BY A.date DESC');
 			$stmt->execute(array(
 				':today'=>$date, 
 				':tomorrow'=>$tomorrow,
