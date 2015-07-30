@@ -6,7 +6,8 @@
 <head>
     <?php head('브리드 복싱 &amp; 크로스핏 - 관리자메뉴', 
     array('/exercise/css/font-awesome/css/font-awesome.css',
-        '/exercise/css/style.css'
+          '/exercise/css/style.css',
+          '/exercise/css/style-responsive.css'
         ));?>
     <!--[if lt IE 9]>
     <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
@@ -110,11 +111,14 @@
                 </section>
                 
             </section>
-        <script src="/exercise/js/jquery.js"></script>
-        <script src="/exercise/js/bootstrap.min.js"></script>
-        <script src="/exercise/js/jquery.nicescroll.js" type="text/javascript"></script>
-        <script src="/exercise/js/common-scripts.js"></script>
+               <script src="/exercise/js/bootstrap.min.js"></script>
+               <script src="/exercise/js/jquery.nicescroll.js" type="text/javascript"></script>
+               
         
+                <script src="/exercise/js/jquery.js"></script>
+                <script class="include" type="text/javascript" src="/exercise/js/jquery.dcjqaccordion.2.7.js"></script>
+                <script src="/exercise/js/common-scripts.js"></script>
+
         
 </body>
 </html>
