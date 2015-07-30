@@ -8,7 +8,7 @@
     array('/exercise/css/font-awesome/css/font-awesome.css',
           '/exercise/css/style.css',
           '/exercise/css/style-responsive.css'
-        ));?>
+          ));?>
     <!--[if lt IE 9]>
     <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
     <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
@@ -111,13 +111,20 @@
                 </section>
                 
             </section>
-               <script src="/exercise/js/bootstrap.min.js"></script>
-               <script src="/exercise/js/jquery.nicescroll.js" type="text/javascript"></script>
-               
-        
-                <script src="/exercise/js/jquery.js"></script>
-                <script class="include" type="text/javascript" src="/exercise/js/jquery.dcjqaccordion.2.7.js"></script>
-                <script src="/exercise/js/common-scripts.js"></script>
+      
+        <script src="/exercise/js/bootstrap.min.js"></script>
+       
+        <script src="/exercise/js/jquery.nicescroll.js" type="text/javascript"></script>
+       
+        <!--사이드바가 화면 크기에 따라 자동으로 사라지게 해주는 js가 있는 곳 -->
+        <!--이것과  style-responsive.css 필-->
+        <!-- 간단한 듯 보이지만 무려 3개의 콤비네이션!....죄송....-->
+        <script src="/exercise/js/jquery.js"></script>
+        <script class="include" type="text/javascript" src="/exercise/js/jquery.dcjqaccordion.2.7.js"></script>
+        <script src="/exercise/js/common-scripts.js"></script>
+
+       
+
 
         
 </body>
