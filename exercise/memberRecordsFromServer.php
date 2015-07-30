@@ -60,7 +60,7 @@
 
 	}
 
-	function getUserExerciseRecord($barcode){
+	function getUserexerciseRecord($barcode){
 
 		$today = date('Y-m-d');
 		//printf("오늘 날짜 : ".$today."</br>");
@@ -73,7 +73,7 @@
 		$tmpsavedexerciseName = array();
 		//오늘 운동했던 운동 종목 이름을 가져옵니다.
 		$stmt = $pdo->prepare("SELECT distinct(name) 
-			FROM ExerciseRecord as er NATURAL JOIN exerciseList as el 
+			FROM exerciseRecord as er NATURAL JOIN exerciseList as el 
 			WHERE er.exerciseNo = el.no and date >= :beforedate and date <= :today 
 			ORDER by er.exerciseNo ASC");
 		$stmt -> execute(array(
@@ -109,7 +109,7 @@
 		//각 종목당 내 위에 몇명이 있는지 알아야겠죠?
 		//일단 내 기록부터 먼저 가지고 옵시다.
 		$stmt = $pdo->prepare("SELECT *
-			FROM ExerciseRecord as er NATURAL JOIN exerciseList as el
+			FROM exerciseRecord as er NATURAL JOIN exerciseList as el
 			WHERE er.exerciseNo = el.no and barcode = :barcode and date >= :beforedate and date <= :today
 			ORDER by er.exerciseNo ASC");
 		$stmt -> execute(array(
@@ -133,7 +133,7 @@
 			//echo($count);
 			if($row['type'] == 0){
 				$stmt = $pdo->prepare("SELECT count(*),el.name 
-					FROM ExerciseRecord  as er NATURAL JOIN exerciseList as el
+					FROM exerciseRecord  as er NATURAL JOIN exerciseList as el
 					WHERE er.exerciseNo = el.no and name = :name and countRecord > :countRecord and date >= :beforedate and date <= :today");
 				$stmt -> execute(array(
 					':name'=> $row['name'],
@@ -157,7 +157,7 @@
 			}
 			else{
 				$stmt = $pdo->prepare("SELECT count(*),el.name 
-					FROM ExerciseRecord as er NATURAL JOIN exerciseList as el
+					FROM exerciseRecord as er NATURAL JOIN exerciseList as el
 					WHERE er.exerciseNo = el.no and name = :name and timeRecord < :timeRecord and date >= :beforedate and date <= :today");
 				$stmt -> execute(array(
 					':name'=> $row['name'],
@@ -216,7 +216,7 @@
 		$tmpsavedexerciseName = array();
 		//오늘 운동했던 운동 종목 이름을 가져옵니다.
 		$stmt = $pdo->prepare("SELECT distinct(name),type
-			FROM ExerciseRecord as er NATURAL JOIN exerciseList as el 
+			FROM exerciseRecord as er NATURAL JOIN exerciseList as el 
 			WHERE er.exerciseNo = el.no and date >= :beforedate and date <= :today 
 			ORDER by er.exerciseNo ASC");
 		$stmt -> execute(array(
@@ -235,7 +235,7 @@
 			if($row['type'] == 0){
 					//printf($row['name']);
 					$stmt = $pdo->prepare("SELECT countRecord , el.name as list ,gm.name as member
-						FROM ExerciseRecord as er JOIN exerciseLIst as el JOIN gymMember as gm
+						FROM exerciseRecord as er JOIN exerciseList as el JOIN gymMember as gm
 						where er.exerciseNO = el.no	
 						and er.barcode = gm.barcode
 						and el.name = :name
@@ -263,7 +263,7 @@
 			else if($row['type'] == 1){
 				//printf($row['name']);
 					$stmt = $pdo->prepare("SELECT timeRecord , el.name as list ,gm.name as member
-						FROM ExerciseRecord as er JOIN exerciseLIst as el JOIN gymMember as gm
+						FROM exerciseRecord as er JOIN exerciseList as el JOIN gymMember as gm
 						where er.exerciseNO = el.no	
 						and er.barcode = gm.barcode
 						and el.name = :name
