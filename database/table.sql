@@ -49,7 +49,8 @@ create table attendance(
 create table achievement(
 	email varchar(50) primary key,
 	name varchar(50) not null,
-	foreign key (email) references member(email)
+	foreign key (email) references member(email),
+	primary key(email, name)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 create table exerciseList(
@@ -116,7 +117,7 @@ create table diaryBoard(
 	foreign key (email) references member(email)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1;
 
--- 오늘의 복싱 진도
+-- 복싱 진도 DB
 create table boxingList(
 	no int(6) not null primary key AUTO_INCREMENT,
 	name varchar(20) not null,
@@ -125,3 +126,10 @@ create table boxingList(
 	summary varchar(100) not null,
 	photo mediumblob not null
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1;
+
+-- 개인별 복싱 진도
+create table boxingLevel(
+	barcode varchar(30) primary key,
+	no int(6) not null
+	foreign key (barcode) references gymMember(barcode)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8
