@@ -21,7 +21,7 @@
 			return $boxingInfo;
 		}
 
-		
+		public static function insert
 
 	}
 ?>
