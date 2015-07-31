@@ -130,6 +130,6 @@ create table boxingList(
 -- 개인별 복싱 진도
 create table boxingLevel(
 	barcode varchar(30) primary key,
-	no int(6) not null
+	no int(6) not null,
 	foreign key (barcode) references gymMember(barcode)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8

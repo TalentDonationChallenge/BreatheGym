@@ -21,7 +21,17 @@
 			return $boxingInfo;
 		}
 
-		public static function insert
+		public static function boxingStepUp($memberBarcode){
+			$pdo=Database::getInstance();
+			$stmt=$pdo->prepare('UPDATE boxingLevel set no = no+1 where barcode=:barcode');
+			$stmt->execute(array(':barcode'=>$memberBarcode));
+		}
+
+		public static function boxingStepDown($memberBarcode){
+			$pdo=Database::getInstance();
+			$stmt=$pdo->prepare('UPDATE boxingLevel set no = no-1 where barcode=:barcode');
+			$stmt->execute(array(':barcode'=>$memberBarcode));
+		}
 
 	}
 ?>

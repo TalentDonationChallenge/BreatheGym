@@ -17,11 +17,12 @@
 			":count"=>$exercise["count"]
 		));
 	}
+	date_default_timezone_set('Asia/Seoul');
 	//운동스케줄 만들기
 	for ($i=0; $i < 10; $i++) { 
 		$numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
 		shuffle($numbers);
-		date_default_timezone_set('Asia/Seoul');
+		
 		$date = date('Y-m-d', strtotime("+".$i."day"));
 		for ($j=0; $j < 3; $j++) { 
 			$stmt = $pdo->prepare("INSERT INTO exerciseSchedule(exerciseNo, date)
@@ -106,6 +107,33 @@
 	 		':date'=>$exerciseRecord['date']
 	 		
 	 	));
+	 }
+	 //복싱 진도,정보 데이터 입력
+	 $boxingList=json_decode(file_get_contents("boxingList.json"), true);
+
+	 foreach($boxingList as $boxingLevel){
+	 	$stmt = $pdo->prepare("INSERT INTO boxingList (name, youtubeSrc, description, summary, photo)
+	 		VALUES (:name, :youtubeSrc, :description, :summary, :photo)");
+	 	$stmt->execute(array(
+	 			':name'=>$boxingLevel['name'],
+	 			':youtubeSrc'=>$boxingLevel['youtubeSrc'],
+	 			':description'=>$boxingLevel['description'],
+	 			':summary'=>$boxingLevel['summary'],
+	 			':photo'=>$boxingLevel['photo']
+	 		));
+	 }
+
+	 
+	 //복싱 개인별 진도 입력
+	 $boxingLevelList=json_decode(file_get_contents("boxingLevel.json"), true);
+
+	 foreach($boxingLevelList as $boxingLevel){
+	 	$stmt=$pdo->prepare("INSERT INTO boxingLevel (barcode, no)
+	 		VALUES (:barcode, :no)");
+	 	$stmt->execute(array(
+	 				':barcode'=>$boxingLevel['barcode'],
+	 				':no'=>$boxingLevel['no']
+	 		));
 	 }
 ?>
 <a href="/index.php">gogo</a>

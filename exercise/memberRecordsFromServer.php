@@ -77,7 +77,7 @@
 			WHERE er.exerciseNo = el.no and date >= :beforedate and date <= :today 
 			ORDER by er.exerciseNo ASC");
 		$stmt -> execute(array(
-			':beforedate' => $beforedate,	
+			':beforedate' => $beforedate,
 			':today' => $today
 		));
 		$rows = $stmt -> fetchAll();

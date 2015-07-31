@@ -1,0 +1,32 @@
+[{
+	"no": 0,
+	"name":"제자리 스텝",
+	"youtubeSrc":"https://www.youtube.com/embed/CWBqwq8GgGU",
+	"description":"제자리 스텝 운동입니다.",
+	"summary":"뭘까여",
+	"photo": "14232"
+	},
+{
+	"no":1,
+	"name":"이동 스텝",
+	"youtubeSrc":"https://www.youtube.com/embed/CWBqwq8GgGU",
+	"description":"이동 스텝입니다.",
+	"summary":"뭐냐는",
+	"photo": "1234"
+	},
+{
+	"no":2,
+	"name":"잽",
+	"youtubeSrc":"https://www.youtube.com/embed/CWBqwq8GgGU",
+	"description":"잽 운동 입니다.",
+	"summary":"뭐래냐",
+	"photo": "45555"
+	},
+{
+	"no":3,
+	"name":"원투 스트레이트",
+	"youtubeSrc":"https://www.youtube.com/embed/CWBqwq8GgGU",
+	"description":"원투 스트레이트 운동입니다.",
+	"summary":"뭐다요",
+	"photo": "123235"
+}]
