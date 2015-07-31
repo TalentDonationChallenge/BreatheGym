@@ -3,6 +3,7 @@
 	ini_set("display_errors", 1);
 	require_once(__DIR__.'/../framework/framework.php');
 	require_once(__DIR__.'/memberRecordsFromServer.php');
+	date_default_timezone_set('Asia/Seoul');
 ?>
 <!DOCTYPE html>
 <html>
