@@ -47,7 +47,7 @@ create table attendance(
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 create table achievement(
-	email varchar(50) primary key,
+	email varchar(50),
 	name varchar(50) not null,
 	foreign key (email) references member(email),
 	primary key(email, name)
