@@ -71,20 +71,19 @@ $(document).ready(function () {
 					requestType : 'schedule',
 					no : originalEventObject.no,
 					date : date.format()
-				},
-				success : function (msg) {
-					// we need to copy it, so that multiple events don't have a reference to the same object
-					var copiedEventObject = $.extend({}, originalEventObject);
-
-					// assign it the date that was reported
-					copiedEventObject.start = date;
-					copiedEventObject.allDay = allDay;
-
-					// render the event on the calendar
-					// the last `true` argument determines if the event "sticks" (http://arshaw.com/fullcalendar/docs/event_rendering/renderEvent/)
-					var newEvent =  $('#calendar').fullCalendar('renderEvent', copiedEventObject, true);
-					newEvents.push(newEvent[0]._id);
 				}
+			}).done(function (msg) {
+				// we need to copy it, so that multiple events don't have a reference to the same object
+				var copiedEventObject = $.extend({}, originalEventObject);
+
+				// assign it the date that was reported
+				copiedEventObject.start = date;
+				copiedEventObject.allDay = allDay;
+
+				// render the event on the calendar
+				// the last `true` argument determines if the event "sticks" (http://arshaw.com/fullcalendar/docs/event_rendering/renderEvent/)
+				var newEvent =  $('#calendar').fullCalendar('renderEvent', copiedEventObject, true);
+				newEvents.push(newEvent[0]._id);
 			});
 		},
 		events : function (start, end, timezone, callback) {
