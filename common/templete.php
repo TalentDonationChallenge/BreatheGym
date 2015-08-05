@@ -37,6 +37,8 @@
 								<span class='pull-right'><a href='#'>Register</a></span><span><a href='#'>Need help?</a></span>
 							</div>
 						</form>
+						<fb:login-button scope="public_profile, email" onlogin="checkLoginState();">
+						</fb:login-button>
 					</div>
 					<div class='modal-footer'>
 						<div class='col-md-12'>

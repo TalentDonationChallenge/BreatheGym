@@ -10,7 +10,17 @@
 	<![endif]-->
 </head>
 <body>
-	<?php 
+	<!-- 페이스북 SDK load -->
+	<script>
+		window.fbAsyncInit = function(){
+			FB.init({
+				appId : '114295028916691',
+				xfbml : true,
+				version : 'v2.4'
+			});
+		}
+	</script>
+	<?php
 		login();
 		navigation();
 	?>

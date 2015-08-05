@@ -7,10 +7,10 @@ drop table if exists breatheBoard;
 drop table if exists freeBoard;
 drop table if exists diaryBoard;
 drop table if exists member;
-drop table if exists gymMember;
 drop table if exists exerciseList;
 drop table if exists boxingList;
 drop table if exists boxingLevel;
+drop table if exists gymMember;
 
 
 create table gymMember(
