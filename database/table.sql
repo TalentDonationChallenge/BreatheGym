@@ -10,6 +10,7 @@ drop table if exists member;
 drop table if exists gymMember;
 drop table if exists exerciseList;
 drop table if exists boxingList;
+drop table if exists boxingLevel;
 
 
 create table gymMember(

@@ -4,6 +4,7 @@
 	require_once(__DIR__ . '/../framework/framework.php');
 	$pdo = Database::getInstance();
 	$pdo->exec(file_get_contents("table.sql")); 
+	
 
 	//운동종류 추가하기
 	$exercises = json_decode(file_get_contents("exerciseList.json"), true);
@@ -17,12 +18,10 @@
 			":count"=>$exercise["count"]
 		));
 	}
-	date_default_timezone_set('Asia/Seoul');
 	//운동스케줄 만들기
 	for ($i=0; $i < 10; $i++) { 
 		$numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
 		shuffle($numbers);
-		
 		$date = date('Y-m-d', strtotime("+".$i."day"));
 		for ($j=0; $j < 3; $j++) { 
 			$stmt = $pdo->prepare("INSERT INTO exerciseSchedule(exerciseNo, date)
