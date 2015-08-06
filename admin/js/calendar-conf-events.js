@@ -81,33 +81,33 @@ $(document).ready(function () {
 				copiedEventObject.allDay = allDay;
 
 				// render the event on the calendar
-				// the last `true` argument determines if the event "sticks" (http://arshaw.com/fullcalendar/docs/event_rendering/renderEvent/)
+				// the last `true` argument determines if the event 'sticks' (http://arshaw.com/fullcalendar/docs/event_rendering/renderEvent/)
 				var newEvent =  $('#calendar').fullCalendar('renderEvent', copiedEventObject, true);
 				newEvents.push(newEvent[0]._id);
 			});
 		},
 		events : function (start, end, timezone, callback) {
-			$.ajax({
-				url: 'load.php',
-				dataType: 'json',
-				data : {
-					requestType : 'schedule',
-					start : start.format(),
-					end : end.format()
-				},
-				success : function (msg) {
-					for (var i in msg.schedule) {
-						var exercise = $('.exercise[no="'+msg.schedule[i].no+'"]');
-						colorDetermine(exercise, msg.schedule[i]);
-						msg.schedule[i].durationEditable = false;
-					}
-					callback(msg.schedule);
-				}
-			});
+			// $.ajax({
+			// 	url: 'load.php',
+			// 	dataType: 'json',
+			// 	data : {
+			// 		requestType : 'schedule',
+			// 		start : start.format(),
+			// 		end : end.format()
+			// 	},
+			// 	success : function (msg) {
+			// 		for (var i in msg.schedule) {
+			// 			var exercise = $('.exercise[no=''+msg.schedule[i].no+'']');
+			// 			colorDetermine(exercise, msg.schedule[i]);
+			// 			msg.schedule[i].durationEditable = false;
+			// 		}
+			// 		callback(msg.schedule);
+			// 	}
+			// });
 		},
 		eventMouseover : function (event, jsEvent, view) {
-			$(this).find('.fc-content').append('<i class="fa fa-times pull-right"></i>');
-			$(this).find('i').data('id', event._id);
+			// $(this).find('.fc-content').append('<i class='fa fa-times pull-right'></i>');
+			// $(this).find('i').data('id', event._id);
 		},
 		eventMouseout : function (event, jsEvent, view) {
 			$(this).find('i').remove();
@@ -129,10 +129,10 @@ $(document).ready(function () {
 			var start = event.start.clone();
 
 			$.ajax({
-				url:"edit.php",
-				method:"post",
+				url:'edit.php',
+				method:'post',
 				data: {
-					requestType: 'schedule', 
+					requestType: 'schedule',
 					no : event.no,
 					originalDate : start.subtract(delta._days,'days').format(),
 					date : event.start.format()
@@ -154,97 +154,134 @@ $(document).ready(function () {
 	});
 
 	/* 운동추가창 만들기 */
-	$("#add-exercise-form").focusin(function () {
+	$('#add-exercise-form').focusin(function () {
 		event.stopPropagation();
-		$("#exercise-spec").removeClass("hidden");
+		$('#exercise-spec').removeClass('hidden');
 	});
-	$("#add-exercise-form").click(function () {
+	$('#add-exercise-form').click(function () {
 		event.stopPropagation();
 	});
-	$("body").click(function () {
-		$("#exercise-spec").addClass("hidden");
+	$('body').click(function () {
+		$('#exercise-spec').addClass('hidden');
 	});
-	$("input[name='exercise-type']").click(function () {
-		$("#time-spec").toggleClass("hidden");
-		$("#count-spec").toggleClass("hidden");
+	$('input[name="exercise-type"]').click(function () {
+		$('#time-spec').toggleClass('hidden');
+		$('#count-spec').toggleClass('hidden');
+	});
+	$('.fc-view-container').click(function () {
+		event.stopPropagation();
+	});
+	/* 날짜 선택하기 */
+
+	$('.fc-day').click(function () {
+		var isSelected = $(this).hasClass('selected');
+		$('.fc-day').removeClass('selected');
+		if(!isSelected){
+			$(this).addClass('selected');
+		}
 	});
 
 	/* 운동 추가하기 */
 
-	$("#add-exercise-form .btn-insert").click(function () {
+	$('#add-exercise-form .btn-insert').click(function () {
 		var insertObject = { requestType : 'exercise' };
 		if ($('#exercise-name').val()===''){ // 운동이름 제한 규칙을 어떻게 둬야 할까?
-			alert("운동이름을 입력해주세요");
+			$('.alert').html('운동이름을 입력해주세요');
+			$('.alert').css('display','block');
+			$('.alert').fadeOut(2000, function () {
+				$(this).empty();
+			});
 			return;
 		}
 		insertObject.name = $('#exercise-name').val();
-		if ($("input[name='exercise-type']:checked").val()==="time"){
-			if ($("#minute").val()>59 || $("#second").val()>59
-			|| ($("#minute").val()==='' && $("#second").val() === '')) {
-				alert("값이 올바르지 않습니다");
+		if ($('input[name="exercise-type"]:checked').val()==='time'){
+			if ($('#minute').val()>59 || $('#second').val()>59
+			|| ($('#minute').val()==='' && $('#second').val() === '')) {
+				$('.alert').html('값이 올바르지 않습니다');
+				$('.alert').css('display','block');
+				$('.alert').fadeOut(2000, function () {
+					$(this).empty();
+				});
 				return ;
 			}
 			insertObject.type = 'time';
 			insertObject.minute = $('#minute').val();
 			insertObject.second = $('#second').val();
-		} else if ($("input[name='exercise-type']:checked").val()==="count") {
-			if ($("#count").val() === '' || isNaN($('#count').val())) { // isNaN은 숫자인 경우 false, 문자가 섞인경우 true를 반환
-				alert('값이 올바르지 않습니다.');
+		} else if ($('input[name="exercise-type"]:checked').val()==='count') {
+			if ($('#count').val() === '' || isNaN($('#count').val())) { // isNaN은 숫자인 경우 false, 문자가 섞인경우 true를 반환
+				$('.alert').html('값이 올바르지 않습니다');
+				$('.alert').css('display','block');
+				$('.alert').fadeOut(2000, function () {
+					$(this).empty();
+				});
 				return ;
 			}
 			insertObject.type = 'count';
 			insertObject.count = $('#count').val();
 		}
+		if ($('.fc-day.selected').attr('data-date')===undefined) {
+			$('.alert').html('날짜를 선택해 주세요');
+			$('.alert').css('display','block');
+			$('.alert').fadeOut(2000, function () {
+				$(this).empty();
+			});
+			return;
+		}
+		insertObject.date = $('.fc-day.selected').attr('data-date');
 		$.ajax({
-			url:"insert.php",
-			method:"post",
+			url:'insert.php',
+			method:'post',
 			data: insertObject
 		}).done(function (msg){
 			location.reload(); // 그냥 새로고침을 하는게 더 나아보인다
 		}).fail(function (msg) {
-			alert('서버 오류가 발생하여 운동을 추가하는데 실패하였습니다.');
-			location.reload();
+			$('.alert').html('서버오류가 발생하여 운동을 추가하는데 실패하였습니다');
+			$('.alert').css('display','block');
+			$('.alert').fadeOut(2000, function () {
+				$(this).empty();
+				location.reload();
+			});
 		});
 	});
 
 	/* 운동목록 삭제하기 */
-	$(document).on('mouseenter', '.exercise', function () {
-		$(this).find('span').addClass("fa fa-minus-circle remove");
-		$('#exercises').css({'margin-right': 0});
-	});
-	$(document).on('mouseleave', '.exercise', function () {
-		$(this).find('span').removeClass("fa fa-minus-circle remove");  
-		$('#exercises').css({'margin-right': '20px'});
-	});
-	$(document).on('click', '.exercise .remove', function () {
-		var exercise = $(this).parent();
-		$.ajax({
-			url:"delete.php",
-			method:"post",
-			data: {requestType: 'exercise', no : exercise.attr('no')}
-		}).done(function (msg){
-			location.reload();
-		}).fail(function (msg) {
-			alert('서버 오류가 발생하여 운동을 삭제하는데 실패하였습니다.');
-			location.reload();
-		});
-	});
-
-	//스케줄 삭제하기
-	$(document).on('click', '.fc-content i', function () {
-		var schedule = $('#calendar').fullCalendar('clientEvents', $(this).data('id'));
-		$.ajax({ //스케줄을 DB에서 삭제하기
-			url: 'delete.php',
-			type : 'post',
-			data : {
-				requestType : 'schedule',
-				no : schedule[0].no,
-				date : schedule[0].start.format()
-			},
-			success : function (msg) {
-				$('#calendar').fullCalendar('removeEvents', schedule[0]._id);
-			}
-		});
-	});
+	// $(document).on('mouseenter', '.exercise', function () {
+	// 	$(this).find('span').addClass('fa fa-minus-circle remove');
+	// 	$('#exercises').css({'margin-right': 0});
+	// });
+	// $(document).on('mouseleave', '.exercise', function () {
+	// 	$(this).find('span').removeClass('fa fa-minus-circle remove');
+	// 	$('#exercises').css({'margin-right': '20px'});
+	// });
+	// $(document).on('click', '.exercise .remove', function () {
+	// 	var exercise = $(this).parent();
+	// 	$.ajax({
+	// 		url:'delete.php',
+	// 		method:'post',
+	// 		data: {requestType: 'exercise', no : exercise.attr('no')}
+	// 	}).done(function (msg){
+	// 		location.reload();
+	// 	}).fail(function (msg) {
+	// 		alert('서버 오류가 발생하여 운동을 삭제하는데 실패하였습니다.');
+	// 		location.reload();
+	// 	});
+	// });
+	//
+	// //스케줄 삭제하기
+	// $(document).on('click', '.fc-content i', function () {
+	// 	var schedule = $('#calendar').fullCalendar('clientEvents', $(this).data('id'));
+	// 	$.ajax({ //스케줄을 DB에서 삭제하기
+	// 		url: 'delete.php',
+	// 		type : 'post',
+	// 		data : {
+	// 			requestType : 'schedule',
+	// 			no : schedule[0].no,
+	// 			date : schedule[0].start.format()
+	// 		},
+	// 		success : function (msg) {
+	// 			$('#calendar').fullCalendar('removeEvents', schedule[0]._id);
+	// 		}
+	// 	});
+	// });
 
 });

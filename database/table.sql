@@ -1,3 +1,5 @@
+-- 외래키 사용시 reference가 되는 테이블은 먼저 생성하고 나중에 없앤다
+
 drop table if exists exerciseRecord;
 drop table if exists attendance;
 drop table if exists achievement;
@@ -10,7 +12,6 @@ drop table if exists exerciseList;
 drop table if exists boxingList;
 drop table if exists boxingLevel;
 drop table if exists gymMember;
-
 
 create table gymMember(
 	barcode varchar(30) primary key,
@@ -56,6 +57,7 @@ create table achievement(
 create table exerciseList(
 	no int(6) not null primary key AUTO_INCREMENT,
 	name varchar(20) not null,
+	date date not null,
 	type int(1) not null, -- 일정시간동안 세트수 0, 일정세트 하는데 걸린시간 1
 	time time default 0,
 	count int(3) default 0
@@ -66,10 +68,9 @@ create table exerciseRecord(
 	exerciseNo int(6) not null,
 	timeRecord time,
 	countRecord int(3),
-	date date not null,
 	foreign key (barcode) references gymMember(barcode),
 	foreign key (exerciseNo) references exerciseList(no),
-	primary key(barcode, exerciseNo, date)
+	primary key(barcode, exerciseNo)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 create table consulting(

@@ -8,6 +8,9 @@
 	margin-bottom: 0;
 	vertical-align: middle;
 }
+#memo {
+	resize : none;
+}
 #exercise-spec>div {
 	margin-top: 15px;
 }
@@ -15,7 +18,9 @@
 	margin-top: 15px;
 	margin-right: 20px;
 }
-
+.alert {
+	display: none;
+}
 /* Calendar Events - Calendar.html*/
 .exercise {
 	cursor: pointer;
@@ -25,6 +30,14 @@
 	padding: 10px;
 }
 
+.fc-day:hover {
+	background-color: blanchedalmond; /*색깔은 어떻게 하는게 좋을까?*/
+	cursor: pointer;
+}
+.fc-day.selected {
+	background-color: blanchedalmond; /*색깔은 어떻게 하는게 좋을까?*/
+}
+/*
 .drop-after {
 	padding-top: 15px;
 	margin-top: 15px;
@@ -41,4 +54,4 @@
 
 .remove {
 	margin-left: 10px;
-}
+}*/
