@@ -1,48 +1,11 @@
 $(document).ready(function () {
-	var colorDetermine = function (obj, eventObject) { // 색깔 결정하는 함수
-		var colorObject = {
-			theme : '#68dff0',
-			success : '#5cb85c',
-			info : '#5bc0de',
-			warning : '#f0ad4e',
-			danger : '#d9534f',
-			'default' : '#999'
-		};
-		if (obj.hasClass('label-theme'))
-			eventObject.color = colorObject.theme;
-		else if (obj.hasClass('label-success'))
-			eventObject.color = colorObject.success;
-		else if (obj.hasClass('label-info'))
-			eventObject.color = colorObject.info;
-		else if (obj.hasClass('label-warning'))
-			eventObject.color = colorObject.warning;
-		else if (obj.hasClass('label-danger'))
-			eventObject.color = colorObject.danger;
-		else if (obj.hasClass('label-default'))
-			eventObject.color = colorObject.default;
-	}
-	var bindEventData = function () { // 운동 정보를 스케줄 오브젝트로 만들기
-		var eventObject = {
-			title: $.trim($(this).text()),
-			no : $(this).attr('no'),
-			durationEditable : false
-		};
-		colorDetermine($(this), eventObject);
-		$(this).data('eventObject', eventObject);
-		$(this).draggable({
-			zIndex: 999,
-			revert: true,      // will cause the event to go back to its
-			revertDuration: 0  //  original position after the drag
-		});
-	}
 
 	/* initialize the external events
 	 -----------------------------------------------------------------*/
-	$('#exercises .exercise').each(bindEventData);
+	// $('#exercises .exercise').each(bindEventData);
 
 	/* initialize the calendar
 	 -----------------------------------------------------------------*/
-	 var newEvents = [];
 	$('#calendar').fullCalendar({
 		lang : 'ko',
 		header: {
@@ -51,105 +14,105 @@ $(document).ready(function () {
 			right: 'month,basicWeek'
 		},
 		editable: true,
-		droppable: true, // this allows things to be dropped onto the calendar !!!
-		drop: function(date, allDay) { // this function is called when something is dropped
-			// // retrieve the dropped element's stored Event Object
-			var originalEventObject = $(this).data('eventObject');
-			var events = $('#calendar').fullCalendar('clientEvents', function (e) {
-				return date.format() === e.start.format();
-			});
-			for (var i in events) {
-				if (events[i].no === originalEventObject.no) {
-					alert('이미 추가한 운동입니다');
-					return;
-				}
-			}
-			$.ajax({ //스케줄을 DB에 추가하기
-				url: 'insert.php',
-				type : 'post',
-				data : {
-					requestType : 'schedule',
-					no : originalEventObject.no,
-					date : date.format()
-				}
-			}).done(function (msg) {
-				// we need to copy it, so that multiple events don't have a reference to the same object
-				var copiedEventObject = $.extend({}, originalEventObject);
-
-				// assign it the date that was reported
-				copiedEventObject.start = date;
-				copiedEventObject.allDay = allDay;
-
-				// render the event on the calendar
-				// the last `true` argument determines if the event 'sticks' (http://arshaw.com/fullcalendar/docs/event_rendering/renderEvent/)
-				var newEvent =  $('#calendar').fullCalendar('renderEvent', copiedEventObject, true);
-				newEvents.push(newEvent[0]._id);
-			});
-		},
-		events : function (start, end, timezone, callback) {
-			// $.ajax({
-			// 	url: 'load.php',
-			// 	dataType: 'json',
-			// 	data : {
-			// 		requestType : 'schedule',
-			// 		start : start.format(),
-			// 		end : end.format()
-			// 	},
-			// 	success : function (msg) {
-			// 		for (var i in msg.schedule) {
-			// 			var exercise = $('.exercise[no=''+msg.schedule[i].no+'']');
-			// 			colorDetermine(exercise, msg.schedule[i]);
-			// 			msg.schedule[i].durationEditable = false;
-			// 		}
-			// 		callback(msg.schedule);
-			// 	}
-			// });
-		},
-		eventMouseover : function (event, jsEvent, view) {
-			// $(this).find('.fc-content').append('<i class='fa fa-times pull-right'></i>');
-			// $(this).find('i').data('id', event._id);
-		},
-		eventMouseout : function (event, jsEvent, view) {
-			$(this).find('i').remove();
-		},
-		eventDrop : function (event, delta, revertFunc, jsEvent, ui, view) {
-			var events = $('#calendar').fullCalendar('clientEvents', function (e) {
-				return event.start.format() === e.start.format();
-			});
-			for (var i in events) {
-				if(event._id === events[i]._id){
-					continue;
-				}
-				if (events[i].no === event.no) {
-					alert('이미 추가한 운동입니다');
-					revertFunc();
-					return;
-				}
-			}
-			var start = event.start.clone();
-
-			$.ajax({
-				url:'edit.php',
-				method:'post',
-				data: {
-					requestType: 'schedule',
-					no : event.no,
-					originalDate : start.subtract(delta._days,'days').format(),
-					date : event.start.format()
-				}
-			}).done(function (msg){
-				newEvents.push(event._id);
-			}).fail(function (msg) {
-				alert('서버 오류가 발생하여 스케줄을 변경하는데 실패하였습니다.');
-				revertFunc();
-			});
-		},
-		viewRender : function (view, element) {
-			for(var i in newEvents) {
-				$('#calendar').fullCalendar('removeEvents', newEvents[i]);
-			}
-			newEvents = [];
-		},
+		// droppable: true, // this allows things to be dropped onto the calendar !!!
+		// drop: function(date, allDay) { // this function is called when something is dropped
+		// 	// // retrieve the dropped element's stored Event Object
+		// 	var originalEventObject = $(this).data('eventObject');
+		// 	var events = $('#calendar').fullCalendar('clientEvents', function (e) {
+		// 		return date.format() === e.start.format();
+		// 	});
+		// 	for (var i in events) {
+		// 		if (events[i].no === originalEventObject.no) {
+		// 			alert('이미 추가한 운동입니다');
+		// 			return;
+		// 		}
+		// 	}
+		// 	$.ajax({ //스케줄을 DB에 추가하기
+		// 		url: 'insert.php',
+		// 		type : 'post',
+		// 		data : {
+		// 			requestType : 'schedule',
+		// 			no : originalEventObject.no,
+		// 			date : date.format()
+		// 		}
+		// 	}).done(function (msg) {
+		// 		// we need to copy it, so that multiple events don't have a reference to the same object
+		// 		var copiedEventObject = $.extend({}, originalEventObject);
+		//
+		// 		// assign it the date that was reported
+		// 		copiedEventObject.start = date;
+		// 		copiedEventObject.allDay = allDay;
+		//
+		// 		// render the event on the calendar
+		// 		// the last `true` argument determines if the event 'sticks' (http://arshaw.com/fullcalendar/docs/event_rendering/renderEvent/)
+		// 		var newEvent =  $('#calendar').fullCalendar('renderEvent', copiedEventObject, true);
+		// 		newEvents.push(newEvent[0]._id);
+		// 	});
+		// },
+		// events : function (start, end, timezone, callback) {
+		// 	// $.ajax({
+		// 	// 	url: 'load.php',
+		// 	// 	dataType: 'json',
+		// 	// 	data : {
+		// 	// 		requestType : 'schedule',
+		// 	// 		start : start.format(),
+		// 	// 		end : end.format()
+		// 	// 	},
+		// 	// 	success : function (msg) {
+		// 	// 		for (var i in msg.schedule) {
+		// 	// 			var exercise = $('.exercise[no=''+msg.schedule[i].no+'']');
+		// 	// 			colorDetermine(exercise, msg.schedule[i]);
+		// 	// 			msg.schedule[i].durationEditable = false;
+		// 	// 		}
+		// 	// 		callback(msg.schedule);
+		// 	// 	}
+		// 	// });
+		// },
+		// eventMouseover : function (event, jsEvent, view) {
+		// 	// $(this).find('.fc-content').append('<i class='fa fa-times pull-right'></i>');
+		// 	// $(this).find('i').data('id', event._id);
+		// },
+		// eventMouseout : function (event, jsEvent, view) {
+		// 	$(this).find('i').remove();
+		// },
+		// eventDrop : function (event, delta, revertFunc, jsEvent, ui, view) {
+		// 	var events = $('#calendar').fullCalendar('clientEvents', function (e) {
+		// 		return event.start.format() === e.start.format();
+		// 	});
+		// 	for (var i in events) {
+		// 		if(event._id === events[i]._id){
+		// 			continue;
+		// 		}
+		// 		if (events[i].no === event.no) {
+		// 			alert('이미 추가한 운동입니다');
+		// 			revertFunc();
+		// 			return;
+		// 		}
+		// 	}
+		// 	var start = event.start.clone();
+		//
+		// 	$.ajax({
+		// 		url:'edit.php',
+		// 		method:'post',
+		// 		data: {
+		// 			requestType: 'schedule',
+		// 			no : event.no,
+		// 			originalDate : start.subtract(delta._days,'days').format(),
+		// 			date : event.start.format()
+		// 		}
+		// 	}).done(function (msg){
+		// 		newEvents.push(event._id);
+		// 	}).fail(function (msg) {
+		// 		alert('서버 오류가 발생하여 스케줄을 변경하는데 실패하였습니다.');
+		// 		revertFunc();
+		// 	});
+		// },
+		// viewRender : function (view, element) {
+		// 	for(var i in newEvents) {
+		// 		$('#calendar').fullCalendar('removeEvents', newEvents[i]);
+		// 	}
+		// 	newEvents = [];
+		// },
 		allDayDefault : true
 	});
 
@@ -184,7 +147,7 @@ $(document).ready(function () {
 	/* 운동 추가하기 */
 
 	$('#add-exercise-form .btn-insert').click(function () {
-		var insertObject = { requestType : 'exercise' };
+		var insertObject = {};
 		if ($('#exercise-name').val()===''){ // 운동이름 제한 규칙을 어떻게 둬야 할까?
 			$('.alert').html('운동이름을 입력해주세요');
 			$('.alert').css('display','block');
@@ -228,12 +191,11 @@ $(document).ready(function () {
 			return;
 		}
 		insertObject.date = $('.fc-day.selected').attr('data-date');
+		insertObject.memo = $('#memo').val();
 		$.ajax({
 			url:'insert.php',
 			method:'post',
 			data: insertObject
-		}).done(function (msg){
-			location.reload(); // 그냥 새로고침을 하는게 더 나아보인다
 		}).fail(function (msg) {
 			$('.alert').html('서버오류가 발생하여 운동을 추가하는데 실패하였습니다');
 			$('.alert').css('display','block');
@@ -241,6 +203,8 @@ $(document).ready(function () {
 				$(this).empty();
 				location.reload();
 			});
+		}).done(function (msg){
+			location.reload(); // 그냥 새로고침을 하는게 더 나아보인다
 		});
 	});
 
