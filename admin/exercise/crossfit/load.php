@@ -1,24 +1,21 @@
 <?php
-	require_once (__DIR__.'/../../framework/framework.php');
+	require_once (__DIR__.'/../../../framework/framework.php');
 
 	$msg = array(
 		'status' => 'ok'
 	);
 
 	try {
-		if (!isset($_GET['requestType'])) throw new Exception('no request');
-		if ($_GET['requestType'] === 'exercise') {
-			$msg['exercises'] = AdminExerciseSchedule::loadExercise();
-		} else if ($_GET['requestType'] === 'schedule') {
-			$msg['schedule'] = AdminExerciseSchedule::loadSchedule($_GET['start'], $_GET['end']);
-		} else {
-			new Exception('no request');
+		if (!isset($_GET['requestType'])) throw new Exception('not proper request');
+		if ($_GET['requestType'] == 'exercises') {
+			$msg['exercises'] = AdminExerciseSchedule::loadExercises($_GET['start'], $_GET['end']);
+		} else if ($_GET['requestType'] == 'exercise') {
+			$msg['exercise'] = AdminExerciseSchedule::loadExercise($_GET['no']);
 		}
-
 	} catch (Exception $exception) {
-		$message['status'] = 'error';
-		$message['message'] = $exception->getMessage();
-		
+		$msg['status'] = 'error';
+		$msg['message'] = $exception->getMessage();
+
 		header("HTTP/1.1 410 Gone");
 	}
 

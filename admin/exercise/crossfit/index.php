@@ -8,7 +8,7 @@
 	array('/common/font-awesome/css/font-awesome.css',
 		'/common/css/style.css',
 		'/common/css/style-responsive.css',
-		'../../css/fullcalendar.min.css',
+		'../../css/fullcalendar.css',
 		'../../css/exercise.css'));?>
 	<!--[if lt IE 9]>
 	<script src='https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js'></script>
@@ -70,6 +70,19 @@
 							</div>
 						</div>
 						<div class='alert alert-danger'></div>
+					</div>
+					<div class='exercise-info-view hidden'>
+						<h4></h4>
+						<p class='type'></p>
+						<p class='time'></p>
+						<p class='count'></p>
+						<p class='memo'></p>
+						<button type="button" class="btn btn-default">
+							<i class="fa fa-pencil-square-o"></i> 수정
+						</button>
+						<button type="button" class="btn btn-danger">
+							<i class="fa fa-trash-o"></i> 삭제
+						</button>
 					</div>
 				</aside>
 				<aside class='col-lg-9 mt'>

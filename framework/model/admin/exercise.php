@@ -33,21 +33,42 @@
 			return $pdo->lastInsertId();
 		}
 
-		public static function loadExercises() {
+		public static function loadExercises($start, $end) {
 			$pdo = Database::getInstance();
-			$stmt = $pdo->prepare('SELECT no, name FROM exerciseList ORDER BY no ASC');
-			$stmt -> execute();
+			$stmt = $pdo->prepare('SELECT no, name, date FROM exerciseList
+				WHERE date>=:start AND date<=:end');
+			$stmt -> execute(array(
+				':start'=>$start,
+				':end'=>$end
+			));
 			$rows = $stmt -> fetchAll();
-
 			$exercises = array();
-
 			foreach ($rows as $row) {
 				$exercises[] = array(
 					'no' => $row['no'],
-					'name' => $row['name']
+					'title' => $row['name'],
+					'start' => $row['date']
 				);
 			}
 			return $exercises;
+		}
+		public static function loadExercise($no) {
+			$pdo = Database::getInstance();
+			$stmt = $pdo->prepare('SELECT name,type,time,count,memo FROM exerciseList
+				WHERE no=:no');
+			$stmt -> execute(array(
+				':no'=>$no
+			));
+
+			$row = $stmt -> fetch();
+			$exercise = array(
+				'name' => $row['name'],
+				'type' => $row['type'],
+				'time' => $row['time'],
+				'count' => $row['count'],
+				'memo' => $row['memo']
+			);
+			return $exercise;
 		}
 
 		public static function deleteExercise($no) {

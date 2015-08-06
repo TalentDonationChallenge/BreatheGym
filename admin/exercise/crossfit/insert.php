@@ -4,7 +4,7 @@
 	$msg = array(
 		'status' => 'ok'
 	);
-
+// ***메모에서 공격 들어올 수 있으므로 추후 수정해야함 ***
 	try {
 		// if (!Utility::isManager()) throw new Exception('no previlege'); // 관리자 권한 있는지 확인
 		if (!(isset($_POST['name'])&&isset($_POST['type'])&&isset($_POST['date']))) throw new Exception('not proper request') ;
