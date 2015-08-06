@@ -92,6 +92,7 @@ $(document).ready(function(){
 			}
 		}).done(function (msg) {
 			$('ul.exercises>li.active').each(loadMembers);
+			console.console.log('testing');
 		});
 	});
 });
