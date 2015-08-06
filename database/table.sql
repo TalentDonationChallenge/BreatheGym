@@ -1,7 +1,6 @@
 drop table if exists exerciseRecord;
 drop table if exists attendance;
 drop table if exists achievement;
-drop table if exists exerciseSchedule;
 drop table if exists consulting;
 drop table if exists breatheBoard;
 drop table if exists freeBoard;
@@ -71,13 +70,6 @@ create table exerciseRecord(
 	foreign key (barcode) references gymMember(barcode),
 	foreign key (exerciseNo) references exerciseList(no),
 	primary key(barcode, exerciseNo, date)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
-create table exerciseSchedule(
-	exerciseNo int(6) not null,
-	date date,
-	foreign key (exerciseNo) references exerciseList(no) on delete cascade,
-	primary key (exerciseNo, date)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 create table consulting(
