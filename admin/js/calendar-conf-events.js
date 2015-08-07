@@ -26,7 +26,7 @@ $(document).ready(function () {
 				}
 			});
 		},
-		eventClick : function (calEvent, jsEvent, view) {
+		eventClick : function (calEvent, jsEvent, view) { /* 날짜 선택하기 */
 			$('.exercise-info-view>h4').empty();
 			$('.exercise-info-view>p').empty();
 			$.ajax({
@@ -54,6 +54,15 @@ $(document).ready(function () {
 				$('.exercise-info-view').removeClass('hidden');
 			});
 		},
+		viewRender: function (view, element) {
+			$('.fc-day').click(function () {
+				var isSelected = $(this).hasClass('selected');
+				$('.fc-day').removeClass('selected');
+				if(!isSelected){
+					$(this).addClass('selected');
+				}
+			});
+		},
 		aspectRatio : 1.8,
 		allDayDefault : true,
 		weekends : false
@@ -78,15 +87,6 @@ $(document).ready(function () {
 	});
 	$('.fc-view-container').click(function () {
 		event.stopPropagation();
-	});
-	/* 날짜 선택하기 */
-
-	$('.fc-day').click(function () {
-		var isSelected = $(this).hasClass('selected');
-		$('.fc-day').removeClass('selected');
-		if(!isSelected){
-			$(this).addClass('selected');
-		}
 	});
 
 	/* 운동 추가하기 */
