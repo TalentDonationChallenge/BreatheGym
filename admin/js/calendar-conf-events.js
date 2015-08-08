@@ -38,6 +38,7 @@ $(document).ready(function () {
 			}).done(function (msg) {
 				$('.exercise-info-view>h4').html(msg.exercise.name);
 				$('.exercise-info-view .memo').html(msg.exercise.memo);
+				$('.exercise-info-view').attr('no', calEvent.no);
 				if (msg.exercise.type === '0') {
 					$('.exercise-info-view .type').html('시간');
 					var time = moment(msg.exercise.time, 'HH:mm:ss');
@@ -153,6 +154,16 @@ $(document).ready(function () {
 		});
 	});
 
+	// 삭제
+	$(document).on('click', '.exercise-info-view .delete', function () {
+		$.ajax({
+			url:'delete.php',
+			method: 'post',
+			data: {no : $('.exercise-info-view').attr('no')}
+		}).done(function (msg) {
+			location.reload();
+		});
+	});
 	/* 운동목록 삭제하기 */
 	// $(document).on('mouseenter', '.exercise', function () {
 	// 	$(this).find('span').addClass('fa fa-minus-circle remove');

@@ -77,15 +77,6 @@
 			$stmt -> execute(array(':no'=>$no));
 		}
 
-		public static function deleteSchedule($no, $date) {
-			$pdo = Database::getInstance();
-			$stmt = $pdo->prepare('DELETE FROM exerciseSchedule WHERE exerciseNo = :no AND date = :date');
-			$stmt -> execute(array(
-				':no'=>$no,
-				':date'=>$date
-			));
-		}
-
 		public static function editSchedule($no, $originalDate, $date) {
 			$pdo = Database::getInstance();
 			$stmt = $pdo->prepare('UPDATE exerciseSchedule SET date = :date

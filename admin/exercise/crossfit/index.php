@@ -71,16 +71,16 @@
 						</div>
 						<div class='alert alert-danger'></div>
 					</div>
-					<div class='exercise-info-view hidden'>
+					<div class='exercise-info-view hidden' no=''>
 						<h4></h4>
 						<p class='type'></p>
 						<p class='time'></p>
 						<p class='count'></p>
 						<p class='memo'></p>
-						<button type="button" class="btn btn-default">
+						<button type="button" class="btn btn-default edit">
 							<i class="fa fa-pencil-square-o"></i> 수정
 						</button>
-						<button type="button" class="btn btn-danger">
+						<button type="button" class="btn btn-danger delete">
 							<i class="fa fa-trash-o"></i> 삭제
 						</button>
 					</div>

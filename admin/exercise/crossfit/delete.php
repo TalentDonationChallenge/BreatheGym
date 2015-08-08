@@ -1,19 +1,13 @@
 <?php
-	require_once (__DIR__.'/../../framework/framework.php');
+	require_once (__DIR__.'/../../../framework/framework.php');
 
 	$msg = array(
 		'status' => 'ok'
 	);
 
 	try {
-		if (!isset($_POST['requestType'])) throw new Exception('no request');
-		if ($_POST['requestType'] === 'exercise') {
-			AdminExerciseSchedule::deleteExercise($_POST['no']);
-		} else if ($_POST['requestType'] === 'schedule') {
-			AdminExerciseSchedule::deleteSchedule($_POST['no'], $_POST['date']);
-		} else {
-			new Exception('no request');
-		}
+		if (!isset($_POST['no'])) throw new Exception('no request');
+		AdminExerciseSchedule::deleteExercise($_POST['no']);
 
 	} catch (Exception $exception) {
 		$msg['status'] = 'error';
