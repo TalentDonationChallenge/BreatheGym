@@ -1,10 +1,10 @@
-<?php 
+<?php
 	require_once(__DIR__.'/../../framework/framework.php');
 ?>
 <!DOCTYPE html>
 <html>
 <head>
-	<?php head('브리드 복싱 &amp; 크로스핏 - 관리자메뉴', 
+	<?php head('브리드 복싱 &amp; 크로스핏 - 관리자메뉴',
 	array('/common/font-awesome/css/font-awesome.css',
 		'/common/css/style.css',
 		'/common/css/style-responsive.css',
@@ -47,6 +47,21 @@
 							</tr>
 						</thead>
 						<tbody>
+						<?php $members = AdminRecordManage::
+						getMembers(date('Y-m-d'), $exercises[0]['no'], $_GET['no']);
+						$input = ($exercises[0]['type']==='0') ?
+						'<input type="number" name="count" class="form-control"> 개'
+						: '<input type="number" name="minute" class="form-control"> 분
+						<input type="number" name="second" class="form-control"> 초' ;
+						foreach ($members as $member) { ?>
+							<tr>
+								<td><?=$member['name']?></td>
+								<td><?=$member['barcode']?></td>
+								<td><?=$member['date']?></td>
+								<td class='form-inline col-md-4'><?=$input?></td>
+							</tr>
+						<?php }
+						?>
 						</tbody>
 						</table>
 					</div>
@@ -56,7 +71,7 @@
 						<button class='btn btn-primary' type='submit'>저장</button>
 					</div>
 				</section>
-				
+
 			</div><!-- page end-->
 		</section><!--/wrapper -->
 	</section><!-- /MAIN CONTENT -->

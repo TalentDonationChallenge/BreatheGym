@@ -60,9 +60,9 @@ create table exerciseList(
 	name varchar(20) not null,
 	date date not null,
 	type int(1) not null, -- 일정시간동안 세트수 0, 일정세트 하는데 걸린시간 1
-	time time default 0,
-	count int(3) default 0,
-	memo text default ''
+	time time default 0 not null,
+	count int(3) default 0 not null,
+	memo text default '' not null
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 create table exerciseRecord(
