@@ -31,6 +31,10 @@
 			<div class="panel panel-default">
 				<section class="panel-body table-panel">
 					<ul class="nav nav-tabs exercises">
+					<?php $exercises = AdminRecordManage::getExercises(date('Y-m-d'));
+					foreach ($exercises as $exercise) { ?>
+						<li><a href="#"><?=$exercise['name']?></a></li>
+					<?php } ?>
 					</ul>
 					<div class="table-responsive">
 						<table class="table table-striped">

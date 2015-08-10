@@ -1,22 +1,25 @@
 <?php
-	error_reporting(E_ALL);
-	ini_set("display_errors", 1);
+	// error_reporting(E_ALL);
+	// ini_set("display_errors", 1);
 	require_once(__DIR__ . '/../framework/framework.php');
 	$pdo = Database::getInstance();
 	$pdo->exec(file_get_contents("table.sql"));
 
 
-	//운동종류 추가하기
+	// 운동종류 추가하기
 	$exercises = json_decode(file_get_contents("exerciseList.json"), true);
+	$i=0;
 	foreach ($exercises as $exercise) {
-		$stmt = $pdo->prepare("INSERT INTO exerciseList (name, type, time, count)
-		VALUES (:name, :type, :time, :count)");
+		$stmt = $pdo->prepare("INSERT INTO exerciseList (name, type, date, time, count)
+		VALUES (:name, :type, :date, :time, :count)");
 		$stmt->execute(array(
 			":name"=>$exercise["name"],
 			":type"=>$exercise["type"],
+			":date"=>date("Y-m-d",mktime(0,0,0,date("m"),date("d")+($i%5),date("Y"))),
 			":time"=>$exercise["time"],
 			":count"=>$exercise["count"]
 		));
+		$i++;
 	}
 
 	//언제나 gymMember가 member보다 먼저 추가되어야 합니다

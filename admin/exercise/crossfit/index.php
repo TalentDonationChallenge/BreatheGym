@@ -77,9 +77,6 @@
 						<p class='time'></p>
 						<p class='count'></p>
 						<p class='memo'></p>
-						<button type="button" class="btn btn-default edit">
-							<i class="fa fa-pencil-square-o"></i> 수정
-						</button>
 						<button type="button" class="btn btn-danger delete">
 							<i class="fa fa-trash-o"></i> 삭제
 						</button>
