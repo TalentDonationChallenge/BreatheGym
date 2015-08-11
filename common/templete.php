@@ -31,14 +31,19 @@
 							</div>
 							<div class='form-group'>
 								<input type='password' class='form-control input-lg' placeholder='Password'>
+							</div>			
+							<div class='form-group'>
+								<div class="fb-login-button" data-max-rows="4" data-size="xlarge" data-show-faces="false" data-auto-logout-link="false">
+									<button class='btn btn-primary btn-lg btn-block'>Facebook Sign In</button>
+								</div>
 							</div>
 							<div class='form-group'>
 								<button class='btn btn-primary btn-lg btn-block'>Sign In</button>
 								<span class='pull-right'><a href='#'>Register</a></span><span><a href='#'>Need help?</a></span>
 							</div>
 						</form>
-						<fb:login-button scope="public_profile, email" onlogin="checkLoginState();">
-						</fb:login-button>
+
+						
 					</div>
 					<div class='modal-footer'>
 						<div class='col-md-12'>

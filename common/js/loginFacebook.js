@@ -10,8 +10,8 @@ window.fbAsyncInit = function(){
 //Load the SDK asynchronously
 (function(d, s, id){
 	var js, fjs = d.getElementsByTagName(s)[0];
-	if(d.getElementById(id)){return;}
-	js = d.createElements(s);
+	if(d.getElementById(id)) {return;}
+	js = d.createElement(s);
 	js.id = id;
 	js.src = "//connect.facebook.net/en_US/sdk.js";
 }(document, 'script', 'facebook-jssdk'));
@@ -27,6 +27,7 @@ function testAPI(){
 }
 
 //Checking login status
+/*
 FB.getLoginStatus(function(response){
 	if(response.status === 'connected'){
 		console.log('logged in.');
@@ -34,4 +35,4 @@ FB.getLoginStatus(function(response){
 	else {
 		FB.login();
 	}
-})
+})*/
