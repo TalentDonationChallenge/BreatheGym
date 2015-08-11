@@ -26,8 +26,8 @@
 	$gymMembers = json_decode(file_get_contents("gymMember.json"), true);
 	foreach ($gymMembers as $gymMember) {
 		$stmt = $pdo->prepare('INSERT INTO gymMember
-			(barcode, name, sex, height, weight, registerDate, duration)
-		VALUES (:barcode, :name, :sex, :height, :weight, :registerDate, :duration)');
+			(barcode, name, sex, height, weight, registerDate, duration, branch)
+		VALUES (:barcode, :name, :sex, :height, :weight, :registerDate, :duration, :branch)');
 		$stmt->execute(array(
 			":barcode"=>$gymMember["barcode"],
 			":name"=>$gymMember["name"],
@@ -35,7 +35,8 @@
 			":height"=>$gymMember["height"],
 			":weight"=>$gymMember["weight"],
 			":registerDate"=>$gymMember["registerDate"],
-			":duration"=>$gymMember["duration"]
+			":duration"=>$gymMember["duration"],
+			":branch"=>$gymMember["branch"]
 		));
 	}
 

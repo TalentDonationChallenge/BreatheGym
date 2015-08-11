@@ -6,7 +6,8 @@
 		"height":145,
 		"weight":41,
 		"registerDate":"2015-07-19",
-		"duration":2
+		"duration":2,
+		"branch":2
 	},
 	{
 		"barcode":"k4k23k5asdf",
@@ -15,7 +16,8 @@
 		"height":176,
 		"weight":65,
 		"registerDate":"2015-07-21",
-		"duration":3
+		"duration":3,
+		"branch":2
 	},
 	{
 		"barcode":"djfdjkfh1823",
@@ -24,7 +26,8 @@
 		"height":160,
 		"weight":56,
 		"registerDate":"2015-07-13",
-		"duration":1
+		"duration":1,
+		"branch":2
 	},
 	{
 		"barcode":"dfadf7812",
@@ -33,7 +36,8 @@
 		"height":165,
 		"weight":54,
 		"registerDate":"2015-02-19",
-		"duration":3
+		"duration":3,
+		"branch":2
 	},
 	{
 		"barcode":"adsfhg1273",
@@ -42,7 +46,8 @@
 		"height":159,
 		"weight":50,
 		"registerDate":"2015-03-19",
-		"duration":8
+		"duration":8,
+		"branch":2
 	},
 	{
 		"barcode":"qh1y345qewr",
@@ -51,7 +56,8 @@
 		"height":160,
 		"weight":58,
 		"registerDate":"2014-07-19",
-		"duration":12
+		"duration":1,
+		"branch":22
 	},
 	{
 		"barcode":"ddu12h3q",
@@ -60,7 +66,8 @@
 		"height":180,
 		"weight":65,
 		"registerDate":"2015-01-12",
-		"duration":7
+		"duration":7,
+		"branch":2
 	},
 	{
 		"barcode":"sid919ndu18",
@@ -69,7 +76,8 @@
 		"height":165,
 		"weight":55,
 		"registerDate":"2015-01-19",
-		"duration":11
+		"duration":1,
+		"branch":21
 	},
 	{
 		"barcode":"s718du98",
@@ -78,8 +86,9 @@
 		"height":170,
 		"weight":60,
 		"registerDate":"2014-07-19",
-		"duration":0
-	},	
+		"duration":0,
+		"branch":2
+	},
 	{
 		"barcode":"juq8w9e01",
 		"name":"조지",
@@ -87,7 +96,8 @@
 		"height":167,
 		"weight":65,
 		"registerDate":"2015-01-19",
-		"duration":0
+		"duration":0,
+		"branch":2
 	},
 	{
 		"barcode":"u8w9e0rqq23",
@@ -96,7 +106,8 @@
 		"height":175,
 		"weight":70,
 		"registerDate":"2015-03-19",
-		"duration":0
+		"duration":0,
+		"branch":2
 	},
 	{
 		"barcode":"jd90qid9q0",
@@ -105,7 +116,8 @@
 		"height":180,
 		"weight":65,
 		"registerDate":"2015-01-11",
-		"duration":0
+		"duration":0,
+		"branch":2
 	},
 	{
 		"barcode":"s891ie81",
@@ -114,7 +126,8 @@
 		"height":165,
 		"weight":55,
 		"registerDate":"2015-04-19",
-		"duration":5
+		"duration":5,
+		"branch":2
 
 	},
 	{
@@ -124,7 +137,8 @@
 		"height":155,
 		"weight":50,
 		"registerDate":"2014-07-19",
-		"duration":0
+		"duration":0,
+		"branch":2
 	},
 	{
 		"barcode":"hd2yq7172",
@@ -133,7 +147,8 @@
 		"height":175,
 		"weight":70,
 		"registerDate":"1992-02-19",
-		"duration":0
+		"duration":0,
+		"branch":2
 	},
 	{
 		"barcode":"ud8q8e9fqs",
@@ -142,7 +157,8 @@
 		"height":180,
 		"weight":90,
 		"registerDate":"2015-01-11",
-		"duration":0
+		"duration":0,
+		"branch":2
 	},
 	{
 		"barcode":"ud8q8ei9v",
@@ -151,7 +167,8 @@
 		"height":165,
 		"weight":65,
 		"registerDate":"2015-01-19",
-		"duration":0
+		"duration":0,
+		"branch":2
 		},
 	{
 		"barcode":"uduf8123aa",
@@ -160,8 +177,9 @@
 		"height":170,
 		"weight":65,
 		"registerDate":"2015-07-19",
-		"duration":0
-	},		
+		"duration":0,
+		"branch":2
+	},
 	{
 		"barcode":"hd7e8q8d8r",
 		"name":"김정은",
@@ -169,7 +187,8 @@
 		"height":180,
 		"weight":80,
 		"registerDate":"2015-06-09",
-		"duration":2
+		"duration":2,
+		"branch":2
 	},
 	{
 		"barcode":"ue8e194qeb",
@@ -178,7 +197,8 @@
 		"height":160,
 		"weight":65,
 		"registerDate":"2015-05-19",
-		"duration":0
+		"duration":0,
+		"branch":2
 	},
 	{
 		"barcode":"a8d8fi0f",
@@ -187,7 +207,8 @@
 		"height":165,
 		"weight":60,
 		"registerDate":"2015-05-19",
-		"duration":0
+		"duration":0,
+		"branch":1
 	},
 	{
 		"barcode":"jcu99o183",
@@ -196,7 +217,8 @@
 		"height":162,
 		"weight":65,
 		"registerDate":"2015-03-19",
-		"duration":0
+		"duration":0,
+		"branch":1
 
 	},
 	{
@@ -206,7 +228,8 @@
 		"height":175,
 		"weight":70,
 		"registerDate":"2015-03-11",
-		"duration":0
+		"duration":0,
+		"branch":1
 	},
 	{
 		"barcode":"jdfq7ig0e",
@@ -215,7 +238,8 @@
 		"height":165,
 		"weight":55,
 		"registerDate":"2015-01-19",
-		"duration":0
+		"duration":0,
+		"branch":1
 	},
 	{
 		"barcode":"jfyf7q719",
@@ -224,7 +248,8 @@
 		"height":165,
 		"weight":50,
 		"registerDate":"2015-07-11",
-		"duration":0
+		"duration":0,
+		"branch":1
 	},
 	{
 		"barcode":"kas9d0q0e",
@@ -233,7 +258,8 @@
 		"height":155,
 		"weight":50,
 		"registerDate":"2015-07-19",
-		"duration":1
+		"duration":1,
+		"branch":1
 	},
 	{
 		"barcode":"ifu7f781",
@@ -242,7 +268,8 @@
 		"height":156,
 		"weight":49,
 		"registerDate":"2015-01-10",
-		"duration":0
+		"duration":0,
+		"branch":1
 	},
 	{
 		"barcode":"jfjuef13",
@@ -251,7 +278,8 @@
 		"height":155,
 		"weight":55,
 		"registerDate":"2015-07-19",
-		"duration":0
+		"duration":0,
+		"branch":1
 	},
 	{
 		"barcode":"8d8d8fq0fu",
@@ -260,7 +288,8 @@
 		"height":158,
 		"weight":65,
 		"registerDate":"2015-02-11",
-		"duration":0
+		"duration":0,
+		"branch":1
 	},
 	{
 		"barcode":"ud7df7a99",
@@ -269,6 +298,7 @@
 		"height":165,
 		"weight":55,
 		"registerDate":"2015-01-19",
-		"duration":0
+		"duration":0,
+		"branch":1
 	}
 ]
