@@ -1,7 +1,8 @@
+-- 외래키 사용시 reference가 되는 테이블은 먼저 생성하고 나중에 없앤다
+
 drop table if exists exerciseRecord;
 drop table if exists attendance;
 drop table if exists achievement;
-drop table if exists exerciseSchedule;
 drop table if exists consulting;
 drop table if exists breatheBoard;
 drop table if exists freeBoard;
@@ -12,7 +13,6 @@ drop table if exists boxingList;
 drop table if exists boxingLevel;
 drop table if exists gymMember;
 
-
 create table gymMember(
 	barcode varchar(30) primary key,
 	name varchar(30) not null,
@@ -22,7 +22,8 @@ create table gymMember(
 	height int(3) not null,
 	weight int(3) not null,
 	registerDate date not null,
-	duration int(3) not null
+	duration int(3) not null,
+	branch int(1) not null default 1
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 create table member(
@@ -57,9 +58,11 @@ create table achievement(
 create table exerciseList(
 	no int(6) not null primary key AUTO_INCREMENT,
 	name varchar(20) not null,
+	date date not null,
 	type int(1) not null, -- 일정시간동안 세트수 0, 일정세트 하는데 걸린시간 1
-	time time default 0,
-	count int(3) default 0
+	time time default 0 not null,
+	count int(3) default 0 not null,
+	memo text default '' not null
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 create table exerciseRecord(
@@ -67,17 +70,9 @@ create table exerciseRecord(
 	exerciseNo int(6) not null,
 	timeRecord time,
 	countRecord int(3),
-	date date not null,
 	foreign key (barcode) references gymMember(barcode),
 	foreign key (exerciseNo) references exerciseList(no),
-	primary key(barcode, exerciseNo, date)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
-create table exerciseSchedule(
-	exerciseNo int(6) not null,
-	date date,
-	foreign key (exerciseNo) references exerciseList(no) on delete cascade,
-	primary key (exerciseNo, date)
+	primary key(barcode, exerciseNo)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 create table consulting(

@@ -23,16 +23,16 @@
 
 	<?php
 			// 짐 전체의  랭킹을 가져옵니다.
-			$breathRanking = BreathRanking();
-			$courseAforBreathMember = $breathRanking[0];
-			$courseBforBreathMember = $breathRanking[1];
-			$courseCforBreathMember = $breathRanking[2];
+			// $breathRanking = BreathRanking();
+			// $courseAforBreathMember = $breathRanking[0];
+			// $courseBforBreathMember = $breathRanking[1];
+			// $courseCforBreathMember = $breathRanking[2];
 
-			//회원의 랭킹을 가져옵니다.
-			$gymMemverrecord = getUserExerciseRecord('8d8d8fq0fu');
-			$courseAforGymMember= $gymMemverrecord[0];
-			$courseBforGymMember = $gymMemverrecord[1];
-			$courseCforGymMember = $gymMemverrecord[2];
+			// //회원의 랭킹을 가져옵니다.
+			// $gymMemverrecord = getUserExerciseRecord('8d8d8fq0fu');
+			// $courseAforGymMember= $gymMemverrecord[0];
+			// $courseBforGymMember = $gymMemverrecord[1];
+			// $courseCforGymMember = $gymMemverrecord[2];
 
 
 	?>
@@ -73,18 +73,18 @@
 					                                <tbody>
 					                                    <tr>
 					                                        
-					                                        <td><?php printf($courseAforBreathMember[0]['member']) ?></td>
-					                                        <td><?php printf($courseAforBreathMember[0]['count']) ?>개</td>
+					                                        <td><?php //printf($courseAforBreathMember[0]['member']) ?></td>
+					                                        <td><?php //printf($courseAforBreathMember[0]['count']) ?>개</td>
 					                                        
 					                                    </tr>
 					                                    <tr>
-					                                        <td><?php printf($courseAforBreathMember[1]['member']) ?></td>
-					                                        <td><?php printf($courseAforBreathMember[1]['count']) ?>개</td>
+					                                        <td><?php //printf($courseAforBreathMember[1]['member']) ?></td>
+					                                        <td><?php //printf($courseAforBreathMember[1]['count']) ?>개</td>
 					                                        
 					                                    </tr>
 					                                    <tr>
-					                                        <td><?php printf($courseAforBreathMember[2]['member']) ?></td>
-					                                        <td><?php printf($courseAforBreathMember[2]['count']) ?>개</td>
+					                                        <td><?php //printf($courseAforBreathMember[2]['member']) ?></td>
+					                                        <td><?php //printf($courseAforBreathMember[2]['count']) ?>개</td>
 					                                       
 					                                    </tr>
 					                                </tbody>
@@ -109,18 +109,18 @@
 					                                <tbody>
 					                                    <tr>
 					                                        
-					                                         <td><?php printf($courseBforBreathMember[0]['member']) ?></td>
-					                                         <td><?php printf($courseBforBreathMember[0]['count']) ?>개</td>
+					                                         <td><?php //printf($courseBforBreathMember[0]['member']) ?></td>
+					                                         <td><?php //printf($courseBforBreathMember[0]['count']) ?>개</td>
 					                                        
 					                                    </tr>
 					                                    <tr>
-					                                          <td><?php printf($courseBforBreathMember[1]['member']) ?></td>
-					                                          <td><?php printf($courseBforBreathMember[1]['count']) ?>개</td>
+					                                          <td><?php //printf($courseBforBreathMember[1]['member']) ?></td>
+					                                          <td><?php //printf($courseBforBreathMember[1]['count']) ?>개</td>
 					                                        
 					                                    </tr>
 					                                    <tr>
-					                                         <td><?php printf($courseBforBreathMember[2]['member']) ?></td>
-					                                         <td><?php printf($courseBforBreathMember[2]['count']) ?>개</td>
+					                                         <td><?php //printf($courseBforBreathMember[2]['member']) ?></td>
+					                                         <td><?php //printf($courseBforBreathMember[2]['count']) ?>개</td>
 					                                       
 					                                    </tr>
 					                                </tbody>
@@ -145,18 +145,18 @@
 					                                <tbody>
 					                                    <tr>
 					                                        
-					                                         <td><?php printf($courseCforBreathMember[0]['member']) ?></td>
-					                                         <td><?php printf($courseCforBreathMember[0]['count']) ?></td>
+					                                         <td><?php //printf($courseCforBreathMember[0]['member']) ?></td>
+					                                         <td><?php //printf($courseCforBreathMember[0]['count']) ?></td>
 					                                        
 					                                    </tr>
 					                                    <tr>
-					                                        <td><?php printf($courseCforBreathMember[1]['member']) ?></td>
-					                                         <td><?php printf($courseCforBreathMember[1]['count']) ?></td>
+					                                        <td><?php //printf($courseCforBreathMember[1]['member']) ?></td>
+					                                         <td><?php //printf($courseCforBreathMember[1]['count']) ?></td>
 					                                        
 					                                    </tr>
 					                                    <tr>
-					                                         <td><?php printf($courseCforBreathMember[2]['member']) ?></td>
-					                                         <td><?php printf($courseCforBreathMember[2]['count']) ?></td>
+					                                         <td><?php //printf($courseCforBreathMember[2]['member']) ?></td>
+					                                         <td><?php //printf($courseCforBreathMember[2]['count']) ?></td>
 					                                       
 					                                    </tr>
 					                                </tbody>
@@ -187,18 +187,18 @@
                                 <tbody>
                                     <tr>
                                         
-                                         <td><?php printf($courseAforGymMember['name'])?></td>
-                                        <td><?php echo($courseAforGymMember['ranking']."%") ?></td>
+                                         <td><?php //printf($courseAforGymMember['name'])?></td>
+                                        <td><?php //echo($courseAforGymMember['ranking']."%") ?></td>
                                         
                                     </tr>
                                     <tr>
-                                        <td><?php printf($courseBforGymMember['name'])?></td>
-                                        <td><?php echo($courseBforGymMember['ranking']."%")?></td>
+                                        <td><?php //printf($courseBforGymMember['name'])?></td>
+                                        <td><?php //echo($courseBforGymMember['ranking']."%")?></td>
                                         
                                     </tr>
                                     <tr>
-                                        <td><?php printf($courseCforGymMember['name'])?></td>
-                                        <td><?php echo($courseCforGymMember['ranking']."%")?></td>
+                                        <td><?php //printf($courseCforGymMember['name'])?></td>
+                                        <td><?php //echo($courseCforGymMember['ranking']."%")?></td>
                                        
                                     </tr>
                                 </tbody>

@@ -1,9 +1,6 @@
 <?php 
-	error_reporting(E_ALL);
-	ini_set("display_errors", 1);
 	require_once(__DIR__.'/../framework/framework.php');
 	require_once(__DIR__.'/memberRecordsFromServer.php');
-	date_default_timezone_set('Asia/Seoul');
 ?>
 <!DOCTYPE html>
 <html>
@@ -22,12 +19,12 @@
 
 <!--이것은 지금 로그인 한 사람이 이름이 강민호, 바코드 djdbffuq123 인 사람이라고 생각하고 코딩한 것임 -->
 	<?php
-		$datearray = getUserDurationDate('jfyf7q719');
-		$gymMemverrecord = getUserExerciseRecord('jfyf7q719');
-			$courseA = $gymMemverrecord[0]['ranking'];
-			$courseB = $gymMemverrecord[1]['ranking'];
-			$courseC = $gymMemverrecord[2]['ranking'];
-			$myrecordPercentage = ((($courseA + $courseB + $courseC)/3));
+		// $datearray = getUserDurationDate('jfyf7q719');
+		// $gymMemverrecord = getUserExerciseRecord('jfyf7q719');
+		// 	$courseA = $gymMemverrecord[0]['ranking'];
+		// 	$courseB = $gymMemverrecord[1]['ranking'];
+		// 	$courseC = $gymMemverrecord[2]['ranking'];
+		// 	$myrecordPercentage = ((($courseA + $courseB + $courseC)/3));
 			
 		//print_r($datearray);
 	?>
@@ -43,16 +40,16 @@
 					<div class = "row3" id ="menucontainer">
 						<div class = "main-chart" >
 							<div>
-								<p>어서오세요 <?php printf($datearray[0]) ?>회원님</p>
+								<p>어서오세요 <?php //printf($datearray[0]) ?>회원님</p>
 							</div>
 							<div class = "row mtbox">
 								<div class = "col-md-3 col-sm-3 col-md-offset1 box0">
                                     <div class = "box1">
 										
                                         <h3>상위</h3>
-                                        <h4><?php printf($myrecordPercentage)?>%</h4>
+                                        <h4>%</h4>
 									</div>
-									<p>당신은 상위 <?php printf($myrecordPercentage)?>%! 분발하세</p>
+									<p>당신은 상위 %! 분발하세</p>
 								</div>
 								<div class = "col-md-3 col-sm-3 col-md-offset1 box0">
 									<div class = "box1">
@@ -66,7 +63,7 @@
 									<div class = "box1">
 										
 										<h3>출석률</h3>
-										<h4><?php printf($datearray[2])?>%</h4>
+										<h4><?php //printf($datearray[2])?>%</h4>
 									</div>
 									<p>이번달 출석률 왜이럼?</p>
 								</div>
@@ -74,9 +71,9 @@
 									<div class = "box1">
 										
 										<h3>등록일</h3>
-										<h4><?php printf($datearray[1])?></h4>
+										<h4><?php //printf($datearray[1])?></h4>
 									</div>
-									<p>남은 <?php printf($datearray[3])?> 일동안 열심히 해보자!</p>
+									<p>남은 <?php// printf($datearray[3])?> 일동안 열심히 해보자!</p>
 								</div>
 							</div>
 						</div>
@@ -114,7 +111,7 @@
 	                                </div>
 	                                  
 	                                <div id = "mrecord">
-	                              		<h4>오늘 회원님은 상위 <?php printf($myrecordPercentage)?>%의 기록을 달성하였습니다.</h4>
+	                              		<h4>오늘 회원님은 상위 <?php //printf($myrecordPercentage)?>%의 기록을 달성하였습니다.</h4>
 	                            	</div>
 	                                 
 	                            </div>

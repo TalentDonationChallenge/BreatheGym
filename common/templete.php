@@ -8,12 +8,12 @@
 	<title><?=$title?></title>
 	<meta name='viewport' content='width=device-width, initial-scale=1, maximum-scale=1'>
 	<link rel='stylesheet' href='/common/css/bootstrap.min.css'>
-	<?php 
+	<?php
 		if(isset($cssFiles)){
 			foreach ($cssFiles as $cssFile): ?>
 			<link rel='stylesheet' href='<?= $cssFile ?>' type='text/css' />
 			<?php endforeach;
-		} 
+		}
 	}
 	/* 로그인창 부분 */
 	function login() { ?>
@@ -47,7 +47,7 @@
 					</div>
 					<div class='modal-footer'>
 						<div class='col-md-12'>
-						</div>  
+						</div>
 					</div>
 				</div>
 			</div>
@@ -120,7 +120,7 @@
 				</div>
 			</div>
 		</nav>
-	<?php } 
+	<?php }
 	/* 관리자메뉴 header */
 	function adminHeader() { ?>
 		<header class='header black-bg'>
@@ -128,7 +128,7 @@
 				<div class='fa fa-bars tooltips' data-placement='right' data-original-title='메뉴 보이기/끄기'></div>
 			</div>
 			<!--logo start-->
-			<a href='index.php' class='logo'><b>관리자메뉴</b></a>
+			<a href='/admin/index.php' class='logo'><b>관리자메뉴</b></a>
 			<!--logo end-->
 			<div class='top-menu'>
 				<ul class='nav pull-right top-menu'>
@@ -137,7 +137,7 @@
 				</ul>
 			</div>
 		</header>
-	<?php } 
+	<?php }
 	/* 관리자 sidebar */
 	function adminSidebar($active) { ?>
 		<aside>
@@ -152,10 +152,14 @@
 				</li>
 
 				<li class='sub-menu'>
-					<a <?=$active==='member'?"class='active'":""?> href='/admin/member/index.php' >
+					<a <?=$active==='member'?"class='active'":""?> href='#' >
 						<i class='fa fa-desktop'></i>
 						<span>회원관리</span>
 					</a>
+					<ul class="sub">
+					<li><a href="/admin/member/index.php?no=1">1호점</a></li>
+					<li><a href="/admin/member/index.php?no=2">2호점</a></li>
+					</ul>
 				</li>
 
 				<li class='sub-menu'>
@@ -165,17 +169,24 @@
 					</a>
 				</li>
 				<li class='sub-menu'>
-					<a <?=$active==='exercise'?"class='active'":""?> href='/admin/exercise/index.php' >
+					<a <?=$active==='exercise'?"class='active'":""?> href='#' >
 						<i class='fa fa-book'></i>
 						<span>운동관리</span>
 					</a>
-
+					<ul class="sub">
+					<li><a href="/admin/exercise/boxing/index.php">복싱</a></li>
+					<li><a href="/admin/exercise/crossfit/index.php">크로스핏</a></li>
+					</ul>
 				</li>
 				<li class='sub-menu'>
-					<a <?=$active==='record'?"class='active'":""?> href='/admin/record/index.php' >
+					<a <?=$active==='record'?"class='active'":""?> href='#' >
 						<i class='fa fa-pencil'></i>
 						<span>기록관리</span>
 					</a>
+					<ul class="sub">
+					<li><a href="/admin/record/index.php?no=1">1호점</a></li>
+					<li><a href="/admin/record/index.php?no=2">2호점</a></li>
+					</ul>
 				</li>
 				<li class='sub-menu'>
 					<a <?=$active==='consulting'?"class='active'":""?> href='/admin/consulting/index.php' >
@@ -183,7 +194,7 @@
 						<span>상담</span>
 					</a>
 				</li>
-				
+
 				</ul>
 			<!-- sidebar menu end-->
 			</div>
@@ -205,7 +216,7 @@
 				</ul>
 			</div>
 		</header>
-	<?php } 
+	<?php }
 	/* 운동관리 sidebar */
 	function memberSidebar($active) { ?>
 		<aside>
@@ -236,7 +247,7 @@
 						<span>MyPage</span>
 					</a>
 				</li>
-				
+
 				</ul>
 			<!-- sidebar menu end-->
 			</div>
@@ -247,7 +258,7 @@
 	function scripts($jsFiles) { ?>
 		<script src='/common/js/jquery-1.11.1.min.js'></script>
 		<script src='/common/js/bootstrap.min.js'></script>
-		<?php 
+		<?php
 		if(isset($jsFiles)){
 			foreach ($jsFiles as $jsFile): ?>
 			<script src='<?= $jsFile ?>'></script>

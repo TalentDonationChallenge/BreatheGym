@@ -1,10 +1,10 @@
-<?php 
+<?php
 	require_once(__DIR__.'/../framework/framework.php');
 ?>
 <!DOCTYPE html>
 <html>
 <head>
-	<?php head('브리드 복싱 &amp; 크로스핏 - 관리자메뉴', 
+	<?php head('브리드 복싱 &amp; 크로스핏 - 관리자메뉴',
 	array('/common/font-awesome/css/font-awesome.css',
 		'/common/css/style.css',
 		'/common/css/style-responsive.css'));?>
@@ -22,7 +22,7 @@
 	<!--sidebar end-->
 	<script src="/common/js/jquery-1.11.1.min.js"></script>
 	<script src="/common/js/bootstrap.min.js"></script>
-	<script src="/js/jquery.dcjqaccordion.2.7.js"></script>
-	<script src="/js/common-scripts.js"></script>
+	<script src="js/jquery.dcjqaccordion.2.7.js"></script>
+	<script src="js/common-scripts.js"></script>
 </body>
 </html>
