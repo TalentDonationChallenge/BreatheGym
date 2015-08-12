@@ -12,13 +12,15 @@
 			$msg['exercises'] = AdminRecordManage::getExercises(date("Y-m-d"));
 		} else if ($_GET['requestType'] === 'member') {
 			$msg['members'] = AdminRecordManage::getMembers(date("Y-m-d"),$_GET['exerciseNo'], $_GET['branch']);
+		} else if ($_GET['requestType'] === 'filledMember') {
+			$msg['members'] = AdminRecordManage::getFilledMemebers(date("Y-m-d"),$_GET['exerciseNo'], $_GET['branch']);
 		} else {
 			new Exception('no request');
 		}
 
 	} catch (Exception $exception) {
-		$message['status'] = 'error';
-		$message['message'] = $exception->getMessage();
+		$msg['status'] = 'error';
+		$msg['message'] = $exception->getMessage();
 
 		header("HTTP/1.1 410 Gone");
 	}

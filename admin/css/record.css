@@ -10,3 +10,7 @@
 	font-weight : bold;
 	border-bottom-style : solid;
 }
+.exercises span {
+	color :#337ab7;
+	cursor: pointer;
+}
