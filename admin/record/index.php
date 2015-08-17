@@ -1,5 +1,10 @@
 <?php
 	require_once(__DIR__.'/../../framework/framework.php');
+	if (isset($_GET['no'])&&($_GET['no']==='1'||$_GET['no']==='2')) {
+		$branch = $_GET['no'];
+	} else {
+		//에러로 보내버리기
+	}
 ?>
 <!DOCTYPE html>
 <html>
@@ -24,17 +29,13 @@
 	<?php adminSidebar("record"); ?>
 	<!--sidebar end-->
 	<!-- Main content start -->
-	<section id="main-content">
+	<section id="main-content" branch='<?=$_GET["no"]?>'>
 		<section class="wrapper">
-			<h3><i class="fa fa-angle-right"></i> 기록관리 </h3>
+			<h3><i class="fa fa-angle-right"></i> 기록관리 (<?=$branch?>호점)</h3>
 			<!-- page start-->
 			<div class="panel panel-default">
 				<section class="panel-body table-panel">
 					<ul class="nav nav-tabs exercises">
-					<?php $exercises = AdminRecordManage::getExercises(date('Y-m-d'));
-					foreach ($exercises as $exercise) { ?>
-						<li><a href="#"><?=$exercise['name']?></a></li>
-					<?php } ?>
 					</ul>
 					<div class="table-responsive">
 						<table class="table table-striped">
@@ -47,21 +48,9 @@
 							</tr>
 						</thead>
 						<tbody>
-						<?php $members = AdminRecordManage::
-						getMembers(date('Y-m-d'), $exercises[0]['no'], $_GET['no']);
-						$input = ($exercises[0]['type']==='0') ?
-						'<input type="number" name="count" class="form-control"> 개'
-						: '<input type="number" name="minute" class="form-control"> 분
-						<input type="number" name="second" class="form-control"> 초' ;
-						foreach ($members as $member) { ?>
-							<tr>
-								<td><?=$member['name']?></td>
-								<td><?=$member['barcode']?></td>
-								<td><?=$member['date']?></td>
-								<td class='form-inline col-md-4'><?=$input?></td>
-							</tr>
-						<?php }
-						?>
+							<!-- <td class="info" colspan="4">
+								hi
+							</td> -->
 						</tbody>
 						</table>
 					</div>
