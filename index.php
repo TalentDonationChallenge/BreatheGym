@@ -10,8 +10,8 @@
 	<![endif]-->
 </head>
 <body>
+
 	<!-- 페이스북 SDK load -->
-	<?php scripts(array('/common/js/loginFacebook.js')) ?>
 	<?php
 		login();
 		navigation();

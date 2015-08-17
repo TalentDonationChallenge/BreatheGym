@@ -1,6 +1,5 @@
 <?php
 	require_once(__DIR__.'/../framework/framework.php');
-
 	/* 헤드부분 function */
 	function head ($title, $cssFiles) { ?>
 	<meta http-equiv='content-type' content='text/html; charset=UTF-8'>
@@ -8,6 +7,10 @@
 	<title><?=$title?></title>
 	<meta name='viewport' content='width=device-width, initial-scale=1, maximum-scale=1'>
 	<link rel='stylesheet' href='/common/css/bootstrap.min.css'>
+	<div id="fb-root"></div>
+
+	<script src = "/common/js/facebook.js"></script>
+	
 	<?php
 		if(isset($cssFiles)){
 			foreach ($cssFiles as $cssFile): ?>
@@ -33,14 +36,17 @@
 								<input type='password' class='form-control input-lg' placeholder='Password'>
 							</div>			
 							<div class='form-group'>
-								<div class="fb-login-button" data-max-rows="4" data-size="xlarge" data-show-faces="false" data-auto-logout-link="false">
-									<button class='btn btn-primary btn-lg btn-block'>Facebook Sign In</button>
-								</div>
+								<!--<button onClick="FB.login();" id="fbLogin" class='btn btn-primary btn-lg btn-block'>Facebook Sign In</button>-->
 							</div>
 							<div class='form-group'>
+								<button class='btn btn-primary btn-lg btn-block' onClick="login();">FacebookLogin</button>
+								<!--<div class="fb-login-button" data-max-rows="1" data-size="medium" data-show-faces="false" data-auto-logout-link="false"></div>-->
 								<button class='btn btn-primary btn-lg btn-block'>Sign In</button>
 								<span class='pull-right'><a href='#'>Register</a></span><span><a href='#'>Need help?</a></span>
+								
 							</div>
+							
+							<div id="status"></div>
 						</form>
 
 						
@@ -65,6 +71,7 @@
 						<span class='icon-bar'></span>
 					</button>
 					<a class='navbar-brand' href='#'>Breathe Gym</a>
+					<button>로그아웃</button>
 				</div>
 
 				<div class='collapse navbar-collapse' id='bs-example-navbar-collapse-1'>
