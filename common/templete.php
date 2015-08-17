@@ -9,7 +9,7 @@
 	<link rel='stylesheet' href='/common/css/bootstrap.min.css'>
 	<div id="fb-root"></div>
 
-	<script src = "/common/js/facebook.js"></script>
+	
 	
 	<?php
 		if(isset($cssFiles)){
@@ -39,7 +39,7 @@
 								<!--<button onClick="FB.login();" id="fbLogin" class='btn btn-primary btn-lg btn-block'>Facebook Sign In</button>-->
 							</div>
 							<div class='form-group'>
-								<button class='btn btn-primary btn-lg btn-block' onClick="login();">FacebookLogin</button>
+								<button id='facebookLogin' class='btn btn-primary btn-lg btn-block'>FacebookLogin</button>
 								<!--<div class="fb-login-button" data-max-rows="1" data-size="medium" data-show-faces="false" data-auto-logout-link="false"></div>-->
 								<button class='btn btn-primary btn-lg btn-block'>Sign In</button>
 								<span class='pull-right'><a href='#'>Register</a></span><span><a href='#'>Need help?</a></span>
@@ -71,7 +71,6 @@
 						<span class='icon-bar'></span>
 					</button>
 					<a class='navbar-brand' href='#'>Breathe Gym</a>
-					<button>로그아웃</button>
 				</div>
 
 				<div class='collapse navbar-collapse' id='bs-example-navbar-collapse-1'>
@@ -122,7 +121,7 @@
 					</ul>
 					<ul class='nav navbar-nav navbar-right'>
 					<li><a href='admin/index.php'>관리자메뉴</a></li>
-					<li><a class='login' href='#'>로그인</a></li>
+					<li><a class='login' id='login' href='#'>로그인</a></li>
 					</ul>
 				</div>
 			</div>
@@ -265,6 +264,7 @@
 	function scripts($jsFiles) { ?>
 		<script src='/common/js/jquery-1.11.1.min.js'></script>
 		<script src='/common/js/bootstrap.min.js'></script>
+		<script src = "/common/js/facebook.js"></script>
 		<?php
 		if(isset($jsFiles)){
 			foreach ($jsFiles as $jsFile): ?>

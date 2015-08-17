@@ -13,27 +13,37 @@
   			
 		};
 
+		function login(){
+			FB.login(function(response){
+					if(response.status === 'connected'){
+	  					window.close();
+	  					$('#loginModal').removeClass("show");
+	  					testAPI();
+	  				} else if (response.status === 'not_authorized'){
+	  					$('#login').innerHTML = '로그인';
+	  					document.getElementById('status').innerHTML = 'Please log ' +
+	  					'into this app';
+	  				} else {
+	  					document.getElementById('login').innerHTML = '로그인';
+	  					document.getElementById('status').innerHTML = 'Please log ' +
+	  					'into Facebook';
+	  				}
+				}, {scope:'public_profile, email'})
+		}
+
+
 		function logout(){
 			FB.logout(function(response){
   				statusChangeCallback(response);
   			});
 		}
+		
+		$('document').ready(function(){
+			$('#facebookLogin').bind("click", function(){
+  				login();
+  			});
+		});
 
-		function login(){
-			FB.login(function(response){
-  				if(response.status === 'connected'){
-  					testAPI();
-  				} else if (response.status === 'not_authorized'){
-  					document.getElementById('status').innerHTML = 'Please log ' +
-  					'into this app';
-  				} else {
-  					document.getElementById('status').innerHTML = 'Please log ' +
-  					'into Facebook';
-  				}
-  			}, {scope:'public_profile, email'});
-		}
-		
-		
 		(function(d, s, id) {
   			var js, fjs = d.getElementsByTagName(s)[0];
 			if (d.getElementById(id)) return;
@@ -41,7 +51,6 @@
 	 		js.src = "//connect.facebook.net/ko_KR/sdk.js#xfbml=1&version=v2.4&appId=114295028916691";
 	 		fjs.parentNode.insertBefore(js, fjs);
 		}(document, 'script', 'facebook-jssdk'));
-		
 
 		function statusChangeCallback(response) {
 		    console.log('statusChangeCallback');
@@ -54,14 +63,12 @@
 		      // Logged into your app and Facebook.
 		      testAPI();
 		    } else if (response.status === 'not_authorized') {
-		      // The person is logged into Facebook, but not your app.
-		      document.getElementById('status').innerHTML = 'Please log ' +
-		        'into this app.';
+		     	// The person is logged into Facebook, but not your app.
+		      	logoutAPI();
 		    } else {
-		      // The person is not logged into Facebook, so we're not sure if
-		      // they are logged into this app or not.
-		      document.getElementById('status').innerHTML = 'Please log ' +
-		        'into Facebook.';
+		       // The person is not logged into Facebook, so we're not sure if
+		       // they are logged into this app or not.
+			   logoutAPI();
 		    }
 		  }
 
@@ -72,15 +79,28 @@
 			});
 		}
 
+
 		// Function implemented after logging in
 		function testAPI(){
-			console.log('Welcome! Fetching your information....');
-			document.getElementsByClassName('login').innerHTML = '로그아웃';
-			FB.api('/me', function(response) {
-				console.log('Successful login for : ' + response.name);
-				document.getElementById('status').innerHTML =
-				 'Thanks for loggin in, '+ response.name + '!';
+				console.log('Welcome! Fetching your information....');
+				document.getElementById('login').innerHTML = '로그아웃';
+				$("#login").off();
+				$("#login").bind("click", function(){
+					logout();
+				});
+				FB.api('/me', function(response) {
+					console.log('Successful login for : ' + response.name);
+					'Thanks for loggin in, '+ response.name + '!';
+				});
+			}
+
+		function logoutAPI(){
+			console.log('Logged out!');
+			document.getElementById('login').innerHTML = '로그인';
+			document.getElementById('status').innerHTML = 'Please log into this app';
+			$('#login').off();
+			$('#login').click(function(){
+				$('#loginModal').addClass("show");
 			});
+
 		}
-
-
