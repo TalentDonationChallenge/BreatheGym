@@ -1,58 +1,5 @@
-
-		window.fbAsyncInit = function(){
-			FB.init({
-				appId : '114295028916691',
-				cookie : true,
-				xfbml : true,
-				version : 'v2.4'
-			});
-			
-			FB.getLoginStatus(function(response) {
-    			statusChangeCallback(response);
-  			});
-  			
-		};
-
-		function login(){
-			FB.login(function(response){
-					if(response.status === 'connected'){
-	  					window.close();
-	  					$('#loginModal').removeClass("show");
-	  					testAPI();
-	  				} else if (response.status === 'not_authorized'){
-	  					$('#login').innerHTML = '로그인';
-	  					document.getElementById('status').innerHTML = 'Please log ' +
-	  					'into this app';
-	  				} else {
-	  					document.getElementById('login').innerHTML = '로그인';
-	  					document.getElementById('status').innerHTML = 'Please log ' +
-	  					'into Facebook';
-	  				}
-				}, {scope:'public_profile, email'})
-		}
-
-
-		function logout(){
-			FB.logout(function(response){
-  				statusChangeCallback(response);
-  			});
-		}
-		
-		$('document').ready(function(){
-			$('#facebookLogin').bind("click", function(){
-  				login();
-  			});
-		});
-
-		(function(d, s, id) {
-  			var js, fjs = d.getElementsByTagName(s)[0];
-			if (d.getElementById(id)) return;
-	 		js = d.createElement(s); js.id = id;
-	 		js.src = "//connect.facebook.net/ko_KR/sdk.js#xfbml=1&version=v2.4&appId=114295028916691";
-	 		fjs.parentNode.insertBefore(js, fjs);
-		}(document, 'script', 'facebook-jssdk'));
-
 		function statusChangeCallback(response) {
+			alert("statusChangeCallback");
 		    console.log('statusChangeCallback');
 		    console.log(response);
 		    // The response object is returned with a status field that lets the
@@ -72,6 +19,42 @@
 		    }
 		  }
 
+		window.fbAsyncInit = function(){
+			FB.init({
+				appId : '114295028916691',
+
+				cookie : true,
+				xfbml : true,
+				version : 'v2.4'
+			});
+			
+			FB.getLoginStatus(function(response) {
+    			statusChangeCallback(response);
+  			});
+		};
+
+		(function(d, s, id) {
+  			var js, fjs = d.getElementsByTagName(s)[0];
+			if (d.getElementById(id)) return;
+	 		js = d.createElement(s); js.id = id;
+	 		js.src = "//connect.facebook.net/ko_KR/sdk.js#xfbml=1&version=v2.4&appId=114295028916691";
+	 		fjs.parentNode.insertBefore(js, fjs);
+		}(document, 'script', 'facebook-jssdk'));
+
+		function login(){
+			console.log("login function");
+			FB.login(function(response){
+					statusChangeCallback(response);
+				}, {scope:'public_profile, email'})
+		}
+
+		function logout(){
+			console.log("logout function");
+			FB.logout(function(response){
+  				statusChangeCallback(response);
+  			});
+		}
+
 		//status checking function
 		function checkLoginState() {
 			FB.getLoginStatus(function(response) {
@@ -82,10 +65,11 @@
 
 		// Function implemented after logging in
 		function testAPI(){
+				alert("testAPI function");
 				console.log('Welcome! Fetching your information....');
 				document.getElementById('login').innerHTML = '로그아웃';
 				$("#login").off();
-				$("#login").bind("click", function(){
+				$("#login").click(function(){
 					logout();
 				});
 				FB.api('/me', function(response) {
@@ -95,12 +79,16 @@
 			}
 
 		function logoutAPI(){
+			alert("logout API function");
 			console.log('Logged out!');
 			document.getElementById('login').innerHTML = '로그인';
 			document.getElementById('status').innerHTML = 'Please log into this app';
 			$('#login').off();
+			$('#facebookLogin').off();
+			$('#facebookLogin').click(function(){
+  				login();
+  			});
 			$('#login').click(function(){
 				$('#loginModal').addClass("show");
 			});
-
 		}

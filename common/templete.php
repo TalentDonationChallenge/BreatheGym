@@ -264,7 +264,7 @@
 	function scripts($jsFiles) { ?>
 		<script src='/common/js/jquery-1.11.1.min.js'></script>
 		<script src='/common/js/bootstrap.min.js'></script>
-		<script src = "/common/js/facebook.js"></script>
+		<script src='/common/js/facebook.js'></script>
 		<?php
 		if(isset($jsFiles)){
 			foreach ($jsFiles as $jsFile): ?>
