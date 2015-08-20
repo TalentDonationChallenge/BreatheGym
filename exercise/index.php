@@ -1,11 +1,11 @@
-<?php 
+<?php
 	require_once(__DIR__.'/../framework/framework.php');
 	require_once(__DIR__.'/memberRecordsFromServer.php');
 ?>
 <!DOCTYPE html>
 <html>
 <head>
-	<?php head('브리드 복싱 &amp; 크로스핏-회원운동기록관리', 
+	<?php head('브리드 복싱 &amp; 크로스핏-회원운동기록관리',
 	array('/exercise/css/font-awesome/css/font-awesome.css',
           '/exercise/css/style.css',
           '/exercise/css/style-responsive.css'
@@ -25,7 +25,7 @@
 		// 	$courseB = $gymMemverrecord[1]['ranking'];
 		// 	$courseC = $gymMemverrecord[2]['ranking'];
 		// 	$myrecordPercentage = ((($courseA + $courseB + $courseC)/3));
-			
+
 		//print_r($datearray);
 	?>
 	<!--header start-->
@@ -45,7 +45,7 @@
 							<div class = "row mtbox">
 								<div class = "col-md-3 col-sm-3 col-md-offset1 box0">
                                     <div class = "box1">
-										
+
                                         <h3>상위</h3>
                                         <h4>%</h4>
 									</div>
@@ -53,7 +53,7 @@
 								</div>
 								<div class = "col-md-3 col-sm-3 col-md-offset1 box0">
 									<div class = "box1">
-										
+
 										<h3>진행률</h3>
 										<h4>25%</h4>
 									</div>
@@ -61,7 +61,7 @@
 								</div>
 								<div class = "col-md-3 col-sm-3 col-md-offset1 box0">
 									<div class = "box1">
-										
+
 										<h3>출석률</h3>
 										<h4><?php //printf($datearray[2])?>%</h4>
 									</div>
@@ -69,7 +69,7 @@
 								</div>
 								<div class = "col-md-3 col-sm-3 col-md-offset1 box0">
 									<div class = "box1">
-										
+
 										<h3>등록일</h3>
 										<h4><?php //printf($datearray[1])?></h4>
 									</div>
@@ -87,16 +87,16 @@
 	                                <div class = "boxing">
 	                                    <img src = "/exercise/img/boxingimg.jpg" width="100%" height="260px">
 	                                </div>
-	                              
+
 	                                <div class ="progress">
-	                                    
+
 	                                    <div class = "progress-bar progress-bar-success" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax = "100" style="width : 20%">
-	                                        
+
 	                                        <span>잽운동</span>
 	                                    </div>
 	                                </div>
 	                            </div>
-	                            
+
 	                        </a>
 
 	                    </div>
@@ -109,29 +109,29 @@
 	                                <div class = "boxing">
 	                                    <img src = "/exercise/img/crossfit.jpg" width="100%" height="260px">
 	                                </div>
-	                                  
+
 	                                <div id = "mrecord">
-	                              		<h4>오늘 회원님은 상위 <?php //printf($myrecordPercentage)?>%의 기록을 달성하였습니다.</h4>
+	                              		<h4>오늘 회원님은 상위 <!--<?php //printf($myrecordPercentage)?>-->%의 기록을 달성하였습니다.</h4>
 	                            	</div>
-	                                 
+
 	                            </div>
 
-	                              
+
 	                        </a>
-	                          
+
 	                    </div>
 	                </div>
                       <!--크로스핏 부분 end -->
 				</section>
             </section>
 			<!--maincontent end-->
-            
+
 		</section>
 	     <script src="/exercise/js/jquery.js"></script>
 	     <script class="include" type="text/javascript" src="/exercise/js/jquery.dcjqaccordion.2.7.js"></script>
         <script src="/exercise/js/common-scripts.js"></script>
         <script src="/exercise/js/bootstrap.min.js"></script>
         <script src="/exercise/js/jquery.nicescroll.js" type="text/javascript"></script>
-       
+
 </body>
 </html>

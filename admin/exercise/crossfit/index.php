@@ -8,7 +8,7 @@
 	array('/common/font-awesome/css/font-awesome.css',
 		'/common/css/style.css',
 		'/common/css/style-responsive.css',
-		'../../css/fullcalendar.css',
+		'/common/css/fullcalendar.css',
 		'../../css/exercise.css'));?>
 	<!--[if lt IE 9]>
 	<script src='https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js'></script>
@@ -95,12 +95,12 @@
 
 	<script src='/common/js/jquery-1.11.1.min.js'></script>
 	<script src='/common/js/bootstrap.min.js'></script>
-	<script src='../../js/jquery.dcjqaccordion.2.7.js'></script>
-	<script src='../../js/jquery-ui.custom.min.js'></script>
-	<script src='../../js/moment.min.js'></script>
-	<script src='../../js/fullcalendar.js'></script>
-	<script src='../../js/ko.js'></script>
-	<script src='../../js/common-scripts.js'></script>
+	<script src='/common/js/jquery.dcjqaccordion.2.7.js'></script>
+	<script src='/common/js/jquery-ui.custom.min.js'></script>
+	<script src='/common/js/moment.min.js'></script>
+	<script src='/common/js/fullcalendar.min.js'></script>
+	<script src='/common/js/ko.js'></script>
+	<script src='/common/js/common-scripts.js'></script>
 	<script src='../../js/calendar-conf-events.js'></script>
 </body>
 </html>
