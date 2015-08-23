@@ -9,8 +9,8 @@
 	<link rel='stylesheet' href='/common/css/bootstrap.min.css'>
 	<div id="fb-root"></div>
 
-	
-	
+
+
 	<?php
 		if(isset($cssFiles)){
 			foreach ($cssFiles as $cssFile): ?>
@@ -34,7 +34,7 @@
 							</div>
 							<div class='form-group'>
 								<input type='password' class='form-control input-lg' placeholder='Password'>
-							</div>			
+							</div>
 							<div class='form-group'>
 								<!--<button onClick="FB.login();" id="fbLogin" class='btn btn-primary btn-lg btn-block'>Facebook Sign In</button>-->
 							</div>
@@ -43,13 +43,13 @@
 								<!--<div class="fb-login-button" data-max-rows="1" data-size="medium" data-show-faces="false" data-auto-logout-link="false"></div>-->
 								<button class='btn btn-primary btn-lg btn-block'>Sign In</button>
 								<span class='pull-right'><a href='#'>Register</a></span><span><a href='#'>Need help?</a></span>
-								
+
 							</div>
-							
+
 							<div id="status"></div>
 						</form>
 
-						
+
 					</div>
 					<div class='modal-footer'>
 						<div class='col-md-12'>
@@ -70,7 +70,7 @@
 						<span class='icon-bar'></span>
 						<span class='icon-bar'></span>
 					</button>
-					<a class='navbar-brand' href='#'>Breathe Gym</a>
+					<a class='navbar-brand' href='/'>Breathe Gym</a>
 				</div>
 
 				<div class='collapse navbar-collapse' id='bs-example-navbar-collapse-1'>
@@ -80,7 +80,7 @@
 							소개<span class='caret'></span>
 						</a>
 						<ul class='dropdown-menu'>
-						<li><a href='introduction.html'>매장소개</a></li>
+						<li><a href='/introduction/gym.php'>매장소개</a></li>
 						<li><a href='#'>운동시간표</a></li>
 						<li><a href='#'>스탭소개</a></li>
 						</ul>
@@ -108,7 +108,7 @@
 						<li><a href='#'>크로스핏 동작들</a></li>
 						</ul>
 					</li>
-					<li><a href='exercise/index.php'>운동관리</a></li>
+					<li><a href='/exercise/index.php'>운동관리</a></li>
 					<li class='dropdown'>
 						<a href='#' class='dropdown-toggle' data-toggle='dropdown' role='button' aria-expanded='false'>
 							커뮤니티<span class='caret'></span>
@@ -120,7 +120,7 @@
 					</li>
 					</ul>
 					<ul class='nav navbar-nav navbar-right'>
-					<li><a href='admin/index.php'>관리자메뉴</a></li>
+					<li><a href='/admin/index.php'>관리자메뉴</a></li>
 					<li><a class='login' id='login' href='#'>로그인</a></li>
 					</ul>
 				</div>

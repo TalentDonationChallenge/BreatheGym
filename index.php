@@ -1,4 +1,4 @@
-<?php 
+<?php
 	require_once(__DIR__.'/framework/framework.php');
 ?>
 <!DOCTYPE html>
@@ -67,7 +67,7 @@
 		</a>
 		<a class='right carousel-control' href='#myCarousel' data-slide='next'>
 			<span class='icon-next'></span>
-		</a>  
+		</a>
 	</div>
 	<!-- /.carousel -->
 
