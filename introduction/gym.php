@@ -27,7 +27,7 @@
 					<li><a href="#">스탭소개</a></li>
 				</ul>
 			</div>
-			<div class="col-sm-8 col-offset-1">
+			<div class="content col-sm-8 col-offset-1">
 				<p>abc</p>
 			</div>
 		</div>
