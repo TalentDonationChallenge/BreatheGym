@@ -1,0 +1,13 @@
+.darkblue-panel {
+    padding :10px;
+}
+.darkblue-panel img {
+    width: 100%;
+}
+.darkblue-panel.pn {
+    height: inherit;
+}
+.darkblue-panel>h5, .darkblue-panel .progress {
+    height: 30px;
+    margin: 10px 0;
+}
