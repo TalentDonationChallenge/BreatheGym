@@ -236,19 +236,19 @@
 					</a>
 				</li>
 				<li class='sub-menu'>
-					<a <?=$active==='analysis'?"class='active'":""?> href='/exercise/boxing/index.php' >
+					<a <?=$active==='boxing'?"class='active'":""?> href='/exercise/boxing/index.php' >
 						<i class='fa fa-bold'></i>
 						<span>복싱</span>
 					</a>
 				</li>
 				<li class='sub-menu'>
-					<a <?=$active==='exercise'?"class='active'":""?> href='/exercise/crossfit/index.php' >
+					<a <?=$active==='crossfit'?"class='active'":""?> href='/exercise/crossfit/index.php' >
 						<i class='fa fa-child'></i>
 						<span>크로스핏</span>
 					</a>
 				</li>
 				<li class='sub-menu'>
-					<a <?=$active==='consulting'?"class='active'":""?> href='/exercise/mypage/index.php' >
+					<a <?=$active==='mypage'?"class='active'":""?> href='/exercise/mypage/index.php' >
 						<i class='fa fa-user'></i>
 						<span>MyPage</span>
 					</a>

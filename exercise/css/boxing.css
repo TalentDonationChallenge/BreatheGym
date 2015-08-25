@@ -1,0 +1,6 @@
+.showback{
+    overflow: hidden;
+}
+.showback>img{
+    width: 100%;
+}

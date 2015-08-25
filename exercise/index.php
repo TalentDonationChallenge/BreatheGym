@@ -1,6 +1,5 @@
 <?php
 	require_once(__DIR__.'/../framework/framework.php');
-	require_once(__DIR__.'/memberRecordsFromServer.php');
 ?>
 <!DOCTYPE html>
 <html>
@@ -38,43 +37,42 @@
 	<!--maincontent start-->
 	<section id = "main-content">
 		<section class = "wrapper">
-			<div class = "row">
-				<div class = "col-lg-12 mt">
-					<div class = "row">
-						<div class = "col-md-3 col-sm-6 mb">
-							<div class="white-panel pn">
-								<div class = "white-header">
-									<h5>크로스핏 순위</h5>
-								</div>
-								<h3>상위 %</h3>
+			<div class = "col-lg-12 mt">
+				<div class = "row">
+					<div class = "col-md-3 col-sm-6 mb">
+						<div class="white-panel pn">
+							<div class = "white-header">
+								<h5>크로스핏 순위</h5>
+							</div>
+							<h3>상위 %</h3>
+						</div>
+					</div>
+					<div class = "col-md-3 col-sm-6 mb">
+						<div class="white-panel pn">
+							<div class = "white-header">
+								<h5>복싱 진도</h5>
 							</div>
 						</div>
-						<div class = "col-md-3 col-sm-6 mb">
-							<div class="white-panel pn">
-								<div class = "white-header">
-									<h5>복싱 진도</h5>
-								</div>
+					</div>
+					<div class = "col-md-3 col-sm-6 mb">
+						<div class="white-panel pn">
+							<div class = "white-header">
+								<h5>연속출석일</h5>
 							</div>
 						</div>
-						<div class = "col-md-3 col-sm-6 mb">
-							<div class="white-panel pn">
-								<div class = "white-header">
-									<h5>연속출석일</h5>
-								</div>
-							</div>
-						</div>
-						<div class = "col-md-3 col-sm-6 mb">
-							<div class="white-panel pn">
-								<div class = "white-header">
-									<h5>등록일</h5>
-								</div>
+					</div>
+					<div class = "col-md-3 col-sm-6 mb">
+						<div class="white-panel pn">
+							<div class = "white-header">
+								<h5>등록일</h5>
 							</div>
 						</div>
 					</div>
 				</div>
-			<!--복싱진도가 보일 부분 start-->
+			</div>
 			<div class = "col-lg-12">
 				<div class="row">
+					<!--복싱진도가 보일 부분 start-->
 					<div class = "col-md-6 col-sm-6 mb">
 						<div class="darkblue-panel pn">
 							<div class="darkblue-header">
@@ -97,12 +95,12 @@
 								<h5>오늘의 크로스핏</h5>
 							</div>
 							<img src = "/exercise/img/crossfit.jpg">
-							<h5>오늘 회원님은 상위 <!--<?php //printf($myrecordPercentage)?>-->%의 기록을 달성하였습니다.</h5>
+							<h5>오늘 회원님은 상위 %의 기록을 달성하였습니다.</h5>
 						</div>
 					</div>
+					<!--크로스핏 부분 end -->
 				</div>
 			</div>
-			<!--크로스핏 부분 end -->
 		</section>
 		<!--maincontent end-->
 
