@@ -8,7 +8,7 @@
 	array('/common/font-awesome/css/font-awesome.css',
           '/common/css/style.css',
           '/common/css/style-responsive.css',
-		  'css/dashboard.css'
+		  '/exercise/css/exercise.css'
         ));?>
 	<!--[if lt IE 9]>
 	<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
@@ -16,24 +16,8 @@
 	<![endif]-->
 </head>
 <body>
-
-<!--이것은 지금 로그인 한 사람이 이름이 강민호, 바코드 djdbffuq123 인 사람이라고 생각하고 코딩한 것임 -->
-	<?php
-		// $datearray = getUserDurationDate('jfyf7q719');
-		// $gymMemverrecord = getUserExerciseRecord('jfyf7q719');
-		// 	$courseA = $gymMemverrecord[0]['ranking'];
-		// 	$courseB = $gymMemverrecord[1]['ranking'];
-		// 	$courseC = $gymMemverrecord[2]['ranking'];
-		// 	$myrecordPercentage = ((($courseA + $courseB + $courseC)/3));
-
-		//print_r($datearray);
-	?>
-	<!--header start-->
-	<?php memberHeader();?>
-	<!--header end-->
-	<!--sidebar start-->
-	<?php memberSidebar("index"); ?>
-	<!--sidebar end-->
+	<?php memberHeader();
+	memberSidebar("index"); ?>
 	<!--maincontent start-->
 	<section id = "main-content">
 		<section class = "wrapper">

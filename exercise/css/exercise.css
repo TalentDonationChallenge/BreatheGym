@@ -1,3 +1,4 @@
+/* dashboard */
 .darkblue-panel {
     padding :10px;
 }
@@ -10,4 +11,15 @@
 .darkblue-panel>h5, .darkblue-panel .progress {
     height: 30px;
     margin: 10px 0;
+}
+/* boxing */
+.showback{
+    overflow: hidden;
+}
+.showback>img{
+    width: 100%;
+}
+/* crossfit */
+.content-panel {
+    padding : 10px;
 }

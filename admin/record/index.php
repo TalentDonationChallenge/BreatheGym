@@ -1,6 +1,6 @@
 <?php
 	require_once(__DIR__.'/../../framework/framework.php');
-	if (isset($_GET['no'])&&($_GET['no']==='1'||$_GET['no']==='2')) {
+	if (isset($_GET['no'])&&($_GET['no']==='1'||$_GET['no']==='2')) { //몇호점인지 찾기
 		$branch = $_GET['no'];
 	} else {
 		//에러로 보내버리기
@@ -14,7 +14,6 @@
 		'/common/css/style.css',
 		'/common/css/style-responsive.css',
 		'/common/css/table-responsive.css',
-		'/common/css/bootstrap.min.css',
 		'../css/record.css'));?>
 	<!--[if lt IE 9]>
 	<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>

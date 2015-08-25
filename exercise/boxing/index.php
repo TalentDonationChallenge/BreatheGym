@@ -8,7 +8,7 @@ require_once(__DIR__.'/../../framework/framework.php');
 		array('/common/font-awesome/css/font-awesome.css',
 			'/common/css/style.css',
 			'/common/css/style-responsive.css',
-			'/exercise/css/boxing.css'
+			'/exercise/css/exercise.css'
 			));?>
     <!--[if lt IE 9]>
     <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
