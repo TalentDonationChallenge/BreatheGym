@@ -6,9 +6,8 @@
 <head>
 	<?php head('브리드 복싱 &amp; 크로스핏 - 회원운동기록관리',
 	array('/common/font-awesome/css/font-awesome.css',
-        '/common/css/style.css',
-        '/common/css/style-responsive.css',
-        '/exercise/css/exercise.css'));?>
+        '/common/css/style.css','/common/css/style-responsive.css',
+        '/exercise/css/exercise.css','/exercise/css/morris.css'));?>
 	<!--[if lt IE 9]>
 	<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
 	<script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
@@ -98,7 +97,7 @@
 						<div class="content-panel">
 							<h4>운동 기록 추이</h4>
 							<div class="panel-body">
-								<div id="hero-graph" class="graph"></div>
+								<div id="line-graph" class="graph"></div>
 							</div>
 						</div>
 					</div>
@@ -111,5 +110,8 @@
 	<script src="/common/js/jquery.dcjqaccordion.2.7.js"></script>
 	<script src="/common/js/bootstrap.min.js"></script>
 	<script src="/common/js/common-scripts.js"></script>
+	<script src="/exercise/js/raphael-min.js"></script>
+	<script src="/exercise/js/morris.min.js"></script>
+	<script src="/exercise/js/crossfit.js"></script>
 </body>
 </html>
