@@ -767,6 +767,10 @@ ul.top-menu > li > a:hover, ul.top-menu > li > a:focus {
 .ds {
 	background: #ffffff;
 	padding-top: 20px;
+    height: 100%;
+    width : 20%;
+    position: fixed;
+    right:0;
 }
 
 .ds h4 {
@@ -1076,7 +1080,6 @@ PANELS CONFIGURATIONS
 .white-panel {
 	text-align: center;
 	background: #ffffff;
-	color: #ccd1d9;
 }
 
 .white-panel p {
@@ -1088,7 +1091,6 @@ PANELS CONFIGURATIONS
 	background: #f4f4f4;
 	padding: 3px;
 	margin-bottom: 15px;
-	color: #c6c6c6;
 }
 .white-panel .small {
 	font-size: 10px;
