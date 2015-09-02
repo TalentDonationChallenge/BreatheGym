@@ -1,0 +1,19 @@
+.darkblue-panel.pn {
+    height: 300px;
+}
+.chart {
+    width : 80%;
+}
+.content-panel .panel-body{
+    width: 95%;
+}
+@media (max-width:992px) {
+    .chart {
+        width: 60%;
+    }
+}
+@media (max-width:768px) {
+    .darkblue-panel.pn{
+        height: 280px;
+    }
+}

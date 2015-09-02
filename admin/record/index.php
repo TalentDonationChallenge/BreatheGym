@@ -28,7 +28,7 @@
 	<?php adminSidebar("record"); ?>
 	<!--sidebar end-->
 	<!-- Main content start -->
-	<section id="main-content" branch='<?=$_GET["no"]?>'>
+	<section id="main-content" branch='<?=$branch?>'>
 		<section class="wrapper">
 			<h3><i class="fa fa-angle-right"></i> 기록관리 (<?=$branch?>호점)</h3>
 			<!-- page start-->
