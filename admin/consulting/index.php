@@ -6,11 +6,8 @@
 <head>
 	<?php head('브리드 복싱 &amp; 크로스핏 - 관리자메뉴',
 	array('/common/font-awesome/css/font-awesome.css',
-		'/common/css/style.css',
-		'/common/css/style-responsive.css',
-		'/common/css/table-responsive.css',
-		'/common/css/to-do.css',
-		'/common/css/zabuto_calendar.css'));?>
+		'/common/css/style.css','/common/css/style-responsive.css',
+		'/common/css/table-responsive.css','/admin/css/consulting.css'));?>
 	<!--[if lt IE 9]>
 	<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
 	<script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
@@ -23,6 +20,61 @@
 	<!--sidebar start-->
 	<?php adminSidebar("consulting"); ?>
 	<!--sidebar end-->
+	<section id="main-content">
+		<section class="wrapper">
+			<h3><i class="fa fa-angle-right"></i> 상담</h3>
+			<div class="col-lg-12 mt">
+				<div class="panel panel-default">
+					<table class="table table-striped">
+						<thead>
+							<tr>
+								<th class="hidden-phone">번호</th>
+								<th>제목</th>
+								<th>글쓴이</th>
+								<th class="hidden-phone">작성시간</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td class="hidden-phone">3</td>
+								<td>레레레레옹</td>
+								<td>이지은</td>
+								<td class="hidden-phone">09/10 21:41:09</td>
+							</tr>
+							<tr>
+								<td class="hidden-phone">2</td>
+								<td>티키타 리듬에 맞춰 스핀 기타 리프의 테마는 스팅의 쉡오마할</td>
+								<td>아이유</td>
+								<td class="hidden-phone">09/03 10:21:58</td>
+							</tr>
+							<tr>
+								<td class="hidden-phone">1</td>
+								<td>나이 값을 떼먹은 남자</td>
+								<td>명수</td>
+								<td class="hidden-phone">09/02 18:32:23</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+				<nav>
+					<ul class="pagination">
+					<li class="disabled">
+						<a href="#" aria-label="Previous">
+						<span aria-hidden="true">&laquo;</span>
+						</a>
+					</li>
+					<li class="active"><a href="#">1</a></li>
+					<li><a href="#">2</a></li>
+					<li class="disabled">
+						<a href="#" aria-label="Next">
+						<span aria-hidden="true">&raquo;</span>
+						</a>
+					</li>
+					</ul>
+				</nav>
+			</div>
+		</section>
+	</section>
 	<script src="/common/js/jquery-1.11.1.min.js"></script>
 	<script src="/common/js/bootstrap.min.js"></script>
 	<script src="/common/js/jquery.dcjqaccordion.2.7.js"></script>

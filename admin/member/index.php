@@ -27,8 +27,8 @@
 	<!--sidebar end-->
 	<section id="main-content" branch='<?=$branch?>'>
 		<section class="wrapper">
+			<h3><i class="fa fa-angle-right"></i> 회원목록 (<?=$branch?>호점)</h3>
 			<div class="col-lg-12 mt">
-				<h3><i class="fa fa-angle-right"></i> 회원목록 (<?=$branch?>호점)</h3>
 				<div class="panel panel-default">
 					<div class="panel-body table-panel">
 						<button class="btn btn-default mt mb" name="button">
