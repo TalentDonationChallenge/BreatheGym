@@ -26,3 +26,20 @@ td:nth-child(2):hover {
 #main-content nav{
     text-align: center;
 }
+.panel-title {
+    font-weight: 600;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+.author {
+    padding-right: 10px;
+    border-right: 1px solid black;
+}
+.time {
+    margin-left: 10px;
+}
+.answer {
+    resize: none;
+    height: 300px!important;
+}
