@@ -23,7 +23,6 @@
 
 
 		function statusChangeCallback(response) {
-			alert("statusChangeCallback");
 		    console.log('statusChangeCallback');
 		    console.log(response);
 		    // The response object is returned with a status field that lets the
@@ -67,7 +66,7 @@
 
 		// Function implemented after logging in
 		function testAPI(){
-				alert("testAPI function");
+				
 				console.log('Welcome! Fetching your information....');
 				document.getElementById('login').innerHTML = '로그아웃';
 				$("#login").off();
@@ -81,7 +80,7 @@
 			}
 
 		function logoutAPI(){
-			alert("logout API function");
+			
 			console.log('Logged out!');
 			document.getElementById('login').innerHTML = '로그인';
 			document.getElementById('status').innerHTML = 'Please log into this app';
