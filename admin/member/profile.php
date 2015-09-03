@@ -23,9 +23,21 @@
 	<?php adminHeader(); ?>
 	<!--header end-->
 	<!--sidebar start-->
-	<?php adminSidebar("member"); ?>
+	<?php adminSidebar("member");
+	if (isset($_GET['type'])) {
+		if(($_GET['type']==='gym')&&(isset($_GET['barcode']))){
+			$barcode = $_GET['barcode'];
+			$profile = MemberManagemant::getGymMemberInfo($barcode);
+		} else if (($_GET['type']==='page')&&(isset($_GET['email']))) {
+
+		} else {
+			//에러닷
+		}
+	} else {
+		//에러닷
+	} ?>
 	<!--sidebar end-->
-	<section id="main-content" branch='<?=$branch?>'>
+	<section id="main-content">
 		<section class="wrapper">
 			<h3><i class="fa fa-angle-right"></i> 회원 프로필</h3>
 			<div class="col-lg-12 mt">
@@ -36,49 +48,51 @@
 							<tbody>
 								<tr>
 									<td>이름</td>
-									<td>나익채</td>
+									<td><?=$profile['name']?></td>
 									<td class="hidden-xs">생년월일</td>
-									<td class="hidden-xs">1991.12.07</td>
+									<td class="hidden-xs"><?=$profile['birthday']?></td>
 								</tr>
                                 <tr class="visible-xs">
                                     <td>생년월일</td>
-									<td>1991.12.07</td>
+									<td><?=$profile['birthday']?></td>
                                 </tr>
 								<tr>
 									<td>성별</td>
-									<td>남자</td>
+									<td><?=$profile['sex']?></td>
 									<td class="hidden-xs">신장</td>
-									<td class="hidden-xs">175cm</td>
+									<td class="hidden-xs"><?=$profile['height']?></td>
 								</tr>
                                 <tr class="visible-xs">
                                     <td>신장</td>
-									<td>175cm</td>
+									<td><?=$profile['height']?></td>
                                 </tr>
 								<tr>
 									<td>등록일</td>
-									<td>7월 21일</td>
+									<td><?=$profile['registerDate']?></td>
 									<td class="hidden-xs">전화번호</td>
-									<td class="hidden-xs">010-5388-7127</td>
+									<td class="hidden-xs"><?=$profile['phone']?></td>
 								</tr>
                                 <tr class="visible-xs">
                                     <td>전화번호</td>
-									<td>010-5388-7127</td>
+									<td><?=$profile['phone']?></td>
                                 </tr>
                                 <tr>
                                     <td>만료일</td>
-                                    <td>8월 20일</td>
+                                    <td><?=$profile['durationDate']?></td>
                                     <td class="hidden-xs">체중</td>
-                                    <td class="hidden-xs"></td>
+                                    <td class="hidden-xs"><?=$profile['weight']?></td>
                                 </tr>
                                 <tr class="visible-xs">
                                     <td>체중</td>
-                                    <td></td>
+                                    <td><?=$profile['weight']?></td>
                                 </tr>
 							</tbody>
 						</table>
 					</div>
                 </div>
                 <button class="btn btn-primary" name="button">바코드 재발급</button>
+				<button class="btn btn-success ml" name="button">정보 수정</button>
+				<button class="btn btn-default pull-right" name="button">회원목록</button>
 			</div>
 		</section>
 	</section>

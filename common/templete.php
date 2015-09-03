@@ -163,8 +163,9 @@
 						<span>회원관리</span>
 					</a>
 					<ul class="sub">
-					<li><a href="/admin/member/index.php?no=1">1호점</a></li>
-					<li><a href="/admin/member/index.php?no=2">2호점</a></li>
+					<li><a href="/admin/member/index.php?type=web">웹페이지</a></li>
+					<li><a href="/admin/member/index.php?type=1">1호점</a></li>
+					<li><a href="/admin/member/index.php?type=2">2호점</a></li>
 					</ul>
 				</li>
 

@@ -3,6 +3,7 @@
 	require_once (__DIR__.'/../common/templete.php');
 	require_once(__DIR__.'/core/database.php');
 	require_once (__DIR__.'/model/admin/exercise.php');
+	require_once (__DIR__.'/model/admin/member.php');
 	require_once (__DIR__.'/model/admin/record.php');
 	require_once (__DIR__.'/model/exercise/user.php');
 	require_once (__DIR__.'/model/exercise/boxing.php');

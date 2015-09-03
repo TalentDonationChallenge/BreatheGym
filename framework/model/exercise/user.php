@@ -8,8 +8,6 @@
     		$stmt = $pdo->prepare("SELECT registerDate, duration FROM gymMember WHERE barcode = :barcode");
     		$stmt -> execute(array(':barcode'=> $barcode));
     		$row = $stmt -> fetch();
-
-            $today = date('Y-m-d');
             $durationDate = date('m월 d일',
                 strtotime('+'.$row['duration'].' month',
                 strtotime($row['registerDate'])));

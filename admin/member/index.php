@@ -1,9 +1,16 @@
 <?php
 	require_once(__DIR__.'/../../framework/framework.php');
-	if (isset($_GET['no'])&&($_GET['no']==='1'||$_GET['no']==='2')) { //몇호점인지 찾기
-		$branch = $_GET['no'];
-	} else {
-		//에러로 보내버리기
+	if(isset($_GET['type'])){
+		if($_GET['type']==='1'||$_GET['type']==='2') { //몇호점인지 찾기
+			$branch = $_GET['type'];
+			$filter['branch']=$branch;
+			$web=false;
+		} else if($_GET['type']==='web'){
+			$web=true;
+			$filter=false;
+		} else {
+			// 에러로 보내버리기
+		}
 	}
 ?>
 <!DOCTYPE html>
@@ -25,9 +32,9 @@
 	<!--sidebar start-->
 	<?php adminSidebar("member"); ?>
 	<!--sidebar end-->
-	<section id="main-content" branch='<?=$branch?>'>
+	<section id="main-content" type='<?=$web?"web":$branch?>'>
 		<section class="wrapper">
-			<h3><i class="fa fa-angle-right"></i> 회원목록 (<?=$branch?>호점)</h3>
+			<h3><i class="fa fa-angle-right"></i> 회원목록 (<?=$web?'웹페이지':$branch.'호점'?>)</h3>
 			<div class="col-lg-12 mt">
 				<div class="panel panel-default">
 					<div class="panel-body table-panel">
@@ -36,8 +43,8 @@
 						</button>
 						<div class="form-inline pull-right mt mb">
 							<select class="form-control">
+								<?=$web?'<option>이메일</option>':'<option>바코드</option>'?>
 								<option>이름</option>
-								<option>바코드</option>
 							</select>
 							<input type="text" class="form-control">
 							<button class="btn btn-primary" name="button">
@@ -55,26 +62,29 @@
 								</tr>
 							</thead>
 							<tbody>
+								<?php //가독성 구려서 미안해요 ㅠㅠ
+								$members = $web?MemberManagemant::getPageMembers($filter):
+								MemberManagemant::getGymMembers($filter);
+								foreach ($members as $member) { ?>
 								<tr>
 									<td><input type="checkbox"></td>
-									<td><a href="#">나익채</a></td>
-									<td class="hidden-phone">010-5388-7127</td>
-									<td class="hidden-phone">8월 20일</td>
-									<td class="hidden-phone">뭐시기</td>
+									<td><a href='profile.php?type=gym&amp;barcode=<?=$member['barcode']?>'>
+										<?=$member['name']?>
+									</a></td>
+									<td class="hidden-phone"><?=$member['phone']?></td>
+									<td class="hidden-phone"><?=$member['durationDate']?></td>
+									<td class="hidden-phone"><?=$member['barcode']?></td>
 								</tr>
-								<tr>
-									<td><input type="checkbox"></td>
-									<td><a href="#">김가연</a></td>
-									<td class="hidden-phone">010-4045-9103</td>
-									<td class="hidden-phone">8월 20일</td>
-									<td class="hidden-phone">뭐시기</td>
-								</tr>
+								<?php } ?>
 							</tbody>
 						</table>
 					</div>
 					<div class="panel-footer">
+						<?php if ($web) { ?>
+
+						<?php } else { ?>
 						<button class="btn btn-success" name="button">SMS알림</button>
-						<div class="btn-group">
+						<div class="btn-group ml">
 							<button class="btn btn-info dropdown-toggle" data-toggle="dropdown" name="button">
 								상태변경<span class="caret"></span>
 							</button>
@@ -85,7 +95,9 @@
 								<li><a href="#">강퇴</a></li>
 							</ul>
 						</div>
-						<button class="btn btn-primary" name="button">엑셀</button>
+						<button class="btn btn-warning ml" name="button">엑셀</button>
+						<button class="btn btn-primary pull-right" name="button">추가</button>
+						<?php } ?>
 					</div>
 				</div>
 			</div>
