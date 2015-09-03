@@ -31,6 +31,10 @@ tr{
 .profile-info td:nth-child(even){
     text-align: left;
 }
+.panel-body{
+    overflow-y: scroll;
+    height: 500px !important;
+}
 @media (max-width:992px) {
     .profile-info{
         position: inherit;

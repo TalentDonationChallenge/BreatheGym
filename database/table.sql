@@ -22,7 +22,7 @@ create table gymMember(
 	height int(3) not null,
 	weight int(3) not null,
 	registerDate date not null,
-	duration int(3) not null,
+	duration int(2) not null, -- 개월수 단위로
 	branch int(1) not null default 1
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 

@@ -213,7 +213,7 @@
 				<div class='fa fa-bars tooltips' data-placement='right' data-original-title='메뉴 보이기/끄기'></div>
 			</div>
 			<!--logo start-->
-			<a href='index.php' class='logo'><b>운동기록관리</b></a>
+			<a href='/exercise/index.php' class='logo'><b>운동기록관리</b></a>
 			<!--logo end-->
 			<div class='top-menu'>
 				<ul class='nav pull-right top-menu'>

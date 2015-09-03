@@ -17,7 +17,14 @@
 </head>
 <body>
 	<?php memberHeader();
-	memberSidebar("index"); ?>
+	memberSidebar("index");
+	//로그인 했다고 가정하기
+	$_SESSION['login'] = true;
+	$_SESSION['gymMember'] = true;
+	$_SESSION['barcode'] = 'ddu12h3q';
+	$barcode = $_SESSION['barcode'];
+	$progress = MemberBoxingManage::getBoxingProgress($barcode);
+	?>
 	<!--maincontent start-->
 	<section id = "main-content">
 		<section class = "wrapper">
@@ -28,6 +35,7 @@
 							<div class = "white-header">
 								<h5>크로스핏 순위</h5>
 							</div>
+							<h1><i class="fa fa-line-chart icon"></i></h1>
 							<h3>상위 %</h3>
 						</div>
 					</div>
@@ -36,6 +44,8 @@
 							<div class = "white-header">
 								<h5>복싱 진도</h5>
 							</div>
+							<h1><i class="fa fa-server icon"></i></h1>
+							<h3><?=$progress['name']?></h3>
 						</div>
 					</div>
 					<div class = "col-md-3 col-sm-6 mb">
@@ -43,13 +53,17 @@
 							<div class = "white-header">
 								<h5>연속출석일</h5>
 							</div>
+							<h1><i class="fa fa-trophy icon"></i></h1>
+							<h3>5일</h3>
 						</div>
 					</div>
 					<div class = "col-md-3 col-sm-6 mb">
 						<div class="white-panel pn">
 							<div class = "white-header">
-								<h5>등록일</h5>
+								<h5>마감일</h5>
 							</div>
+							<h1><i class="fa fa-calendar icon"></i></h1>
+							<h3><?=UserExerciseInfo::getDurationDate($barcode)?></h3>
 						</div>
 					</div>
 				</div>
@@ -57,28 +71,35 @@
 			<div class = "col-lg-12">
 				<div class="row">
 					<!--복싱진도가 보일 부분 start-->
-					<div class = "col-md-6 col-sm-6 mb">
+					<div class = "col-sm-6 mb">
 						<div class="darkblue-panel pn">
 							<div class="darkblue-header">
 								<h5>오늘의 복싱 진도</h5>
 							</div>
-							<img src = "/exercise/img/boxing.jpg">
+							<div class="img-wrap">
+								<img src = "/exercise/img/boxing.jpg">
+							</div>
 							<div class ="progress">
-								<div class = "progress-bar progress-bar-success" role="progressbar"
-								aria-valuenow="40" aria-valuemin="0" aria-valuemax = "100" style="width : 20%">
-								<span>잽운동</span>
+							<?php
+							$progressList = MemberBoxingManage::getBoxingProgressList($progress['no']);
+							foreach ($progressList as $progressElem) { ?>
+								<div class='progress-bar progress-bar-<?=$progressElem["color"]?>'>
+									<span><?=$progressElem['name']?></span>
 								</div>
+							<?php } ?>
 							</div>
 						</div>
 					</div>
 					<!--복싱진도가 보일 부분 end -->
 					<!--크로스핏 부분 start -->
-					<div class = "col-md-6 col-sm-6 mb">
+					<div class = "col-sm-6">
 						<div class="darkblue-panel pn">
 							<div class="darkblue-header">
 								<h5>오늘의 크로스핏</h5>
 							</div>
-							<img src = "/exercise/img/crossfit.jpg">
+							<div class="img-wrap">
+								<img src = "/exercise/img/crossfit.jpg">
+							</div>
 							<h5>오늘 회원님은 상위 %의 기록을 달성하였습니다.</h5>
 						</div>
 					</div>

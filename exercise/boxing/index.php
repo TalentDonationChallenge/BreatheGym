@@ -20,42 +20,57 @@ require_once(__DIR__.'/../../framework/framework.php');
 	<?php memberHeader(); ?>
 	<!--header end-->
 	<!--sidebar start-->
-	<?php memberSidebar("boxing"); ?>
+	<?php memberSidebar("boxing");
+	$barcode = $_SESSION['barcode'];
+	$progress = MemberBoxingManage::getBoxingProgress($barcode);
+	$boxingInfo = MemberBoxingManage::getBoxingInfo($progress['no']);
+	?>
 	<!--sidebar end-->
 	<section id = "main-content">
 		<section class = "wrapper">
 			<div class = "col-lg-12 mt">
 				<div class="showback">
 				<h4><i class = "fa fa-angle-right"></i>오늘의 복싱 진도</h4>
-				<div class="progress">
+				<div class ="progress">
+				<?php
+				$progressList = MemberBoxingManage::getBoxingProgressList($progress['no']);
+				foreach ($progressList as $progressElem) { ?>
+					<div class='progress-bar progress-bar-<?=$progressElem["color"]?>'>
+						<span><?=$progressElem['name']?></span>
+					</div>
+				<?php } ?>
 				</div>
-				<h2>잽운동</h2>
+				<h2><?=$progress['name']?></h2>
 				<!-- 16:9 동영상 -->
 				<div class="col-md-6">
 					<div class="embed-responsive embed-responsive-16by9">
-						<iframe class="embed-responsive-item" src="https://www.youtube.com/embed/CWBqwq8GgGU"></iframe>
+						<iframe class="embed-responsive-item" src='<?=$boxingInfo["youtubeSrc"]?>'></iframe>
 					</div>
 				</div>
 				<div class="col-md-6">
 					<h2>연습방법</h2>
-					<p class="lead">저도 잘 몰라요. 그냥 열심히 하시면 됩니다.</p>
-					<p class="lead">근데 과연 잘 할 수 있을까요?</p>
-					<p class="lead">후후</p>
+					<p><?=$boxingInfo['description']?></p> <!-- 이부분 텍스트 처리 필요 -->
 				</div>
 			</div>
 		</div>
 		<div class="col-md-6">
 			<div class = "showback">
-				<h4><i class = "fa fa-angle-right"></i>이전 내 진도</h4>
-				<p>잽운동</p>
-				<img src = "/exercise/img/boxingimg.jpg">
+				<h4><i class = "fa fa-angle-right"></i> 이전 내 진도</h4>
+				<?php if($progress['no']>=0) {
+					$past = MemberBoxingManage::getBoxingInfo($progress['no']-1);
+				} ?>
+				<p><?=$progress['no']==0?'이전 진도 없음':$past["name"]?></p>
+				<img src="/exercise/img/boxingimg.jpg">
 			</div>
 		</div>
 		<div class="col-md-6">
 			<div class = "showback">
-				<h4><i class = "fa fa-angle-right"></i>다음 진도</h4>
-				<p>뎀프시롤</p>
-				<img src = "/exercise/img/boxingimg.jpg">
+				<h4><i class = "fa fa-angle-right"></i> 다음 진도</h4>
+				<?php if($progress['no']<4) { // 진도가 총 몇개일까요...
+					$next = MemberBoxingManage::getBoxingInfo($progress['no']+1);
+				} ?>
+				<p><?=$progress['no']==4?'다음 진도 없음':$next["name"]?></p>
+				<img src="/exercise/img/boxingimg.jpg">
 			</div>
 		</div>
 		</section>

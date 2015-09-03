@@ -6,8 +6,8 @@
 <head>
 	<?php head('브리드 복싱 &amp; 크로스핏 - 관리자메뉴',
 	array('/common/font-awesome/css/font-awesome.css',
-		'/common/css/style.css',
-		'/common/css/style-responsive.css'));?>
+		'/common/css/style.css','/common/css/style-responsive.css',
+		'/admin/css/dashboard.css'));?>
 	<!--[if lt IE 9]>
 	<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
 	<script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
@@ -29,6 +29,7 @@
 							<div class = "white-header">
 								<h5>총 회원수</h5>
 							</div>
+							<h1><i class="icon fa fa-users"></i></h1>
 							<h3>115명</h3>
 						</div>
 					</div>
@@ -37,6 +38,7 @@
 							<div class = "white-header">
 								<h5>오늘 출석</h5>
 							</div>
+							<h1><i class="icon fa fa-calendar-check-o"></i></h1>
 							<h3>79명</h3>
 						</div>
 					</div>
@@ -45,6 +47,7 @@
 							<div class = "white-header">
 								<h5>최근 가입자</h5>
 							</div>
+							<h1><i class="icon fa fa-user-plus"></i></h1>
 							<h3>13명</h3>
 						</div>
 					</div>
@@ -53,6 +56,7 @@
 							<div class = "white-header">
 								<h5>방문자 수</h5>
 							</div>
+							<h1><i class="icon fa fa-bar-chart-o"></i></h1>
 							<h3>104명</h3>
 						</div>
 					</div>
