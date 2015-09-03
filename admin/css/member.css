@@ -4,17 +4,60 @@ th{
 tr{
     text-align: center;
 }
+.content-panel{
+    padding : 10px;
+    overflow: hidden;
+}
+.profile-pic {
+    vertical-align: top;
+    width: 200px;
+    height: 200px;
+    float: left;
+}
+.profile-info {
+    display: inline-block;
+    position: absolute;
+    left: 250px;
+    right: 50px;
+}
+.profile-info table {
+    border: 1px solid #ddd;
+}
+.profile-info td:nth-child(odd){
+    font-weight: bold;
+    border: 1px solid #ddd;
+    width: 100px;
+}
+.profile-info td:nth-child(even){
+    text-align: left;
+}
+@media (max-width:992px) {
+    .profile-info{
+        position: inherit;
+        width: 100%;
+        margin-top: 10px;
+    }
+    .profile-pic {
+        float:none;
+    }
+    .content-panel {
+        text-align: center;
+    }
+}
 @media (max-width:768px) {
     .form-inline>.form-control {
         display: inline-block;
     }
     .form-inline>select {
-        width: 30%;
+        width: 70px;
     }
     .form-inline>input {
-        width: 50%;
+        width: 100px;
     }
     .form-inline>button {
         margin-bottom: 0;
+    }
+    button.btn>span{
+        display: none;
     }
 }

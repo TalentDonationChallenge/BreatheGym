@@ -32,7 +32,7 @@
 				<div class="panel panel-default">
 					<div class="panel-body table-panel">
 						<button class="btn btn-default mt mb" name="button">
-							<i class="fa fa-check-square-o"></i> 전체선택
+							<i class="fa fa-check-square-o"></i><span> 전체선택</span>
 						</button>
 						<div class="form-inline pull-right mt mb">
 							<select class="form-control">
@@ -40,25 +40,34 @@
 								<option>바코드</option>
 							</select>
 							<input type="text" class="form-control">
-							<button class="btn btn-primary" name="button">검색</button>
+							<button class="btn btn-primary" name="button">
+								<i class="fa fa-search"></i><span> 검색</span>
+							</button>
 						</div>
 						<table class="table table-striped table-hover">
 							<thead>
 								<tr>
 									<th>#</th>
 									<th>이름</th>
-									<th>전화번호</th>
-									<th>마감일</th>
-									<th>회원코드</th>
+									<th class="hidden-phone">전화번호</th>
+									<th class="hidden-phone">마감일</th>
+									<th class="hidden-phone">회원코드</th>
 								</tr>
 							</thead>
 							<tbody>
 								<tr>
 									<td><input type="checkbox"></td>
-									<td>나익채</td>
-									<td>010-5388-7127</td>
-									<td>8월 20일</td>
-									<td>뭐시기</td>
+									<td><a href="#">나익채</a></td>
+									<td class="hidden-phone">010-5388-7127</td>
+									<td class="hidden-phone">8월 20일</td>
+									<td class="hidden-phone">뭐시기</td>
+								</tr>
+								<tr>
+									<td><input type="checkbox"></td>
+									<td><a href="#">김가연</a></td>
+									<td class="hidden-phone">010-4045-9103</td>
+									<td class="hidden-phone">8월 20일</td>
+									<td class="hidden-phone">뭐시기</td>
 								</tr>
 							</tbody>
 						</table>
