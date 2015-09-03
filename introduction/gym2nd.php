@@ -24,8 +24,8 @@ require_once(__DIR__.'/../framework/framework.php');
 			<div class="panel panel-default col-sm-3 hidden-xs side-bar">
 				<ul class="nav nav-pills nav-stacked">
 					<li class="list-option">매장소개</li>
-					<li class="active"><a href="/introduction/gym.php">1호점</a></li>
-					<li class="#"><a href="/introduction/gym2nd.php">2호점</a></li>
+					<li class="#"><a href="/introduction/gym.php">1호점</a></li>
+					<li class="active"><a href="/introduction/gym2nd.php">2호점</a></li>
 					<li class="list-option">이용시간</li>
 					<li class="#"><a href="/introduction/gymservice.php?no=1">1호점</a></li>
 					<li class="#"><a href="/introduction/gymservice.php?no=2">2호점</a></li>
@@ -34,7 +34,7 @@ require_once(__DIR__.'/../framework/framework.php');
 			</div>
 			<div class="content col-sm-9 mt text-left">
 				<div class="text-center">
-					<img src="/introduction/images/breathegym1st.jpg" alt="BreatheGym 1st">
+					<img src="/introduction/images/breathegym2nd.jpg" alt="BreatheGym 1st">
 				</div>
 				<p>abc</p>
 			</div>

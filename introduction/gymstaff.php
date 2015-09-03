@@ -36,7 +36,39 @@ require_once(__DIR__.'/../framework/framework.php');
 				<div class="text-center">
 					<img src="/introduction/images/breathegym1st.jpg" alt="BreatheGym 1st">
 				</div>
-				<p>abc</p>
+				<div class="panel panel-default col-sm-5 mt staff-panel">
+					<div class="panel-body">
+						<img src="/introduction/images/ali.jpg" alt="Boxer Ali">
+					</div>
+					<div class="panel-footer">Panel footer</div>
+				</div>
+
+				<div class="panel panel-default col-sm-5 col-sm-offset-2 mt staff-panel">
+					<div class="panel-body">
+						<img src="/introduction/images/tyson.jpg" alt="Boxer Ali">
+					</div>
+					<div class="panel-footer">Panel footer</div>
+				</div>
+
+				<div class="text-center highmt">
+					<img src="/introduction/images/breathegym2nd.jpg" alt="BreatheGym 2nd">
+				</div>
+
+				<div class="panel panel-default col-sm-5 mt staff-panel">
+					<div class="panel-body">
+						<img src="/introduction/images/rocky.jpg" alt="Boxer Ali">
+					</div>
+					<div class="panel-footer">Panel footer</div>
+				</div>
+
+				<div class="panel panel-default col-sm-5 col-sm-offset-2 mt staff-panel">
+					<div class="panel-body">
+						<img src="/introduction/images/ippo.jpg" alt="Boxer Ali">
+					</div>
+					<div class="panel-footer">Panel footer</div>
+				</div>
+
+
 			</div>
 		</div>
 		<!-- FOOTER -->
