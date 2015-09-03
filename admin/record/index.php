@@ -1,6 +1,6 @@
 <?php
 	require_once(__DIR__.'/../../framework/framework.php');
-	if (isset($_GET['no'])&&($_GET['no']==='1'||$_GET['no']==='2')) {
+	if (isset($_GET['no'])&&($_GET['no']==='1'||$_GET['no']==='2')) { //몇호점인지 찾기
 		$branch = $_GET['no'];
 	} else {
 		//에러로 보내버리기
@@ -14,7 +14,6 @@
 		'/common/css/style.css',
 		'/common/css/style-responsive.css',
 		'/common/css/table-responsive.css',
-		'/common/css/bootstrap.min.css',
 		'../css/record.css'));?>
 	<!--[if lt IE 9]>
 	<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
@@ -29,7 +28,7 @@
 	<?php adminSidebar("record"); ?>
 	<!--sidebar end-->
 	<!-- Main content start -->
-	<section id="main-content" branch='<?=$_GET["no"]?>'>
+	<section id="main-content" branch='<?=$branch?>'>
 		<section class="wrapper">
 			<h3><i class="fa fa-angle-right"></i> 기록관리 (<?=$branch?>호점)</h3>
 			<!-- page start-->
@@ -67,10 +66,10 @@
 
 	<script src="/common/js/jquery-1.11.1.min.js"></script>
 	<script src="/common/js/bootstrap.min.js"></script>
-	<script src="../js/jquery.dcjqaccordion.2.7.js"></script>
-	<script src="../js/jquery-ui.custom.min.js"></script>
-	<script src="../js/moment.min.js"></script>
-	<script src="../js/common-scripts.js"></script>
+	<script src="/common/js/jquery.dcjqaccordion.2.7.js"></script>
+	<script src="/common/js/jquery-ui.custom.min.js"></script>
+	<script src="/common/js/moment.min.js"></script>
+	<script src="/common/js/common-scripts.js"></script>
 	<script src="../js/record-scripts.js"></script>
 </body>
 </html>

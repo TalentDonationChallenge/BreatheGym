@@ -35,12 +35,17 @@
 .fc-event {
 	cursor: pointer;
 	font-size: 1.35em;
-	height: 20px;
 }
-
+.fc-content {
+	line-height: 50px;
+	margin-left: 5px;
+}
 @media (max-width: 768px) {
 	.fc-center>h2 {
 		font-size: 20px;
+	}
+	.fc-event {
+		font-size: 1.0em;
 	}
 	.fc-right {
 		display: none;
