@@ -35,6 +35,9 @@ tr{
     overflow-y: scroll;
     height: 500px !important;
 }
+button>a{
+    color:inherit;
+}
 @media (max-width:992px) {
     .profile-info{
         position: inherit;
@@ -55,8 +58,9 @@ tr{
     .form-inline>select {
         width: 70px;
     }
+    /*포커스 됐을 때 같은줄의 검색 버튼을 제외한 form요소는 안보이게!*/
     .form-inline>input {
-        width: 100px;
+        width: 50px;
     }
     .form-inline>button {
         margin-bottom: 0;

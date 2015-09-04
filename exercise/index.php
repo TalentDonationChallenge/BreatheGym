@@ -82,11 +82,16 @@
 							<div class ="progress">
 							<?php
 							$progressList = MemberBoxingManage::getBoxingProgressList($progress['no']);
+							$hidden = count($progressList)<3?0:count($progressList)-2;
+							$i = 0;
 							foreach ($progressList as $progressElem) { ?>
-								<div class='progress-bar progress-bar-<?=$progressElem["color"]?>'>
+								<div class='progress-bar progress-bar-<?=$progressElem["color"]?> <?=
+								$i>=$hidden?"":"visible-lg"?>'>
 									<span><?=$progressElem['name']?></span>
 								</div>
-							<?php } ?>
+							<?php
+								$i++;
+							} ?>
 							</div>
 						</div>
 					</div>

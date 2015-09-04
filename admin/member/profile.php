@@ -90,9 +90,15 @@
 						</table>
 					</div>
                 </div>
-                <button class="btn btn-primary" name="button">바코드 재발급</button>
-				<button class="btn btn-success ml" name="button">정보 수정</button>
-				<button class="btn btn-default pull-right" name="button">회원목록</button>
+				<button class="btn btn-default pull-right" name="button">
+					<a href='index.php?type=<?=$_GET["type"]==="gym"?$profile["branch"]:"page"?>'>
+						<i class="fa fa-list"></i><span class="hidden-xs"> 회원목록</span>
+					</a>
+				</button>
+                <button class="btn btn-primary hidden-xs" name="button">바코드 재발급</button>
+				<button class="btn btn-success ml" name="button">
+					<i class="fa fa-edit"></i><span class="hidden-xs"> 정보수정</span>
+				</button>
 			</div>
 		</section>
 	</section>

@@ -64,7 +64,8 @@
                 'height'=>$row['height'],
                 'weight'=>$row['weight'],
                 'registerDate'=> date('m월 d일', $registerDate),
-                'durationDate'=> $durationDate
+                'durationDate'=> $durationDate,
+                'branch'=>$row['branch']
             );
             return $gymMemberInfo;
         }

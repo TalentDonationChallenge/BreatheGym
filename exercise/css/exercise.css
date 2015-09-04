@@ -45,3 +45,16 @@ h1>.icon {
 .progress-bar {
     width: 20%;
 }
+@media (max-width:1200px) {
+    .progress-bar {
+        width: 40%;
+    }
+}
+@media (max-width:1600px) {
+    .darkblue-panel .img-wrap {
+        height: inherit;
+    }
+    .progress-bar>span, .darkblue-panel>h5 {
+        font-size: 10pt;
+    }
+}

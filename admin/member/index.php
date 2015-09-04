@@ -35,6 +35,7 @@
 	<section id="main-content" type='<?=$web?"web":$branch?>'>
 		<section class="wrapper">
 			<h3><i class="fa fa-angle-right"></i> 회원목록 (<?=$web?'웹페이지':$branch.'호점'?>)</h3>
+			<div class="row">
 			<div class="col-lg-12 mt">
 				<div class="panel panel-default">
 					<div class="panel-body table-panel">
@@ -83,7 +84,8 @@
 						<?php if ($web) { ?>
 
 						<?php } else { ?>
-						<button class="btn btn-success" name="button">SMS알림</button>
+						<button class="btn btn-primary pull-right" name="button">추가</button>
+						<button class="btn btn-success" name="button">SMS</button>
 						<div class="btn-group ml">
 							<button class="btn btn-info dropdown-toggle" data-toggle="dropdown" name="button">
 								상태변경<span class="caret"></span>
@@ -95,11 +97,11 @@
 								<li><a href="#">강퇴</a></li>
 							</ul>
 						</div>
-						<button class="btn btn-warning ml" name="button">엑셀</button>
-						<button class="btn btn-primary pull-right" name="button">추가</button>
+						<button class="btn btn-warning hidden-xs ml" name="button">엑셀</button>
 						<?php } ?>
 					</div>
 				</div>
+			</div>
 			</div>
 		</section>
 	</section>
