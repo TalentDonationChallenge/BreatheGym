@@ -130,9 +130,6 @@
 	/* 관리자메뉴 header */
 	function adminHeader() { ?>
 		<header class='header black-bg'>
-			<div class='sidebar-toggle-box'>
-				<div class='fa fa-bars tooltips' data-placement='right' data-original-title='메뉴 보이기/끄기'></div>
-			</div>
 			<!--logo start-->
 			<a href='/admin/index.php' class='logo'><b>관리자메뉴</b></a>
 			<!--logo end-->
@@ -210,9 +207,6 @@
 	/* 운동관리 header */
 	function memberHeader() { ?>
 		<header class='header black-bg'>
-			<div class='sidebar-toggle-box'>
-				<div class='fa fa-bars tooltips' data-placement='right' data-original-title='메뉴 보이기/끄기'></div>
-			</div>
 			<!--logo start-->
 			<a href='/exercise/index.php' class='logo'><b>운동기록관리</b></a>
 			<!--logo end-->

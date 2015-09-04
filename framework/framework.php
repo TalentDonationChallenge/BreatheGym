@@ -7,6 +7,7 @@
 	require_once (__DIR__.'/model/admin/record.php');
 	require_once (__DIR__.'/model/exercise/user.php');
 	require_once (__DIR__.'/model/exercise/boxing.php');
+	require_once (__DIR__.'/model/exercise/crossfit.php');
 	// require_once (__DIR__.'/model/boxingInformation.php');
 	// require_once (__DIR__.'/model/boxingLesson.php');
 	// require_once (__DIR__.'/model/breatheStroy.php');

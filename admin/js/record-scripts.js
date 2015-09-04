@@ -92,7 +92,7 @@ $(document).ready(function(){
 			}
 		});
 	};
-	//데이터 로드 - 운동기록
+	//데이터 로드 - 운동목록
 	$.ajax({
 		url: 'load.php',
 		type: 'get',

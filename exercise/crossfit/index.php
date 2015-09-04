@@ -27,11 +27,8 @@
 				<div class="row">
 				<!-- 순위 -->
 					<div class="col-md-6">
-						<div class="content-panel mb">
+						<div class="content-panel rank mb">
 							<ul class="nav nav-tabs exercises">
-							<li class="active"><a href="#">윗몸일으키기</a></li>
-							<li><a href="#">팔굽혀펴기</a></li>
-							<li><a href="#">로잉</a></li>
 							</ul>
 							<table class="table table-striped">
 							<thead>
