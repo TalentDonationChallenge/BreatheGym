@@ -27,6 +27,9 @@ h1>.icon {
     font-size: 60pt;
     margin: 20px;
 }
+.progress-bar {
+    width: 20%;
+}
 /* boxing */
 .showback{
     overflow: hidden;
@@ -42,8 +45,8 @@ h1>.icon {
     line-height: 30px;
     font-size: 12pt;
 }
-.progress-bar {
-    width: 20%;
+.rank, .record {
+    height: 230px;
 }
 @media (max-width:1200px) {
     .progress-bar {
