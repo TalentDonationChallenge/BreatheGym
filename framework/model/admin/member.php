@@ -4,7 +4,31 @@
      */
     class MemberManagemant {
         public static function getPageMembers($filter) {
-
+            $pdo = Database::getInstance();
+            if (isset($filter['email'])) {
+                $stmt = $pdo->prepare("SELECT email, name, nickname, sex, registerDate FROM member
+                WHERE email=:email");
+                $stmt->execute(array('email'=>$filter['email']));
+            } else if (isset($filter['name'])) {
+                $stmt = $pdo->prepare("SELECT email, name, nickname, sex, registerDate FROM member
+                WHERE name=:name");
+                $stmt->execute(array('name'=>$filter['name']));
+            } else {
+                $stmt = $pdo->prepare("SELECT email, name, nickname, sex, registerDate FROM member");
+                $stmt->execute();
+            }
+            $rows = $stmt->fetchAll();
+            $pageMembers = array();
+            foreach ($rows as $row) {
+                $pageMembers[] = array(
+                    'email'=>$row['email'],
+                    'name'=>$row['name'],
+                    'nickname'=>$row['nickname'],
+                    'sex'=>$row['sex']=='0'?'남자':'여자',
+                    'registerDate'=>date('Y년 m월 d일', strtotime($row['registerDate']))
+                );
+            }
+            return $pageMembers;
         }
         public static function getGymMembers($filter) {
             $pdo = Database::getInstance();
@@ -42,7 +66,21 @@
             }
         }
         public static function getPageMemberInfo($email){
-
+            $pdo = Database::getInstance();
+            $stmt = $pdo->prepare("SELECT email, name, nickname, sex, registerDate, barcode FROM member
+            WHERE email=:email");
+            $stmt->execute(array('email'=>$email));
+            $row = $stmt->fetch();
+            $sex=$row['sex']==='0'?'남자':'여자';
+            $pageMemberInfo = array(
+                'email'=>$row['email'],
+                'name'=>$row['name'],
+                'nickname'=>$row['nickname'],
+                'sex'=>$sex,
+                'registerDate'=>$row['registerDate'],
+                'barcode'=>$row['barcode']
+            );
+            return $pageMemberInfo;
         }
 
         public static function getGymMemberInfo($barcode){

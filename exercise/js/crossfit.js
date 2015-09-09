@@ -14,6 +14,10 @@ $(document).ready(function () {
             }
         }).done(function (msg) {
             $('.rank tbody').empty();
+            if (msg.rankers.length === 0) {
+                $('.rank tbody').append($('<tr><td colspan="3"> 아직 입력 안됨 <td/></tr>'));
+                return;
+            }
             for (var i in msg.rankers) {
                 var list = $('<tr />')
                 .append($('<td />').append((i*1)+1))

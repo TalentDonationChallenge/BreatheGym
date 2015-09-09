@@ -14,7 +14,9 @@
 			$exercise = array('no'=>$_GET['exerciseNo'],'type'=>$_GET['type']);
 			$msg['rankers'] = MemberCrossfitManagement::getCrossfitRankers($exercise);
 		} else if ($_GET['requestType'] === 'userRecord') {
-
+			$exercise = array('no'=>$_GET['exerciseNo'],'type'=>$_GET['type']);
+			$msg['recordPercent'] =
+		 		MemberCrossfitManagement::getUserRecordPercent($_SESSION['barcode'],$exercise);
 		} else {
 			new Exception('no request');
 		}

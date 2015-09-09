@@ -39,28 +39,13 @@
 							</tr>
 							</thead>
 							<tbody>
-								<tr>
-									<td>1</td>
-									<td>손아섭</td>
-									<td>100</td>
-								</tr>
-								<tr>
-									<td>2</td>
-									<td>강민호</td>
-									<td>80</td>
-								</tr>
-								<tr>
-									<td>3</td>
-									<td>아두치</td>
-									<td>79</td>
-								</tr>
 							</tbody>
 							</table>
 						</div>
 					</div>
 					<!--회원 개인 기록-->
 					<div class="col-md-6">
-						<div class="content-panel mb">
+						<div class="content-panel record mb">
 							<h4>회원 개인기록</h4>
 							<table class="table table-striped">
 								<thead>
@@ -71,21 +56,17 @@
 								</tr>
 								</thead>
 								<tbody>
-									<tr>
-										<td>윗몸일으키기</td>
-										<td>50</td>
-										<td>30%</td>
-									</tr>
-									<tr>
-										<td>윗몸일으키기</td>
-										<td>50</td>
-										<td>30%</td>
-									</tr>
-									<tr>
-										<td>윗몸일으키기</td>
-										<td>50</td>
-										<td>30%</td>
-									</tr>
+								<?php $exercises = AdminRecordManage::getExercises(date("Y-m-d"));
+								foreach ($exercises as $exercise) {
+									$userRecord =
+									MemberCrossfitManagement::getUserRecord($_SESSION['barcode'], $exercise);
+									if(!$userRecord) continue;?>
+								<tr>
+									<td><?=$exercise['name']?></td>
+									<td><?=$userRecord['record']?></td>
+									<td><?=$userRecord['percentage']?></td>
+								</tr>
+								<?php } ?>
 								</tbody>
 							</table>
 						</div>

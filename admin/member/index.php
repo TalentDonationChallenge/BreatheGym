@@ -56,10 +56,18 @@
 							<thead>
 								<tr>
 									<th>#</th>
-									<th>이름</th>
-									<th class="hidden-phone">전화번호</th>
-									<th class="hidden-phone">마감일</th>
-									<th class="hidden-phone">회원코드</th>
+									<?php if($web) { ?>
+										<th>이메일</th>
+										<th class="hidden-phone">닉네임</th>
+										<th class="hidden-phone">이름</th>
+										<th class="hidden-phone">성별</th>
+										<th class="hidden-phone">가입일</th>
+									<?php } else { ?>
+										<th>이름</th>
+										<th class="hidden-phone">전화번호</th>
+										<th class="hidden-phone">마감일</th>
+										<th class="hidden-phone">회원코드</th>
+									<?php } ?>
 								</tr>
 							</thead>
 							<tbody>
@@ -68,6 +76,16 @@
 								MemberManagemant::getGymMembers($filter);
 								foreach ($members as $member) { ?>
 								<tr>
+								<?php if($web) { ?>
+									<td><input type="checkbox"></td>
+									<td><a href='profile.php?type=page&amp;email=<?=$member["email"]?>'>
+										<?=$member['email']?>
+									</a></td>
+									<td class="hidden-phone"><?=$member['nickname']?></td>
+									<td class="hidden-phone"><?=$member['name']?></td>
+									<td class="hidden-phone"><?=$member['sex']?></td>
+									<td class="hidden-phone"><?=$member['registerDate']?></td>
+								<?php } else {?>
 									<td><input type="checkbox"></td>
 									<td><a href='profile.php?type=gym&amp;barcode=<?=$member['barcode']?>'>
 										<?=$member['name']?>
@@ -75,6 +93,7 @@
 									<td class="hidden-phone"><?=$member['phone']?></td>
 									<td class="hidden-phone"><?=$member['durationDate']?></td>
 									<td class="hidden-phone"><?=$member['barcode']?></td>
+									<?php } ?>
 								</tr>
 								<?php } ?>
 							</tbody>
