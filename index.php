@@ -77,20 +77,44 @@
 	<!-- Wrap the rest of the page in another container to center all the content. -->
 
 	<div class='container marketing'>
-
 		<!-- Three columns of text below the carousel -->
 		<div class='row'>
-			<div class='col-md-4 text-center'>
-				<img class='' src='http://placehold.it/140x140'>
-				<h2>브리드짐소개</h2>
-				<p>이러쿵저러쿵 이러쿵저러쿵</p>
-				<p><a class='btn btn-default' href='#'>View details »</a></p>
+			<div class='col-md-5'>
+				<h2>Ranking<small class='pull-right'>View details >></small></h2>
+				<table class='table table-hover'>
+					<thead>
+						<td>#</td>
+						<td>이름</td>
+						<td>운동종목</td>
+						<td>기록</td>
+					</thead>
+					<tbody>
+						<tr>
+							<td>1</td>
+							<td>심종규</td>
+							<td>데드리프트</td>
+							<td>45</td>
+						</tr>
+						<tr>
+							<td>2</td>
+							<td>차진욱</td>
+							<td>데드리프트</td>
+							<td>39</td>
+						</tr>
+						<tr>
+							<td>3</td>
+							<td>나익채</td>
+							<td>데드리프트</td>
+							<td>30</td>
+						</tr>
+					</tbody>
+				</table>
+				
 			</div>
-			<div class='col-md-8 text-center'>
+			<div class='col-md-7 text-center'>
 				<img class='img-circle' src='http://placehold.it/140x140'>
-				<h2>오늘의 운동왕!</h2>
-				<p>뭐 넣어야 할지 몰라서 그냥 넣어본거니까 크게 신경쓰지 말아요 헤헤</p>
-				<p><a class='btn btn-default' href='#'>View details »</a></p>
+				<h2>오늘의 챔피언!</h2>
+				<p>축하합니다! 계속해서 분발해주세요!</p>
 			</div>
 		</div><!-- /.row -->
 
@@ -99,11 +123,38 @@
 
 		<hr class='featurette-divider'>
 
-		<div class='featurette'>
-			<h2 class='featurette-heading'>다이어트해야하는데 <span class='text-muted'>밥을 굶기도 싫다면?</span></h2>
-			<p class='lead'>운동까지 하기싫으니까 그냥 다이어트는 안될 것 같다 ㅠㅠ 졸리네 자러가고싶다 </p>
-		</div>
+		
+		<div class='container'>
+			<h2>브리드짐 이야기</h2>
+			<div class='media'>
+				<div class='media-left'>
+					<a href='#'>
+						<img class='img-rounded' src='http://placehold.it/140x140' alt='...'/>
+					</a>
+				</div>
 
+				<div class='media-body'>
+					<h4 class='media-heading'>브리드짐 제 5회 정기 모임!</h4>
+					브리드짐 제 5회 정기 오프라인 모임이 머스커비에서 있었습니다. 운동은 열심히!
+					놀 때는 누구보다 즐겁게 노는 브리드짐 가족들! 앞으로도 열심히 해서 건강한
+					생활 하도록 해요~
+				</div>
+			</div>
+			<div class='media'>
+				<div class='media-left'>
+					<a href='#'>
+						<img class='img-rounded' src='http://placehold.it/140x140' alt='...'/>
+					</a>
+				</div>
+
+				<div class='media-body'>
+					<h4 class='media-heading'>오프라인 스파링데이</h4>
+					치열한 예선 전을 거치고 결승전까지 올라온 두 선수! 차진욱 VS 허재!!
+					두 선수의 불꽃 튀기는 마지막 승부를 브리드짐 2호점에서 확인하세요!
+					오는 23일 저녁 6시에 시작되는 경기를 놓치지 마세요~:)
+				</div>
+			</div>
+		</div>
 		<hr class='featurette-divider'>
 
 		<!-- /END THE FEATURETTES -->

@@ -42,7 +42,7 @@
 								<button id='facebookLogin' class='btn btn-primary btn-lg btn-block'>FacebookLogin</button>
 								<!--<div class="fb-login-button" data-max-rows="1" data-size="medium" data-show-faces="false" data-auto-logout-link="false"></div>-->
 								<button class='btn btn-primary btn-lg btn-block'>Sign In</button>
-								<span class='pull-right'><a href='#'>Register</a></span><span><a href='#'>Need help?</a></span>
+								<span class='pull-right'><a href='/register.php'>Register</a></span><span><a href='#'>Need help?</a></span>
 
 							</div>
 
