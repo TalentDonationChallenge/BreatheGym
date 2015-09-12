@@ -15,7 +15,7 @@
 	require_once (__DIR__.'/model/consulting.php');
 	// require_once (__DIR__.'/model/crossfitGesture.php');
 	// require_once (__DIR__.'/model/crossfitInfromation.php');
-	require_once (__DIR__.'/model/freeboard.php');
+	require_once (__DIR__.'/model/board.php');
 	// require_once (__DIR__.'/model/member.php');
 	// require_once (__DIR__.'/model/note.php');
 	// require_once (__DIR__.'/model/review.php');

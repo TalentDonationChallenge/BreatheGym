@@ -1,5 +1,5 @@
 <?php
-require_once(__DIR__.'/freeboard.php');
+require_once(__DIR__.'/board.php');
     /**
      * 상담담담
      */
