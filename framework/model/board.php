@@ -114,22 +114,22 @@
         	return $pdo->lastInsertId();
         }
 
-		public function loadComments($no) {
-			$table = $this->table;
+		public function loadComments($postNumber, $tableName) {
 			$pdo = Database::getInstance();
-			$sql = "SELECT name, content, writtenTime
-			FROM {$comments} WHERE table = :table and no = :no";
-			$stmt = $pdo->prepare($sql);
+			$stmt = $pdo->prepare("SELECT nickname, content, writtenTime
+			FROM comments NATURAL JOIN member
+			WHERE tableName = :table and postNumber = :no
+			ORDER BY no DESC");
 			$stmt->execute(array(
-				':table' => $table
-				':no' => $no
+				':table' => $tableName,
+				':no' => $postNumber
 			));
 			$rows = $stmt->fetchAll();
 			$posts = array();
 
 			foreach ($rows as $row) {
 				$posts[] = array(
-					'name' => $row['name'],
+					'nickname' => $row['nickname'],
 					'content' => $row['content'],
 					'writtenTime' => date('m/d H:i:s',strtotime($row['writtenTime']))
 				);
