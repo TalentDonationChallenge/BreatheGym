@@ -18,7 +18,9 @@
 	<?php adminHeader(); ?>
 	<!--header end-->
 	<!--sidebar start-->
-	<?php adminSidebar("consulting"); ?>
+	<?php adminSidebar("consulting");
+	$consulting = new Consulting('consulting');
+	?>
 	<!--sidebar end-->
 	<section id="main-content">
 		<section class="wrapper">
@@ -35,24 +37,16 @@
 							</tr>
 						</thead>
 						<tbody>
+							<?php
+							$posts = $consulting->loadPostList(1);
+							foreach ($posts as $post) { ?>
 							<tr>
-								<td class="hidden-phone">3</td>
-								<td>레레레레옹</td>
-								<td>이지은</td>
-								<td class="hidden-phone">09/10 21:41:09</td>
+								<td><?=$post['no']?></td>
+								<td><?=$post['title']?></td>
+								<td><?=$post['nickname']?></td>
+								<td><?=$post['writtenTime']?></td>
 							</tr>
-							<tr>
-								<td class="hidden-phone">2</td>
-								<td>티키타 리듬에 맞춰 스핀 기타 리프의 테마는 스팅의 쉡오마할</td>
-								<td>아이유</td>
-								<td class="hidden-phone">09/03 10:21:58</td>
-							</tr>
-							<tr>
-								<td class="hidden-phone">1</td>
-								<td>나이 값을 떼먹은 남자</td>
-								<td>명수</td>
-								<td class="hidden-phone">09/02 18:32:23</td>
-							</tr>
+							<?php } ?>
 						</tbody>
 					</table>
 				</div>

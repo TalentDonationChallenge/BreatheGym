@@ -81,6 +81,7 @@ create table consulting(
 	title varchar(50) not null,
 	content text not null,
 	writtenTime datetime not null,
+	reply int(6) default 0 not null,
 	foreign key (email) references member(email)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1;
 
