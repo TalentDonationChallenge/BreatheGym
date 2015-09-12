@@ -13,9 +13,11 @@
   text-align: center;
   margin-bottom: 20px;
 }
+
 .marketing h2 {
   font-weight: normal;
 }
+
 .marketing .col-lg-4 p {
   margin-left: 10px;
   margin-right: 10px;
@@ -53,15 +55,28 @@
   height: 250px;
 }
 
-.introMain {
-  background-image: url(/introduction/images/introMain.png);
-  background-repeat: no-repeat;
-  background-position: fixed;
-  background-position-y: -50px;
-  background-size: 100%;
+.introduce{
+  padding-top : 40px;
 }
 
-body {
-  color: white;
-  background-color: black;
+.introduceList li{
+  text-align : center;
+  padding : 10px;
+}
+
+.introduceList{
+  padding : 20px;
+  font-size : 20px;
+  text-align : left;
+  color : #8E8E8E;
+}
+
+.introduceList :hover{
+  background-color : #8E8E8E;
+  color : white;
+}
+
+.grayBackground{{
+  color : white;
+  background-color : #8E8E8E;
 }
