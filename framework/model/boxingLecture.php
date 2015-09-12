@@ -1,9 +1,9 @@
 <?php
 require_once(__DIR__.'/board.php');
     /**
-     * 복싱 후기
+     * 복싱 강좌
      */
-    class review extends Board {
+    class boxingLecture extends Board {
         
     }
 ?>

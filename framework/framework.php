@@ -9,12 +9,12 @@
 	require_once (__DIR__.'/model/exercise/user.php');
 	require_once (__DIR__.'/model/exercise/boxing.php');
 	require_once (__DIR__.'/model/exercise/crossfit.php');
-	// require_once (__DIR__.'/model/boxingInformation.php');
-	// require_once (__DIR__.'/model/boxingLesson.php');
+	// require_once (__DIR__.'/model/boxingLecture.php');
+	// require_once (__DIR__.'/model/boxingLibrary.php');
 	// require_once (__DIR__.'/model/breatheStroy.php');
 	require_once (__DIR__.'/model/consulting.php');
-	// require_once (__DIR__.'/model/crossfitGesture.php');
-	// require_once (__DIR__.'/model/crossfitInfromation.php');
+	// require_once (__DIR__.'/model/crossfitLibrary.php');
+	// require_once (__DIR__.'/model/crossfitLecture.php');
 	require_once (__DIR__.'/model/board.php');
 	// require_once (__DIR__.'/model/member.php');
 	// require_once (__DIR__.'/model/note.php');

@@ -114,5 +114,42 @@
         	return $pdo->lastInsertId();
         }
 
+		public function loadComments($no) {
+			$table = $this->table;
+			$pdo = Database::getInstance();
+			$sql = "SELECT name, content, writtenTime
+			FROM {$comments} WHERE table = :table and no = :no";
+			$stmt = $pdo->prepare($sql);
+			$stmt->execute(array(
+				':table' => $table
+				':no' => $no
+			));
+			$rows = $stmt->fetchAll();
+			$posts = array();
+
+			foreach ($rows as $row) {
+				$posts[] = array(
+					'name' => $row['name'],
+					'content' => $row['content'],
+					'writtenTime' => date('m/d H:i:s',strtotime($row['writtenTime']))
+				);
+			}
+			return $posts;
+		}
+
+		public function submitComments($name, $content, $table, $postNumber) {
+			$table = $this->table;
+			$pdo = Database::getInstance();
+			$sql = "INSERT INTO {$table} (tableName, postNumber, name, content, writtenTime)
+				VALUES (:table, :postNumber, :name, :content, NOW())";
+			$stmt = $pdo->prepare($sql);
+			$stmt->execute(array(
+				':table'=>$table,
+				':postNumber'=>$postNumber,
+				':name'=>$name,
+				':content'=>$content
+			));
+			return $pdo->lastInsertId();
+		}
 	}
 ?>
