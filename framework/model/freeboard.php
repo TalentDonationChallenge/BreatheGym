@@ -37,9 +37,9 @@
 			$pdo = Database::getInstance();
 			$sql = "SELECT no, title, nickname, writtenTime
 			FROM {$table} JOIN member ON {$table}.email = member.email
-			ORDER BY no DESC LIMIT 30 OFFSET :offset";
+			WHERE reply = 0 ORDER BY no DESC LIMIT 15 OFFSET :offset";
 			$stmt = $pdo->prepare($sql);
-			$offset = ($page-1)*30;
+			$offset = ($page-1)*15;
 			$stmt->bindParam(":offset", $offset , PDO::PARAM_INT);
 			$stmt->execute();
 			$rows = $stmt->fetchAll();
@@ -88,6 +88,16 @@
 				':no'=>$no
 			));
 			return $pdo->lastInsertId();
+		}
+
+		public function pageCount() {
+			$table = $this->table;
+			$pdo = Database::getInstance();
+			$sql = "SELECT count(no)/15 as pages FROM {$table}";
+			$stmt = $pdo->prepare($sql);
+			$stmt->execute();
+			$row = $stmt->fetch();
+			return ceil($row['pages']);
 		}
 	}
 ?>
