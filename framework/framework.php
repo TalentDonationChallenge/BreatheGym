@@ -5,6 +5,7 @@
 	require_once (__DIR__.'/model/admin/exercise.php');
 	require_once (__DIR__.'/model/admin/member.php');
 	require_once (__DIR__.'/model/admin/record.php');
+	require_once (__DIR__.'/model/admin/information.php');
 	require_once (__DIR__.'/model/exercise/user.php');
 	require_once (__DIR__.'/model/exercise/boxing.php');
 	require_once (__DIR__.'/model/exercise/crossfit.php');
