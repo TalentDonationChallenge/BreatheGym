@@ -49,9 +49,9 @@ td:nth-child(5), th:nth-child(5) {
 .time {
     margin-left: 10px;
 }
-.answer {
+.write {
     resize: none;
-    height: 100px!important;
+    height: 300px!important;
     width:100%;
 }
 
@@ -102,8 +102,18 @@ td:nth-child(5), th:nth-child(5) {
     border-bottom-style: dotted; 
 }
 
-.mt {
-    margin-top: 15px;
+.mr {
+    margin-right: 30px;
+}
+.p-title {
+    float: left;
+    font-size: 20pt ;
+}
+
+.title {
+    resize: none;
+    height: 20px !important;
+    width:70%;
 }
 
 .write-comm {

@@ -76,7 +76,9 @@
 					</li>
 					</ul>
 
-					<button type="button" class="btn btn-default pull-right">글쓰기</button>
+					<button type="button" class="btn btn-default pull-right">
+						<a href="write.php"><span>글쓰기</span><a>
+					</button>
 				</nav>
 			</div>
 		</section>

@@ -74,7 +74,7 @@ require_once(__DIR__.'/../../framework/framework.php');
 									</span>
 									<span class="date">2015.09.12. 09:02</span>
 									<span></span>
-									<p class="report">신고</p>
+									<a href="#" class="report">신고</a>
 								</div>
 
 								<div class="comm-content">
@@ -89,7 +89,7 @@ require_once(__DIR__.'/../../framework/framework.php');
 									</span>
 									<span class="date">2015.09.12. 09:02</span>
 									<span></span>
-									<p class="report">신고</p>
+									<a href="#" class="report">삭제</a>
 								</div>
 
 								<div class="comm-content">
@@ -104,7 +104,7 @@ require_once(__DIR__.'/../../framework/framework.php');
 									</span>
 									<span class="date">2015.09.12. 09:02</span>
 									<span></span>
-									<p class="report">신고</p>
+									<a href="#" class="report">신고</a>
 								</div>
 
 								<div class="comm-content">
@@ -119,7 +119,7 @@ require_once(__DIR__.'/../../framework/framework.php');
 									</span>
 									<span class="date">2015.09.12. 09:02</span>
 									<span></span>
-									<p class="report">신고</p>
+									<a href="#" class="report">신고</a>
 								</div>
 
 								<div class="comm-content">
@@ -134,7 +134,7 @@ require_once(__DIR__.'/../../framework/framework.php');
 									</span>
 									<span class="date">2015.09.12. 09:02</span>
 									<span></span>
-									<p class="report">신고</p>
+									<a href="#" class="report">신고</a>
 								</div>
 
 								<div class="comm-content">
@@ -145,7 +145,7 @@ require_once(__DIR__.'/../../framework/framework.php');
 
 						</ul>
 						<div class="write-comm mt">
-							<textarea class="answer"></textarea>
+							<textarea class="form-control answer"></textarea>
 						</div>
 							<button type="button" class="btn btn-default btn-option mt">확인</button>
 					</div>
@@ -153,7 +153,11 @@ require_once(__DIR__.'/../../framework/framework.php');
 				<div class="buttons mt">
 					<button class="btn btn-default" name="button">이전글</button>
 					<button class="btn btn-default" name="button">다음글</button>
-					<button class="btn btn-default" name="button">목록</button>
+					<button class="btn btn-default" name="button">
+						<a href="index.php">
+							<span>목록</span>
+						</a>
+					</button>
 				</div>
 			</div>
 		</section>
