@@ -4,9 +4,7 @@
 	*/
 	class Board {
 		private $table; //위험하긴한데 이게 코드를 줄이는 방법이기도 하고... 흠
-		function __construct($type)
-		{
-			printf($type);
+		function __construct($type) {
 			$this->table = $type;
 		}
 
@@ -66,14 +64,17 @@
 			$stmt = $pdo->prepare($sql);
 			$stmt->execute(array(':no' => $no));
 			$row = $stmt->fetch();
-
-			$post = array(
-				'no' => $row['no'],
-				'title' => $row['title'],
-				'nickname' => $row['nickname'],
-				'writtenTime' => $row['writtenTime']
-			);
-			return $post;
+			if($row){
+				$post = array(
+					'no' => $row['no'],
+					'title' => $row['title'],
+					'nickname' => $row['nickname'],
+					'writtenTime' => date('Y/m/d H:i:s',strtotime($row['writtenTime']))
+				);
+				return $post;
+			} else{
+				return false;
+			}
 		}
 
 		public function editPost($no, $title, $content) {
