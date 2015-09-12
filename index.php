@@ -4,14 +4,13 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<?php head('브리드 복싱 &amp; 크로스핏', array('/common/css/navigation.css')); ?>
+	<?php head('브리드 복싱 &amp; 크로스핏', array('/common/css/navigation.css','/common/css/index.css')); ?>
 	<!--[if lt IE 9]>
 	<script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
 	<![endif]-->
 </head>
 <body>
 	<script src="/common/js/facebook.js"></script>
-
 	<!-- 페이스북 SDK load -->
 	<?php
 		login();
@@ -19,6 +18,7 @@
 	?>
 	<!-- Carousel
 	================================================== -->
+	<img class='logo' src='./resources/teambreathelogo.png'/>
 	<div id='myCarousel' class='carousel slide'>
 		<!-- Indicators -->
 		<ol class='carousel-indicators'>
@@ -28,35 +28,32 @@
 		</ol>
 		<div class='carousel-inner'>
 			<div class='item active'>
-				<img src='/assets/example/bg_suburb.jpg' style='width:100%' class='img-responsive'>
+				<img src='./resources/boxing-gloves.jpg' width='100%' class='img-responsive'>
+				
 				<div class='container'>
 					<div class='carousel-caption'>
 						<h1>BREATHE BOXING GYM &amp; CROSSFIT</h1>
 						<p></p>
-						<p><a class='btn btn-lg btn-primary' href='http://getbootstrap.com'>Learn More</a></p>
+						<p><a class='btn btn-lg btn-primary' href='./introduction/gym.php'>Learn More</a></p>
 						<br>
 					</div>
 				</div>
 			</div>
 			<div class='item'>
-				<img src='main_boxing.jpg' class='img-responsive'>
+				<img src='./resources/cats.jpg' class='img-responsive' width='100%'>
 				<div class='container'>
 					<div class='carousel-caption'>
-						<h1>Boxing</h1>
-						<p>복싱은 헝그리!</p>
+						<h1>Fitness / Boxing / Crossfit</h1>
 						<p></p>
 						<br>
 					</div>
 				</div>
 			</div>
 			<div class='item'>
-				<img src='main_crossfit.jpg' class='img-responsive'>
+				<img src='./resources/Breathe.png' class='img-responsive' width='100%'>
 				<div class='container'>
 					<div class='carousel-caption'>
-						<h1>Crossfit</h1>
-						<p>크로스핏은 힘들어!</p>
-						<p></p>
-						<br>
+
 					</div>
 				</div>
 			</div>
@@ -123,9 +120,11 @@
 
 		<hr class='featurette-divider'>
 
-		
-		<div class='container'>
-			<h2>브리드짐 이야기</h2>
+		<h2 class='text-center'>브리드짐 이야기</h2>
+		<br/>
+		<br/>
+		<div class='container mediaBox'>
+			
 			<div class='media'>
 				<div class='media-left'>
 					<a href='#'>
@@ -154,12 +153,98 @@
 					오는 23일 저녁 6시에 시작되는 경기를 놓치지 마세요~:)
 				</div>
 			</div>
-		</div>
-		<hr class='featurette-divider'>
+			<div class='media'>
+				<div class='media-left'>
+					<a href='#'>
+						<img class='img-rounded' src='http://placehold.it/140x140' alt='...'/>
+					</a>
+				</div>
 
+				<div class='media-body'>
+					<h4 class='media-heading'>상반기 버피테스트 100</h4>
+					상반기 버피테스트 100이 이번 수요일에 진행되었습니다. 이번에는 반드시
+					저번보다 좋은 성적을 얻겠다는 가족들의 뜨거운 의지가 여기까지 전해졌는데요.
+					그동안의 노력의 성과가 있었기를 기대하면서~ 모두의 성적과 랭킹을
+					공개합니다!
+				</div>
+			</div>
+		</div>
+		<br/>
+		<br/>
+		<br/>
+	</div><!-- /.container -->
+	<div class='gradientBackground' style='height : 100px'></div>
+	<div class='people grayBackground'>
+		<h2>Breathe Gallery</h2>
+		<br/>
+		<div class='container gallery'>
+			<div class='row gallery'>
+				<div class='col-md-3 col-xs-6 gallery'>
+					<div class='col-md-12 col-xs-12 gallery galleryBox'>
+						<img class='img-rounded galleryImage' src='./resources/crossfit.jpg' alt='...'/>
+						<div class='gradientImage'>
+							크로스핏의 효과와 장점
+						</div>
+					</div>
+					<div class='col-md-12 col-xs-12 gallery galleryBox'>
+						<img class='img-rounded galleryImage' src='./resources/man.jpg' alt='.../'/>
+						<div class='gradientImage'>
+							어깨 근육 발달에<br/>
+							좋은 운동!
+						</div>
+					</div>
+				</div>
+				<div class='col-md-3 col-xs-6'>
+					<div class='col-md-12 col-xs-12 gallery galleryBox'>
+						<img class='img-rounded galleryImage' src='./resources/crossfit.jpg' alt='...'/>
+						<div class='gradientImage'>
+							크로스핏의 효과와 장점
+						</div>
+					</div>
+					<div class='col-md-12 col-xs-12 gallery galleryBox'>
+						<img class='img-rounded galleryImage' src='./resources/man.jpg' alt='.../'/>
+						<div class='gradientImage'>
+							어깨 근육 발달에<br/>
+							좋은 운동!
+						</div>
+					</div>
+				</div>
+				<div class='col-md-3 col-xs-6'>
+					<div class='col-md-12 col-xs-12 gallery galleryBox'>
+						<img class='img-rounded galleryImage' src='./resources/crossfit.jpg' alt='...'/>
+						<div class='gradientImage'>
+							크로스핏의 효과와 장점
+						</div>
+					</div>
+					<div class='col-md-12 col-xs-12 gallery galleryBox'>
+						<img class='img-rounded galleryImage' src='./resources/man.jpg' alt='.../'/>
+						<div class='gradientImage'>
+							어깨 근육 발달에<br/>
+							좋은 운동!
+						</div>
+					</div>
+				</div>
+				<div class='col-md-3 col-xs-6'>
+					<div class='col-md-12 col-xs-12 gallery galleryBox'>
+						<img class='img-rounded galleryImage' src='./resources/crossfit.jpg' alt='...'/>
+						<div class='gradientImage'>
+							크로스핏의 효과와 장점
+						</div>
+					</div>
+					<div class='col-md-12 col-xs-12 gallery galleryBox'>
+						<img class='img-rounded galleryImage' src='./resources/man.jpg' alt='.../'/>
+						<div class='gradientImage'>
+							어깨 근육 발달에<br/>
+							좋은 운동!
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
 		<!-- /END THE FEATURETTES -->
 
-
+	<div class='container'>
 		<!-- FOOTER -->
 		<footer>
 			<p>브리드 복싱 짐 &amp; 크로스핏</p>
@@ -168,8 +253,7 @@
 			<p class='pull-right'><a href='#'>Back to top</a></p>
 			<p>Copyright © 2015 Breathe Boxing Gym &amp; Crossfit. All rights reserved.</p>
 		</footer>
-
-	</div><!-- /.container -->
+	</div>
 	<?php scripts(array('/common/js/navigation.js')) ?>
 </body>
 </html>

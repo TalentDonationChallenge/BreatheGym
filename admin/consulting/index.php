@@ -20,6 +20,7 @@
 	<!--sidebar start-->
 	<?php adminSidebar("consulting");
 	$consulting = new Consulting('consulting');
+	$page = isset($_GET['page'])?$_GET['page']:1;
 	?>
 	<!--sidebar end-->
 	<section id="main-content">
@@ -37,33 +38,43 @@
 							</tr>
 						</thead>
 						<tbody>
-							<?php
-							$posts = $consulting->loadPostList(1);
-							foreach ($posts as $post) { ?>
-							<tr>
-								<td><?=$post['no']?></td>
-								<td><?=$post['title']?></td>
-								<td><?=$post['nickname']?></td>
-								<td><?=$post['writtenTime']?></td>
-							</tr>
-							<?php } ?>
+						<?php
+						$posts = $consulting->loadPostList($page);
+						foreach ($posts as $post) { ?>
+						<tr>
+							<td><?=$post['no']?></td>
+							<td><?=$post['title']?></td>
+							<td><?=$post['nickname']?></td>
+							<td><?=$post['writtenTime']?></td>
+						</tr>
+						<?php } ?>
 						</tbody>
 					</table>
 				</div>
 				<nav>
 					<ul class="pagination">
-					<li class="disabled">
-						<a href="#" aria-label="Previous">
+					<?php
+					$allPages = $consulting->pageCount();
+					$pagingStart = $page%5==0?$page-4:$page-($page%5)+1; ?>
+					<?=$page<=5?'':
+					'<li>
+						<a href="index.php?page='.($pagingStart-1).'" aria-label="Previous">
 						<span aria-hidden="true">&laquo;</span>
 						</a>
-					</li>
-					<li class="active"><a href="#">1</a></li>
-					<li><a href="#">2</a></li>
-					<li class="disabled">
-						<a href="#" aria-label="Next">
+					</li>'?>
+					<?php
+					for ($i=$pagingStart; $i < $pagingStart+5 ; $i++) {
+						if ($i==$allPages+1) break;?>
+						<li class="<?=$page==$i?"active":""?>">
+							<a href="index.php?page=<?=$i?>"><?=$i?></a>
+						</li>
+					<?php }?>
+					<?=$pagingStart+4<$allPages?
+					'<li>
+						<a href="index.php?page='.($pagingStart+5).'" aria-label="Next">
 						<span aria-hidden="true">&raquo;</span>
 						</a>
-					</li>
+					</li>':''?>
 					</ul>
 				</nav>
 			</div>
