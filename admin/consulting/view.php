@@ -44,6 +44,7 @@
 					</div>
 				</div>
 				<h4><i class="fa fa-angle-right"></i> 답변</h4>
+				<?php  ?>
 				<textarea class="form-control answer"></textarea>
 				<div class="buttons mt">
 					<button class="btn btn-default" name="button">이전글</button>
