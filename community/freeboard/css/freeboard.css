@@ -1,0 +1,113 @@
+th {
+    text-align: center;
+}
+td:first-child, th:first-child {
+    width: 55px;
+    text-align: center;
+}
+
+td:nth-child(2) {
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    max-width: 0;
+}
+
+td:nth-child(2):hover {
+    text-decoration: underline;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+td:nth-child(3),th:nth-child(3) {
+    width: 100px;
+    text-align: center;
+}
+td:nth-child(4), th:nth-child(4) {
+    width: 120px;
+    text-align: center;
+}
+
+td:nth-child(5), th:nth-child(5) {
+    width: 55px;
+    text-align: center;
+}
+
+#main-content nav{
+    text-align: center;
+}
+.panel-title {
+    font-weight: 600;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+.author {
+    padding-right: 10px;
+    border-right: 1px solid black;
+}
+.time {
+    margin-left: 10px;
+}
+.answer {
+    resize: none;
+    height: 100px!important;
+    width:100%;
+}
+
+.nick-area {
+    font-size: 15px;
+}
+.box-reply {
+    margin: 10px 20px;
+    padding: 20px 20px;
+}
+
+.bg-color {
+    background-color: #f9f9f9;
+    overflow: hidden;
+}
+
+.btn-option {
+    float: right;
+    width: 100px;
+    height: 100px;
+}
+
+.date {
+    font-size: 11px;
+    font-family: '돋움',dotum,Helvetica,sans-serif;
+    margin: 3px 0 0 7px;
+}
+
+.del-padding {
+    padding: 0px !important;
+}
+
+.report {
+    float: right;
+    vertical-align: center;
+}
+
+.comm-content {
+    display: block;
+    text-align: left;
+}
+
+.comm-line {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    height: 1px;
+    border-bottom-width: 1px;
+    border-bottom-style: dotted; 
+}
+
+.mt {
+    margin-top: 15px;
+}
+
+.write-comm {
+    position: absolute;
+    left: 50px;
+    right: 170px;
+}
