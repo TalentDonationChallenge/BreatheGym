@@ -18,7 +18,10 @@
 	<?php adminHeader(); ?>
 	<!--header end-->
 	<!--sidebar start-->
-	<?php adminSidebar("consulting"); ?>
+	<?php adminSidebar("consulting");
+	$consulting = new Consulting('consulting');
+	$page = isset($_GET['page'])?$_GET['page']:1;
+	?>
 	<!--sidebar end-->
 	<section id="main-content">
 		<section class="wrapper">
@@ -35,41 +38,43 @@
 							</tr>
 						</thead>
 						<tbody>
-							<tr>
-								<td class="hidden-phone">3</td>
-								<td>레레레레옹</td>
-								<td>이지은</td>
-								<td class="hidden-phone">09/10 21:41:09</td>
-							</tr>
-							<tr>
-								<td class="hidden-phone">2</td>
-								<td>티키타 리듬에 맞춰 스핀 기타 리프의 테마는 스팅의 쉡오마할</td>
-								<td>아이유</td>
-								<td class="hidden-phone">09/03 10:21:58</td>
-							</tr>
-							<tr>
-								<td class="hidden-phone">1</td>
-								<td>나이 값을 떼먹은 남자</td>
-								<td>명수</td>
-								<td class="hidden-phone">09/02 18:32:23</td>
-							</tr>
+						<?php
+						$posts = $consulting->loadPostList($page);
+						foreach ($posts as $post) { ?>
+						<tr>
+							<td><?=$post['no']?></td>
+							<td><?=$post['title']?></td>
+							<td><?=$post['nickname']?></td>
+							<td><?=$post['writtenTime']?></td>
+						</tr>
+						<?php } ?>
 						</tbody>
 					</table>
 				</div>
 				<nav>
 					<ul class="pagination">
-					<li class="disabled">
-						<a href="#" aria-label="Previous">
+					<?php
+					$allPages = $consulting->pageCount();
+					$pagingStart = $page%5==0?$page-4:$page-($page%5)+1; ?>
+					<?=$page<=5?'':
+					'<li>
+						<a href="index.php?page='.($pagingStart-1).'" aria-label="Previous">
 						<span aria-hidden="true">&laquo;</span>
 						</a>
-					</li>
-					<li class="active"><a href="#">1</a></li>
-					<li><a href="#">2</a></li>
-					<li class="disabled">
-						<a href="#" aria-label="Next">
+					</li>'?>
+					<?php
+					for ($i=$pagingStart; $i < $pagingStart+5 ; $i++) {
+						if ($i==$allPages+1) break;?>
+						<li class="<?=$page==$i?"active":""?>">
+							<a href="index.php?page=<?=$i?>"><?=$i?></a>
+						</li>
+					<?php }?>
+					<?=$pagingStart+4<$allPages?
+					'<li>
+						<a href="index.php?page='.($pagingStart+5).'" aria-label="Next">
 						<span aria-hidden="true">&raquo;</span>
 						</a>
-					</li>
+					</li>':''?>
 					</ul>
 				</nav>
 			</div>

@@ -27,34 +27,34 @@
 					<div class = "col-md-3 col-sm-6 mb">
 						<div class="white-panel pn">
 							<div class = "white-header">
-								<h5>총 회원수</h5>
+								<h5>체육관 회원수</h5>
 							</div>
 							<h1><i class="icon fa fa-users"></i></h1>
-							<h3>115명</h3>
+							<h3><?=AdminInformation::pageMemberCount()?>명</h3>
 						</div>
 					</div>
 					<div class = "col-md-3 col-sm-6 mb">
 						<div class="white-panel pn">
 							<div class = "white-header">
-								<h5>오늘 출석</h5>
+								<h5>체육관 오늘 출석</h5>
 							</div>
 							<h1><i class="icon fa fa-calendar-check-o"></i></h1>
-							<h3>79명</h3>
+							<h3><?=AdminInformation::attendanceCount()?>명</h3>
 						</div>
 					</div>
 					<div class = "col-md-3 col-sm-6 mb">
 						<div class="white-panel pn">
 							<div class = "white-header">
-								<h5>최근 가입자</h5>
+								<h5>최근 웹페이지 가입자 (1개월)</h5>
 							</div>
 							<h1><i class="icon fa fa-user-plus"></i></h1>
-							<h3>13명</h3>
+							<h3><?=AdminInformation::recentlyJoinedMember()?>명</h3>
 						</div>
 					</div>
 					<div class = "col-md-3 col-sm-6 mb">
 						<div class="white-panel pn">
 							<div class = "white-header">
-								<h5>방문자 수</h5>
+								<h5>웹페이지 방문자 수 (오늘)</h5>
 							</div>
 							<h1><i class="icon fa fa-bar-chart-o"></i></h1>
 							<h3>104명</h3>
@@ -63,13 +63,12 @@
 				</div>
 			</div>
 			<div class="col-lg-9">
-				<h3>만료자</h3>
+				<h3>만료 예정자</h3>
 				<div class="content-panel">
 					<table class="table table-striped">
 						<thead>
 							<tr>
 								<th>이름</th>
-								<th>시간</th> <!-- 시간은 왜있냐능.. -->
 								<th>등록일</th>
 								<th>마감일</th>
 								<th>전화</th>
@@ -78,14 +77,12 @@
 						<tbody>
 							<tr>
 								<td>나익채</td>
-								<td>??</td>
 								<td>7월 20일</td>
 								<td>8월 20일</td>
 								<td>010-5388-7127</td>
 							</tr>
 							<tr>
 								<td>김가연</td>
-								<td>??</td>
 								<td>7월 20일</td>
 								<td>8월 20일</td>
 								<td>010-4045-9103</td>
