@@ -68,6 +68,7 @@
 				$post = array(
 					'no' => $row['no'],
 					'title' => $row['title'],
+					'content'=>$row['content'],
 					'nickname' => $row['nickname'],
 					'writtenTime' => date('Y/m/d H:i:s',strtotime($row['writtenTime']))
 				);

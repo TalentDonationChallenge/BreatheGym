@@ -39,8 +39,8 @@
 						<h2 class="panel-title"><?=htmlspecialchars($posting['title'])?></h2>
 					</div>
 					<div class="panel-body">
-						<p><?=preg_match("/^ *$/", $notice['content'])?
-						"&nbsp;":str_replace("\n", '<br />', htmlspecialchars($notice['content']));?></p>
+						<p><?=preg_match("/^ *$/", $posting['content'])?
+						"&nbsp;":str_replace("\n", '<br />', htmlspecialchars($posting['content']));?></p>
 					</div>
 				</div>
 				<h4><i class="fa fa-angle-right"></i> 답변</h4>
