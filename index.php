@@ -67,14 +67,13 @@
 		</a>
 	</div>
 	<!-- /.carousel -->
-
-
 	<!-- Marketing messaging and featurettes
 	================================================== -->
 	<!-- Wrap the rest of the page in another container to center all the content. -->
-
+	
 	<div class='container marketing'>
 		<!-- Three columns of text below the carousel -->
+		<h1> > Today Ranking</h1>
 		<div class='row'>
 			<div class='col-md-5'>
 				<h2>Ranking<small class='pull-right'>View details >></small></h2>
@@ -114,14 +113,10 @@
 				<p>축하합니다! 계속해서 분발해주세요!</p>
 			</div>
 		</div><!-- /.row -->
-
-
-		<!-- START THE FEATURETTES -->
-
-		<hr class='featurette-divider'>
-
-		<h2 class='text-center'>브리드짐 이야기</h2>
 		<br/>
+		<br/>
+		<h1>> Breathe Diary<small class='pull-right'>View details>></small></h1>
+		<!-- START THE FEATURETTES -->
 		<br/>
 		<div class='container mediaBox'>
 			
@@ -175,9 +170,8 @@
 	</div><!-- /.container -->
 	<div class='gradientBackground' style='height : 100px'></div>
 	<div class='people grayBackground'>
-		<h2>Breathe Gallery</h2>
-		<br/>
 		<div class='container gallery'>
+			<h1>> Breathe Gallery</h1>
 			<div class='row gallery'>
 				<div class='col-md-3 col-xs-6 gallery'>
 					<div class='col-md-12 col-xs-12 gallery galleryBox'>
@@ -198,14 +192,13 @@
 					<div class='col-md-12 col-xs-12 gallery galleryBox'>
 						<img class='img-rounded galleryImage' src='./resources/crossfit.jpg' alt='...'/>
 						<div class='gradientImage'>
-							크로스핏의 효과와 장점
+							싸부님의 다이어리
 						</div>
 					</div>
 					<div class='col-md-12 col-xs-12 gallery galleryBox'>
 						<img class='img-rounded galleryImage' src='./resources/man.jpg' alt='.../'/>
 						<div class='gradientImage'>
-							어깨 근육 발달에<br/>
-							좋은 운동!
+							오늘의 크로스핏 강좌
 						</div>
 					</div>
 				</div>
@@ -213,7 +206,7 @@
 					<div class='col-md-12 col-xs-12 gallery galleryBox'>
 						<img class='img-rounded galleryImage' src='./resources/crossfit.jpg' alt='...'/>
 						<div class='gradientImage'>
-							크로스핏의 효과와 장점
+							오늘의 복싱 강좌
 						</div>
 					</div>
 					<div class='col-md-12 col-xs-12 gallery galleryBox'>
@@ -244,9 +237,10 @@
 	</div>
 		<!-- /END THE FEATURETTES -->
 
-	<div class='container'>
+	<div class='people grayBackground'>
 		<!-- FOOTER -->
-		<footer>
+		<footer class='container'>
+			<img src = "./resources/teambreathelogo.png" class='pull-left'/>
 			<p>브리드 복싱 짐 &amp; 크로스핏</p>
 			<p>1호점 : 경기도 안산시 어쩌구저쩌구</p>
 			<p>2호점 : 경기도 안산시 상록구 어쩌구</p>
