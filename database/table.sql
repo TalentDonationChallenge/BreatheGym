@@ -7,11 +7,20 @@ drop table if exists consulting;
 drop table if exists breatheBoard;
 drop table if exists freeBoard;
 drop table if exists diaryBoard;
-drop table if exists member;
 drop table if exists exerciseList;
 drop table if exists boxingList;
 drop table if exists boxingLevel;
+drop table if exists exerciseEpilogue;
+drop table if exists boxingLib;
+drop table if exists boxingLec;
+drop table if exists sparring;
+drop table if exists crossfitLib;
+drop table if exists crossfitLec;
+drop table if exists comments;
+drop table if exists pictures;
+drop table if exists member;
 drop table if exists gymMember;
+
 
 create table gymMember(
 	barcode varchar(30) primary key default '',
@@ -106,6 +115,73 @@ create table freeBoard(
 	foreign key (email) references member(email)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1;
 
+-- 운동 후기
+create table exerciseEpilogue(
+	no int(6) not null primary key AUTO_INCREMENT,
+	email varchar(50) not null default '',
+	title varchar(50) not null,
+	content text not null,
+	writtenTime datetime not null,
+	hits int(6) not null default 0,
+	foreign key (email) references member(email)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1;
+
+-- 복싱 자료실
+create table boxingLib(
+	no int(6) not null primary key AUTO_INCREMENT,
+	email varchar(50) not null default '',
+	title varchar(50) not null,
+	content text not null,
+	writtenTime datetime not null,
+	hits int(6) not null default 0,
+	foreign key (email) references member(email)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1;
+
+-- 복싱 강의실
+create table boxingLec(
+	no int(6) not null primary key AUTO_INCREMENT,
+	email varchar(50) not null default '',
+	title varchar(50) not null,
+	content text not null,
+	writtenTime datetime not null,
+	hits int(6) not null default 0,
+	foreign key (email) references member(email)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1;
+
+-- 스파링 영상
+create table sparring(
+	no int(6) not null primary key AUTO_INCREMENT,
+	email varchar(50) not null default '',
+	title varchar(50) not null,
+	content text not null,
+	writtenTime datetime not null,
+	hits int(6) not null default 0,
+	foreign key (email) references member(email)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1;
+
+-- 크로스핏 자료실
+create table crossfitLib(
+	no int(6) not null primary key AUTO_INCREMENT,
+	email varchar(50) not null default '',
+	title varchar(50) not null,
+	content text not null,
+	writtenTime datetime not null,
+	hits int(6) not null default 0,
+	foreign key (email) references member(email)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1;
+
+-- 크로스핏 동작들
+create table crossfitLec(
+	no int(6) not null primary key AUTO_INCREMENT,
+	email varchar(50) not null default '',
+	title varchar(50) not null,
+	content text not null,
+	writtenTime datetime not null,
+	hits int(6) not null default 0,
+	foreign key (email) references member(email)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1;
+
+
 -- 사부님의 노트
 create table diaryBoard(
 	no int(6) not null primary key AUTO_INCREMENT,
@@ -132,4 +208,25 @@ create table boxingLevel(
 	barcode varchar(30) primary key,
 	no int(6) not null default 0,
 	foreign key (barcode) references gymMember(barcode)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- 댓글 테이블
+create table comments(
+	no int(6) not null primary key AUTO_INCREMENT,
+	tableName enum('breatheBoard', 'freeBoard', 'diaryBoard', 'consulting',
+		'exerciseEpilogue', 'boxingLib', 'boxingLec', 'sparring', 'crossfitLec', 'crossfitLib') not null,
+	postNumber int(6) not null,
+	name varchar(20) not null,
+	content text not null,
+	writtenTime datetime not null
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1;
+
+-- 사진 테이블
+create table pictures(
+	no int(6) not null primary key AUTO_INCREMENT,
+	tableName enum('breatheBoard', 'freeBoard', 'diaryBoard', 'consulting',
+		'exerciseEpilogue', 'boxingLib', 'boxingLec', 'sparring', 'crossfitLec', 'crossfitLib') not null,
+	postNumber int(6) not null,
+	fileName varchar(50) not null,
+	originFileName varchar(50) not null
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1;
