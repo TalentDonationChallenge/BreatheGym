@@ -4,9 +4,7 @@
 	*/
 	class Board {
 		private $table; //위험하긴한데 이게 코드를 줄이는 방법이기도 하고... 흠
-		function __construct($type)
-		{
-			printf($type);
+		function __construct($type) {
 			$this->table = $type;
 		}
 
@@ -37,7 +35,7 @@
 			$pdo = Database::getInstance();
 			$sql = "SELECT no, title, nickname, writtenTime
 			FROM {$table} JOIN member ON {$table}.email = member.email
-			WHERE reply = 0 ORDER BY no DESC LIMIT 15 OFFSET :offset";
+			ORDER BY no DESC LIMIT 15 OFFSET :offset";
 			$stmt = $pdo->prepare($sql);
 			$offset = ($page-1)*15;
 			$stmt->bindParam(":offset", $offset , PDO::PARAM_INT);
@@ -66,14 +64,18 @@
 			$stmt = $pdo->prepare($sql);
 			$stmt->execute(array(':no' => $no));
 			$row = $stmt->fetch();
-
-			$post = array(
-				'no' => $row['no'],
-				'title' => $row['title'],
-				'nickname' => $row['nickname'],
-				'writtenTime' => $row['writtenTime']
-			);
-			return $post;
+			if($row){
+				$post = array(
+					'no' => $row['no'],
+					'title' => $row['title'],
+					'content'=>$row['content'],
+					'nickname' => $row['nickname'],
+					'writtenTime' => date('Y/m/d H:i:s',strtotime($row['writtenTime']))
+				);
+				return $post;
+			} else{
+				return false;
+			}
 		}
 
 		public function editPost($no, $title, $content) {
@@ -99,5 +101,18 @@
 			$row = $stmt->fetch();
 			return ceil($row['pages']);
 		}
+
+        public function addHitCounter($no, $hits) {
+        	$table = $this->table;
+        	$pdo = Database::getInstance();
+        	$sql = "UPDATE {$table} SET hit = :hit WHERE no = :no";
+        	$stmt = $pdo->prepare($sql);
+        	$stmt->execute(array(
+        		':hit' => $hits+1,
+        		':no' => $no
+        	));
+        	return $pdo->lastInsertId();
+        }
+
 	}
 ?>

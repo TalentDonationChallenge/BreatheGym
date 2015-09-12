@@ -23,6 +23,9 @@ td:nth-child(2):hover {
     cursor: pointer;
     font-weight: bold;
 }
+td>a {
+    color : #797979;
+}
 #main-content nav{
     text-align: center;
 }

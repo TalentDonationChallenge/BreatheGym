@@ -43,7 +43,9 @@
 						foreach ($posts as $post) { ?>
 						<tr>
 							<td><?=$post['no']?></td>
-							<td><?=$post['title']?></td>
+							<td><a href="view.php?no=<?=$post['no']?>">
+								<?=$post['title']?>
+							</a></td>
 							<td><?=$post['nickname']?></td>
 							<td><?=$post['writtenTime']?></td>
 						</tr>
