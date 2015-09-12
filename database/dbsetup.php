@@ -26,8 +26,8 @@
 	$gymMembers = json_decode(file_get_contents("gymMember.json"), true);
 	foreach ($gymMembers as $gymMember) {
 		$stmt = $pdo->prepare('INSERT INTO gymMember
-			(barcode, name, sex, height, weight, registerDate, duration, branch)
-		VALUES (:barcode, :name, :sex, :height, :weight, :registerDate, :duration, :branch)');
+			(barcode, name, sex, height, weight, registerDate, duration, branch, active)
+		VALUES (:barcode, :name, :sex, :height, :weight, :registerDate, :duration, :branch, :active)');
 		$stmt->execute(array(
 			":barcode"=>$gymMember["barcode"],
 			":name"=>$gymMember["name"],
@@ -36,15 +36,16 @@
 			":weight"=>$gymMember["weight"],
 			":registerDate"=>$gymMember["registerDate"],
 			":duration"=>$gymMember["duration"],
-			":branch"=>$gymMember["branch"]
+			":branch"=>$gymMember["branch"],
+			":active"=>$gymMember["active"]
 		));
 	}
 
 	$members = json_decode(file_get_contents("member.json"), true);
 	foreach ($members as $member) {
 		$stmt = $pdo->prepare("INSERT INTO member
-			(email, password, name, phone, barcode, birthday, facebook, sex, registerDate, nickname, active)
-			VALUES (:email, :password, :name, :phone, :barcode, :birthday, :facebook, :sex, :registerDate, :nickname, :active)");
+			(email, password, name, phone, barcode, birthday, facebook, sex, registerDate, nickname, level)
+			VALUES (:email, :password, :name, :phone, :barcode, :birthday, :facebook, :sex, :registerDate, :nickname, :level)");
 		$stmt->execute(array(
 			':email'=>$member['email'],
 			':password'=>sha1($member['password']),
@@ -56,7 +57,7 @@
 			':sex'=>$member['sex'],
 			':registerDate'=>$member['registerDate'],
 			':nickname'=>$member['nickname'],
-			':active'=>$member['active']
+			':level'=>$member['level']
 		));
 	}
 

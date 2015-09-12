@@ -23,9 +23,11 @@
 	<!-- 글번호를 GET으로 받아와서 고고싱하기로 하겠습니다 -->
 	<?php if (isset($_GET['no'])) {
 		$consulting = new Consulting('consulting');
-		$posting = $consulting->loadPost($_GET['no']);
-		// 포스팅이 존재하지 않는 경우, $posting은 false를 반환
-	} ?>
+		$posting = $consulting->loadPost($_GET['no']); // 포스팅이 존재하지 않는 경우, $posting은 false를 반환
+		$reply = $consulting->loadReply($_GET['no']); // 답변이 존재하지 않는 경우, $reply는 false
+	}
+	$page=isset($_GET['page'])?$_GET['page']:1;
+	?>
 	<section id="main-content">
 		<section class="wrapper">
 			<h3><i class="fa fa-angle-right"></i> 상담</h3>
@@ -44,13 +46,29 @@
 					</div>
 				</div>
 				<h4><i class="fa fa-angle-right"></i> 답변</h4>
-				<?php  ?>
+				<?php if ($reply) { ?>
+				<div class="panel panel-default mb">
+					<div class="panel-heading">
+						<span class="pull-right hidden-phone time">
+							<?=$reply['writtenTime']?>
+						</span>
+						<h2 class="panel-title"><?=htmlspecialchars($reply['title'])?></h2>
+					</div>
+					<div class="panel-body">
+						<p><?=preg_match("/^ *$/", $reply['content'])?
+						"&nbsp;":str_replace("\n", '<br />', htmlspecialchars($reply['content']));?></p>
+					</div>
+				</div>
+				<?php } else { ?>
 				<textarea class="form-control answer"></textarea>
+				<?php }?>
 				<div class="buttons mt">
-					<button class="btn btn-default" name="button">이전글</button>
-					<button class="btn btn-default" name="button">다음글</button>
-					<button class="btn btn-default" name="button">목록</button>
-					<button class="btn btn-primary pull-right" name="button">등록</button>
+					<button class="btn btn-default" name="button">
+						<a href="index.php?page=<?=$page?>">목록</a>
+					</button>
+					<?=$reply?
+					'<button class="btn btn-primary pull-right" name="button">수정</button>':
+					'<button class="btn btn-primary pull-right" name="button">등록</button>'?>
 				</div>
 			</div>
 		</section>

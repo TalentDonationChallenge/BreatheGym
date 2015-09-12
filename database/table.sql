@@ -32,7 +32,8 @@ create table gymMember(
 	weight int(3) not null default 0 check (weight >= 0),
 	registerDate date not null default '2000-01-01',
 	duration int(2) not null default 0 check (duration >= 0), -- 개월수 단위로
-	branch int(1) not null default 1
+	branch int(1) not null default 1,
+	active int(1) not null default 0 check (active = 0 or active = 1)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 create table member(
@@ -46,7 +47,7 @@ create table member(
 	sex int(1) not null default 0 check (sex = 0 or sex = 1),
 	registerDate date default '2000-01-01',
 	nickname varchar(30) not null unique default '',
-	active int(1) not null default 0 check (active = 0 or active = 1),
+	level int(1) not null default 0,
 	foreign key (barcode) references gymMember(barcode)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 

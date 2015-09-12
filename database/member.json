@@ -1,5 +1,17 @@
 [
 	{
+		"email":"master@gmail.com",
+		"password":"1111",
+		"name":"",
+		"phone":"01012348125",
+		"barcode":"djdbffuq123",
+		"birthday":"2015-01-23",
+		"facebook":1,
+		"sex":0,
+		"registerDate":"2015-07-19",
+		"nickname":"멋쟁이싸부",
+		"level":9
+	},{
 		"email":"dhfje@daum.net",
 		"password":"1111",
 		"name":"테일러",
@@ -10,7 +22,7 @@
 		"sex":0,
 		"registerDate":"2015-07-19",
 		"nickname":"뿌잉",
-		"active":1
+		"level":0
 	},
 	{
 		"email":"kkkkk@naver.com",
@@ -23,7 +35,7 @@
 		"sex":0,
 		"registerDate":"2015-07-21",
 		"nickname":"김클린",
-		"active":1
+		"level":0
 	},
 	{
 		"email":"kasdkbjf1@gmail.com",
@@ -36,7 +48,7 @@
 		"sex":0,
 		"registerDate":"2015-07-13",
 		"nickname":"두낫풋",
-		"active":1
+		"level":0
 	},
 	{
 		"email":"asdfq12f@gmail.com",
@@ -49,7 +61,7 @@
 		"sex":0,
 		"registerDate":"2015-02-19",
 		"nickname":"니엄마요리잘함",
-		"active":1
+		"level":0
 
 	},
 	{
@@ -63,7 +75,7 @@
 		"sex":0,
 		"registerDate":"2015-03-19",
 		"nickname":"오우지쟈스",
-		"active":1
+		"level":0
 	},
 	{
 		"email":"asdfa11@adsf.net",
@@ -76,7 +88,7 @@
 		"sex":0,
 		"registerDate":"2014-07-19",
 		"nickname":"매니퓰",
-		"active":1
+		"level":0
 	},
 	{
 		"email":"ashd123@dbndf.com",
@@ -89,7 +101,7 @@
 		"sex":0,
 		"registerDate":"2015-01-12",
 		"nickname":"파이트",
-		"active":1
+		"level":0
 	},
 	{
 		"email":"ahsdh12@abxgd.com",
@@ -102,7 +114,7 @@
 		"sex":0,
 		"registerDate":"2015-01-19",
 		"nickname":"디스솔브",
-		"active":1
+		"level":0
 	},
 	{
 		"email":"ahshdu123@jdjdjf.co.kr",
@@ -115,8 +127,8 @@
 		"sex":0,
 		"registerDate":"2014-07-19",
 		"nickname":"나자렛몽키스패너",
-		"active":1
-	},	
+		"level":0
+	},
 	{
 		"email":"didu1834@daum.net",
 		"password":"1111",
@@ -128,7 +140,7 @@
 		"sex":1,
 		"registerDate":"2015-01-19",
 		"nickname":"핸들위드",
-		"active":1
+		"level":0
 	},
 	{
 		"email":"d9d0d71@naver.com",
@@ -141,7 +153,7 @@
 		"sex":1,
 		"registerDate":"2015-03-19",
 		"nickname":"타이드팟즈",
-		"active":1
+		"level":0
 	},
 	{
 		"email":"dufu1841@gmail.com",
@@ -154,7 +166,7 @@
 		"sex":1,
 		"registerDate":"2015-01-11",
 		"nickname":"오션미스트",
-		"active":1
+		"level":0
 	},
 	{
 		"email":"jdud819e@gmail.com",
@@ -167,7 +179,7 @@
 		"sex":0,
 		"registerDate":"2015-04-19",
 		"nickname":"코우션",
-		"active":1
+		"level":0
 
 	},
 	{
@@ -181,7 +193,7 @@
 		"sex":0,
 		"registerDate":"2014-07-19",
 		"nickname":"아이이리턴트",
-		"active":1
+		"level":0
 	},
 	{
 		"email":"id818idjf@aid123.com",
@@ -194,7 +206,7 @@
 		"sex":1,
 		"registerDate":"1992-02-19",
 		"nickname":"함풀이프",
-		"active":1
+		"level":0
 	},
 	{
 		"email":"jdifqe123@naver.com",
@@ -207,7 +219,7 @@
 		"sex":1,
 		"registerDate":"2015-01-11",
 		"nickname":"스왈로드오어",
-		"active":1
+		"level":0
 	},
 	{
 		"email":"diaif19293@naver.com",
@@ -220,7 +232,7 @@
 		"sex":0,
 		"registerDate":"2015-01-19",
 		"nickname":"풋인마우스",
-		"active":1
+		"level":0
 		},
 	{
 		"email":"asdfuiweh@naver.com",
@@ -233,7 +245,7 @@
 		"sex":0,
 		"registerDate":"2015-07-19",
 		"nickname":"킵아웃오브",
-		"active":1
+		"level":0
 	},
 	{
 		"email":"sdaufhsdf1@daum.net",
@@ -246,7 +258,7 @@
 		"sex":1,
 		"registerDate":"2015-06-09",
 		"nickname":"더리치오브",
-		"active":1
+		"level":0
 	},
 	{
 		"email":"jdfhaks223@naver.com",
@@ -259,7 +271,7 @@
 		"sex":0,
 		"registerDate":"2015-05-19",
 		"nickname":"칠드런",
-		"active":1
+		"level":0
 	},
 	{
 		"email":"dkdf8134@gmail.com",
@@ -272,7 +284,7 @@
 		"sex":0,
 		"registerDate":"2015-05-19",
 		"nickname":"시커션온",
-		"active":1
+		"level":0
 	},
 	{
 		"email":"diff818@gmail.com",
@@ -285,7 +297,7 @@
 		"sex":1,
 		"registerDate":"2015-03-19",
 		"nickname":"백라벨",
-		"active":1
+		"level":0
 
 	},
 	{
@@ -299,7 +311,7 @@
 		"sex":1,
 		"registerDate":"2015-03-11",
 		"nickname":"드라이핸즈",
-		"active":1
+		"level":0
 	},
 	{
 		"email":"kdffaaa@gmail.com",
@@ -312,7 +324,7 @@
 		"sex":0,
 		"registerDate":"2015-01-19",
 		"nickname":"애드팩투드럼",
-		"active":1
+		"level":0
 	},
 	{
 		"email":"jfjfu183@gmail.com",
@@ -325,7 +337,7 @@
 		"sex":0,
 		"registerDate":"2015-07-11",
 		"nickname":"애드클로디스",
-		"active":1
+		"level":0
 	},
 	{
 		"email":"fjf812@naver.com",
@@ -338,7 +350,7 @@
 		"sex":0,
 		"registerDate":"2015-07-19",
 		"nickname":"클로즈패키지",
-		"active":1
+		"level":0
 	},
 	{
 		"email":"nhhfhfu1@gmail.com",
@@ -351,7 +363,7 @@
 		"sex":0,
 		"registerDate":"2015-01-10",
 		"nickname":"애프터유즈",
-		"active":1
+		"level":0
 	},
 	{
 		"email":"jduf818@gmail.com",
@@ -364,7 +376,7 @@
 		"sex":0,
 		"registerDate":"2015-07-19",
 		"nickname":"포보스",
-		"active":1
+		"level":0
 	},
 	{
 		"email":"idiffh111@naver.com",
@@ -377,7 +389,7 @@
 		"sex":0,
 		"registerDate":"2015-02-11",
 		"nickname":"컷히어",
-		"active":1
+		"level":0
 	},
 	{
 		"email":"dufudfu11@naver.com",
@@ -390,6 +402,6 @@
 		"sex":0,
 		"registerDate":"2015-01-19",
 		"nickname":"식스틴팩캡슐즈",
-		"active":1
+		"level":0
 	}
 ]

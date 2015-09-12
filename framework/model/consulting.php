@@ -4,20 +4,48 @@ require_once(__DIR__.'/board.php');
      * 상담담담
      */
     class Consulting extends Board {
+        public function loadPostList($page) {
+			$pdo = Database::getInstance();
+			$sql = "SELECT no, title, nickname, writtenTime
+			FROM consulting NATURAL JOIN member
+			WHERE reply=0 ORDER BY no DESC LIMIT 15 OFFSET :offset";
+			$stmt = $pdo->prepare($sql);
+			$offset = ($page-1)*15;
+			$stmt->bindParam(":offset", $offset , PDO::PARAM_INT);
+			$stmt->execute();
+			$rows = $stmt->fetchAll();
+
+			$posts = array();
+
+			foreach ($rows as $row) {
+				$posts[] = array(
+					'no' => $row['no'],
+					'title' => $row['title'],
+					'nickname' => $row['nickname'],
+					'writtenTime' => date('m/d H:i:s',strtotime($row['writtenTime']))
+				);
+			}
+			return $posts;
+		}
+
         public function loadReply($origin) {
             $pdo = Database::getInstance();
-			$stmt = $pdo->prepare("SELECT content, writtenTime
-                FROM consult WHERE reply = :reply");
+			$stmt = $pdo->prepare("SELECT title, content, writtenTime
+                FROM consulting WHERE reply = :reply");
 			$stmt->execute(array(
-				':content'=>$content,
                 ':reply'=>$origin
 			));
             $row = $stmt->fetch();
-            $reply = array(
-                'content'=>$row['content'],
-                'writtenTime'=> date('m/d H:i:s',strtotime($row['writtenTime']))
-            );
-			return $reply;
+            if($row){
+                $reply = array(
+                    'title'=>$row['title'],
+                    'content'=>$row['content'],
+                    'writtenTime'=> date('m/d H:i:s',strtotime($row['writtenTime']))
+                );
+    			return $reply;
+            } else {
+                return false;
+            }
         }
         public function insertReply($origin, $content) {
 			$pdo = Database::getInstance();
