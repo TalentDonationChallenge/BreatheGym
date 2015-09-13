@@ -12,7 +12,7 @@ $(document).ready(function () {
                 content : $("textarea.write").val()
             }
         }).done(function () {
-            location.reload();
+            location.href="index.php";
         });
     });
 });
