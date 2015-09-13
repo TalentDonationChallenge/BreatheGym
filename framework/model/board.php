@@ -152,5 +152,12 @@
 			));
 			return $pdo->lastInsertId();
 		}
+
+		public function deletePost($no) {
+			$pdo = Database::getInstance();
+			$sql = "DELETE FROM comments WHERE no = :no";
+			$stmt = $pdo->prepare($sql);
+			$stmt->execute(array(':no' => $no));
+		}
 	}
 ?>
