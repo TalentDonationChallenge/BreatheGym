@@ -217,9 +217,10 @@ create table comments(
 	tableName enum('breatheBoard', 'freeBoard', 'diaryBoard', 'consulting',
 		'exerciseEpilogue', 'boxingLib', 'boxingLec', 'sparring', 'crossfitLec', 'crossfitLib') not null,
 	postNumber int(6) not null,
-	name varchar(20) not null,
+	email varchar(50) not null primary key,
 	content text not null,
-	writtenTime datetime not null
+	writtenTime datetime not null,
+	foreign key (email) references member(email)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1;
 
 -- 사진 테이블
