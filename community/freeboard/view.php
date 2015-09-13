@@ -6,26 +6,28 @@ require_once(__DIR__.'/../../framework/framework.php');
 <head>
 	<?php head('브리드 복싱 &amp; 크로스핏 - 관리자메뉴',
 		array('/common/font-awesome/css/font-awesome.css',
-			'/common/css/style.css','/common/css/style-responsive.css',
-			'/common/css/table-responsive.css','/community/freeboard/css/freeboard.css'));?>
+			'/common/css/table-responsive.css','/community/css/community.css'));?>
 	<!--[if lt IE 9]>
 	<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
 	<script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
 	<![endif]-->
 </head>
 <body>
+	<?php
+		login();
+		navigation();
+	?>
 	<!--header start-->
-	<?php communityHeader(); ?>
 	<!--header end-->
 	<!--sidebar start-->
-	<?php communitySidebar("community/freeboard"); ?>
 	<!--sidebar end-->
 	<!-- 글번호를 GET으로 받아와서 고고싱하기로 하겠습니다 -->
 	<section id="main-content">
 		<section class="wrapper">
-			<h3><i class="fa fa-angle-right"></i> 상담</h3>
-			<div class="col-lg-12 mt">
-				<div class="panel panel-default mb">
+			<!-- <div class="col-lg-12 mt"> -->
+			<div class="container">
+			<h3><i class="fa fa-angle-right"></i> 자유게시판</h3>
+				<div class="panel panel-default mb mt">
 					<div class="panel-heading">
 						<span class="pull-right hidden-phone time">2015/09/03 10:21:58</span>
 						<span class="pull-right author">아이유</span>

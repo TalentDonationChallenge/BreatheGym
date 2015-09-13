@@ -115,7 +115,7 @@
 						</a>
 						<ul class='dropdown-menu'>
 						<li><a href='/community/freeboard/index.php'>자유게시판</a></li>
-						<li><a href='#'>상담</a></li>
+						<li><a href='/community/consulting/index.php'>상담</a></li>
 						</ul>
 					</li>
 					</ul>
@@ -261,47 +261,6 @@
 		</aside>
 	<?php }
 
-	// test
-
-	/* 운동관리 header */
-	function communityHeader() { ?>
-		<header class='header black-bg'>
-			<div class="sidebar-toggle-box">
-				<div class="fa fa-bars"></div>
-			</div>
-			<!--logo start-->
-			<a href='/exercise/index.php' class='logo'><b>커뮤니티</b></a>
-			<!--logo end-->
-			<div class='top-menu'>
-				<ul class='nav pull-right top-menu'>
-				<li><a class="home" href="/"><i class="fa fa-home"></i></a></li>
-				<li><a class='logout' href='/'>로그아웃</a></li>
-				</ul>
-			</div>
-		</header>
-	 <?php }
-
-	function communitySidebar($active) { ?>
-		<aside>
-			<div id='sidebar'  class='nav-collapse '>
-				<ul class='sidebar-menu' id='nav-accordion'>
-				<li class='mt'>
-					<a <?=$active==='community/freeboard'?"class='active'":""?> href='/community/freeboard/index.php'>
-						<i class='fa fa-pencil-square-o'></i>
-						<span>자유게시판</span>
-					</a>
-				</li>
-				<li class='sub-menu'>
-					<a <?=$active==='boxing'?"class='active'":""?> href='#' >
-						<i class='fa fa-question'></i>
-						<span>상담</span>
-					</a>
-				</li>
-				</ul>
-			</div>
-		</aside>
-	<?php }
-	// test
 
 	/* footer */
 	/* 자바스크립트 */

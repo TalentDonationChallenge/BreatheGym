@@ -102,6 +102,10 @@ td:nth-child(5), th:nth-child(5) {
     border-bottom-style: dotted; 
 }
 
+.mt {
+    margin-top: 25px;
+}
+
 .mr {
     margin-right: 30px;
 }
@@ -121,8 +125,23 @@ td:nth-child(5), th:nth-child(5) {
     width:70%;
 }
 */
+
 .write-comm {
     position: absolute;
-    left: 50px;
-    right: 170px;
+    left: 230px;
+    right: 350px;
+}
+
+@media (min-width: 768px) {
+        .form-horizontal .control-label {
+        text-align: left;
+    }
+}
+
+body {
+    color: #797979;
+}
+
+ul li {
+    list-style: none;
 }

@@ -6,27 +6,25 @@ require_once(__DIR__.'/../../framework/framework.php');
 <head>
 	<?php head('브리드 복싱 &amp; 크로스핏 - 관리자메뉴',
 		array('/common/font-awesome/css/font-awesome.css',
-			'/common/css/style.css','/common/css/style-responsive.css',
-			'/common/css/table-responsive.css','/community/freeboard/css/freeboard.css'));?>
+			'/common/css/table-responsive.css','/community/css/community.css'));?>
 	<!--[if lt IE 9]>
 	<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
 	<script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
 	<![endif]-->
 </head>
 <body>
-	<!--header start-->
-	<?php communityHeader(); ?>
-	<!--header end-->
-	<!--sidebar start-->
-	<?php communitySidebar("community/freeboard"); ?>
-	<!--sidebar end-->
+	<?php
+		login();
+		navigation();
+	?>
 	<section id="main-content">
 		<section class="wrapper">
+			<div class="container">
 			<h3><i class="fa fa-angle-right"></i> 자유게시판</h3>
-			<div class="col-lg-12 mt">
+			<!-- <div class="col-lg-12 mt"> -->
 
 				<div class="form-horizontal">
-					<div class="form-group">
+					<div class="form-group mt">
 						<label for="inputEmail3" class="col-sm-1 control-label">제목</label>
 						<div class="col-sm-6">
 							<input type="text" class="form-control" id="inputEmail3" placeholder="제목을 입력하세요.">
