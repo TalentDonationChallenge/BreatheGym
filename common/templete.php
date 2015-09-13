@@ -81,8 +81,13 @@
 						</a>
 						<ul class='dropdown-menu'>
 						<li><a href='/introduction/gym.php'>매장소개</a></li>
-						<li><a href='#'>운동시간표</a></li>
-						<li><a href='#'>스탭소개</a></li>
+						<li><a href='/introduction/gymservice.php?no=1'>운동시간표</a>
+			
+						<li class='text-center'><a href='/introduction/gymservice.php?no=1'>1호점</a></li>
+						<li class='text-center'><a href='/introduction/gymservice.php?no=2'>2호점</a></li>
+						
+						</li>
+						<li><a href='/introduction/gymstaff.php'>스탭소개</a></li>
 						</ul>
 					</li>
 					<li class='dropdown'>
