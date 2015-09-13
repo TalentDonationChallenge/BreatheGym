@@ -153,7 +153,7 @@
 			return $pdo->lastInsertId();
 		}
 
-		public function deletePost($no) {
+		public function deleteComments($no) {
 			$pdo = Database::getInstance();
 			$sql = "DELETE FROM comments WHERE no = :no";
 			$stmt = $pdo->prepare($sql);
