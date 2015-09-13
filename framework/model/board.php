@@ -35,7 +35,7 @@
 		public function loadPostList($page) {
 			$table = $this->table;
 			$pdo = Database::getInstance();
-			$sql = "SELECT no, title, nickname, writtenTime
+			$sql = "SELECT no, title, nickname, writtenTime, hits
 			FROM {$table} JOIN member ON {$table}.email = member.email
 			ORDER BY no DESC LIMIT 15 OFFSET :offset";
 			$stmt = $pdo->prepare($sql);
@@ -51,6 +51,7 @@
 					'no' => $row['no'],
 					'title' => $row['title'],
 					'nickname' => $row['nickname'],
+					'hits' => $row['hits'],
 					'writtenTime' => date('m/d H:i:s',strtotime($row['writtenTime']))
 				);
 			}
