@@ -16,8 +16,15 @@
 	// require_once (__DIR__.'/model/crossfitLibrary.php');
 	// require_once (__DIR__.'/model/crossfitLecture.php');
 	require_once (__DIR__.'/model/board.php');
+	require_once (__DIR__.'/model/imageBoard.php');
 	// require_once (__DIR__.'/model/member.php');
 	// require_once (__DIR__.'/model/note.php');
 	// require_once (__DIR__.'/model/review.php');
 	// require_once (__DIR__.'/model/sparringVideo.php');
+
+	//로그인 했다고 가정하기
+	$_SESSION['login'] = true;
+	$_SESSION['gymMember'] = true;
+	$_SESSION['barcode'] = 'ddu12h3q';
+	$_SESSION['email'] = 'ashd123@dbndf.com';
 ?>

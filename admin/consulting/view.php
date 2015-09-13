@@ -22,7 +22,7 @@
 	<!--sidebar end-->
 	<!-- 글번호를 GET으로 받아와서 고고싱하기로 하겠습니다 -->
 	<?php if (isset($_GET['no'])) {
-		$consulting = new Consulting('consulting');
+		$consulting = new Consulting();
 		$posting = $consulting->loadPost($_GET['no']); // 포스팅이 존재하지 않는 경우, $posting은 false를 반환
 		$reply = $consulting->loadReply($_GET['no']); // 답변이 존재하지 않는 경우, $reply는 false
 	}
@@ -33,7 +33,7 @@
 			<h3><i class="fa fa-angle-right"></i> 상담</h3>
 			<div class="col-lg-12 mt">
 				<div class="panel panel-default mb">
-					<div class="panel-heading">
+					<div class="panel-heading"  no='<?=$_GET["no"]?>'>
 						<span class="pull-right hidden-phone time">
 							<?=$posting['writtenTime']?>
 						</span>
@@ -67,8 +67,8 @@
 						<a href="index.php?page=<?=$page?>">목록</a>
 					</button>
 					<?=$reply?
-					'<button class="btn btn-primary pull-right" name="button">수정</button>':
-					'<button class="btn btn-primary pull-right" name="button">등록</button>'?>
+					'<button class="btn btn-primary pull-right edit" name="button">수정</button>':
+					'<button class="btn btn-primary pull-right submit" name="button">등록</button>'?>
 				</div>
 			</div>
 		</section>
@@ -77,5 +77,6 @@
 	<script src="/common/js/bootstrap.min.js"></script>
 	<script src="/common/js/jquery.dcjqaccordion.2.7.js"></script>
 	<script src="/common/js/common-scripts.js"></script>
+	<script src="../js/consulting.js"></script>
 </body>
 </html>

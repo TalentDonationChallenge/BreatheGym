@@ -18,10 +18,6 @@
 <body>
 	<?php memberHeader();
 	memberSidebar("index");
-	//로그인 했다고 가정하기
-	$_SESSION['login'] = true;
-	$_SESSION['gymMember'] = true;
-	$_SESSION['barcode'] = 'ddu12h3q';
 	$barcode = $_SESSION['barcode'];
 	$progress = MemberBoxingManage::getBoxingProgress($barcode);
 	?>

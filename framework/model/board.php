@@ -7,7 +7,9 @@
 		function __construct($type) {
 			$this->table = $type;
 		}
-
+		public function setTable($type) {
+			$this->table = $type;
+		}
 		public function insertPost($email, $title, $content) {
 			$table = $this->table;
 			$pdo = Database::getInstance();
@@ -33,7 +35,7 @@
 		public function loadPostList($page) {
 			$table = $this->table;
 			$pdo = Database::getInstance();
-			$sql = "SELECT no, title, nickname, writtenTime
+			$sql = "SELECT no, title, nickname, writtenTime, hits
 			FROM {$table} JOIN member ON {$table}.email = member.email
 			ORDER BY no DESC LIMIT 15 OFFSET :offset";
 			$stmt = $pdo->prepare($sql);
@@ -49,6 +51,7 @@
 					'no' => $row['no'],
 					'title' => $row['title'],
 					'nickname' => $row['nickname'],
+					'hits' => $row['hits'],
 					'writtenTime' => date('m/d H:i:s',strtotime($row['writtenTime']))
 				);
 			}
@@ -92,7 +95,7 @@
 			return $pdo->lastInsertId();
 		}
 
-		public function pageCount() {
+		public function pageCount() { //총 페이지 갯수 구하기
 			$table = $this->table;
 			$pdo = Database::getInstance();
 			$sql = "SELECT count(no)/15 as pages FROM {$table}";
@@ -125,31 +128,37 @@
 				':no' => $postNumber
 			));
 			$rows = $stmt->fetchAll();
-			$posts = array();
+			$comments = array();
 
 			foreach ($rows as $row) {
-				$posts[] = array(
+				$comments[] = array(
 					'nickname' => $row['nickname'],
 					'content' => $row['content'],
 					'writtenTime' => date('m/d H:i:s',strtotime($row['writtenTime']))
 				);
 			}
-			return $posts;
+			return $comments;
 		}
 
-		public function submitComments($name, $content, $table, $postNumber) {
-			$table = $this->table;
+		public function submitComments($email, $content, $table, $postNumber) {
 			$pdo = Database::getInstance();
-			$sql = "INSERT INTO {$table} (tableName, postNumber, name, content, writtenTime)
-				VALUES (:table, :postNumber, :name, :content, NOW())";
+			$sql = "INSERT INTO comment (tableName, postNumber, email, content, writtenTime)
+				VALUES (:table, :postNumber, :email, :content, NOW())";
 			$stmt = $pdo->prepare($sql);
 			$stmt->execute(array(
 				':table'=>$table,
 				':postNumber'=>$postNumber,
-				':name'=>$name,
+				':email'=>$email,
 				':content'=>$content
 			));
 			return $pdo->lastInsertId();
+		}
+
+		public function deleteComments($no) {
+			$pdo = Database::getInstance();
+			$sql = "DELETE FROM comments WHERE no = :no";
+			$stmt = $pdo->prepare($sql);
+			$stmt->execute(array(':no' => $no));
 		}
 	}
 ?>

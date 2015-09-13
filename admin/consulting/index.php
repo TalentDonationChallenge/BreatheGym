@@ -19,7 +19,7 @@
 	<!--header end-->
 	<!--sidebar start-->
 	<?php adminSidebar("consulting");
-	$consulting = new Consulting('consulting');
+	$consulting = new Consulting();
 	$page = isset($_GET['page'])?$_GET['page']:1;
 	?>
 	<!--sidebar end-->
@@ -48,6 +48,7 @@
 							</a></td>
 							<td><?=$post['nickname']?></td>
 							<td><?=$post['writtenTime']?></td>
+							<td><?=$post['hits']?></td>
 						</tr>
 						<?php } ?>
 						</tbody>

@@ -4,6 +4,9 @@ require_once(__DIR__.'/board.php');
      * 상담담담
      */
     class Consulting extends Board {
+        function __construct() {
+            parent::setTable('consulting');
+        }
         public function loadPostList($page) {
 			$pdo = Database::getInstance();
 			$sql = "SELECT no, title, nickname, writtenTime
@@ -49,11 +52,12 @@ require_once(__DIR__.'/board.php');
         }
         public function insertReply($origin, $content) {
 			$pdo = Database::getInstance();
-			$stmt = $pdo->prepare("INSERT INTO consulting (content, writtenTime, reply)
-				VALUES (:content, NOW(), :reply)");
+			$stmt = $pdo->prepare("INSERT INTO consulting (email, content, writtenTime, reply)
+				VALUES (:email, :content, NOW(), :reply)");
 			$stmt->execute(array(
+                ':email'=>'master@gmail.com',//관리자메일
 				':content'=>$content,
-                ':reply'=>$content
+                ':reply'=>$origin
 			));
 			return $pdo->lastInsertId();
         }
