@@ -110,12 +110,17 @@ td:nth-child(5), th:nth-child(5) {
     font-size: 20pt ;
 }
 
-.title {
+.answer {
+    resize: none;
+    height: 100px !important;
+}
+
+/*.title {
     resize: none;
     height: 20px !important;
     width:70%;
 }
-
+*/
 .write-comm {
     position: absolute;
     left: 50px;

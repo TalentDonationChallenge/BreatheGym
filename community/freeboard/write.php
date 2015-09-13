@@ -29,24 +29,22 @@ require_once(__DIR__.'/../../framework/framework.php');
 					<div class="form-group">
 						<label for="inputEmail3" class="col-sm-1 control-label">제목</label>
 						<div class="col-sm-6">
-							<input type="email" class="form-control" id="inputEmail3" placeholder="제목을 입력하세요.">
+							<input type="text" class="form-control" id="inputEmail3" placeholder="제목을 입력하세요.">
 						</div>
 					</div>
 					<div class="form-group">
 						<label for="inputPassword3" class="col-sm-1 control-label">파일첨부</label>
 						<div class="col-sm-11">
-							<a href="#" class="form-inline">사진</a>
+							<a href="#" class="form-inline">사진</a> 
 						</div>
 					</div>
 				</div>
 				<textarea class="write form-control" placeholder="내용을 입력하세요."></textarea>
 				<nav>
-					<button class="btn btn-default mt mr">
-						<a href="write.php"><span>확인</span></a>
-					</button>
+					<button class="btn btn-default mt mr btn-primary">확인</button>
 
 					<button class="btn btn-default mt">
-						<a href="write.php"><span>취소</span></a>
+						<a href="index.php"><span>취소</span></a>
 					</button>
 				</nav>
 			</div>

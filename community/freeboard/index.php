@@ -6,24 +6,30 @@
 <head>
 	<?php head('브리드 복싱 &amp; 크로스핏 - 관리자메뉴',
 	array('/common/font-awesome/css/font-awesome.css',
-		'/common/css/style.css','/common/css/style-responsive.css',
-		'/common/css/table-responsive.css','/community/freeboard/css/freeboard.css'));?>
+		'/common/css/table-responsive.css','/community/freeboard/css/freeboard.css',
+		'/common/css/navigation.css','/common/css/index.css'));?>
 	<!--[if lt IE 9]>
 	<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
 	<script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
 	<![endif]-->
 </head>
 <body>
+	<?php
+		login();
+		navigation();
+	?>
 	<!--header start-->
-	<?php communityHeader(); ?>
+	<?php //communityHeader(); ?>
 	<!--header end-->
 	<!--sidebar start-->
-	<?php communitySidebar("community/freeboard"); ?>
+	<?php //communitySidebar("community/freeboard"); ?>
 	<!--sidebar end-->
 	<section id="main-content">
 		<section class="wrapper">
+			
+			<!-- <div class="col-lg-12 mt"> -->
+			<div class="container">
 			<h3><i class="fa fa-angle-right"></i> 자유게시판</h3>
-			<div class="col-lg-12 mt">
 				<div class="panel panel-default">
 					<table class="table table-striped">
 						<thead>
@@ -76,8 +82,8 @@
 					</li>
 					</ul>
 
-					<button type="button" class="btn btn-default pull-right">
-						<a href="write.php"><span>글쓰기</span><a>
+					<button type="button" class="btn btn-default pull-right btn-primary">
+						글쓰기
 					</button>
 				</nav>
 			</div>

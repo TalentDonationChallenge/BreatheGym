@@ -279,13 +279,11 @@
 				</ul>
 			</div>
 		</header>
-	<?php }
+	 <?php }
 
-	/* 운동관리 sidebar */
 	function communitySidebar($active) { ?>
 		<aside>
 			<div id='sidebar'  class='nav-collapse '>
-			<!-- sidebar menu start-->
 				<ul class='sidebar-menu' id='nav-accordion'>
 				<li class='mt'>
 					<a <?=$active==='community/freeboard'?"class='active'":""?> href='/community/freeboard/index.php'>
@@ -300,7 +298,6 @@
 					</a>
 				</li>
 				</ul>
-			<!-- sidebar menu end-->
 			</div>
 		</aside>
 	<?php }
