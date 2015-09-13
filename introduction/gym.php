@@ -37,7 +37,14 @@ require_once(__DIR__.'/../framework/framework.php');
 				</ul>
 			</div>
 			<div class='col-md-9 col-xs-12'>
-				<div class=''
+				<div class = 'row'>
+					<div class='col-md-6 col-xs-6 branchPanel'>
+						<img class='img-rounded' width='100%' src='http://placehold.it/140x140' alt='...'/>
+					</div>
+					<div class='col-md-6 col-xs-6 branchPanel'>
+
+					</div>
+				</div>
 			</div>
 			<!--<div class="panel panel-default col-sm-3 hidden-xs side-bar">
 				<ul class="nav nav-pills nav-stacked">
