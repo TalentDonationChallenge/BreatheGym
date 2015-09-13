@@ -217,7 +217,7 @@ create table comments(
 	tableName enum('breatheBoard', 'freeBoard', 'diaryBoard', 'consulting',
 		'exerciseEpilogue', 'boxingLib', 'boxingLec', 'sparring', 'crossfitLec', 'crossfitLib') not null,
 	postNumber int(6) not null,
-	email varchar(50) not null primary key,
+	email varchar(50) not null, --primary key가 있는데 프라이머리키 두개라서 안된다해서 일단 없앰
 	content text not null,
 	writtenTime datetime not null,
 	foreign key (email) references member(email)
