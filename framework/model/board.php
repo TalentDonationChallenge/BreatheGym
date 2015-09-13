@@ -116,7 +116,7 @@
 
 		public function loadComments($postNumber, $tableName) {
 			$pdo = Database::getInstance();
-			$stmt = $pdo->prepare("SELECT nickname, content, writtenTime
+			$stmt = $pdo->prepare("SELECT name, content, writtenTime
 			FROM comments NATURAL JOIN member
 			WHERE tableName = :table and postNumber = :no
 			ORDER BY no DESC");
@@ -129,7 +129,7 @@
 
 			foreach ($rows as $row) {
 				$posts[] = array(
-					'nickname' => $row['nickname'],
+					'name' => $row['name'],
 					'content' => $row['content'],
 					'writtenTime' => date('m/d H:i:s',strtotime($row['writtenTime']))
 				);
