@@ -64,7 +64,7 @@
 								<tr>
 									<td><?=$exercise['name']?></td>
 									<td><?=$userRecord['record']?></td>
-									<td><?=$userRecord['percentage']?></td>
+									<td><?=$userRecord['percentage']?>%</td>
 								</tr>
 								<?php } ?>
 								</tbody>

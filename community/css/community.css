@@ -99,7 +99,7 @@ td:nth-child(5), th:nth-child(5) {
     margin-bottom: 10px;
     height: 1px;
     border-bottom-width: 1px;
-    border-bottom-style: dotted; 
+    border-bottom-style: dotted;
 }
 
 .mt {
@@ -144,4 +144,9 @@ body {
 
 ul li {
     list-style: none;
+}
+input[type='file']{
+    line-height: 10pt;
+    font-size: 9pt;
+    margin-top: 9px;
 }

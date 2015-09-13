@@ -48,7 +48,6 @@
 							</a></td>
 							<td><?=$post['nickname']?></td>
 							<td><?=$post['writtenTime']?></td>
-							<td><?=$post['hits']?></td>
 						</tr>
 						<?php } ?>
 						</tbody>

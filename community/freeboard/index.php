@@ -27,8 +27,8 @@
 	<?php //communitySidebar("community/freeboard"); ?>
 	<!--sidebar end-->
 	<section id="main-content">
-		<section class="wrapper">	
-			
+		<section class="wrapper">
+
 			<!-- <div class="col-lg-12 mt"> -->
 			<div class="container">
 			<h3><i class="fa fa-angle-right"></i> 자유게시판</h3>
@@ -86,7 +86,7 @@
 					</li>':''?>
 					</ul>
 
-					<button type="button" class="btn btn-default pull-right btn-primary">
+					<button type="button" class="btn pull-right btn-primary btn-write">
 						글쓰기
 					</button>
 				</nav>
@@ -97,5 +97,6 @@
 	<script src="/common/js/bootstrap.min.js"></script>
 	<script src="/common/js/jquery.dcjqaccordion.2.7.js"></script>
 	<script src="/common/js/common-scripts.js"></script>
+	<script src="../js/freeboard.js"></script>
 </body>
 </html>
