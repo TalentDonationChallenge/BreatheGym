@@ -20,4 +20,10 @@
 	// require_once (__DIR__.'/model/note.php');
 	// require_once (__DIR__.'/model/review.php');
 	// require_once (__DIR__.'/model/sparringVideo.php');
+
+	//로그인 했다고 가정하기
+	$_SESSION['login'] = true;
+	$_SESSION['gymMember'] = true;
+	$_SESSION['barcode'] = 'ddu12h3q';
+	$_SESSION['email'] = 'ashd123@dbndf.com';
 ?>

@@ -19,7 +19,7 @@
 	<!--header end-->
 	<!--sidebar start-->
 	<?php adminSidebar("consulting");
-	$consulting = new Consulting('consulting');
+	$consulting = new Consulting();
 	$page = isset($_GET['page'])?$_GET['page']:1;
 	?>
 	<!--sidebar end-->
