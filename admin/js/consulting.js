@@ -8,7 +8,7 @@ $(document).ready(function(){
                 content:$('.answer').val()
             }
         }).done(function () {
-            // location.reload();
+            location.reload();
         });
     });
 });
