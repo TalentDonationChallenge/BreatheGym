@@ -1,13 +1,13 @@
 <?php
-	require_once(__DIR__.'/../../framework/framework.php');
+require_once(__DIR__.'/../../framework/framework.php');
 ?>
 <!DOCTYPE html>
 <html>
 <head>
 	<?php head('브리드 복싱 &amp; 크로스핏 - 관리자메뉴',
-	array('/common/font-awesome/css/font-awesome.css',
-		'/common/css/table-responsive.css','/community/freeboard/css/freeboard.css',
-		'/common/css/navigation.css','/common/css/index.css'));?>
+		array('/common/font-awesome/css/font-awesome.css',
+			'/common/css/table-responsive.css','/community/css/community.css',
+			'/common/css/navigation.css','/common/css/index.css'));?>
 	<!--[if lt IE 9]>
 	<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
 	<script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
@@ -15,22 +15,33 @@
 </head>
 <body>
 	<?php
-		login();
-		navigation();
+	login();
+	navigation();
+	$freeboard=new ImageBoard('freeboard');
+	$page = isset($_GET['page'])?$_GET['page']:1;
 	?>
-	<!--header start-->
-	<?php //communityHeader(); ?>
-	<!--header end-->
-	<!--sidebar start-->
-	<?php //communitySidebar("community/freeboard"); ?>
-	<!--sidebar end-->
+
 	<section id="main-content">
-		<section class="wrapper">
-			
+		<section class="wrapper">	
 			<!-- <div class="col-lg-12 mt"> -->
+
 			<div class="container">
-			<h3><i class="fa fa-angle-right"></i> 상담</h3>
-				<div class="panel panel-default">
+				<h3><i class="fa fa-angle-right"></i> 상담</h3>
+				<div class="form-horizontal">
+					<div class="form-group mt">
+						<label for="inputEmail3" class="col-sm-1 control-label">제목</label>
+						<div class="col-sm-6">
+							<input type="text" class="form-control" id="inputEmail3" placeholder="제목을 입력하세요.">
+						</div>
+					</div>
+				</div>
+				<textarea class="write form-control mt" placeholder="내용을 입력하세요."></textarea>
+
+				<nav>
+					<button class="btn mt mr btn-primary">확인</button>
+				</nav>
+
+				<div class="panel panel-default mt-alot">
 					<table class="table table-striped">
 						<thead>
 							<tr>
@@ -42,56 +53,54 @@
 							</tr>
 						</thead>
 						<tbody>
+							<?php
+							$posts = $freeboard->loadPostList($page);
+							foreach($posts as $post) { ?>
 							<tr>
-								<td class="hidden-phone">3</td>
-								<td>레레레레옹</td>
-								<td>이지은</td>
-								<td class="hidden-phone">09/10 21:41:09</td>
-								<td>4</td>
+								<td><?=$post['no']?></td>
+								<td><a href="view.php?page=<?=$page?>&amp;no=<?=$post['no']?>">
+									<?=$post['title']?>
+								</a></td>
+								<td><?=$post['nickname']?></td>
+								<td><?=$post['writtenTime']?></td>
+								<td><?=$post['hits']?></td>
 							</tr>
-							<tr>
-								<td class="hidden-phone">2</td>
-								<td>티키타 리듬에 맞춰 스핀 기타 리프의 테마는 스팅의 쉡오마할</td>
-								<td>아이유</td>
-								<td class="hidden-phone">09/03 10:21:58</td>
-								<td>1</td>
-							</tr>
-							<tr>
-								<td class="hidden-phone">1</td>
-								<td>나이 값을 떼먹은 남자</td>
-								<td>명수</td>
-								<td class="hidden-phone">09/02 18:32:23</td>
-								<td>21</td>
-							</tr>
+							<?php }?>
 						</tbody>
 					</table>
 				</div>
 				<nav>
 					<ul class="pagination">
-					<li class="disabled">
-						<a href="#" aria-label="Previous">
+						<?php
+					$allPages = $freeboard->pageCount(); // 다음부터 수정(a.k.a. 복붙)할때 이부분에 게시판 이름을 수정하면 된다
+					$pagingStart = $page%5==0?$page-4:$page-($page%5)+1; ?>
+					<?=$page<=5?'':
+					'<li>
+					<a href="index.php?page='.($pagingStart-1).'" aria-label="Previous">
 						<span aria-hidden="true">&laquo;</span>
-						</a>
+					</a>
+				</li>'?>
+				<?php
+				for ($i=$pagingStart; $i < $pagingStart+5 ; $i++) {
+					if ($i==$allPages+1) break;?>
+					<li class="<?=$page==$i?"active":""?>">
+						<a href="index.php?page=<?=$i?>"><?=$i?></a>
 					</li>
-					<li class="active"><a href="#">1</a></li>
-					<li><a href="#">2</a></li>
-					<li class="disabled">
-						<a href="#" aria-label="Next">
+					<?php }?>
+					<?=$pagingStart+4<$allPages?
+					'<li>
+					<a href="index.php?page='.($pagingStart+5).'" aria-label="Next">
 						<span aria-hidden="true">&raquo;</span>
-						</a>
-					</li>
-					</ul>
-
-					<button type="button" class="btn btn-default pull-right btn-primary">
-						글쓰기
-					</button>
-				</nav>
-			</div>
-		</section>
-	</section>
-	<script src="/common/js/jquery-1.11.1.min.js"></script>
-	<script src="/common/js/bootstrap.min.js"></script>
-	<script src="/common/js/jquery.dcjqaccordion.2.7.js"></script>
-	<script src="/common/js/common-scripts.js"></script>
+					</a>
+				</li>':''?>
+			</ul>
+		</nav>
+	</div>
+</section>
+</section>
+<script src="/common/js/jquery-1.11.1.min.js"></script>
+<script src="/common/js/bootstrap.min.js"></script>
+<script src="/common/js/jquery.dcjqaccordion.2.7.js"></script>
+<script src="/common/js/common-scripts.js"></script>
 </body>
 </html>

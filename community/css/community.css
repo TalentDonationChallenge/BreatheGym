@@ -106,6 +106,10 @@ td:nth-child(5), th:nth-child(5) {
     margin-top: 25px;
 }
 
+.mt-alot {
+    margin-top: 70px;
+}
+
 .mr {
     margin-right: 30px;
 }
