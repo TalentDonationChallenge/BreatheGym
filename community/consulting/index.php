@@ -17,7 +17,7 @@ require_once(__DIR__.'/../../framework/framework.php');
 	<?php
 	login();
 	navigation();
-	$freeboard=new ImageBoard('freeboard');
+	$freeboard=new Consulting();
 	$page = isset($_GET['page'])?$_GET['page']:1;
 	?>
 
@@ -49,7 +49,6 @@ require_once(__DIR__.'/../../framework/framework.php');
 								<th>제목</th>
 								<th>글쓴이</th>
 								<th class="hidden-phone">작성일</th>
-								<th>조회</th>
 							</tr>
 						</thead>
 						<tbody>
@@ -63,7 +62,6 @@ require_once(__DIR__.'/../../framework/framework.php');
 								</a></td>
 								<td><?=$post['nickname']?></td>
 								<td><?=$post['writtenTime']?></td>
-								<td><?=$post['hits']?></td>
 							</tr>
 							<?php }?>
 						</tbody>
