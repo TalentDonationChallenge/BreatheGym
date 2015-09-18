@@ -71,7 +71,7 @@
 }
 
 .introduceList{
-  padding : 20px;
+  
   font-size : 20px;
   text-align : left;
   color : #000000;
@@ -82,7 +82,7 @@
   color : white;
 }
 
-.introduceList :active{
+.listActive{
   background-color : #8E8E8E;
   color : white;
 }
@@ -95,7 +95,6 @@
   background-color : #333333;
   padding : 10px;
   color : white;
-  margin-top : 20px;
 }
 
 .contentBox{
@@ -122,3 +121,10 @@ footer{
 body{
   padding : 0;
 }
+
+.sidebar{
+  
+  border-radius : 10px;
+  border : #8E8E8E 2px solid;
+}
+

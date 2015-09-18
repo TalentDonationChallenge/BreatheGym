@@ -18,10 +18,10 @@ require_once(__DIR__.'/../framework/framework.php');
 	login();
 	navigation();
 	?>
-	<div class="container marketing">
+	<div class="container introduce">
 		
 		<div class="row">
-			<div class='col-md-3 col-xs-12'>
+			<div class='col-md-2 col-xs-12 sidebar'>
 				<div class='smallTitle'>
 					<h3>BreatheGym 소개</h3>
 				</div>
@@ -36,13 +36,14 @@ require_once(__DIR__.'/../framework/framework.php');
 					<a href='gymservice.php?no=1'><li class='col-md-12 col-xs-4'>1호점</li></a>
 					<a href='gymservice.php?no=2'><li class='col-md-12 col-xs-4'>2호점</li></a>
 					<a href='gymstaff.php'>
-					<li class='col-md-12 col-xs-4'>
+					<a href='gymstaff.php'>
+						<li class='col-md-12 col-xs-4 listActive'>
 						+ 스탭소개
-					</li>
+						</li>
 					</a>
 				</ul>
 			</div>
-			<div class="content col-md-9 col-xs-12 mt text-left">
+			<div class="content col-md-10 col-xs-12 mt text-left">
 				<div class="text-center">
 					<img width='100%' src="/introduction/images/breathegym1st.jpg" alt="BreatheGym 1st">
 				</div>

@@ -20,12 +20,12 @@ require_once(__DIR__.'/../framework/framework.php');
 	?>
 	<div class="container introduce">
 		<div class="row">
-			<div class='col-md-3 col-xs-12'>
-				<div class='smallTitle'>
-					<h3>BreatheGym 소개</h3>
-				</div>
+			<div class='col-md-2 col-xs-12 sidebar'>
+				
+				<h3>BreatheGym 소개</h3>
+				
 				<ul class='row list-unstyled introduceList'>
-					<a href='gym.php'><li class='col-md-12 col-xs-4 item'>
+					<a href='gym.php'><li class='col-md-12 col-xs-4 listActive'>
 						+ 매장소개
 					</li></a>
 					<a href='gymservice.php?no=1'>
@@ -41,7 +41,7 @@ require_once(__DIR__.'/../framework/framework.php');
 					</a>
 				</ul>
 			</div>
-			<div class='col-md-9 col-xs-12 '>
+			<div class='col-md-10 col-xs-12 '>
 				<div class = 'row'>
 					<div class='col-md-12 col-xs-12'>
 						<div class='contentBox text-center'>

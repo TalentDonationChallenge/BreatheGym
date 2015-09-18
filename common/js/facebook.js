@@ -46,6 +46,7 @@
 		function login(){
 			console.log("login function");
 			FB.login(function(response){
+					location.reload();
 					statusChangeCallback(response);
 			}, {scope:'public_profile, email'})
 		}
@@ -69,13 +70,20 @@
 				
 				console.log('Welcome! Fetching your information....');
 				document.getElementById('login').innerHTML = '로그아웃';
+				alert('good');
+				alert($_SESSION['email']);
 				$("#login").off();
 				$("#login").click(function(){
 					logout();
 				});
 				FB.api('/me', function(response) {
+					$_SESSION['login'] = true;
+					$_SESSION['gymMember'] = true;
+					$_SESSION['barcode'] = 'ddu12h3q';
+					$_SESSION['email'] = response.userID;
 					console.log('Successful login for : ' + response.name +
 					'Thanks for loggin in, '+ response.name + '!');
+					
 				});
 			}
 

@@ -20,7 +20,7 @@ require_once(__DIR__.'/../framework/framework.php');
 	?>
 	<div class="container introduce">
 		<div class="row">
-			<div class='col-md-3 col-xs-12'>
+			<div class='col-md-2 col-xs-12 sidebar'>
 				<div class='smallTitle'>
 					<h3>BreatheGym 소개</h3>
 				</div>
@@ -29,11 +29,21 @@ require_once(__DIR__.'/../framework/framework.php');
 						+ 매장소개
 					</li></a>
 					<a href='gymservice.php?no=1'>
-					<li class='col-md-12 col-xs-4'>
+					<li class='col-md-12 col-xs-4 listActive'>
 						+ 이용시간
 					</li></a>
-					<a href='gymservice.php?no=1'><li class='col-md-12 col-xs-4'>1호점</li></a>
-					<a href='gymservice.php?no=2'><li class='col-md-12 col-xs-4'>2호점</li></a>
+					<?php
+						if($_GET['no']=='1'){?>
+							<a href='gymservice.php?no=1'><li class='col-md-12 col-xs-4 listActive'>1호점</li></a>
+							<a href='gymservice.php?no=2'><li class='col-md-12 col-xs-4'>2호점</li></a>
+						<?php
+						} else if($_GET['no']=='2'){?>
+							<a href='gymservice.php?no=1'><li class='col-md-12 col-xs-4'>1호점</li></a>
+							<a href='gymservice.php?no=2'><li class='col-md-12 col-xs-4 listActive'>2호점</li></a>
+					<?php
+						}
+					?>
+					
 					<a href='gymstaff.php'>
 					<li class='col-md-12 col-xs-4'>
 						+ 스탭소개
@@ -41,7 +51,7 @@ require_once(__DIR__.'/../framework/framework.php');
 					</a>
 				</ul>
 			</div>
-			<div class='col-md-9 col-xs-12 '>
+			<div class='col-md-10 col-xs-12 '>
 				<?php
 				if($_GET['no']=='1'){?>
 					<img src='images/gym1st-service.jpg' width='100%'/>
