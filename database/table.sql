@@ -217,7 +217,7 @@ create table comments(
 	tableName enum('breatheBoard', 'freeBoard', 'diaryBoard', 'consulting',
 		'exerciseEpilogue', 'boxingLib', 'boxingLec', 'sparring', 'crossfitLec', 'crossfitLib') not null,
 	postNumber int(6) not null,
-	email varchar(50) not null primary key,
+	email varchar(50) not null,
 	content text not null,
 	writtenTime datetime not null,
 	foreign key (email) references member(email)
