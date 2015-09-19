@@ -17,14 +17,14 @@
 	<?php
 		login();
 		navigation();
-		$breathestory=new ImageBoard('breathestory');
+		$breatheboard=new ImageBoard('breatheBoard');
 		$page = isset($_GET['page'])?$_GET['page']:1;
 	?>
 	<!--header start-->
 	<?php //communityHeader(); ?>
 	<!--header end-->
 	<!--sidebar start-->
-	<?php //communitySidebar("board/breathestory"); ?>
+	<?php //communitySidebar("board/breatheboard"); ?>
 	<!--sidebar end-->
 	<section id="main-content">
 		<section class="wrapper">
@@ -45,7 +45,7 @@
 						</thead>
 						<tbody>
 							<?php
-								$posts = $breathestory->loadPostList($page);
+								$posts = $breatheboard->loadPostList($page);
 								foreach($posts as $post) { ?>
 									<tr>
 										<td><?=$post['no']?></td>
@@ -63,7 +63,7 @@
 				<nav>
 					<ul class="pagination">
 					<?php
-					$allPages = $breathestory->pageCount(); // 다음부터 수정(a.k.a. 복붙)할때 이부분에 게시판 이름을 수정하면 된다
+					$allPages = $breatheboard->pageCount(); // 다음부터 수정(a.k.a. 복붙)할때 이부분에 게시판 이름을 수정하면 된다
 					$pagingStart = $page%5==0?$page-4:$page-($page%5)+1; ?>
 					<?=$page<=5?'':
 					'<li>
@@ -97,6 +97,6 @@
 	<script src="/common/js/bootstrap.min.js"></script>
 	<script src="/common/js/jquery.dcjqaccordion.2.7.js"></script>
 	<script src="/common/js/common-scripts.js"></script>
-	<script src="../js/breathestory.js"></script>
+	<script src="../js/breatheboard.js"></script>
 </body>
 </html>

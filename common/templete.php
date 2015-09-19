@@ -95,9 +95,9 @@
 							게시판<span class='caret'></span>
 						</a>
 						<ul class='dropdown-menu'>
-						<li><a href='#'>브리드이야기</a></li>
-						<li><a href='#'>사부님의 노트</a></li>
-						<li><a href='#'>운동후기</a></li>
+						<li><a href='/board/breatheboard/index.php'>브리드이야기</a></li>
+						<li><a href='/board/diaryboard/index.php'>사부님의 노트</a></li>
+						<li><a href='/board/review/index.php'>운동후기</a></li>
 						</ul>
 					</li>
 					<li class='dropdown'>
@@ -105,9 +105,9 @@
 							운동정보<span class='caret'></span>
 						</a>
 						<ul class='dropdown-menu'>
-						<li><a href='#'>복싱자료실</a></li>
-						<li><a href='#'>복싱운동강좌</a></li>
-						<li><a href='#'>스파링영상</a></li>
+						<li><a href='/exerciseInfo/boxingLibrary/index.php'>복싱자료실</a></li>
+						<li><a href='/exerciseInfo/boxingLecture/index.php'>복싱운동강좌</a></li>
+						<li><a href='/exerciseInfo/sparring/index.php'>스파링영상</a></li>
 						<li class='divider'></li>
 						<li><a href='/exerciseInfo/crossfitLibrary/index.php'>크로스핏 사진/영상</a></li>
 						</ul>

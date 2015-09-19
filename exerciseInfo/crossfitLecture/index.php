@@ -17,7 +17,7 @@
 	<?php
 		login();
 		navigation();
-		$crossfitlecture=new ImageBoard('crossfitLecture');
+		$crossfitlecture=new ImageBoard('crossfitLec');
 		$page = isset($_GET['page'])?$_GET['page']:1;
 	?>
 	<!--header start-->

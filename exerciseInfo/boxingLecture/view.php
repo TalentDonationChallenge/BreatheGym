@@ -14,9 +14,9 @@ require_once(__DIR__.'/../../framework/framework.php');
 </head>
 <body>
 	<?php if (isset($_GET['no'])) {
-		$boxinglecture = new ImageBoard('boxingLecture');
+		$boxinglecture = new ImageBoard('boxingLec');
 		$posting = $boxinglecture->loadPost($_GET['no']);
-		$comments = $boxinglecture->loadComments($_GET['no'], 'boxingLecture');
+		$comments = $boxinglecture->loadComments($_GET['no'], 'boxingLec');
 	}
 		login();
 		navigation();

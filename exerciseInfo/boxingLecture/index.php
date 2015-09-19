@@ -17,7 +17,7 @@
 	<?php
 		login();
 		navigation();
-		$boxinglecture=new ImageBoard('boxingLecture');
+		$boxinglecture=new ImageBoard('boxingLec');
 		$page = isset($_GET['page'])?$_GET['page']:1;
 	?>
 	<!--header start-->

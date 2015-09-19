@@ -14,9 +14,9 @@ require_once(__DIR__.'/../../framework/framework.php');
 </head>
 <body>
 	<?php if (isset($_GET['no'])) {
-		$crossfitlibrary = new ImageBoard('crossfitLibrary');
-		$posting = $crossfitlibrary->loadPost($_GET['no']);
-		$comments = $crossfitlibrary->loadComments($_GET['no'], 'crossfitLibrary');
+		$crossfitlecture = new ImageBoard('crossfitLec');
+		$posting = $crossfitlecture->loadPost($_GET['no']);
+		$comments = $crossfitlecture->loadComments($_GET['no'], 'crossfitLec');
 	}
 		login();
 		navigation();

@@ -14,9 +14,9 @@ require_once(__DIR__.'/../../framework/framework.php');
 </head>
 <body>
 	<?php if (isset($_GET['no'])) {
-		$breathestory = new ImageBoard('breathestory');
-		$posting = $breathestory->loadPost($_GET['no']);
-		$comments = $breathestory->loadComments($_GET['no'], 'breathestory');
+		$breatheboard = new ImageBoard('breatheBoard');
+		$posting = $breatheboard->loadPost($_GET['no']);
+		$comments = $breatheboard->loadComments($_GET['no'], 'breatheBoard');
 	}
 		login();
 		navigation();

@@ -117,7 +117,7 @@ create table freeBoard(
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1;
 
 -- 운동 후기
-create table exerciseEpilogue(
+create table review(
 	no int(6) not null primary key AUTO_INCREMENT,
 	email varchar(50) not null default '',
 	title varchar(50) not null,
