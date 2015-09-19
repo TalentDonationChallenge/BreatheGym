@@ -95,7 +95,7 @@
 							게시판<span class='caret'></span>
 						</a>
 						<ul class='dropdown-menu'>
-						<li><a href='#'>브리드이야기</a></li>
+						<li><a href='/board/breatheStory/index.php'>브리드이야기</a></li>
 						<li><a href='#'>사부님의 노트</a></li>
 						<li><a href='#'>운동후기</a></li>
 						</ul>

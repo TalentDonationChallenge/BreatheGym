@@ -21,9 +21,9 @@ require_once(__DIR__.'/../framework/framework.php');
 	<div class="container introduce">
 		<div class="row">
 			<div class='col-md-2 col-xs-12 sidebar'>
-				<div class='smallTitle'>
+				
 					<h3>BreatheGym 소개</h3>
-				</div>
+				
 				<ul class='row list-unstyled introduceList'>
 					<a href='gym.php'><li class='col-md-12 col-xs-4'>
 						+ 매장소개

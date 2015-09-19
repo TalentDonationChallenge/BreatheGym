@@ -236,7 +236,6 @@
 		</div>
 	</div>
 		<!-- /END THE FEATURETTES -->
-
 	<div class='people grayBackground'>
 		<!-- FOOTER -->
 		<footer class='container'>

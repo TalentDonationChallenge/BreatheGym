@@ -71,7 +71,6 @@
 				console.log('Welcome! Fetching your information....');
 				document.getElementById('login').innerHTML = '로그아웃';
 				alert('good');
-				alert($_SESSION['email']);
 				$("#login").off();
 				$("#login").click(function(){
 					logout();
