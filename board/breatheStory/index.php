@@ -5,7 +5,7 @@ require_once(__DIR__.'/../../framework/framework.php');
 <html>
 <head>
 	<?php head('브리드 복싱 &amp; 크로스핏 - 브리드 이야기',
-		array('/common/font-awesome/css/font-awesome.css',
+		array('/board/css/lightbox.css','/common/font-awesome/css/font-awesome.css',
 			'/common/css/table-responsive.css','/community/css/community.css',
 			'/common/css/navigation.css','/common/css/index.css'));?>
 	<!--[if lt IE 9]>
@@ -15,29 +15,43 @@ require_once(__DIR__.'/../../framework/framework.php');
 </head>
 <body>
 	<script src="/common/js/facebook.js"></script>
-
 	<!-- 페이스북 SDK load -->
 	<?php
 	login();
 	navigation();
-	
 	?>
 	<section class='wrapper'>
-		<h1>브리드 이야기</h1>
+		
 		<div class='container'>
-			<a href='/resources/box-resized.jpg' data-lightbox="boxing">
-				Boxing with Breathe
-				<img src='/resources/box-resized.jpg'/>
-			</a>
+			<h1>브리드 이야기</h1>
+			<div class='row'>
+				<div class='col-md-3 col-xs-6'>
+					<div class='panel panel-default'>
+						<img src='crossfit.jpg' width='100%'/>
+					</div>
+				</div>
+				<div class='col-md-3 col-xs-6'>
+					<div class='panel panel-default'>
+						<img src='crossfit.jpg' width='100%'/>
+					</div>
+				</div>
+				<div class='col-md-3 col-xs-6'>
+					<div class='panel panel-default'>
+						<img src='crossfit.jpg' width='100%'/>
+					</div>
+				</div>
+				<div class='col-md-3 col-xs-6'>
+					<div class='panel panel-default'>
+						<img src='crossfit.jpg' width='100%'/>
+					</div>
+				</div>
+			</div>
 		</div>
 	</section>
-	
-
-
 <script src="/common/js/jquery-1.11.1.min.js"></script>
-<script src="/common/js/bootstrap.min.js"></script>
 <script src="/common/js/jquery.dcjqaccordion.2.7.js"></script>
-<script src="/common/js/common-scripts.js"></script>
-<script src="/board/js/lightbox.js"></script>
+<script src="/common/js/bootstrap.min.js"></script>
+<!--<script src="/common/js/common-scripts.js"></script>-->
+<script src="/board/js/lightbox-plus-jquery.js"></script>
 </body>
 </html>

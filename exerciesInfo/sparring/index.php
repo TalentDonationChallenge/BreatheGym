@@ -17,21 +17,21 @@
 	<?php
 		login();
 		navigation();
-		$review=new ImageBoard('review');
+		$sparring=new ImageBoard('sparring');
 		$page = isset($_GET['page'])?$_GET['page']:1;
 	?>
 	<!--header start-->
 	<?php //communityHeader(); ?>
 	<!--header end-->
 	<!--sidebar start-->
-	<?php //communitySidebar("board/review"); ?>
+	<?php //communitySidebar("exerciseInfo/sparring"); ?>
 	<!--sidebar end-->
 	<section id="main-content">
 		<section class="wrapper">
 
 			<!-- <div class="col-lg-12 mt"> -->
 			<div class="container">
-			<h3><i class="fa fa-angle-right"></i> 운동후기</h3>
+			<h3><i class="fa fa-angle-right"></i> 스파링영상</h3>
 				<div class="panel panel-default mt">
 					<table class="table table-striped">
 						<thead>
@@ -45,7 +45,7 @@
 						</thead>
 						<tbody>
 							<?php
-								$posts = $review->loadPostList($page);
+								$posts = $sparring->loadPostList($page);
 								foreach($posts as $post) { ?>
 									<tr>
 										<td><?=$post['no']?></td>
@@ -63,7 +63,7 @@
 				<nav>
 					<ul class="pagination">
 					<?php
-					$allPages = $review->pageCount(); // 다음부터 수정(a.k.a. 복붙)할때 이부분에 게시판 이름을 수정하면 된다
+					$allPages = $sparring->pageCount(); // 다음부터 수정(a.k.a. 복붙)할때 이부분에 게시판 이름을 수정하면 된다
 					$pagingStart = $page%5==0?$page-4:$page-($page%5)+1; ?>
 					<?=$page<=5?'':
 					'<li>
@@ -97,6 +97,6 @@
 	<script src="/common/js/bootstrap.min.js"></script>
 	<script src="/common/js/jquery.dcjqaccordion.2.7.js"></script>
 	<script src="/common/js/common-scripts.js"></script>
-	<script src="../js/review.js"></script>
+	<script src="../js/sparring.js"></script>
 </body>
 </html>
