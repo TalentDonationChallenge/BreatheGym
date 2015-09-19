@@ -2,23 +2,47 @@
 
     //홈페이지에서 가입양식을 통해 회원가입을 할때 사용하는 php 파일입니다.
 	//클라이언트에서 양식 폼에 맞게 작성한 데이터를 받아 db에 등록된 회원인지의 여부를 살펴보고 그 결과에 따라 다른 메세지를 클리이언트로 보내주는것이 목적입니다.
-
-
+error_reporting(E_ALL);
+ini_set("display_errors", 1);
+echo "start";
 	require_once(__DIR__.'/framework/framework.php');
 	
-	if(isset($POST_['userEmail']) && isset($POST_['userPassword']) && isset($POST_['userName']) && isset($POST_['userSex'])  && isset($POST_['userNickName']) && isset($POST_['userBirthDay'])){
-		$userEmail = $POST_['userEmail'];
-		$userName = $POST_['userPassword'];
-		$userPassword = $POST_['userName'];
-		$userPhone = $POST_['userNickName'];
+	if(isset($_POST['userEmail']) && isset($_POST['userPassword']) && isset($_POST['userPhone']) && isset($_POST['sexRadio']) &&isset($_POST['userName']) && isset($_POST['userNickName'])){
+		
+		$userEmail = $_POST['userEmail'];
+		$userName = $_POST['userName'];
+		$userPassword = $_POST['userPassword'];
+		$userPhone = $_POST['userPhone'];
 		$userBarcode = null;
 		$facebook = 0;
-		$userSex = $POST_['userSex'];
-		$userBirthDay = date('Y-m-d',strtotime($POST_['userBirthDay'])));
+		$userSex = $_POST['sexRadio'];
+		
+		$userBirthDay = date('Y-m-d',strtotime($_POST['userBirthDay']));
+		
 		$registerDate = date('Y-m-d');
-		$userNickName = "불타는고구마";
+		
+		$userNickName = $_POST['userNickName'];
+		
 		$userLevel = 0;
 
+		//echo $userEmail;
+
+		$getUsercount = UserRegister::isUserExistFromRegisterInfo($userEmail);
+		echo $getUsercount;
+		if($getUsercount === "1"){
+			echo "user exist";
+		}
+		else if($getUsercount === "0"){
+			//유저가 없으니 회원으로 가입시킵니다.
+			
+			UserRegister::registerUserToDatabase($userEmail,$userPassword,$userName,
+				$userPhone,$userBarcode,$userBirthDay,
+				$facebook,$userSex,$registerDate,
+				$userNickName,$userLevel);
+			
+		
+
+		}
 	}
 	else{
 		header("HTTP/1.1 400 Invalid Request");
@@ -27,7 +51,7 @@
 	
 	
 	//등록된 회원인지 알아보기 위해서 db 접속하여 살펴봅니다. 1이 나오면 등록된 유저, 0이 나오면 등록되지 않은 유저입니다.
-	$getUsercount = UserRegister::isUserExistFromRegisterInfo($userEmail);
+	/*$getUsercount = UserRegister::isUserExistFromRegisterInfo($userEmail);
 	
 	if($getUsercount === "1"){
 		echo "user exist";
@@ -40,6 +64,6 @@
 			$facebook,$userSex,$registerDate,
 			$userNickName,$userLevel);
 		
-	} 
+	} */
 ?>
 	

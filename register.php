@@ -4,7 +4,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<?php head('브리드 복싱 &amp; 크로스핏', array('/common/font-awesome/css/font-awesome.css','/common/css/navigation.css')); ?>
+	<?php head('브리드 복싱 &amp; 크로스핏', array('/common/css/navigation.css')); ?>
 	<!--[if lt IE 9]>
 	<script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
 	<![endif]-->
@@ -27,11 +27,11 @@
 		<h5 class='text-center'>브리드짐의 모든 서비스를 이용하기 위해 회원가입 해주세요.</h5>
 		
 		<hr>
-		<form id='registerForm' class='form-horizontal'>
+		<form action="signFromWeb.php" method="POST" id='registerForm' class='form-horizontal'>
 			<div class="form-group" id='emailGroup'>
 				<label for="email" class='col-xs-2'>이메일</label>
 				<div class='col-xs-9'>
-					<input type='email' class="form-control" id='email' placeholder='Input Email'>
+					<input type='email' class="form-control" id='email' placeholder='Input Email' name = "userEmail">
 					<span class='glyphicon glyphicon-ok form-control-feedback' aria-hidden='true'></span>
 					<span class='glyphicon glyphicon-danger-sign form-control-feedback' aria-hidden='true'></span>
 					<div class='alert alert-danger' id='emailAlert' role='alert' hidden='true'>올바른 이메일을 입력해주세요! 예시)email@breathegym.gym</div>
@@ -44,7 +44,7 @@
 			<div class="form-group" id='passwordGroup'>
 				<label for="password" class='col-xs-2'>비밀번호</label>
 				<div class='col-xs-10'>
-					<input type='password' class='form-control' id='password' placeholder='Input Password'>
+					<input type='password' class='form-control' id='password' placeholder='Input Password' name = "userPassword">
 					<span class='glyphicon glyphicon-ok form-control-feedback' aria-hidden='true'></span>
 					<span class='glyphicon glyphicon-danger-sign form-control-feedback' aria-hidden='true'></span>
 					<div class='alert alert-danger' id='passwordAlert' role='alert' hidden='true'>영문자 대소문자, 숫자가 포함되어야 합니다.</div>
@@ -65,18 +65,18 @@
 				<div class='form-group col-xs-6'>
 					<label for='name' class='col-xs-4'>이름</label>
 					<div class='col-xs-8'>
-						<input type='text' class='form-control' id='name' placeholder='Input Name'>	
+						<input type='text' class='form-control' id='name' placeholder='Input Name' name = "userName">	
 					</div>
 				</div>
 				<div class='form-group col-xs-6'>
 					<label for='sex' class='col-xs-4'>성별</label>
 					<div class='radio col-xs-8' id='sex'>
 						<label class='radio-inline'>
-							<input type='radio' name='sexRadio' id='optionSex1' value='male' checked>
+							<input type='radio' name='sexRadio' id='optionSex1' value='male' name = "userSex">
 							남자
 						</label>
 						<label class='radio-inline'>
-							<input type='radio' name='sexRadio' id='optionSex2' value='female'>
+							<input type='radio' name='sexRadio' id='optionSex2' value='female' name = "userSex">
 							여자
 						</label>
 					</div>
@@ -86,21 +86,21 @@
 			<div class='form-group'>
 				<label for='닉네임' class='col-xs-2'>닉네임</label>
 				<div class='col-xs-10'>
-					<input type='text' class='form-control' id='nickname' placeholder='Input Nickname'>
+					<input type='text' class='form-control' id='nickname' placeholder='Input Nickname' name = "userNickName">
 				</div>
 			</div>
 			<br/>
 			<div class='form-group'>
 				<label for='phone' class='col-xs-2'>전화번호</label>
 				<div class='col-xs-10'>
-					<input type='text' class='form-control' id='phone' placeholder='Input Phone number'>
+					<input type='text' class='form-control' id='phone' placeholder='Input Phone number' name = "userPhone">
 				</div>
 			</div>
 			<br/>
 			<div class='form-group'>
 				<label for='birthday' class='col-xs-2'>생년월일</label>
 				<div class='col-xs-10'>
-					<input type='date' class='form-control' id='birthday'>
+					<input type='date' class='form-control' id='birthday' name = "userBirthDay">
 				</div>
 			</div>
 			<br/>

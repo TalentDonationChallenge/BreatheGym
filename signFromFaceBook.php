@@ -8,28 +8,20 @@
 	
 
 
-	if(isset($POST_['userEmail']) && isset($POST_['userName']) && isset($POST_['userSex']) && isset($POST_['userBirthDay'])){
-		$userEmail = $POST_['userEmail'];
-		$userName = $POST_['userPassword'];
+	if(isset($_POST['userEmail']) && isset($_POST['userName']) && isset($_POST['userSex']) && isset($_POST['userBirthDay'])){
+		$userEmail = $_POST['userEmail'];
+		$userName = $_POST['userPassword'];
 		$userPassword = '';
 		$userPhone = '00000000000';
 		$userBarcode = null;
 		$facebook = 1;
-		$userSex = $POST_['userSex'];
-		$userBirthDay = date('Y-m-d',strtotime($POST_['userBirthDay'])));
+		$userSex = $_POST['userSex'];
+		$userBirthDay = date('Y-m-d',strtotime($_POST['userBirthDay'])));
 		$registerDate = date('Y-m-d');
 		$userNickName = '';
 		$userLevel = 0;
 
-	}
-	else{
-		header("HTTP/1.1 400 Invalid Request");
-				die("HTTP/1.1 400 Invalid Request - your input is invalid.");
-	}
-
-
-
-	$getUsercount = UserRegister::isUserExistFromRegisterInfo($userEmail);
+		$getUsercount = UserRegister::isUserExistFromRegisterInfo($userEmail);
 	
 	if($getUsercount === "1"){
 		echo "user exist";
@@ -43,4 +35,14 @@
 			$userNickName,$userLevel);
 		
 	} 
+
+	}
+	else{
+		header("HTTP/1.1 400 Invalid Request");
+				die("HTTP/1.1 400 Invalid Request - your input is invalid.");
+	}
+
+
+
+	
 ?>
