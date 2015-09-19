@@ -54,7 +54,7 @@
 								<?php if ($web) { ?>
 									<tr>
 										<td>이름</td>
-										<td><?=$profile['name']?></td>
+										<td><input type="text" class="form-control" id="name" placeholder="홍길동"></td>
 										<td class="hidden-xs">이메일</td>
 										<td class="hidden-xs"><?=$profile['email']?></td>
 									</tr>
@@ -64,7 +64,7 @@
 									</tr>
 									<tr>
 										<td>성별</td>
-										<td><?=$profile['sex']?></td>
+										<td><input type="text" class="form-control" id="name" placeholder="홍길동"></td>
 										<td class="hidden-xs">닉네임</td>
 										<td class="hidden-xs"><?=$profile['nickname']?></td>
 									</tr>
@@ -74,7 +74,7 @@
 									</tr>
 									<tr>
 										<td>가입일</td>
-										<td><?=$profile['registerDate']?></td>
+										<td><input type="text" class="form-control" id="name" placeholder="홍길동"></td>
 										<td class="hidden-xs">바코드</td>
 										<td class="hidden-xs"><?=$profile['barcode']?></td>
 									</tr>
@@ -85,9 +85,9 @@
 								<?php } else { ?>
 									<tr>
 										<td>이름</td>
-										<td><?=$profile['name']?></td>
+										<td><input type="text" class="form-control" id="name"></td>
 										<td class="hidden-xs">생년월일</td>
-										<td class="hidden-xs"><?=$profile['birthday']?></td>
+										<td class="hidden-xs"><input type="date" class="form-control" id="name"></td>
 									</tr>
 									<tr class="visible-xs">
 										<td>생년월일</td>
@@ -95,9 +95,18 @@
 									</tr>
 									<tr>
 										<td>성별</td>
-										<td><?=$profile['sex']?></td>
+										<td>
+										<div class="checkbox">
+										<label class="checkbox-inline">
+											<input type="checkbox" id="inlineCheckbox1" value="option1"> 남
+										</label>
+										<label class="checkbox-inline">
+											<input type="checkbox" id="inlineCheckbox1" value="option1"> 여
+										</label>	
+										</div>
+										</td>
 										<td class="hidden-xs">신장</td>
-										<td class="hidden-xs"><?=$profile['height']?></td>
+										<td class="hidden-xs"><input type="number" class="form-control" id="name"></td>
 									</tr>
 									<tr class="visible-xs">
 										<td>신장</td>
@@ -105,9 +114,9 @@
 									</tr>
 									<tr>
 										<td>등록일</td>
-										<td><?=$profile['registerDate']?></td>
+										<td><input type="date" class="form-control" id="name"></td>
 										<td class="hidden-xs">전화번호</td>
-										<td class="hidden-xs"><?=$profile['phone']?></td>
+										<td class="hidden-xs"><input type="tel" class="form-control" id="name"></td>
 									</tr>
 									<tr class="visible-xs">
 										<td>전화번호</td>
@@ -115,9 +124,9 @@
 									</tr>
 									<tr>
 										<td>만료일</td>
-										<td><?=$profile['durationDate']?></td>
+										<td><input type="date" class="form-control" id="name"></td>
 										<td class="hidden-xs">체중</td>
-										<td class="hidden-xs"><?=$profile['weight']?></td>
+										<td class="hidden-xs"><input type="number" class="form-control" id="name"></td>
 									</tr>
 									<tr class="visible-xs">
 										<td>체중</td>
@@ -139,11 +148,9 @@
 				</button>
 				<?php if(isset($barcode)) { ?>
                 <button class="btn btn-primary hidden-xs" name="button">바코드 재발급</button>
-				<a href="editProfile.php">
 				<button class="btn btn-success ml" name="button">
 					<i class="fa fa-edit"></i><span class="hidden-xs"> 정보수정</span>
 				</button>
-				</a>
 				<?php } ?>
 			</div>
 		</section>
