@@ -48,8 +48,8 @@ require_once(__DIR__.'/../../framework/framework.php');
 						</p>
 					</div>
 					<div class="hit-reply hit-style">
-							<span>댓글 12</span>
-							<span> &#124; 조회 123</span>
+							<span>댓글 <?php echo count($comments) ?></span>
+							<span> &#124; 조회 <?=$posting['hits']?></span>
 							<span class="pull-right">
 							<span class="mouse-over">수정 </span>&#124;
 							<span class="mouse-over">신고(or 삭제)</span>

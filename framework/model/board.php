@@ -163,5 +163,18 @@
 			$stmt = $pdo->prepare($sql);
 			$stmt->execute(array(':no' => $no));
 		}
+
+		public function countComments($postNo, $tableName) {
+			$pdo = Database::getInstance();
+			$stmt = $pdo->prepare("SELECT COUNT(no)
+			FROM comments
+			WHERE tableName = :table and postNumber = :postNo");
+			$stmt->execute(array(
+				':table'=>$tableName,
+				':postNo'=>$postNo
+			));
+			$row = $stmt->fetch();
+			return $row['COUNT(no)'];
+		}
 	}
 ?>

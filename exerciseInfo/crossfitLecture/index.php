@@ -50,8 +50,8 @@
 									<tr>
 										<td><?=$post['no']?></td>
 										<td><a href="view.php?page=<?=$page?>&amp;no=<?=$post['no']?>">
-										<?=$post['title']?>
-										</a></td>
+										<?=$post['title']?></a> (<?=$freeboard->countComments($post['no'],'freeBoard')?>)
+										</td>
 										<td><?=$post['nickname']?></td>
 										<td><?=$post['writtenTime']?></td>
 										<td><?=$post['hits']?></td>
