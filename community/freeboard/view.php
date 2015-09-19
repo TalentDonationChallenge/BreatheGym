@@ -47,6 +47,14 @@ require_once(__DIR__.'/../../framework/framework.php');
 							"nbsp;":str_replace("\n", '<br />', htmlspecialchars($posting['content']));?>
 						</p>
 					</div>
+					<div class="hit-reply hit-style">
+							<span>댓글 12</span>
+							<span> &#124; 조회 123</span>
+							<span class="pull-right">
+							<span class="mouse-over">수정 </span>&#124;
+							<span class="mouse-over">신고(or 삭제)</span>
+							</span>
+					</div>
 					<div class="box-reply bg-color">
 						<ul class="del-padding">
 							<?php
