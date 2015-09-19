@@ -19,7 +19,6 @@ require_once(__DIR__.'/../framework/framework.php');
 	navigation();
 	?>
 	<div class="container introduce">
-		
 		<div class="row">
 			<div class='col-md-2 col-xs-12 sidebar'>
 				

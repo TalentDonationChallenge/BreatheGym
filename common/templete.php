@@ -109,8 +109,7 @@
 						<li><a href='#'>복싱운동강좌</a></li>
 						<li><a href='#'>스파링영상</a></li>
 						<li class='divider'></li>
-						<li><a href='#'>크로스핏 자료실</a></li>
-						<li><a href='#'>크로스핏 동작들</a></li>
+						<li><a href='/exerciseInfo/crossfitLibrary/index.php'>크로스핏 사진/영상</a></li>
 						</ul>
 					</li>
 					<li><a href='/exercise/index.php'>운동관리</a></li>

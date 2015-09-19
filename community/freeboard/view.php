@@ -15,6 +15,7 @@ require_once(__DIR__.'/../../framework/framework.php');
 <body>
 	<?php if (isset($_GET['no'])) {
 		$freeboard = new ImageBoard('freeboard');
+		$freeboard->addHitCounter($_GET['no']); //조회수 ++
 		$posting = $freeboard->loadPost($_GET['no']);
 		$comments = $freeboard->loadComments($_GET['no'], 'freeBoard');
 	}
@@ -33,7 +34,7 @@ require_once(__DIR__.'/../../framework/framework.php');
 			<div class="container">
 			<h3><i class="fa fa-angle-right"></i> 자유게시판</h3>
 				<div class="panel panel-default mb mt">
-					<div class="panel-heading">
+					<div class="panel-heading"  no='<?=$_GET["no"]?>'>
 						<span class="pull-right hidden-phone time">
 							<?=$posting['writtenTime']?>
 						</span>
@@ -52,41 +53,39 @@ require_once(__DIR__.'/../../framework/framework.php');
 							if ($comments) {
 								foreach($comments as $comment) { ?>
 							<li> <!-- 여기서부터 다음까지 댓글임 -->
-								<div class="">
+								<div no='<?=$comment["no"]?>'>
 									<span class="nick-area">
 										<a href="#"><?=$comment['nickname']?></a>
 									</span>
 									<span class="date"><?=$comment['writtenTime']?></span>
-									<span></span>
-									<a href="#" class="report">신고</a>
+									<?=$_SESSION['email']===$comment['email']?
+									'<span class="delete">삭제</span>':
+									'<span class="report">신고</span>'?>
 								</div>
 
 								<div class="comm-content">
 									<span><?=$comment['content']?></span>
 								</div>
 								<li class="comm-line"></li>
-								<?php } } else { ?>
+								<?php }
+							} else { ?>
 								<?="아직 댓글이 없습니다!"?>
 								<li class="comm-line"></li>
 								<?php } ?>
 							</li>
 						</ul>
+						<button type="button" class="btn btn-default btn-option mt">확인</button>
 						<div class="write-comm mt">
 							<textarea class="form-control answer"></textarea>
 						</div>
-							<button type="button" class="btn btn-default btn-option mt">확인</button>
 					</div>
-					
+
 				</div>
-				
+
 				<div class="buttons mt">
-					<button class="btn btn-default" name="button">이전글</button>
-					<button class="btn btn-default" name="button">다음글</button>
-					<button class="btn btn-default" name="button">
-						<a href="index.php">
-							<span>목록</span>
-						</a>
-					</button>
+					<a href="index.php">
+						<button class="btn btn-default" name="button">목록</button>
+					</a>
 				</div>
 			</div>
 		</section>
@@ -95,5 +94,6 @@ require_once(__DIR__.'/../../framework/framework.php');
 	<script src="/common/js/bootstrap.min.js"></script>
 	<script src="/common/js/jquery.dcjqaccordion.2.7.js"></script>
 	<script src="/common/js/common-scripts.js"></script>
+	<script src="../js/freeboard.js"></script>
 </body>
 </html>

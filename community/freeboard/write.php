@@ -40,10 +40,9 @@ require_once(__DIR__.'/../../framework/framework.php');
 				<textarea class="write form-control" placeholder="내용을 입력하세요."></textarea>
 				<nav>
 					<button class="btn mt mr btn-primary submit">확인</button>
-
-					<button class="btn btn-default mt">
-						<a href="index.php"><span>취소</span></a>
-					</button>
+					<a href="index.php">
+						<button class="btn btn-default mt">취소</button>
+					</a>
 				</nav>
 			</div>
 		</section>

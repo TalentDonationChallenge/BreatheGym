@@ -85,7 +85,6 @@
 						</a>
 					</li>':''?>
 					</ul>
-
 					<button type="button" class="btn pull-right btn-primary btn-write">
 						글쓰기
 					</button>
