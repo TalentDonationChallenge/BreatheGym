@@ -50,12 +50,13 @@
 			$tomorrow = date('Y-m-d',strtotime("+1day ".$date));
 			$pdo=Database::getInstance();
 			$stmt=$pdo->prepare(
-			'SELECT DISTINCT attendance.barcode as barcode, name, date
-			FROM (gymMember NATURAL JOIN attendance) LEFT JOIN exerciseRecord
-			ON attendance.barcode = exerciseRecord.barcode
-			WHERE date>=:today AND date<:tomorrow
-			AND (exerciseNo IS NULL OR exerciseNo != :exercise)
-			AND branch = :branch ORDER BY date DESC');
+			'SELECT DISTINCT barcode, name, date
+    		FROM (gymMember NATURAL JOIN attendance)
+    		WHERE date>=:today AND date<:tomorrow
+			AND barcode NOT IN (SELECT barcode
+                        FROM exerciseRecord NATURAL JOIN exerciseList
+                        WHERE date>=:today AND date<:tomorrow AND exerciseNo = :exercise)
+    		AND branch = :branch ORDER BY date DESC');
 			$stmt->execute(array(
 				':today'=>$date,
 				':tomorrow'=>$tomorrow,
