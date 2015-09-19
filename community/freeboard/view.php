@@ -53,20 +53,22 @@ require_once(__DIR__.'/../../framework/framework.php');
 							if ($comments) {
 								foreach($comments as $comment) { ?>
 							<li> <!-- 여기서부터 다음까지 댓글임 -->
-								<div class="">
+								<div no='<?=$comment["no"]?>'>
 									<span class="nick-area">
 										<a href="#"><?=$comment['nickname']?></a>
 									</span>
 									<span class="date"><?=$comment['writtenTime']?></span>
-									<span></span>
-									<a href="#" class="report">신고</a>
+									<?=$_SESSION['email']===$comment['email']?
+									'<span class="delete">삭제</span>':
+									'<span class="report">신고</span>'?>
 								</div>
 
 								<div class="comm-content">
 									<span><?=$comment['content']?></span>
 								</div>
 								<li class="comm-line"></li>
-								<?php } } else { ?>
+								<?php }
+							} else { ?>
 								<?="아직 댓글이 없습니다!"?>
 								<li class="comm-line"></li>
 								<?php } ?>
