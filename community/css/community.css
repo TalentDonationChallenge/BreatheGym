@@ -84,9 +84,14 @@ td:nth-child(5), th:nth-child(5) {
     padding: 0px !important;
 }
 
-.report {
+.box-reply .report, .box-reply .delete {
     float: right;
-    vertical-align: center;
+    cursor: pointer;
+}
+
+.box-reply .report:hover, .box-reply .delete:hover {
+    text-decoration: underline;
+    font-weight: bold;
 }
 
 .comm-content {

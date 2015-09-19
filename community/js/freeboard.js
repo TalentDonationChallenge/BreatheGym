@@ -29,4 +29,17 @@ $(document).ready(function () {
             location.reload();
         });
     });
+    $('.box-reply .delete').click(function () {
+        var commentNo = $(this).parent().attr('no');
+        $.ajax({
+            url: 'delete.php',
+            method: 'post',
+            data : {
+                requestType : 'comment',
+                no : commentNo
+            }
+        }).done(function () {
+            location.reload();
+        });
+    })
 });
