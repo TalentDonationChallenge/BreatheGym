@@ -20,7 +20,7 @@ class AdminInformation {
 
     public static function recentlyJoinedMember(){
         $pdo = Database::getInstance();
-        $stmt = $pdo->prepare("SELECT count(barcode) as count
+        $stmt = $pdo->prepare("SELECT count(email) as count
         FROM member WHERE registerDate >= :month");
         $recentMonth = date('Y-m-d',strtotime('-1 month'));
         $stmt->execute(array('month'=>$recentMonth));
@@ -34,7 +34,15 @@ class AdminInformation {
 
     public static function endedMembers() {
         $pdo = Database::getInstance();
-        
+
+    }
+    public static function monthlyJoinedMember() {
+        $pdo = Database::getInstance();
+        $stmt = $pdo->prepare("SELECT count(email) as count, registerDate
+        FROM member WHERE registerDate > :month
+        GROUP BY extract(YEAR_MONTH FROM registerDate)");
+        $recentMonth = date('Y-m-d',strtotime('-6 month'));
+
     }
 }
  ?>

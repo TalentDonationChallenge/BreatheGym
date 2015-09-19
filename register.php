@@ -4,7 +4,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<?php head('브리드 복싱 &amp; 크로스핏', array('/common/css/navigation.css')); ?>
+	<?php head('브리드 복싱 &amp; 크로스핏', array('/common/font-awesome/css/font-awesome.css','/common/css/navigation.css')); ?>
 	<!--[if lt IE 9]>
 	<script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
 	<![endif]-->

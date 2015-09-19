@@ -95,9 +95,15 @@
 							게시판<span class='caret'></span>
 						</a>
 						<ul class='dropdown-menu'>
+<<<<<<< HEAD
 						<li><a href='/board/breatheboard/index.php'>브리드이야기</a></li>
 						<li><a href='/board/diaryboard/index.php'>사부님의 노트</a></li>
 						<li><a href='/board/review/index.php'>운동후기</a></li>
+=======
+						<li><a href='/board/breatheStory/index.php'>브리드이야기</a></li>
+						<li><a href='#'>사부님의 노트</a></li>
+						<li><a href='#'>운동후기</a></li>
+>>>>>>> 10dd3cff29ff41346af319d9edefb2dc4d0781bd
 						</ul>
 					</li>
 					<li class='dropdown'>
