@@ -61,7 +61,7 @@
 		public function loadPost($no) {
 			$table = $this->table;
 			$pdo = Database::getInstance();
-			$sql = "SELECT no, title, nickname, content, writtenTime
+			$sql = "SELECT no, title, nickname, content, writtenTime, hits
 			FROM {$table} JOIN member ON {$table}.email = member.email
 			WHERE no =:no";
 			$stmt = $pdo->prepare($sql);
@@ -73,7 +73,8 @@
 					'title' => $row['title'],
 					'content'=>$row['content'],
 					'nickname' => $row['nickname'],
-					'writtenTime' => date('Y/m/d H:i:s',strtotime($row['writtenTime']))
+					'writtenTime' => date('Y/m/d H:i:s',strtotime($row['writtenTime'])),
+					'hits' => $row['hits']
 				);
 				return $post;
 			} else{
@@ -105,13 +106,12 @@
 			return ceil($row['pages']);
 		}
 
-        public function addHitCounter($no, $hits) {
+        public function addHitCounter($no) {
         	$table = $this->table;
         	$pdo = Database::getInstance();
-        	$sql = "UPDATE {$table} SET hit = :hit WHERE no = :no";
+        	$sql = "UPDATE {$table} SET hits = hits+1 WHERE no = :no";
         	$stmt = $pdo->prepare($sql);
         	$stmt->execute(array(
-        		':hit' => $hits+1,
         		':no' => $no
         	));
         	return $pdo->lastInsertId();
@@ -122,7 +122,7 @@
 			$stmt = $pdo->prepare("SELECT nickname, content, writtenTime
 			FROM comments NATURAL JOIN member
 			WHERE tableName = :table and postNumber = :no
-			ORDER BY no DESC");
+			ORDER BY no ASC");
 			$stmt->execute(array(
 				':table' => $tableName,
 				':no' => $postNumber
@@ -140,9 +140,10 @@
 			return $comments;
 		}
 
-		public function submitComments($email, $content, $table, $postNumber) {
+		public function submitComments($email, $content, $postNumber) {
+			$table = $this->table;
 			$pdo = Database::getInstance();
-			$sql = "INSERT INTO comment (tableName, postNumber, email, content, writtenTime)
+			$sql = "INSERT INTO comments (tableName, postNumber, email, content, writtenTime)
 				VALUES (:table, :postNumber, :email, :content, NOW())";
 			$stmt = $pdo->prepare($sql);
 			$stmt->execute(array(

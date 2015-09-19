@@ -131,9 +131,7 @@ td:nth-child(5), th:nth-child(5) {
 */
 
 .write-comm {
-    position: absolute;
-    left: 230px;
-    right: 350px;
+    margin : 35px 130px 0 0;
 }
 
 @media (min-width: 768px) {
