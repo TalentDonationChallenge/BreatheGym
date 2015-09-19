@@ -17,7 +17,7 @@ require_once(__DIR__.'/../../framework/framework.php');
 	<?php
 	login();
 	navigation();
-	$crossfitlibrary=new ImageBoard('crossfitLibrary');
+	$crossfitlibrary=new ImageBoard('crossfitLib');
 	$page = isset($_GET['page'])?$_GET['page']:1;
 	?>
 	<!--header start-->
@@ -30,146 +30,120 @@ require_once(__DIR__.'/../../framework/framework.php');
 		<section class="wrapper">
 			<div class="container">
 				<h3><i class="fa fa-angle-right"></i> 크로스핏 자료실</h3>
-
-				<div class="col-sm-3 mt">
-					<div class="panel panel-default cross-panel">
-						<div class="panel-body">
-							<img src="/introduction/images/ali.jpg" alt="Boxer Ali">
-						</div>
-						<div class="panel-footer">
-							<span class="inline-to-block">제목</span>
-							<span>조회 89</span>
-							<span> | 15.07.31</span>
-							<span class="inline-to-block">글쓴이</span>
-						</div>
-					</div>
-				</div>
-
-				<div class="col-sm-3 mt">
-					<div class="panel panel-default cross-panel">
-						<div class="panel-body">
-							<img src="/introduction/images/ali.jpg" alt="Boxer Ali">
-						</div>
-						<div class="panel-footer">
-							<span class="inline-to-block">제목</span>
-							<span>조회 89</span>
-							<span> | 15.07.31</span>
-							<span class="inline-to-block">글쓴이</span>
+				<div class="row">
+					<div class="col-sm-3 mt">
+						<div class="panel panel-default cross-panel">
+							<div class="panel-body">
+								<img src="/introduction/images/ali.jpg" alt="Boxer Ali">
+							</div>
+							<div class="panel-footer">
+								<span class="inline-to-block">제목</span>
+								<span>조회 89</span>
+								<span> &#124; 15.07.31</span>
+								<span class="inline-to-block">글쓴이</span>
+							</div>
 						</div>
 					</div>
-				</div>
 
-				<div class="col-sm-3 mt">
-					<div class="panel panel-default cross-panel">
-						<div class="panel-body">
-							<img src="/introduction/images/ali.jpg" alt="Boxer Ali">
-						</div>
-						<div class="panel-footer">
-							<span class="inline-to-block">제목</span>
-							<span>조회 89</span>
-							<span> | 15.07.31</span>
-							<span class="inline-to-block">글쓴이</span>
+					<div class="col-sm-3 mt">
+						<div class="panel panel-default cross-panel">
+							<div class="panel-body">
+								<img src="/introduction/images/ali.jpg" alt="Boxer Ali">
+							</div>
+							<div class="panel-footer">
+								<span class="inline-to-block">제목</span>
+								<span>조회 89</span>
+								<span> &#124; 15.07.31</span>
+								<span class="inline-to-block">글쓴이</span>
+							</div>
 						</div>
 					</div>
-				</div>
 
-				<div class="col-sm-3 mt">
-					<div class="panel panel-default cross-panel">
-						<div class="panel-body">
-							<img src="/introduction/images/ali.jpg" alt="Boxer Ali">
-						</div>
-						<div class="panel-footer">
-							<span class="inline-to-block">제목</span>
-							<span>조회 89</span>
-							<span> | 15.07.31</span>
-							<span class="inline-to-block">글쓴이</span>
+					<div class="col-sm-3 mt">
+						<div class="panel panel-default cross-panel">
+							<div class="panel-body">
+								<img src="/introduction/images/ali.jpg" alt="Boxer Ali">
+							</div>
+							<div class="panel-footer">
+								<span class="inline-to-block">제목</span>
+								<span>조회 89</span>
+								<span> &#124; 15.07.31</span>
+								<span class="inline-to-block">글쓴이</span>
+							</div>
 						</div>
 					</div>
-				</div>
 
-				<div class="col-sm-3 mt">
-					<div class="panel panel-default cross-panel">
-						<div class="panel-body">
-							<img src="/introduction/images/ali.jpg" alt="Boxer Ali">
-						</div>
-						<div class="panel-footer">
-							<span class="inline-to-block">제목</span>
-							<span>조회 89</span>
-							<span> | 15.07.31</span>
-							<span class="inline-to-block">글쓴이</span>
+					<div class="col-sm-3 mt">
+						<div class="panel panel-default cross-panel">
+							<div class="panel-body">
+								<img src="/introduction/images/ali.jpg" alt="Boxer Ali">
+							</div>
+							<div class="panel-footer">
+								<span class="inline-to-block">제목</span>
+								<span>조회 89</span>
+								<span> &#124; 15.07.31</span>
+								<span class="inline-to-block">글쓴이</span>
+							</div>
 						</div>
 					</div>
-				</div>
 
-				<div class="col-sm-3 mt">
-					<div class="panel panel-default cross-panel">
-						<div class="panel-body">
-							<img src="/introduction/images/ali.jpg" alt="Boxer Ali">
-						</div>
-						<div class="panel-footer">
-							<span class="inline-to-block">제목</span>
-							<span>조회 89</span>
-							<span> | 15.07.31</span>
-							<span class="inline-to-block">글쓴이</span>
+					<div class="col-sm-3 mt">
+						<div class="panel panel-default cross-panel">
+							<div class="panel-body">
+								<img src="/introduction/images/ali.jpg" alt="Boxer Ali">
+							</div>
+							<div class="panel-footer">
+								<span class="inline-to-block">제목</span>
+								<span>조회 89</span>
+								<span> &#124; 15.07.31</span>
+								<span class="inline-to-block">글쓴이</span>
+							</div>
 						</div>
 					</div>
-				</div>
 
-				<div class="col-sm-3 mt">
-					<div class="panel panel-default cross-panel">
-						<div class="panel-body">
-							<img src="/introduction/images/ali.jpg" alt="Boxer Ali">
-						</div>
-						<div class="panel-footer">
-							<span class="inline-to-block">제목</span>
-							<span>조회 89</span>
-							<span> | 15.07.31</span>
-							<span class="inline-to-block">글쓴이</span>
+					<div class="col-sm-3 mt">
+						<div class="panel panel-default cross-panel">
+							<div class="panel-body">
+								<img src="/introduction/images/ali.jpg" alt="Boxer Ali">
+							</div>
+							<div class="panel-footer">
+								<span class="inline-to-block">제목</span>
+								<span>조회 89</span>
+								<span> &#124; 15.07.31</span>
+								<span class="inline-to-block">글쓴이</span>
+							</div>
 						</div>
 					</div>
-				</div>
 
-				<div class="col-sm-3 mt">
-					<div class="panel panel-default cross-panel">
-						<div class="panel-body">
-							<img src="/introduction/images/ali.jpg" alt="Boxer Ali">
-						</div>
-						<div class="panel-footer">
-							<span class="inline-to-block">제목</span>
-							<span>조회 89</span>
-							<span> | 15.07.31</span>
-							<span class="inline-to-block">글쓴이</span>
+					<div class="col-sm-3 mt">
+						<div class="panel panel-default cross-panel">
+							<div class="panel-body">
+								<img src="/introduction/images/ali.jpg" alt="Boxer Ali">
+							</div>
+							<div class="panel-footer">
+								<span class="inline-to-block">제목</span>
+								<span>조회 89</span>
+								<span> &#124; 15.07.31</span>
+								<span class="inline-to-block">글쓴이</span>
+							</div>
 						</div>
 					</div>
+
+					<div class="col-sm-3 mt">
+						<div class="panel panel-default cross-panel">
+							<div class="panel-body">
+								<img src="/introduction/images/ali.jpg" alt="Boxer Ali">
+							</div>
+							<div class="panel-footer">
+								<span class="inline-to-block">제목</span>
+								<span>조회 89</span>
+								<span> &#124; 15.07.31</span>
+								<span class="inline-to-block">글쓴이</span>
+							</div>
+						</div>
+					</div>
+
 				</div>
-<!-- 				<div class="panel panel-default mt">
-					<table class="table table-striped">
-						<thead>
-							<tr>
-								<th class="hidden-phone">번호</th>
-								<th>제목</th>
-								<th>글쓴이</th>
-								<th class="hidden-phone">작성일</th>
-								<th>조회</th>
-							</tr>
-						</thead>
-						<tbody>
-							<?php
-								$posts = $crossfitlibrary->loadPostList($page);
-								foreach($posts as $post) { ?>
-									<tr>
-										<td><?=$post['no']?></td>
-										<td><a href="view.php?page=<?=$page?>&amp;no=<?=$post['no']?>">
-										<?=$post['title']?>
-										</a></td>
-										<td><?=$post['nickname']?></td>
-										<td><?=$post['writtenTime']?></td>
-										<td><?=$post['hits']?></td>
-									</tr>
-							<?php }?>
-						</tbody>
-					</table>
-				</div> -->
 
 				<nav>
 					<ul class="pagination">

@@ -6,3 +6,11 @@
 .inline-to-block {
 	display: block;
 }
+
+.mr {
+	margin-right: 15px;
+}
+
+.ml {
+	margin-left: 15px;
+}
