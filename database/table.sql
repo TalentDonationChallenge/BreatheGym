@@ -41,7 +41,7 @@ create table member(
 	password varchar(50) not null default '',
 	name varchar(30) not null default '',
 	phone varchar(12) not null default '00000000000',
-	barcode varchar(30) not null default '',
+	barcode varchar(30) null default '',
 	birthday date not null default '2000-01-01',
 	facebook int(1) not null default 0 check (facebook = 0 or facebook = 1),
 	sex int(1) not null default 0 check (sex = 0 or sex = 1),
@@ -117,7 +117,7 @@ create table freeBoard(
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1;
 
 -- 운동 후기
-create table review(
+create table exerciseEpilogue(
 	no int(6) not null primary key AUTO_INCREMENT,
 	email varchar(50) not null default '',
 	title varchar(50) not null,
