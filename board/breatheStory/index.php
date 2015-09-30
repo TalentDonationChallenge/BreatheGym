@@ -5,7 +5,7 @@ require_once(__DIR__.'/../../framework/framework.php');
 <html>
 <head>
 	<?php head('브리드 복싱 &amp; 크로스핏 - 브리드 이야기',
-		array('/board/css/lightbox.css','/common/font-awesome/css/font-awesome.css',
+		array('/board/css/board.css','/common/font-awesome/css/font-awesome.css',
 			'/common/css/table-responsive.css','/community/css/community.css',
 			'/common/css/navigation.css','/common/css/index.css'));?>
 	<!--[if lt IE 9]>
@@ -20,32 +20,111 @@ require_once(__DIR__.'/../../framework/framework.php');
 	login();
 	navigation();
 	?>
-	<section class='wrapper'>
-		
+	<div class='zoom'>
+		<i class='fa fa-close fa-3x pull-right'></i>
+		<div class='container-fluid scroll'>
+
+		</div>
+		<img src='/resources/crossfit.jpg'/>
+	</div>
+	<section class='wrapper content'>
 		<div class='container'>
 			<h1>브리드 이야기</h1>
 			<div class='row'>
-				<div class='col-md-3 col-xs-6'>
+				
+				<div class='col-md-3 col-xs-12 col-md-offset-1'>
 					<div class='panel panel-default'>
-						<img src='crossfit.jpg' width='100%'/>
+						<div class='panel-body item'>
+							<img src='/resources/crossfit.jpg' height='100%'/>
+						</div>
+						<div class='panel-footer'>
+							제2호점 개점!
+						</div>
 					</div>
 				</div>
-				<div class='col-md-3 col-xs-6'>
+				<div class='col-md-3 col-xs-12'>
 					<div class='panel panel-default'>
-						<img src='crossfit.jpg' width='100%'/>
+						<div class='panel-body item'>
+							<img src='/resources/crossfit.jpg' height='100%'/>
+						</div>
+						<div class='panel-footer'>
+							안산 프로복싱 라이선스 후기
+						</div>
 					</div>
 				</div>
-				<div class='col-md-3 col-xs-6'>
+				<div class='col-md-3 col-xs-12'>
 					<div class='panel panel-default'>
-						<img src='crossfit.jpg' width='100%'/>
-					</div>
-				</div>
-				<div class='col-md-3 col-xs-6'>
-					<div class='panel panel-default'>
-						<img src='crossfit.jpg' width='100%'/>
+						<div class='panel-body item'>
+							<img src='/resources/crossfit.jpg' height='100%'/>
+						</div>
+						<div class='panel-footer'>
+							안산 프로복싱 라이선스 후기
+						</div>
 					</div>
 				</div>
 			</div>
+			<div class='row'>
+				<div class='col-md-3 col-xs-12 col-md-offset-1'>
+					<div class='panel panel-default'>
+						<div class='panel-body item'>
+							<img src='/resources/crossfit.jpg' height='100%'/>
+						</div>
+					</div>
+					<div class='panel-footer'>
+						제3회 스파링 데이! 그 뜨거운 열기 속으로
+					</div>
+				</div>
+				<div class='col-md-3 col-xs-12'>
+					<div class='panel panel-default'>
+						<div class='panel-body item'>
+							<img src='/resources/crossfit.jpg' height='100%'/>
+						</div>
+						<div class='panel-footer'>
+							2호점 오프라인 모임 개최!
+						</div>
+					</div>
+				</div>
+				<div class='col-md-3 col-xs-12'>
+					<div class='panel panel-default'>
+						<div class='panel-body item'>
+							<img src='/resources/crossfit.jpg' height='100%'/>
+						</div>
+						<div class='panel-footer'>
+							2호점 오프라인 모임 개최!
+						</div>
+					</div>
+				</div>
+			</div>
+			<nav>
+				<ul class="pagination">
+					<?php
+					$allPages = $diaryboard->pageCount(); // 다음부터 수정(a.k.a. 복붙)할때 이부분에 게시판 이름을 수정하면 된다
+					$pagingStart = $page%5==0?$page-4:$page-($page%5)+1; ?>
+					<?=$page<=5?'':
+					'<li>
+						<a href="index.php?page='.($pagingStart-1).'" aria-label="Previous">
+						<span aria-hidden="true">&laquo;</span>
+						</a>
+					</li>'?>
+					<?php
+					for ($i=$pagingStart; $i < $pagingStart+5 ; $i++) {
+						if ($i==$allPages+1) break;?>
+						<li class="<?=$page==$i?"active":""?>">
+							<a href="index.php?page=<?=$i?>"><?=$i?></a>
+						</li>
+					<?php }?>
+					<?=$pagingStart+4<$allPages?
+					'<li>
+						<a href="index.php?page='.($pagingStart+5).'" aria-label="Next">
+						<span aria-hidden="true">&raquo;</span>
+						</a>
+					</li>':''?>
+				</ul>
+
+				<button type="button" class="btn pull-right btn-primary btn-write">
+					글쓰기
+				</button>
+			</nav>
 		</div>
 	</section>
 <script src="/common/js/jquery-1.11.1.min.js"></script>
