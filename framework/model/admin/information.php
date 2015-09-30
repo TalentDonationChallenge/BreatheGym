@@ -36,13 +36,24 @@ class AdminInformation {
         $pdo = Database::getInstance();
 
     }
-    public static function monthlyJoinedMember() {
+    public static function monthlyJoinedMemberCount() {
         $pdo = Database::getInstance();
-        $stmt = $pdo->prepare("SELECT count(email) as count, registerDate
+        $stmt = $pdo->prepare('SELECT count(email) as count,
+        date_format(registerDate, "%M") as month
         FROM member WHERE registerDate > :month
-        GROUP BY extract(YEAR_MONTH FROM registerDate)");
-        $recentMonth = date('Y-m-d',strtotime('-6 month'));
-
+        GROUP BY extract(YEAR_MONTH FROM registerDate)
+        ORDER BY registerDate ASC');
+        $sixMonthAgo = date('Y-m-d',strtotime('-6 month'));
+        $stmt->execute(array('month'=>$sixMonthAgo));
+        $rows = $stmt->fetchAll();
+        $count = array();
+        foreach ($rows as $row) {
+            $count[] = array(
+                'count'=>$row['count'],
+                'month'=>$row['month']
+            );
+        }
+        return $count;
     }
 }
  ?>

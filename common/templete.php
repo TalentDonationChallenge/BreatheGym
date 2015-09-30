@@ -82,10 +82,10 @@
 						<ul class='dropdown-menu'>
 						<li><a href='/introduction/gym.php'>매장소개</a></li>
 						<li><a href='/introduction/gymservice.php?no=1'>운동시간표</a>
-			
+
 						<li class='text-center'><a href='/introduction/gymservice.php?no=1'>1호점</a></li>
 						<li class='text-center'><a href='/introduction/gymservice.php?no=2'>2호점</a></li>
-						
+
 						</li>
 						<li><a href='/introduction/gymstaff.php'>스탭소개</a></li>
 						</ul>
@@ -95,15 +95,9 @@
 							게시판<span class='caret'></span>
 						</a>
 						<ul class='dropdown-menu'>
-<<<<<<< HEAD
 						<li><a href='/board/breatheboard/index.php'>브리드이야기</a></li>
 						<li><a href='/board/diaryboard/index.php'>사부님의 노트</a></li>
 						<li><a href='/board/review/index.php'>운동후기</a></li>
-=======
-						<li><a href='/board/breatheStory/index.php'>브리드이야기</a></li>
-						<li><a href='#'>사부님의 노트</a></li>
-						<li><a href='#'>운동후기</a></li>
->>>>>>> 10dd3cff29ff41346af319d9edefb2dc4d0781bd
 						</ul>
 					</li>
 					<li class='dropdown'>

@@ -17,7 +17,7 @@
 	<?php
 		login();
 		navigation();
-		$review=new ImageBoard('review');
+		$review=new ImageBoard('exerciseEpilogue');
 		$page = isset($_GET['page'])?$_GET['page']:1;
 	?>
 	<!--header start-->

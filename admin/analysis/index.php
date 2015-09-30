@@ -68,7 +68,8 @@
 	<script src="/common/js/bootstrap.min.js"></script>
 	<script src="/common/js/jquery.dcjqaccordion.2.7.js"></script>
 	<script src="/common/js/common-scripts.js"></script>
-	<script src="/admin/js/analysis.js"></script>
 	<script src="/common/js/Chart.min.js"></script>
+	<script src="/common/js/moment.min.js"></script>
+	<script src="/admin/js/analysis.js"></script>
 </body>
 </html>

@@ -1,5 +1,7 @@
 $(document).ready(function () {
-    var myNewChart = new Chart($("#chart").get(0).getContext("2d")).Line({
+    var month = ["January", "February", "March", "April", "May", "June",
+     "July","August","September","October","Nobember","December"];
+    var monthlyJoinedChart = new Chart($("#chart").get(0).getContext("2d")).Line({
         labels: ["January", "February", "March", "April", "May", "June", "July"],
         datasets: [
             {
@@ -55,6 +57,11 @@ $(document).ready(function () {
         color : "#444c57"
     }];
     var myDoughnut = new Chart($("#piechart").get(0).getContext("2d")).Doughnut(doughnutData);
+    $.ajax({
+        url:'load.php'
+    }).done(function (msg) {
+        console.log(msg)
+    });
     var myBarchart = new Chart($("#bar-graph").get(0).getContext("2d")).Bar({
         labels: ["January", "February", "March", "April", "May", "June", "July"],
     datasets: [

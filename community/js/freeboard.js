@@ -1,7 +1,4 @@
 $(document).ready(function () {
-    $('.btn-write').click(function () {
-        location.href="write.php";
-    });
     $('nav>button.submit').click(function () {
         //여기 예외처리해야함
         $.ajax({
