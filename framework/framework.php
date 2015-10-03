@@ -18,7 +18,7 @@
 	require_once (__DIR__.'/model/board.php');
 	require_once (__DIR__.'/model/imageBoard.php');
 	require_once (__DIR__.'/model/memberRegisterFromRegister.php');
-	// require_once (__DIR__.'/model/member.php');
+	require_once (__DIR__.'/model/member.php');
 	// require_once (__DIR__.'/model/note.php');
 	// require_once (__DIR__.'/model/review.php');
 	// require_once (__DIR__.'/model/sparringVideo.php');

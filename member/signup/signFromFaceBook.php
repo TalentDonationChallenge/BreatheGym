@@ -4,8 +4,8 @@
 	//클라이언트에서 양식 폼에 맞게 작성한 데이터를 받아 db에 등록된 회원인지의 여부를 살펴보고 그 결과에 따라 다른 메세지를 클리이언트로 보내주는것이 목적입니다.
 
 
-	require_once(__DIR__.'/framework/framework.php');
-	
+	require_once(__DIR__.'/../../framework/framework.php');
+
 
 
 	if(isset($_POST['userEmail']) && isset($_POST['userName']) && isset($_POST['userSex']) && isset($_POST['userBirthDay'])){
@@ -22,7 +22,7 @@
 		$userLevel = 0;
 
 		$getUsercount = UserRegister::isUserExistFromRegisterInfo($userEmail);
-	
+
 	if($getUsercount === "1"){
 		echo "user exist";
 	}
@@ -33,8 +33,8 @@
 			$userPhone,$userBarcode,$userBirthDay,
 			$facebook,$userSex,$registerDate,
 			$userNickName,$userLevel);
-		
-	} 
+
+	}
 
 	}
 	else{
@@ -44,5 +44,5 @@
 
 
 
-	
+
 ?>
