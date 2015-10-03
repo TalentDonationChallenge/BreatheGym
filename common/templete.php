@@ -28,7 +28,7 @@
 						<h1 class='text-center'>Login</h1>
 					</div>
 					<div class='modal-body'>
-						<form class='form col-md-12 center-block'>
+						<div class='form col-md-12 center-block'>
 							<div class='form-group'>
 								<input type='email' class='form-control input-lg' placeholder='Email'>
 							</div>
@@ -41,7 +41,7 @@
 								<span class='pull-right'><a href='/member/signup/'>Register</a></span><span><a href='#'>Need help?</a></span>
 							</div>
 							<div id="status"></div>
-						</form>
+						</div>
 					</div>
 					<div class='modal-footer'>
 						<div class='col-md-12'>

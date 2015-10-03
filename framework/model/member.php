@@ -12,7 +12,7 @@
             ));
             $member = $stmt->fetch();
             $memberPassword = $member['password'];
-            if ($password === $memberPassword) {
+            if (sha1($password) === $memberPassword) {
                 return true;
             } else {
                 return false;
