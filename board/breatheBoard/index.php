@@ -21,17 +21,16 @@ require_once(__DIR__.'/../../framework/framework.php');
 	navigation();
 	?>
 	<div class='zoom' id='zoom'>
-		<i class='fa fa-close fa-3x pull-right'></i>
+		<i class='fa fa-close fa-3x pull-right close'></i>
 		<div class='container-fluid scroll'>
-
+			<img src='/resources/crossfit.jpg'/>
 		</div>
-		<img src='/resources/crossfit.jpg'/>
+		
 	</div>
 	<section class='wrapper content'>
-		<div class='container'>
+		<div class='container text-centered'>
 			<h1>브리드 이야기</h1>
 			<div class='row'>
-
 				<div class='col-md-3 col-xs-12 col-md-offset-1'>
 					<div class='panel panel-default' id='item'>
 						<div class='panel-body item'>
@@ -95,39 +94,16 @@ require_once(__DIR__.'/../../framework/framework.php');
 					</div>
 				</div>
 			</div>
-			<nav>
-				<ul class="pagination">
-					<?php
-					$allPages = $diaryboard->pageCount(); // 다음부터 수정(a.k.a. 복붙)할때 이부분에 게시판 이름을 수정하면 된다
-					$pagingStart = $page%5==0?$page-4:$page-($page%5)+1; ?>
-					<?=$page<=5?'':
-					'<li>
-						<a href="index.php?page='.($pagingStart-1).'" aria-label="Previous">
-						<span aria-hidden="true">&laquo;</span>
-						</a>
-					</li>'?>
-					<?php
-					for ($i=$pagingStart; $i < $pagingStart+5 ; $i++) {
-						if ($i==$allPages+1) break;?>
-						<li class="<?=$page==$i?"active":""?>">
-							<a href="index.php?page=<?=$i?>"><?=$i?></a>
-						</li>
-					<?php }?>
-					<?=$pagingStart+4<$allPages?
-					'<li>
-						<a href="index.php?page='.($pagingStart+5).'" aria-label="Next">
-						<span aria-hidden="true">&raquo;</span>
-						</a>
-					</li>':''?>
-				</ul>
-
-				<button type="button" class="btn pull-right btn-primary btn-write">
-					글쓰기
-				</button>
-			</nav>
+			
 		</div>
 	</section>
-	<?php scripts(array('/common/js/navigation.js','/board/js/breatheStory.js')) ?>
+	<script src='/common/js/jquery-1.11.1.min.js'></script>
+	<script src='/common/js/jquery-ui.custom.min.js'></script>
+	<script src='/common/js/jquery.dcjqaccordion.2.7.js'></script>
+	<script src='/common/js/bootstrap.min.js'></script>
+	<script src='/common/js/facebook.js'></script>
+	<script src='/common/js/navigation.js'></script>
+	<script src='/board/js/breatheStory.js'></script>
 	<!--<script src="/common/js/common-scripts.js"></script>-->
 </body>
 </html>
