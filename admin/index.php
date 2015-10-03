@@ -60,7 +60,7 @@
 								<h5>웹페이지 방문자 수 (오늘)</h5>
 							</div>
 							<h1><i class="icon fa fa-bar-chart-o"></i></h1>
-							<h3>104명</h3>
+							<h3><?=VisitCountDB::showTodayVisitRecord()?>명</h3>
 						</div>
 					</div>
 				</div>
