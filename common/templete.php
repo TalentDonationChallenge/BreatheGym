@@ -104,20 +104,31 @@
 						<li><a href='/exerciseInfo/crossfitLibrary/index.php'>크로스핏 사진/영상</a></li>
 						</ul>
 					</li>
+					<?php if (Utility::isLoggedIn()) {?>
 					<li><a href='/exercise/index.php'>운동관리</a></li>
+					<?php } ?>
 					<li class='dropdown'>
 						<a href='#' class='dropdown-toggle' data-toggle='dropdown' role='button' aria-expanded='false'>
 							커뮤니티<span class='caret'></span>
 						</a>
 						<ul class='dropdown-menu'>
 						<li><a href='/community/freeboard/index.php'>자유게시판</a></li>
+						<?php if (Utility::isLoggedIn()) {?>
 						<li><a href='/community/consulting/index.php'>상담</a></li>
+						<?php } ?>
 						</ul>
 					</li>
 					</ul>
 					<ul class='nav navbar-nav navbar-right'>
+					<?php if (Utility::isLoggedIn()) { ?>
+						<?php if (Utility::isManager()) { ?>
 					<li><a href='/admin/index.php'>관리자메뉴</a></li>
+					<?php } }
+					if (Utility::isLoggedIn()) {?>
+					<li><a href='/member/signout'>로그아웃</a></li>
+					<? } else { ?>
 					<li><a class='login' id='login' href='#'>로그인</a></li>
+					<?php } ?>
 					</ul>
 				</div>
 			</div>
@@ -135,7 +146,7 @@
 			<div class='top-menu'>
 				<ul class='nav pull-right top-menu'>
 				<li><a class="home" href="/"><i class="fa fa-home"></i></a></li>
-				<li><a class='logout' href='/'>로그아웃</a></li>
+				<li><a class='logout' href='/member/signout'>로그아웃</a></li>
 				</ul>
 			</div>
 		</header>
@@ -214,7 +225,7 @@
 			<div class='top-menu'>
 				<ul class='nav pull-right top-menu'>
 				<li><a class="home" href="/"><i class="fa fa-home"></i></a></li>
-				<li><a class='logout' href='/'>로그아웃</a></li>
+				<li><a class='logout' href='/member/signout'>로그아웃</a></li>
 				</ul>
 			</div>
 		</header>

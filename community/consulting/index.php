@@ -1,5 +1,8 @@
 <?php
-require_once(__DIR__.'/../../framework/framework.php');
+	require_once(__DIR__.'/../../framework/framework.php');
+	if (!Utility::isLoggedIn()) {
+		header("Location: /error.php");
+	} else {
 ?>
 <!DOCTYPE html>
 <html>
@@ -103,3 +106,4 @@ require_once(__DIR__.'/../../framework/framework.php');
 <script src="/common/js/common-scripts.js"></script>
 </body>
 </html>
+<?php }?>
