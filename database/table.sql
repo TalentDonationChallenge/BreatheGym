@@ -20,6 +20,7 @@ drop table if exists comments;
 drop table if exists pictures;
 drop table if exists member;
 drop table if exists gymMember;
+drop table if exists visitRecord;
 
 
 create table gymMember(
@@ -232,3 +233,8 @@ create table pictures(
 	fileName varchar(50) not null,
 	originFileName varchar(50) not null
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1;
+
+create table visitRecord(
+	sessionId varchar(50) not null primary key,
+	date date not null default '2000-01-01' 
+)ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1;
