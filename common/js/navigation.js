@@ -5,4 +5,7 @@ $(document).ready(function () {
 	$(".close").click(function () {
 		$("#loginModal").removeClass("show");
 	});
+    $("#login").click(function () {
+        
+    });
 });

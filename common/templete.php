@@ -30,26 +30,18 @@
 					<div class='modal-body'>
 						<form class='form col-md-12 center-block'>
 							<div class='form-group'>
-								<input type='text' class='form-control input-lg' placeholder='Email'>
+								<input type='email' class='form-control input-lg' placeholder='Email'>
 							</div>
 							<div class='form-group'>
 								<input type='password' class='form-control input-lg' placeholder='Password'>
 							</div>
 							<div class='form-group'>
-								<!--<button onClick="FB.login();" id="fbLogin" class='btn btn-primary btn-lg btn-block'>Facebook Sign In</button>-->
-							</div>
-							<div class='form-group'>
 								<button id='facebookLogin' class='btn btn-primary btn-lg btn-block'>FacebookLogin</button>
-								<!--<div class="fb-login-button" data-max-rows="1" data-size="medium" data-show-faces="false" data-auto-logout-link="false"></div>-->
-								<button class='btn btn-primary btn-lg btn-block'>Sign In</button>
-								<span class='pull-right'><a href='/register.php'>Register</a></span><span><a href='#'>Need help?</a></span>
-
+								<button id='login' class='btn btn-primary btn-lg btn-block'>Sign In</button>
+								<span class='pull-right'><a href='/member/signup/'>Register</a></span><span><a href='#'>Need help?</a></span>
 							</div>
-
 							<div id="status"></div>
 						</form>
-
-
 					</div>
 					<div class='modal-footer'>
 						<div class='col-md-12'>
