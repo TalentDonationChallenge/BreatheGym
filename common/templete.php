@@ -142,7 +142,7 @@
 			<div class='top-menu'>
 				<ul class='nav pull-right top-menu'>
 				<li><a class="home" href="/"><i class="fa fa-home"></i></a></li>
-				<li><a class='logout' href='/'>로그아웃</a></li>
+				<li><a class='logout' href='/member/signout'>로그아웃</a></li>
 				</ul>
 			</div>
 		</header>
@@ -221,7 +221,7 @@
 			<div class='top-menu'>
 				<ul class='nav pull-right top-menu'>
 				<li><a class="home" href="/"><i class="fa fa-home"></i></a></li>
-				<li><a class='logout' href='/'>로그아웃</a></li>
+				<li><a class='logout' href='/member/signout'>로그아웃</a></li>
 				</ul>
 			</div>
 		</header>
