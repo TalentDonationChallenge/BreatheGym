@@ -106,5 +106,6 @@
 	<script src="/common/js/navigation.js"></script>
 	<script src="/common/js/common-scripts.js"></script>
 	<script src="../js/freeboard.js"></script>
+	<script src="/common/js/facebook.js"></script>
 </body>
 </html>
