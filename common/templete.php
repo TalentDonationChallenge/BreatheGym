@@ -185,7 +185,6 @@
 						<span>운동관리</span>
 					</a>
 					<ul class="sub">
-					<li><a href="/admin/exercise/boxing/index.php">복싱</a></li>
 					<li><a href="/admin/exercise/crossfit/index.php">크로스핏</a></li>
 					</ul>
 				</li>
@@ -252,13 +251,6 @@
 						<span>크로스핏</span>
 					</a>
 				</li>
-				<li class='sub-menu'>
-					<a <?=$active==='mypage'?"class='active'":""?> href='/exercise/mypage/index.php' >
-						<i class='fa fa-user'></i>
-						<span>MyPage</span>
-					</a>
-				</li>
-
 				</ul>
 			<!-- sidebar menu end-->
 			</div>
