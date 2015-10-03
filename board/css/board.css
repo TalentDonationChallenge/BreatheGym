@@ -6,10 +6,19 @@
 	background-color : rgba(0, 0, 0, 0.7);
 	width : 100%;
 	height : 100%;
-
+	display : none;
 }
 
 .zoom .scroll{
 	width : 100%;
 	overflow-y : scroll;
+}
+
+.item{
+	height : 300px;
+	overflow : hidden;
+}
+
+.item img{
+	height : 100%;
 }

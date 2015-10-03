@@ -69,9 +69,9 @@ require_once(__DIR__.'/../../framework/framework.php');
 						<div class='panel-body item'>
 							<img src='/resources/crossfit.jpg' height='100%'/>
 						</div>
-					</div>
-					<div class='panel-footer'>
-						제3회 스파링 데이! 그 뜨거운 열기 속으로
+						<div class='panel-footer'>
+							제3회 스파링 데이! 그 뜨거운 열기 속으로
+						</div>
 					</div>
 				</div>
 				<div class='col-md-3 col-xs-12'>
@@ -127,11 +127,7 @@ require_once(__DIR__.'/../../framework/framework.php');
 			</nav>
 		</div>
 	</section>
-<script src="/common/js/jquery-1.11.1.min.js"></script>
-<script src="/common/js/jquery.dcjqaccordion.2.7.js"></script>
-<script src="/common/js/bootstrap.min.js"></script>
-<script src="/board/js/breatheStory.js"></script>
-<!--<script src="/common/js/common-scripts.js"></script>-->
-<script src="/board/js/lightbox-plus-jquery.js"></script>
+	<?php scripts(array('/common/js/navigation.js','/board/js/breatheStory.js')) ?>
+	<!--<script src="/common/js/common-scripts.js"></script>-->
 </body>
 </html>
