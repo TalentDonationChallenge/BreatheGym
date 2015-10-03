@@ -1,5 +1,9 @@
 <?php
 	require_once(__DIR__.'/../framework/framework.php');
+	if (!Utility::isLoggedIn()) {
+		header("Location: /error.php");
+		print "hi";
+	} else {
 ?>
 <!DOCTYPE html>
 <html>
@@ -9,14 +13,16 @@
           '/common/css/style.css',
           '/common/css/style-responsive.css',
 		  '/exercise/css/exercise.css'
-        ));?>
+        ));
+        ?>
 	<!--[if lt IE 9]>
 	<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
 	<script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
 	<![endif]-->
 </head>
 <body>
-	<?php memberHeader();
+	<?php 
+	memberHeader();
 	memberSidebar("index");
 	$barcode = $_SESSION['barcode'];
 	$progress = MemberBoxingManage::getBoxingProgress($barcode);
@@ -115,6 +121,6 @@
 	<script src="/common/js/jquery.dcjqaccordion.2.7.js"></script>
 	<script src="/common/js/bootstrap.min.js"></script>
 	<script src="/common/js/common-scripts.js"></script>
-
+<?php }?>
 </body>
 </html>
