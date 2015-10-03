@@ -91,3 +91,8 @@
 	width : 100%;
 	min-height : 200px;
 }
+
+.warn {
+	text-align: center;
+	color: red;
+}

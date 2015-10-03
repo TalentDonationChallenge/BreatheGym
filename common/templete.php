@@ -25,7 +25,7 @@
 				<div class='modal-content'>
 					<div class='modal-header'>
 						<button type='button' class='close' data-dismiss='modal' aria-hidden='true'>×</button>
-						<h1 class='text-center'>Login</h1>
+						<h1 class='text-center'>로그인</h1>
 					</div>
 					<div class='modal-body'>
 						<div class='form col-md-12 center-block'>
@@ -36,11 +36,11 @@
 								<input type='password' class='form-control input-lg' placeholder='Password'>
 							</div>
 							<div class='form-group'>
-								<button id='facebookLogin' class='btn btn-primary btn-lg btn-block'>FacebookLogin</button>
-								<button id='login' class='btn btn-primary btn-lg btn-block'>Sign In</button>
-								<span class='pull-right'><a href='/member/signup/'>Register</a></span><span><a href='#'>Need help?</a></span>
+								<button id='facebookLogin' class='btn btn-primary btn-lg btn-block'>페이스북 로그인</button>
+								<button id='login' class='btn btn-primary btn-lg btn-block'>로그인</button>
+								<span class='pull-right'><a href='/member/signup/'>회원가입</a></span><span><a href='#'>아이디 / 비밀번호 찾기</a></span>
 							</div>
-							<div id="status"></div>
+							<div id="status" class="warn">E-mail과 비밀번호를 다시 한번 확인해주세요.</div>
 						</div>
 					</div>
 					<div class='modal-footer'>
