@@ -16,7 +16,7 @@
             ));
             $member = $stmt->fetch();
             $memberBarcode = $member['barcode'];
-            if (is_null($memberBarcode) {
+            if (is_null($memberBarcode)) {
                 return false;
             } else {
                 return true;
