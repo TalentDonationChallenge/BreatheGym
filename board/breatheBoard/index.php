@@ -22,13 +22,7 @@ require_once(__DIR__.'/../../framework/framework.php');
 	$breatheBoard=new ImageBoard('breatheBoard');
 	$page = isset($_GET['page'])?$_GET['page']:1;
 	?>
-	<div class='zoom' id='zoom'>
-		<i class='fa fa-close fa-3x pull-right close'></i>
-		<div class='container-fluid scroll'>
-			<img src='/resources/crossfit.jpg'/>
-		</div>
-		
-	</div>
+	
 	<section class='wrapper content'>
 		<div class='container'>
 			<h1>브리드 이야기</h1>
@@ -41,7 +35,7 @@ require_once(__DIR__.'/../../framework/framework.php');
 					</div>
 				<?php } else {
 					foreach($posts as $post) { ?>
-						<div class='col-md-3 col-xs-12 col-md-offset-1'>
+						<div class='col-md-3 col-xs-12'>
 							<a href='view.php?page=<?=$page?>&amp;no=<?=$post['no']?>'>
 								<div class='panel panel-default' id='item'>
 									<div class='panel-body item'>
