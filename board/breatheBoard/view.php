@@ -47,12 +47,14 @@ require_once(__DIR__.'/../../framework/framework.php');
 						</p>
 					</div>
 					<div class="hit-reply hit-style">
-						<span>댓글 <?php echo count($comments) ?></span>
-						<span> &#124; 조회 <?=$posting['hits']?></span>
 						<span class="pull-right">
 						<span class="mouse-over">수정 </span>&#124;
 						<span class="mouse-over">신고(or 삭제)</span>
 						</span>
+						<span>댓글 <?php echo count($comments) ?></span>
+						<span> &#124; 조회 <?=$posting['hits']?></span>
+						<div width="400px" class="fb-like" data-href="http://localhost/board/breatheboard/view.php?page=<?=$_GET['page']?>&amp;no=<?=$_GET['no']?>" data-layout="standard" data-action="like" data-show-faces="true" data-share="true"></div>
+						
 					</div>
 
 					<div class="box-reply bg-color">
@@ -80,14 +82,13 @@ require_once(__DIR__.'/../../framework/framework.php');
 								<?php } ?>
 							</li>
 						</ul>
+						<button type="button" class="btn btn-default btn-option mt">확인</button>
 						<div class="write-comm mt">
 							<textarea class="form-control answer"></textarea>
 						</div>
-							<button type="button" class="btn btn-default btn-option mt">확인</button>
+							
 					</div>
-					
 				</div>
-				
 				<div class="buttons mt">
 					<button class="btn btn-default" name="button">이전글</button>
 					<button class="btn btn-default" name="button">다음글</button>
@@ -104,5 +105,6 @@ require_once(__DIR__.'/../../framework/framework.php');
 	<script src="/common/js/bootstrap.min.js"></script>
 	<script src="/common/js/jquery.dcjqaccordion.2.7.js"></script>
 	<script src="/common/js/common-scripts.js"></script>
+	<script src="/common/js/facebook.js"></script>
 </body>
 </html>
