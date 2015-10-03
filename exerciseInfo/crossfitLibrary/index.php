@@ -185,5 +185,6 @@ require_once(__DIR__.'/../../framework/framework.php');
 <script src="/common/js/jquery.dcjqaccordion.2.7.js"></script>
 <script src="/common/js/common-scripts.js"></script>
 <script src="../js/crossfitlibrary.js"></script>
+<?php scripts(array('/common/js/navigation.js')) ?>
 </body>
 </html>

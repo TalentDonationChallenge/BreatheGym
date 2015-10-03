@@ -46,6 +46,12 @@
 						<tbody>
 							<?php
 								$posts = $review->loadPostList($page);
+								if (empty($posts)) { ?>
+									<tr>
+										<td colspan="5">게시글이 없습니다</td>
+									</tr>
+								<?php } else {
+
 								foreach($posts as $post) { ?>
 									<tr>
 										<td><?=$post['no']?></td>

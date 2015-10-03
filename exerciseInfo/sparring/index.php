@@ -46,16 +46,22 @@
 						<tbody>
 							<?php
 								$posts = $sparring->loadPostList($page);
+								if (empty($posts)) { ?>
+									<tr>
+										<td colspan="5">게시글이 없습니다</td>
+									</tr>
+								<?php } else {
 								foreach($posts as $post) { ?>
 									<tr>
 										<td><?=$post['no']?></td>
 										<td><a href="view.php?page=<?=$page?>&amp;no=<?=$post['no']?>">
-										<?=$post['title']?>
-										</a></td>
+										<?=$post['title']?></a> (<?=$sparring->countComments($post['no'],'sparring')?>)
+										</td>
 										<td><?=$post['nickname']?></td>
 										<td><?=$post['writtenTime']?></td>
 										<td><?=$post['hits']?></td>
 									</tr>
+									<?php }?>
 							<?php }?>
 						</tbody>
 					</table>
@@ -100,5 +106,6 @@
 	<script src="/common/js/jquery.dcjqaccordion.2.7.js"></script>
 	<script src="/common/js/common-scripts.js"></script>
 	<script src="../js/sparring.js"></script>
+	<?php scripts(array('/common/js/navigation.js')) ?>
 </body>
 </html>

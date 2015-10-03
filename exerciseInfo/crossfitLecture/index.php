@@ -45,6 +45,11 @@
 						</thead>
 						<tbody>
 							<?php
+								if (empty($posts)) { ?>
+									<tr>
+										<td colspan="5">게시글이 없습니다</td>
+									</tr>
+								<?php } else {
 								$posts = $crossfitlecture->loadPostList($page);
 								foreach($posts as $post) { ?>
 									<tr>
@@ -55,6 +60,7 @@
 										<td><?=$post['nickname']?></td>
 										<td><?=$post['writtenTime']?></td>
 										<td><?=$post['hits']?></td>
+									<?php }?>
 									</tr>
 							<?php }?>
 						</tbody>

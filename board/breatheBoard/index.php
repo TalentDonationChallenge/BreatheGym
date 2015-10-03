@@ -31,7 +31,7 @@ require_once(__DIR__.'/../../framework/framework.php');
 		<div class='container'>
 			<h1>브리드 이야기</h1>
 			<div class='row'>
-				
+
 				<div class='col-md-3 col-xs-12 col-md-offset-1'>
 					<div class='panel panel-default' id='item'>
 						<div class='panel-body item'>
