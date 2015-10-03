@@ -93,9 +93,11 @@
 					</li>':''?>
 					</ul>
 					<?php if (Utility::isLoggedIn()) { ?>
-					<button type="button" class="btn pull-right btn-primary btn-write">
-						글쓰기
-					</button>
+					<a href="write.php">
+						<button type="button" class="btn pull-right btn-primary btn-write">
+							글쓰기
+						</button>
+					</a>
 					<?php } ?>
 				</nav>
 			</div>
