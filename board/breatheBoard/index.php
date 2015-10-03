@@ -19,7 +19,7 @@ require_once(__DIR__.'/../../framework/framework.php');
 	<?php
 	login();
 	navigation();
-	$breatheboard=new ImageBoard('breatheBoard');
+	$breatheBoard=new ImageBoard('breatheBoard');
 	$page = isset($_GET['page'])?$_GET['page']:1;
 	?>
 	<div class='zoom' id='zoom'>
@@ -30,8 +30,35 @@ require_once(__DIR__.'/../../framework/framework.php');
 		
 	</div>
 	<section class='wrapper content'>
-		<div class='container text-centered'>
+		<div class='container'>
 			<h1>브리드 이야기</h1>
+			<div class='row'>
+			<?php
+				$posts= $breatheBoard->loadPostList($page);
+				if (empty($posts)) { ?>
+					<div class='col-md-12 col-xs-12'>
+						포스트가 없습니다.
+					</div>
+				<?php } else {
+					foreach($posts as $post) { ?>
+						<div class='col-md-3 col-xs-12 col-md-offset-1'>
+							<a href='view.php?page=<?=$page?>&amp;no=<?=$post['no']?>'>
+								<div class='panel panel-default' id='item'>
+									<div class='panel-body item'>
+										<img src='/resources/crossfit.jpg' height ='100%'/>
+									</div>
+									<div class='panel-footer'>
+										<?=$post['title']?>(<?=$breatheBoard->countComments($post['no'], 'breatheBoard')?>)
+									</div>
+								</div>
+							</a>
+						</div>
+					<?php
+					}
+				}
+			?>
+			</div>
+			<!--
 			<div class='row'>
 				<div class='col-md-3 col-xs-12 col-md-offset-1'>
 					<div class='panel panel-default' id='item'>
@@ -96,10 +123,12 @@ require_once(__DIR__.'/../../framework/framework.php');
 					</div>
 				</div>
 			</div>
+			-->
+
 			<nav>
 					<ul class="pagination">
 					<?php
-					$allPages = $breatheboard->pageCount(); // 다음부터 수정(a.k.a. 복붙)할때 이부분에 게시판 이름을 수정하면 된다
+					$allPages = $breatheBoard->pageCount(); // 다음부터 수정(a.k.a. 복붙)할때 이부분에 게시판 이름을 수정하면 된다
 					$pagingStart = $page%5==0?$page-4:$page-($page%5)+1; ?>
 					<?=$page<=5?'':
 					'<li>
