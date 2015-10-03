@@ -13,7 +13,20 @@ $(document).ready(function () {
             location.href="index.php";
         });
     });
-    $('.box-reply .btn-option').click(function () {
+    $('.hit-reply .delete').click(function () {
+        var postNo = $('.panel-heading').attr('no');
+        $.ajax({
+            url: 'delete.php',
+            method: 'post',
+            data : {
+                requestType : 'posting',
+                no : postNo
+            }
+        }).done(function () {
+            location.reload();
+        });
+    });
+    $('.box-reply .btn-option').click(function () { // 댓글 작성
         $.ajax({
             url: 'add.php',
             method: 'post',
@@ -26,7 +39,7 @@ $(document).ready(function () {
             location.reload();
         });
     });
-    $('.box-reply .delete').click(function () {
+    $('.box-reply .delete').click(function () { // 댓글 삭제
         var commentNo = $(this).parent().attr('no');
         $.ajax({
             url: 'delete.php',

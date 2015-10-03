@@ -51,8 +51,10 @@ require_once(__DIR__.'/../../framework/framework.php');
 							<span>댓글 <?php echo count($comments) ?></span>
 							<span> &#124; 조회 <?=$posting['hits']?></span>
 							<span class="pull-right">
-							<span class="mouse-over">수정 </span>&#124;
-							<span class="mouse-over">신고(or 삭제)</span>
+							<span class="mouse-over edit">수정</span> &#124;
+							<?=($_SESSION['email']===$posting['email'])||Utility::isManager()?
+							'<span class="mouse-over delete">삭제</span>':
+							'<span class="mouse-over report">신고</span>'?>
 							</span>
 					</div>
 					<div class="box-reply bg-color">
@@ -66,7 +68,7 @@ require_once(__DIR__.'/../../framework/framework.php');
 										<a href="#"><?=$comment['nickname']?></a>
 									</span>
 									<span class="date"><?=$comment['writtenTime']?></span>
-									<?=$_SESSION['email']===$comment['email']?
+									<?=($_SESSION['email']===$posting['email'])||Utility::isManager()?
 									'<span class="delete">삭제</span>':
 									'<span class="report">신고</span>'?>
 								</div>

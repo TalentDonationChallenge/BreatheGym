@@ -61,7 +61,7 @@
 		public function loadPost($no) {
 			$table = $this->table;
 			$pdo = Database::getInstance();
-			$sql = "SELECT no, title, nickname, content, writtenTime, hits
+			$sql = "SELECT no, member.email as email, title, nickname, content, writtenTime, hits
 			FROM {$table} JOIN member ON {$table}.email = member.email
 			WHERE no =:no";
 			$stmt = $pdo->prepare($sql);
@@ -70,6 +70,7 @@
 			if($row){
 				$post = array(
 					'no' => $row['no'],
+					'email' => $row['email'],
 					'title' => $row['title'],
 					'content'=>$row['content'],
 					'nickname' => $row['nickname'],
