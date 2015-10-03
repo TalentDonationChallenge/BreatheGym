@@ -19,7 +19,10 @@
 	require_once (__DIR__.'/model/board.php');
 	require_once (__DIR__.'/model/imageBoard.php');
 	require_once (__DIR__.'/model/memberRegisterFromRegister.php');
+	require_once (__DIR__.'/model/visitCountDB.php');
 	require_once (__DIR__.'/model/member.php');
+
+
 	// require_once (__DIR__.'/model/note.php');
 	// require_once (__DIR__.'/model/review.php');
 	// require_once (__DIR__.'/model/sparringVideo.php');
@@ -29,4 +32,20 @@
 	// $_SESSION['gymMember'] = true;
 	// $_SESSION['barcode'] = 'ddu12h3q';
 	// $_SESSION['email'] = 'ashd123@dbndf.com';
+
+	$status = session_status();
+	//echo $status;
+	if($status != PHP_SESSION_ACTIVE){
+		session_start();
+	}
+
+	$_sessionID = session_id();
+	$registerDate = date('Y-m-d');
+	$isUserAlreadyVisit = VisitCountDB::isAlreadyVisit($_sessionID,$registerDate);
+		
+	if($isUserAlreadyVisit == 0){
+		$insertVisitRecord = VisitCountDB::insertVisitRecord($_sessionID,$registerDate);
+	}
+
+
 ?>
