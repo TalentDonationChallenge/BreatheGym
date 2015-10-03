@@ -46,6 +46,12 @@
 						<tbody>
 							<?php
 								$posts = $diaryboard->loadPostList($page);
+								if (empty($posts)) { ?>
+									<tr>
+										<td colspan="5">게시글이 없습니다</td>
+									</tr>
+								<?php } else {
+
 								foreach($posts as $post) { ?>
 									<tr>
 										<td><?=$post['no']?></td>
@@ -98,5 +104,7 @@
 	<script src="/common/js/jquery.dcjqaccordion.2.7.js"></script>
 	<script src="/common/js/common-scripts.js"></script>
 	<script src="../js/diaryboard.js"></script>
+	<?php scripts(array('/common/js/navigation.js')) ?>
+
 </body>
 </html>

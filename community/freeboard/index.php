@@ -46,7 +46,12 @@
 						<tbody>
 							<?php
 								$posts = $freeboard->loadPostList($page);
-								foreach($posts as $post) {?>
+								if (empty($posts)) { ?>
+									<tr>
+										<td colspan="5">게시글이 없습니다</td>
+									</tr>
+								<?php } else {
+								foreach($posts as $post) { ?>
 									<tr>
 										<td><?=$post['no']?></td>
 										<td><a href="view.php?page=<?=$page?>&amp;no=<?=$post['no']?>">
@@ -55,6 +60,7 @@
 										<td><?=$post['nickname']?></td>
 										<td><?=$post['writtenTime']?></td>
 										<td><?=$post['hits']?></td>
+									<?php }?>
 									</tr>
 							<?php }?>
 						</tbody>
@@ -99,5 +105,6 @@
 	<script src="/common/js/jquery.dcjqaccordion.2.7.js"></script>
 	<script src="/common/js/common-scripts.js"></script>
 	<script src="../js/freeboard.js"></script>
+	<?php scripts(array('/common/js/navigation.js')) ?>
 </body>
 </html>

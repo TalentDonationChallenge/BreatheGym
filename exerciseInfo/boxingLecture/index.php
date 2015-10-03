@@ -46,6 +46,11 @@
 						<tbody>
 							<?php
 								$posts = $boxinglecture->loadPostList($page);
+								if (empty($posts)) { ?>
+									<tr>
+										<td colspan="5">게시글이 없습니다</td>
+									</tr>
+								<?php } else {
 								foreach($posts as $post) { ?>
 									<tr>
 										<td><?=$post['no']?></td>
@@ -55,6 +60,7 @@
 										<td><?=$post['nickname']?></td>
 										<td><?=$post['writtenTime']?></td>
 										<td><?=$post['hits']?></td>
+									<?php }?>
 									</tr>
 							<?php }?>
 						</tbody>
@@ -99,5 +105,6 @@
 	<script src="/common/js/jquery.dcjqaccordion.2.7.js"></script>
 	<script src="/common/js/common-scripts.js"></script>
 	<script src="../js/boxinglecture.js"></script>
+	<?php scripts(array('/common/js/navigation.js')) ?>
 </body>
 </html>
