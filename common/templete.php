@@ -116,8 +116,15 @@
 					</li>
 					</ul>
 					<ul class='nav navbar-nav navbar-right'>
+					<?php if (Utility::isLoggedIn()) { ?>
+						<?php if (Utility::isManager()) { ?>
 					<li><a href='/admin/index.php'>관리자메뉴</a></li>
+					<?php } }
+					if (Utility::isLoggedIn()) {?>
+					<li><a class='login' id='logout' href='/member/signout'>로그아웃</a></li>
+					<? } else { ?>
 					<li><a class='login' id='login' href='#'>로그인</a></li>
+					<?php } ?>
 					</ul>
 				</div>
 			</div>

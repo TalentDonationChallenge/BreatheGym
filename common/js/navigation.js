@@ -1,5 +1,5 @@
 $(document).ready(function () {
-    $(".login").click(function () {
+    $("#login").click(function () {
 		$("#loginModal").addClass("show");
 	});
 	$(".close").click(function () {
