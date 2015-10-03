@@ -104,14 +104,18 @@
 						<li><a href='/exerciseInfo/crossfitLibrary/index.php'>크로스핏 사진/영상</a></li>
 						</ul>
 					</li>
+					<?php if (Utility::isLoggedIn()) {?>
 					<li><a href='/exercise/index.php'>운동관리</a></li>
+					<?php } ?>
 					<li class='dropdown'>
 						<a href='#' class='dropdown-toggle' data-toggle='dropdown' role='button' aria-expanded='false'>
 							커뮤니티<span class='caret'></span>
 						</a>
 						<ul class='dropdown-menu'>
 						<li><a href='/community/freeboard/index.php'>자유게시판</a></li>
+						<?php if (Utility::isLoggedIn()) {?>
 						<li><a href='/community/consulting/index.php'>상담</a></li>
+						<?php } ?>
 						</ul>
 					</li>
 					</ul>
