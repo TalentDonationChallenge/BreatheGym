@@ -30,7 +30,7 @@
 								<h5>월별 가입회원수</h5>
 							</div>
 							<div class="chart">
-								<canvas id="chart"></canvas>
+								<canvas id="joinedChart"></canvas>
 							</div>
 						</div>
 					</div>
@@ -40,14 +40,14 @@
 								<h5>날짜별 출석회원수</h5>
 							</div>
 							<div class="chart">
-								<canvas id="chart2"></canvas>
+								<canvas id="attendChart"></canvas>
 							</div>
 						</div>
 					</div>
 					<div class="col-md-4 mb">
 						<div class="darkblue-panel pn">
 							<div class="darkblue-header">
-								<h5>시간대별 출석회원수</h5>
+								<h5>시간대별 출석회원수 (어제)</h5>
 							</div>
 							<canvas id="piechart"></canvas>
 						</div>
@@ -70,6 +70,7 @@
 	<script src="/common/js/common-scripts.js"></script>
 	<script src="/common/js/Chart.min.js"></script>
 	<script src="/common/js/moment.min.js"></script>
+	<script src="/common/js/ko.js"></script>
 	<script src="/admin/js/analysis.js"></script>
 </body>
 </html>
