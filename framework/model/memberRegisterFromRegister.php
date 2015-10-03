@@ -1,9 +1,15 @@
 <?php
 
+    //회원 가입(register)을 담당하는 함수입니다.
+    //isUserExistFromRegisterInfo=>회원 가입이 작성한 Email을 통해 이미 회원가입이 되어있는 멤버인지 체크하는 함수입니다.
+    //registerUserToDatabase => 새 회원을 db에 저장하는 함수입니다.
+    //userEmail,userPassword,userName,userPhone,userBarcode,userBirthDay,facebook,userSex,registerDate,userNickName,userLevel
+    //을 인자로 하여 저장합니다.
+    
 
 	class UserRegister {
-        public static function isUserExistFromRegisterInfo($userEmail) { //마감일 구하기
-          //  echo "User register";
+        public static function isUserExistFromRegisterInfo($userEmail) { 
+
             $pdo = Database::getInstance();
     		$stmt = $pdo->prepare("SELECT count(*),name FROM member WHERE email = :userEmail");
     		$stmt -> execute(array(
@@ -36,9 +42,7 @@
         }
         
 
-        //연속출석같은 경우, 공휴일이나 여기 쉬는날은 어떻게해?!
-        //출석률도 좀 이상할것같고... ㅠㅠ
-
+    
     }
 	
 	
@@ -51,21 +55,6 @@
 
 
 
-	/*$stmt = $pdo->prepare("INSERT INTO member (email, password, name, phone, barcode,birthday,facebook,sex,registerDate,nickname,level)
-			VALUES (:email, :password, :name, :phone, :barcode, :birthday, :facebook, :sex, :registerDate, :nickname, :level)");
 
-	$stmt->execute(array(
-			":email"=>$email,
-			":password"=>$password ,
-			":name"=>$name,
-			":phone"=>$phone,
-			":barcode"=>$barcode,
-			":birthday"=>$birthday,
-			":facebook"=>$facebook,
-			":sex"=>$sex,
-			":registerDate"=>$registerDate,
-			":nickname"=>$nickname,
-			":level"=>$level
-		));*/
 
 ?>

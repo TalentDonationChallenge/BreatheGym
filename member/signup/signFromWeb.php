@@ -5,6 +5,7 @@
 
 	require_once(__DIR__.'/../../framework/framework.php');
 
+	//submit 버튼을 통해 클라이언트에서 데이터를 보내면 그 데이터를 받아서 처리합니다.
 	if(isset($_POST['userEmail']) && isset($_POST['userPassword']) && isset($_POST['userPhone']) && isset($_POST['sexRadio']) &&isset($_POST['userName']) && isset($_POST['userNickName'])){
 
 		$userEmail = $_POST['userEmail'];
@@ -14,16 +15,12 @@
 		$userBarcode = null;
 		$facebook = 0;
 		$userSex = $_POST['sexRadio'];
-
 		$userBirthDay = date('Y-m-d',strtotime($_POST['userBirthDay']));
-
 		$registerDate = date('Y-m-d');
-
 		$userNickName = $_POST['userNickName'];
-
 		$userLevel = 0;
 
-		//echo $userEmail;
+		
 
 		$getUsercount = UserRegister::isUserExistFromRegisterInfo($userEmail);
 		echo $getUsercount;
