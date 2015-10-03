@@ -92,10 +92,11 @@
 						</a>
 					</li>':''?>
 					</ul>
-
+					<?php if (Utility::isLoggedIn()) { ?>
 					<button type="button" class="btn pull-right btn-primary btn-write">
 						글쓰기
 					</button>
+					<?php } ?>
 				</nav>
 			</div>
 		</section>

@@ -170,12 +170,13 @@ require_once(__DIR__.'/../../framework/framework.php');
 					</a>
 				</li>':''?>
 			</ul>
-
+			<?php if (Utility::isLoggedIn()) { ?>
 			<a href="write.php">
 				<button type="button" class="btn pull-right btn-primary btn-write">
 					글쓰기
 				</button>
 			</a>
+			<?php } ?>
 		</nav>
 	</div>
 </section>

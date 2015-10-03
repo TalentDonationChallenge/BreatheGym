@@ -6,7 +6,7 @@
 				xfbml : true,
 				version : 'v2.4'
 			});
-			
+
 			FB.getLoginStatus(function(response) {
     			statusChangeCallback(response);
   			});
@@ -67,31 +67,31 @@
 
 		// Function implemented after logging in
 		function testAPI(){
-				
-				console.log('Welcome! Fetching your information....');
-				document.getElementById('login').innerHTML = '로그아웃';
-				$("#login").off();
-				$("#login").click(function(){
-					logout();
-				});
-				FB.api('/me', function(response) {
-					console.log('Successful login for : ' + response.name +
-					'Thanks for loggin in, '+ response.name + '!');
-					
-				});
+
+				// console.log('Welcome! Fetching your information....');
+				// document.getElementById('login').innerHTML = '로그아웃';
+				// $("#login").off();
+				// $("#login").click(function(){
+				// 	logout();
+				// });
+				// FB.api('/me', function(response) {
+				// 	console.log('Successful login for : ' + response.name +
+				// 	'Thanks for loggin in, '+ response.name + '!');
+				//
+				// });
 			}
 
 		function logoutAPI(){
-			
-			console.log('Logged out!');
-			document.getElementById('login').innerHTML = '로그인';
-			document.getElementById('status').innerHTML = 'Please log into this app';
-			$('#login').off();
-			$('#facebookLogin').off();
-			$('#facebookLogin').click(function(){
-  				login();
-  			});
-			$('#login').click(function(){
-				$('#loginModal').addClass("show");
-			});
+
+			// console.log('Logged out!');
+			// document.getElementById('login').innerHTML = '로그인';
+			// document.getElementById('status').innerHTML = 'Please log into this app';
+			// $('#login').off();
+			// $('#facebookLogin').off();
+			// $('#facebookLogin').click(function(){
+  	// 			login();
+  	// 		});
+			// $('#login').click(function(){
+			// 	$('#loginModal').addClass("show");
+			// });
 		}

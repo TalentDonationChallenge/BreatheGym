@@ -7,7 +7,11 @@
             // 로그인성공
             $_SESSION['login'] = true;
         	$_SESSION['email'] = $email;
-            $_SESSION['barcode'] = Utility::isGymMember(); 
+            $_SESSION['barcode'] = Utility::isGymMember();
+            echo $email;
+        } else {
+            //실패!
+            echo "실패";
         }
 
     }
