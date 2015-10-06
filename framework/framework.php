@@ -21,6 +21,7 @@
 	require_once (__DIR__.'/model/memberRegisterFromRegister.php');
 	require_once (__DIR__.'/model/visitCountDB.php');
 	require_once (__DIR__.'/model/member.php');
+	require_once (__DIR__.'/model/attendance.php');
 
 
 	// require_once (__DIR__.'/model/note.php');
