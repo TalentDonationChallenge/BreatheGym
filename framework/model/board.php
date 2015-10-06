@@ -10,6 +10,9 @@
 		public function setTable($type) {
 			$this->table = $type;
 		}
+		public function getTable() {
+			return $this->table;
+		}
 		public function insertPost($email, $title, $content) {
 			$table = $this->table;
 			$pdo = Database::getInstance();

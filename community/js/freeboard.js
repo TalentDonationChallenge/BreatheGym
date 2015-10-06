@@ -1,18 +1,18 @@
 $(document).ready(function () {
-    $('nav>button.submit').click(function () {
-        //여기 예외처리해야함
-        $.ajax({
-            url: 'add.php',
-            method:'post',
-            data : {
-                requestType: 'posting',
-                title: $("#title").val(),
-                content : $("textarea.write").val()
-            }
-        }).done(function () {
-            location.href="index.php";
-        });
-    });
+    // $('nav>button.submit').click(function () {
+    //     //여기 예외처리해야함
+    //     $.ajax({
+    //         url: 'add.php',
+    //         method:'post',
+    //         data : {
+    //             requestType: 'posting',
+    //             title: $("#title").val(),
+    //             content : $("textarea.write").val()
+    //         }
+    //     }).done(function () {
+    //         location.href="index.php";
+    //     });
+    // });
     $('.hit-reply .delete').click(function () {
         var postNo = $('.panel-heading').attr('no');
         $.ajax({

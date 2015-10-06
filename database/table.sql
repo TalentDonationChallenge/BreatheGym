@@ -114,6 +114,7 @@ create table freeBoard(
 	content text not null,
 	writtenTime datetime not null,
 	hits int(6) not null default 0,
+	picture tinyint not null default 0,
 	foreign key (email) references member(email)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1;
 
@@ -236,5 +237,5 @@ create table pictures(
 
 create table visitRecord(
 	sessionId varchar(50) not null primary key,
-	date date not null default '2000-01-01' 
+	date date not null default '2000-01-01'
 )ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1;

@@ -22,28 +22,29 @@ require_once(__DIR__.'/../../framework/framework.php');
 			<div class="container">
 			<h3><i class="fa fa-angle-right"></i> 자유게시판</h3>
 			<!-- <div class="col-lg-12 mt"> -->
-
+			<form action="add.php" method="post">
 				<div class="form-horizontal">
 					<div class="form-group mt">
 						<label for="title" class="col-sm-1 control-label">제목</label>
 						<div class="col-sm-6">
-							<input type="text" class="form-control" id="title" placeholder="제목을 입력하세요.">
+							<input type="text" name="title" class="form-control" placeholder="제목을 입력하세요.">
 						</div>
 					</div>
 					<div class="form-group">
 						<label for="attach" class="col-sm-1 control-label">이미지첨부</label>
 						<div class="col-sm-11">
-							<input id="attach" type="file" name="image">
+							<input id="attach" type="file" name="image[]" accept="image/*" multiple="true">
 						</div>
 					</div>
 				</div>
-				<textarea class="write form-control" placeholder="내용을 입력하세요."></textarea>
+				<textarea name="content" class="write form-control" placeholder="내용을 입력하세요."></textarea>
 				<nav>
 					<button class="btn mt mr btn-primary submit">확인</button>
 					<a href="index.php">
 						<button class="btn btn-default mt">취소</button>
 					</a>
 				</nav>
+			</form>
 			</div>
 		</section>
 	</section>
