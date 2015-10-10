@@ -1,0 +1,184 @@
+.item{
+	cursor : pointer;
+	height : 300px;
+	overflow-x : hidden;
+	padding : 0;
+}
+
+th {
+    text-align: center;
+}
+td:first-child, th:first-child {
+    width: 55px;
+    text-align: center;
+}
+
+td:nth-child(2) {
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    max-width: 0;
+}
+
+td:nth-child(2):hover {
+    text-decoration: underline;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+td:nth-child(3),th:nth-child(3) {
+    width: 100px;
+    text-align: center;
+}
+td:nth-child(4), th:nth-child(4) {
+    width: 120px;
+    text-align: center;
+}
+
+td:nth-child(5), th:nth-child(5) {
+    width: 55px;
+    text-align: center;
+}
+
+#main-content nav{
+    text-align: center;
+}
+.panel-title {
+    font-weight: 600;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+.author {
+    padding-right: 10px;
+    border-right: 1px solid black;
+}
+.time {
+    margin-left: 10px;
+}
+.write {
+    resize: none;
+    height: 300px!important;
+    width:100%;
+}
+
+.nick-area {
+    font-size: 15px;
+}
+
+.box-reply {
+    margin: 10px 20px;
+    padding: 20px 20px;
+}
+
+.bg-color {
+    background-color: #f9f9f9;
+    overflow: hidden;
+}
+
+.hit-reply {
+    margin: 0px 20px;
+}
+
+.hit-style {
+    font-weight: bold;
+}
+
+.mouse-over:hover {
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+.btn-option {
+    float: right;
+    width: 100px;
+    height: 100px;
+}
+
+.date {
+    font-size: 11px;
+    font-family: '돋움',dotum,Helvetica,sans-serif;
+    margin: 3px 0 0 7px;
+}
+
+.del-padding {
+    padding: 0px !important;
+}
+
+.box-reply .report, .box-reply .delete {
+    float: right;
+    cursor: pointer;
+}
+
+.box-reply .report:hover, .box-reply .delete:hover {
+    text-decoration: underline;
+    font-weight: bold;
+}
+
+.comm-content {
+    display: block;
+    text-align: left;
+}
+
+.comm-line {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    height: 1px;
+    border-bottom-width: 1px;
+    border-bottom-style: dotted;
+}
+
+.mt {
+    margin-top: 25px;
+}
+
+.mt-alot {
+    margin-top: 70px;
+}
+
+.little-mr {
+    margin-right: 5px;
+}
+
+.mr {
+    margin-right: 30px;
+}
+.p-title {
+    float: left;
+    font-size: 20pt ;
+}
+
+.answer {
+    resize: none;
+    height: 100px !important;
+}
+
+/*.title {
+    resize: none;
+    height: 20px !important;
+    width:70%;
+}
+*/
+
+.write-comm {
+    margin : 35px 130px 0 0;
+}
+
+@media (min-width: 768px) {
+        .form-horizontal .control-label {
+        text-align: left;
+    }
+}
+
+body {
+    color: #797979;
+}
+
+ul li {
+    list-style: none;
+}
+input[type='file']{
+    line-height: 10pt;
+    font-size: 9pt;
+    margin-top: 9px;
+}
