@@ -54,9 +54,8 @@ require_once(__DIR__.'/../../framework/framework.php');
 						<span>댓글 <?php echo count($comments) ?></span>
 						<span> &#124; 조회 <?=$posting['hits']?></span>
 						<div width="400px" class="fb-like" data-href="http://localhost/board/breatheboard/view.php?page=<?=$_GET['page']?>&amp;no=<?=$_GET['no']?>" data-layout="standard" data-action="like" data-show-faces="true" data-share="true"></div>
-						
-					</div>
-
+						<!-- Your send button code -->
+    				<div class="fb-send" data-href="http://localhost/board/breatheboard/view.php?page=<?=$_GET['page']?>&amp;no=<?=$_GET['no']?>"></div>
 					<div class="box-reply bg-color">
 						<ul class="del-padding">
 							<?php
@@ -86,7 +85,7 @@ require_once(__DIR__.'/../../framework/framework.php');
 						<div class="write-comm mt">
 							<textarea class="form-control answer"></textarea>
 						</div>
-							
+
 					</div>
 				</div>
 				<div class="buttons mt">
