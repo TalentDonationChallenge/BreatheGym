@@ -29,7 +29,7 @@
 		<div class='carousel-inner'>
 			<div class='item active'>
 				<img src='./resources/boxing-gloves.jpg' width='100%' class='img-responsive'>
-				
+
 				<div class='container'>
 					<div class='carousel-caption'>
 						<h1>BREATHE BOXING GYM &amp; CROSSFIT</h1>
@@ -70,12 +70,12 @@
 	<!-- Marketing messaging and featurettes
 	================================================== -->
 	<!-- Wrap the rest of the page in another container to center all the content. -->
-	
+
 	<div class='container marketing'>
 		<!-- Three columns of text below the carousel -->
 		<h1> > Today Ranking</h1>
 		<div class='row'>
-			<div class='col-md-5'>
+			<div class='col-md-7'>
 				<h2>Ranking<small class='pull-right'>View details >></small></h2>
 				<table class='table table-hover'>
 					<thead>
@@ -105,12 +105,16 @@
 						</tr>
 					</tbody>
 				</table>
-				
+
 			</div>
-			<div class='col-md-7 text-center'>
-				<img class='img-circle' src='http://placehold.it/140x140'>
-				<h2>오늘의 챔피언!</h2>
-				<p>축하합니다! 계속해서 분발해주세요!</p>
+			<div class='col-md-5 text-center'>
+				<div class="fb-page" data-height="300px" data-width="100%" data-href="https://www.facebook.com/%EB%B8%8C%EB%A6%AC%EB%93%9C%EB%B3%B5%EC%8B%B1-680392418649439/" data-small-header="false" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true" data-show-posts="true">
+					<div class="fb-xfbml-parse-ignore">
+						<blockquote cite="https://www.facebook.com/%EB%B8%8C%EB%A6%AC%EB%93%9C%EB%B3%B5%EC%8B%B1-680392418649439/">
+							<a href="https://www.facebook.com/facebook">Facebook</a>
+						</blockquote>
+					</div>
+				</div>
 			</div>
 		</div><!-- /.row -->
 		<br/>
@@ -119,7 +123,9 @@
 		<!-- START THE FEATURETTES -->
 		<br/>
 		<div class='container mediaBox'>
-			
+			<?php
+				
+			?>
 			<div class='media'>
 				<div class='media-left'>
 					<a href='#'>
