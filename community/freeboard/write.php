@@ -38,9 +38,9 @@ require_once(__DIR__.'/../../framework/framework.php');
 					</div> -->
 				</div>
 				<textarea name="content" class="write form-control" placeholder="내용을 입력하세요."></textarea>
-				<form id="fileupload" action="//jquery-file-upload.appspot.com/" method="POST" enctype="multipart/form-data">
+				<form id="fileupload" method="POST" enctype="multipart/form-data">
 					<!-- Redirect browsers with JavaScript disabled to the origin page -->
-					<noscript><input type="hidden" name="redirect" value="https://blueimp.github.io/jQuery-File-Upload/"></noscript>
+					<noscript><input type="hidden" name="redirect" value="/community/freeboard/write.php"></noscript>
 					<!-- The fileupload-buttonbar contains buttons to add/delete files and start/cancel the upload -->
 					<label>이미지 첨부</label>
 					<div class="row fileupload-buttonbar">
@@ -49,21 +49,12 @@ require_once(__DIR__.'/../../framework/framework.php');
 							<span class="btn btn-success fileinput-button">
 								<i class="fa fa-plus"></i>
 								<span>Add files...</span>
-								<input type="file" name="files[]" multiple>
+								<input type="file" name="files[]" multiple accept="image/*">
 							</span>
-							<!-- <button type="submit" class="btn btn-primary start">
+							<span class="btn btn-primary start">
 								<i class="fa fa-upload"></i>
-								<span>Start upload</span>
-							</button>
-							<button type="reset" class="btn btn-warning cancel">
-								<i class="fa fa-ban"></i>
-								<span>Cancel upload</span>
-							</button>
-							<button type="button" class="btn btn-danger delete">
-								<i class="fa fa-trash"></i>
-								<span>Delete</span>
-							</button>
-							<input type="checkbox" class="toggle"> -->
+								<span>start</span>
+							</span>
 							<!-- The global file processing state -->
 							<!-- <span class="fileupload-process"></span> -->
 						</div>
@@ -80,13 +71,13 @@ require_once(__DIR__.'/../../framework/framework.php');
 					<!-- The table listing the files available for upload/download -->
 					<table role="presentation" class="table table-striped"><tbody class="files"></tbody></table>
 				<!-- </form> -->
-				<nav>
-					<button class="btn mt mr btn-primary submit">확인</button>
-					<a href="index.php">
-						<button class="btn btn-default mt">취소</button>
-					</a>
-				</nav>
 			</form>
+			<nav>
+				<button class="btn mt mr btn-primary submit">확인</button>
+				<a href="index.php">
+					<button class="btn btn-default mt">취소</button>
+				</a>
+			</nav>
 			</div>
 		</section>
 	</section>
@@ -97,7 +88,7 @@ require_once(__DIR__.'/../../framework/framework.php');
 	<script src="/common/js/common-scripts.js"></script>
 	<script src="//blueimp.github.io/JavaScript-Load-Image/js/load-image.all.min.js"></script>
 	<script src="//blueimp.github.io/JavaScript-Canvas-to-Blob/js/canvas-to-blob.min.js"></script>
-	<script src="//blueimp.github.io/Gallery/js/jquery.blueimp-gallery.min.js"></script>
+	<!-- <script src="//blueimp.github.io/Gallery/js/jquery.blueimp-gallery.min.js"></script> -->
 	<script src="/common/fileupload/js/vendor/jquery.ui.widget.js"></script>
 	<script src="/common/fileupload/js/jquery.iframe-transport.js"></script>
 	<script src="/common/fileupload/js/jquery.fileupload.js"></script>

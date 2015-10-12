@@ -10,7 +10,7 @@
  */
 
 /* global $, window */
-
+var dd ;
 $(function () {
     'use strict';
 
@@ -35,8 +35,8 @@ $(function () {
                     '<div class="progress-bar progress-bar-success" style="width:0%;"></div></div>' +
                     '</td>' +
                     '<td>' +
-                    (!index && !o.options.autoUpload ?
-                        '<button class="btn btn-primary start" disabled><i class="fa fa-upload"></i></button>' : '') +
+                    // (!index && !o.options.autoUpload ?
+                    // '<button class="btn btn-primary start" disabled>Start</button>' : '') +
                     (!index ? '<button class="btn btn-warning cancel"><i class="fa fa-ban"></i></button>' : '') +
                     '</td>' +
                     '</tr>');
@@ -85,17 +85,4 @@ $(function () {
             return rows;
         }
     });
-    $.ajax({
-        // Uncomment the following to send cross-domain cookies:
-        //xhrFields: {withCredentials: true},
-        url: $('#fileupload').fileupload('option', 'url'),
-        dataType: 'json',
-        context: $('#fileupload')[0]
-    }).always(function () {
-        $(this).removeClass('fileupload-processing');
-    }).done(function (result) {
-        $(this).fileupload('option', 'done')
-            .call(this, $.Event('done'), {result: result});
-    });
-
 });
