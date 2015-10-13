@@ -13,8 +13,10 @@
 	<script src="/common/js/facebook.js"></script>
 	<!-- 페이스북 SDK load -->
 	<?php
+		sessionLogin();
 		login();
 		navigation();
+
 	?>
 	<!-- Carousel
 	================================================== -->
