@@ -124,51 +124,29 @@
 		<br/>
 		<div class='container mediaBox'>
 			<?php
-				
-			?>
-			<div class='media'>
-				<div class='media-left'>
-					<a href='#'>
-						<img class='img-rounded' src='http://placehold.it/140x140' alt='...'/>
-					</a>
-				</div>
+				$diaryboard=new ImageBoard('diaryBoard');
+				$posts = $diaryboard->loadPostList(1);
+				if (empty($posts)) { ?>
+					<div class='media'>
+						<div class='media-body'>
+							등록된 게시글이 없습니다
+						</div>
+					</div>
+				<?php } else {
+						foreach($posts as $post) { ?>
+							<div class='media'>
+								<div class='media-left'>
+									<a href='#'>
+										<img class='img-rounded' src='http://placehold.it/140x140' alt='...'/>
+									</a>
+								</div>
 
-				<div class='media-body'>
-					<h4 class='media-heading'>브리드짐 제 5회 정기 모임!</h4>
-					브리드짐 제 5회 정기 오프라인 모임이 머스커비에서 있었습니다. 운동은 열심히!
-					놀 때는 누구보다 즐겁게 노는 브리드짐 가족들! 앞으로도 열심히 해서 건강한
-					생활 하도록 해요~
-				</div>
-			</div>
-			<div class='media'>
-				<div class='media-left'>
-					<a href='#'>
-						<img class='img-rounded' src='http://placehold.it/140x140' alt='...'/>
-					</a>
-				</div>
-
-				<div class='media-body'>
-					<h4 class='media-heading'>오프라인 스파링데이</h4>
-					치열한 예선 전을 거치고 결승전까지 올라온 두 선수! 차진욱 VS 허재!!
-					두 선수의 불꽃 튀기는 마지막 승부를 브리드짐 2호점에서 확인하세요!
-					오는 23일 저녁 6시에 시작되는 경기를 놓치지 마세요~:)
-				</div>
-			</div>
-			<div class='media'>
-				<div class='media-left'>
-					<a href='#'>
-						<img class='img-rounded' src='http://placehold.it/140x140' alt='...'/>
-					</a>
-				</div>
-
-				<div class='media-body'>
-					<h4 class='media-heading'>상반기 버피테스트 100</h4>
-					상반기 버피테스트 100이 이번 수요일에 진행되었습니다. 이번에는 반드시
-					저번보다 좋은 성적을 얻겠다는 가족들의 뜨거운 의지가 여기까지 전해졌는데요.
-					그동안의 노력의 성과가 있었기를 기대하면서~ 모두의 성적과 랭킹을
-					공개합니다!
-				</div>
-			</div>
+								<div class='media-body'>
+									<h4 class='media-heading'><?=$post['title']?></h4>
+									<?=$post['content']?>
+								</div>
+							</div>
+							<?php } } ?>
 		</div>
 		<br/>
 		<br/>
