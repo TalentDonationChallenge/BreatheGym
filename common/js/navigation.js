@@ -16,10 +16,17 @@ $(document).ready(function () {
                     password : $('input[type="password"]').val()
                 }
             }).done(function (msg) {
-                location.reload();
+                if(msg.login == 'success'){
+                    location.replace('index.php');
+                } else if(msg.login == 'fail') {
+                    $('#status').html('아이디와 비밀번호를 확인하세요');
+                } else {
+                    // 서버문제...
+                    $('#status').html('로그인에 실패하였습니다. 다시 시도해주세요');
+                }
             });
         } else {
-
+            $('#status').html('아이디와 비밀번호를 입력하세요');
         }
     });
 });

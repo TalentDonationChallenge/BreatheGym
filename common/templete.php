@@ -8,9 +8,6 @@
 	<meta name='viewport' content='width=device-width, initial-scale=1, maximum-scale=1'>
 	<link rel='stylesheet' href='/common/css/bootstrap.min.css'>
 	<div id="fb-root"></div>
-
-
-
 	<?php
 		if(isset($cssFiles)){
 			foreach ($cssFiles as $cssFile): ?>
@@ -38,9 +35,9 @@
 							<div class='form-group'>
 								<button id='facebookLogin' class='btn btn-primary btn-lg btn-block'>페이스북 로그인</button>
 								<button id='login' class='btn btn-primary btn-lg btn-block'>로그인</button>
-								<span class='pull-right'><a href='/member/signup/'>회원가입</a></span><span><a href='#'>아이디 / 비밀번호 찾기</a></span>
+								<span class='pull-right'><a href='/member/signup/'>회원가입</a></span><span><a href='/member/help.php'>아이디 / 비밀번호 찾기</a></span>
 							</div>
-							<div id="status" class="warn">E-mail과 비밀번호를 다시 한번 확인해주세요.</div>
+							<div id="status" class="warn"></div>
 						</div>
 					</div>
 					<div class='modal-footer'>
@@ -104,7 +101,7 @@
 						<li><a href='/exerciseInfo/crossfitLibrary/index.php'>크로스핏 사진/영상</a></li>
 						</ul>
 					</li>
-					<?php if (Utility::isLoggedIn()) {?>
+					<?php if (Utility::isLoggedIn() && !Utility::isManager()) {?>
 					<li><a href='/exercise/index.php'>운동관리</a></li>
 					<?php } ?>
 					<li class='dropdown'>
@@ -120,10 +117,12 @@
 					</li>
 					</ul>
 					<ul class='nav navbar-nav navbar-right'>
-					<?php if (Utility::isLoggedIn()) { ?>
-						<?php if (Utility::isManager()) { ?>
+					<?php if (Utility::isLoggedIn() && !Utility::isManager()) { ?>
+					<li><a href='/member/index.php'>회원정보</a></li>
+					<?php }
+					if (Utility::isLoggedIn()&&Utility::isManager()) { ?>
 					<li><a href='/admin/index.php'>관리자메뉴</a></li>
-					<?php } }
+					<?php }
 					if (Utility::isLoggedIn()) {?>
 					<li><a href='/member/signout'>로그아웃</a></li>
 					<? } else { ?>
@@ -285,7 +284,7 @@
 		$_sessionID = session_id();
 		$registerDate = date('Y-m-d');
 		$isUserAlreadyVisit = VisitCountDB::isAlreadyVisit($_sessionID,$registerDate);
-			
+
 		if($isUserAlreadyVisit == 0){
 			$insertVisitRecord = VisitCountDB::insertVisitRecord($_sessionID,$registerDate);
 		}

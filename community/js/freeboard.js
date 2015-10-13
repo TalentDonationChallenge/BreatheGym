@@ -22,6 +22,7 @@ $(document).ready(function () {
                 }
             }).done(function (msg) {
                 // location.href="index.php";
+                //msg로 글번호 불러와서 디비연결만 하면됨
             });
         }
     });
