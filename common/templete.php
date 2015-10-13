@@ -274,4 +274,20 @@
 			<?php endforeach;
 		}
 	}
+
+	function sessionLogin(){
+		$status = session_status();
+		//echo $status;
+		if($status != PHP_SESSION_ACTIVE){
+			session_start();
+		}
+
+		$_sessionID = session_id();
+		$registerDate = date('Y-m-d');
+		$isUserAlreadyVisit = VisitCountDB::isAlreadyVisit($_sessionID,$registerDate);
+			
+		if($isUserAlreadyVisit == 0){
+			$insertVisitRecord = VisitCountDB::insertVisitRecord($_sessionID,$registerDate);
+		}
+	}
 ?>

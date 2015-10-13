@@ -236,6 +236,7 @@ create table pictures(
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1;
 
 create table visitRecord(
-	sessionId varchar(50) not null primary key,
-	date date not null default '2000-01-01'
+	sessionId varchar(50) not null,
+	date date not null default '2000-01-01',
+	primary key(sessionId, date)
 )ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1;
