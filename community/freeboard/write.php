@@ -27,15 +27,9 @@ require_once(__DIR__.'/../../framework/framework.php');
 					<div class="form-group mt">
 						<label for="title" class="col-sm-1 control-label">제목</label>
 						<div class="col-sm-6">
-							<input type="text" name="title" class="form-control" placeholder="제목을 입력하세요.">
+							<input id="title" type="text" name="title" class="form-control" placeholder="제목을 입력하세요.">
 						</div>
 					</div>
-					<!-- <div class="form-group">
-						<label for="attach" class="col-sm-1 control-label">이미지첨부</label>
-						<div class="col-sm-11">
-							<input id="attach" type="file" name="image[]" accept="image/*" multiple="true">
-						</div>
-					</div> -->
 				</div>
 				<textarea name="content" class="write form-control" placeholder="내용을 입력하세요."></textarea>
 				<form id="fileupload" method="POST" enctype="multipart/form-data">
@@ -53,10 +47,10 @@ require_once(__DIR__.'/../../framework/framework.php');
 							</span>
 							<span class="btn btn-primary start">
 								<i class="fa fa-upload"></i>
-								<span>start</span>
+								<span>Start</span>
 							</span>
 							<!-- The global file processing state -->
-							<!-- <span class="fileupload-process"></span> -->
+							<span class="fileupload-process"></span>
 						</div>
 						<!-- The global progress state -->
 						<div class="col-lg-5 fileupload-progress fade">

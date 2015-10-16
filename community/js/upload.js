@@ -35,8 +35,8 @@ $(function () {
                     '<div class="progress-bar progress-bar-success" style="width:0%;"></div></div>' +
                     '</td>' +
                     '<td>' +
-                    // (!index && !o.options.autoUpload ?
-                    // '<button class="btn btn-primary start" disabled>Start</button>' : '') +
+                    (!index && !o.options.autoUpload ?
+                    '<button class="btn btn-primary start" disabled><i class="fa fa-upload"></i></button>' : '') +
                     (!index ? '<button class="btn btn-warning cancel"><i class="fa fa-ban"></i></button>' : '') +
                     '</td>' +
                     '</tr>');
@@ -52,6 +52,7 @@ $(function () {
         downloadTemplate: function (o) {
             var rows = $();
             $.each(o.files, function (index, file) {
+                var filename = file.name.split("^@#");
                 var row = $('<tr class="template-download fade">' +
                     '<td><span class="preview"></span></td>' +
                     '<td><p class="name"></p>' +
@@ -62,10 +63,10 @@ $(function () {
                     file.deleteUrl+'"><i class="fa fa-trash"></i></button></td></tr>');
                 row.find('.size').text(o.formatFileSize(file.size));
                 if (file.error) {
-                    row.find('.name').text(file.name);
+                    row.find('.name').text(filename[1]);
                     row.find('.error').text(file.error);
                 } else {
-                    row.find('.name').append($('<a></a>').text(file.name));
+                    row.find('.name').append(filename[1]);
                     if (file.thumbnailUrl) {
                         row.find('.preview').append(
                             $('<a></a>').append(
@@ -80,6 +81,7 @@ $(function () {
                         .attr('data-type', file.delete_type)
                         .attr('data-url', file.delete_url);
                 }
+                row.data('data', {filename : filename[1], saved : file.name});
                 rows = rows.add(row);
             });
             return rows;

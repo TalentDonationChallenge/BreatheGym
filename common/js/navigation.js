@@ -28,5 +28,7 @@ $(document).ready(function () {
         } else {
             $('#status').html('아이디와 비밀번호를 입력하세요');
         }
+        $('input[type="email"]').val('');
+        $('input[type="password"]').val('');
     });
 });

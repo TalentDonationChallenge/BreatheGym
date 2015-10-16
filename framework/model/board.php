@@ -3,7 +3,7 @@
 	* 한번 객체지향처럼 짜보도록 하겠다
 	*/
 	class Board {
-		private $table; //위험하긴한데 이게 코드를 줄이는 방법이기도 하고... 흠
+		protected $table; //위험하긴한데 이게 코드를 줄이는 방법이기도 하고... 흠
 		function __construct($type) {
 			$this->table = $type;
 		}
