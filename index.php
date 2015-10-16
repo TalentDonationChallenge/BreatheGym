@@ -119,12 +119,12 @@
 		</div><!-- /.row -->
 		<br/>
 		<br/>
-		<h1>> Breathe Diary<small class='pull-right'>View details>></small></h1>
+		<h1>> Breathe Story<small class='pull-right'><a href="./board/breatheBoard/index.php">View details>></a></small></h1>
 		<!-- START THE FEATURETTES -->
 		<br/>
 		<div class='container mediaBox'>
 			<?php
-				
+				$pdo
 			?>
 			<div class='media'>
 				<div class='media-left'>
