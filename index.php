@@ -13,8 +13,10 @@
 	<script src="/common/js/facebook.js"></script>
 	<!-- 페이스북 SDK load -->
 	<?php
+		sessionLogin();
 		login();
 		navigation();
+
 	?>
 	<!-- Carousel
 	================================================== -->
@@ -124,6 +126,7 @@
 		<br/>
 		<div class='container mediaBox'>
 			<?php
+<<<<<<< HEAD
 				$pdo
 			?>
 			<div class='media'>
@@ -160,15 +163,31 @@
 						<img class='img-rounded' src='http://placehold.it/140x140' alt='...'/>
 					</a>
 				</div>
+=======
+				$diaryboard=new ImageBoard('diaryBoard');
+				$posts = $diaryboard->loadPostList(1);
+				if (empty($posts)) { ?>
+					<div class='media'>
+						<div class='media-body'>
+							등록된 게시글이 없습니다
+						</div>
+					</div>
+				<?php } else {
+						foreach($posts as $post) { ?>
+							<div class='media'>
+								<div class='media-left'>
+									<a href='#'>
+										<img class='img-rounded' src='http://placehold.it/140x140' alt='...'/>
+									</a>
+								</div>
+>>>>>>> 53604010d06b6e87b977b1b470662d5302a080e3
 
-				<div class='media-body'>
-					<h4 class='media-heading'>상반기 버피테스트 100</h4>
-					상반기 버피테스트 100이 이번 수요일에 진행되었습니다. 이번에는 반드시
-					저번보다 좋은 성적을 얻겠다는 가족들의 뜨거운 의지가 여기까지 전해졌는데요.
-					그동안의 노력의 성과가 있었기를 기대하면서~ 모두의 성적과 랭킹을
-					공개합니다!
-				</div>
-			</div>
+								<div class='media-body'>
+									<h4 class='media-heading'><?=$post['title']?></h4>
+									<?=$post['content']?>
+								</div>
+							</div>
+							<?php } } ?>
 		</div>
 		<br/>
 		<br/>

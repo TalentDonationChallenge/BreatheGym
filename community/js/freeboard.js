@@ -1,18 +1,37 @@
 $(document).ready(function () {
-    // $('nav>button.submit').click(function () {
-    //     //여기 예외처리해야함
-    //     $.ajax({
-    //         url: 'add.php',
-    //         method:'post',
-    //         data : {
-    //             requestType: 'posting',
-    //             title: $("#title").val(),
-    //             content : $("textarea.write").val()
-    //         }
-    //     }).done(function () {
-    //         location.href="index.php";
-    //     });
-    // });
+    var unload = true;
+    $(window).on('beforeunload', function () {
+        if(unload) {
+            $('td .delete').click();
+        }
+    });
+    $('nav>button.submit').click(function (event) {
+        event.preventDefault();
+        //여기 예외처리해야함
+        if($('input[type="text"]').val()===''||$('textarea').val()===''){
+            // 에러메시지 띄우기
+            return;
+        } else {
+            // 예외처리따위 할시간이 없음
+            var files = [];
+            $('tr.template-download').each(function () {
+                files.push($(this).data('data'));
+            });
+            $.ajax({
+                url: 'add.php',
+                method:'post',
+                data : {
+                    requestType: 'posting',
+                    title: $("#title").val(),
+                    content : $("textarea").val(),
+                    files : files
+                }
+            }).done(function (msg) {
+                location.reload();
+                //msg로 글번호 불러와서 디비연결만 하면됨
+            });
+        // }
+    });
     $('.hit-reply .delete').click(function () {
         var postNo = $('.panel-heading').attr('no');
         $.ajax({

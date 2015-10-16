@@ -25,7 +25,7 @@ require_once(__DIR__.'/board.php');
             $table = parent::getTable();
             $pdo = Database::getInstance();
             $stmt = $pdo->prepare('INSERT INTO pictures(tableName, postNumber, fileName, originFileName)
-            VALUES :tableName, :postNumber, :fileName, :originFileName');
+            VALUES (:tableName, :postNumber, :fileName, :originFileName)');
             $stmt->execute(array(
                 ':tableName'=>$table,
                 ':postNumber'=>$postNumber,
