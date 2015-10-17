@@ -222,18 +222,20 @@
 		</div>
 	</div>
 		<!-- /END THE FEATURETTES -->
-	<footer class='grayBackground'>
-		<div class='row contents'>
+	<footer class="grayBackground">
+	<div class="container">
+		<div class='row'>
 			<div class='col-md-3 col-xs-12'>
-				<img class="ml" src = "/resources/teambreathelogo.png"/>
+				<img class="mr" src = "/resources/teambreathelogo.png"/>
 			</div>
-			<div class='col-md-9 col-xs-12'>
+			<div class='col-md-offset-1 col-md-5 col-xs-12'>
 				<br>
 				<p>브리드 복싱 짐 &amp; 크로스핏</p>
 				<p>BreatheGym.com은 Team Breathe, Inc의 소유입니다.</p>
 				<p>Copyright © 2015 Breathe Boxing Gym &amp; Crossfit. All rights reserved.</p>
-				<p class='pull-right mr'><a href='#'>Back to top</a></p>
 			</div>
+			<p class='pull-right col-md-2'><a href='#'>Back to top</a></p>
+		</div>
 		</div>
 	</footer>
 	<?php scripts(array('/common/js/navigation.js')) ?>
