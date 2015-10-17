@@ -21,7 +21,7 @@
     var $settings = $defaults;
 
     $.fn.battatech_excelexport = function (options) {
-        alert("start");
+       
         $settings = $.extend({}, $defaults, options);
 
         var gridData = [];
@@ -31,7 +31,6 @@
 
         function Initialize() {
             var type = $settings.datatype.toLowerCase();
-            alert("type : " + type);
             BuildDataStructure(type);
 
             switch (type) {
@@ -50,7 +49,7 @@
             }
 
             if ($settings.returnUri) {
-                alert("resutnUri : " + excelData);
+                
 
                 return excelData;
             }
@@ -97,7 +96,7 @@
 
         function ConvertFromTable() {
             var result = $('<div>').append($('#' + $settings.containerid).clone()).html();
-            alert("resultFrom Table : " + result);
+            
             return result;
         }
 
@@ -171,7 +170,7 @@
             var uri = "data:application/vnd.ms-excel;base64,";
             var ctx = { worksheet: $settings.worksheetName, table: htmltable };
 
-            alert("return : " + uri + base64(format(excelFile, ctx)) );
+            
             return (uri + base64(format(excelFile, ctx)));
         }
 
