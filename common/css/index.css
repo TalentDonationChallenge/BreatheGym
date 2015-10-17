@@ -96,3 +96,29 @@
 	text-align: center;
 	color: red;
 }
+
+a {
+	color: black;
+}
+
+footer {
+	padding-top : 20px;
+  	padding-bottom : 20px;
+}
+
+footer>div {
+	padding-left: 10px!important;
+	padding-right: 10px!important;
+}
+
+footer img {
+	text-align: center;
+}
+.mr {
+  margin-right: 30px;
+}
+
+footer>div>div>div:nth-child(2) {
+	padding-left: 30px!important;
+	padding-right: 30px!important;
+}

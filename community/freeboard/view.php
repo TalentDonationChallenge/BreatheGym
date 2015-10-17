@@ -18,6 +18,7 @@ require_once(__DIR__.'/../../framework/framework.php');
 		$freeboard->addHitCounter($_GET['no']); //조회수 ++
 		$posting = $freeboard->loadPost($_GET['no']);
 		$comments = $freeboard->loadComments($_GET['no'], 'freeBoard');
+		$images = $posting['picture']=='1'?$freeboard->loadImages($_GET['no']):false;
 	}
 		login();
 		navigation();
@@ -42,6 +43,12 @@ require_once(__DIR__.'/../../framework/framework.php');
 						<h2 class="panel-title"><?=htmlspecialchars($posting['title'])?></h2>
 					</div>
 					<div class="panel-body">
+						<p>
+							<?php foreach ($images as $image) {
+								$address = $image['fileName']?>
+							<img src='upload/files/<?=$address?>' alt="attach image"><br /><br />
+							<?php } ?>
+						</p>
 						<p>
 							<?=preg_match("/^ *$/", $posting['content'])?
 							"nbsp;":str_replace("\n", '<br />', htmlspecialchars($posting['content']));?>

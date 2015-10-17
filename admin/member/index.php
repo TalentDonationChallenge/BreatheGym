@@ -52,7 +52,7 @@ if(isset($_GET['type'])){
 									<i class="fa fa-search"></i><span> 검색</span>
 								</button>
 							</div>
-							<table class="table table-striped table-hover">
+							<table class="table table-striped table-hover" id = "memberlist">
 								<thead>
 									<tr>
 										<th>#</th>
@@ -128,7 +128,7 @@ if(isset($_GET['type'])){
 								<li><a href="#">강퇴</a></li>
 							</ul>
 						</div>
-						<button class="btn btn-warning hidden-xs ml" name="button">엑셀</button>
+						<button class="btn btn-warning hidden-xs ml" id = "export" name="button">엑셀</button>
 						<?php } ?>
 					</div>
 				</div>
@@ -140,5 +140,7 @@ if(isset($_GET['type'])){
 <script src="/common/js/bootstrap.min.js"></script>
 <script src="/common/js/jquery.dcjqaccordion.2.7.js"></script>
 <script src="/common/js/common-scripts.js"></script>
+<script src="/common/js/jquery.battatech.excelexport.js"></script>
+<script src="/admin/js/exportToExcel.js"></script>
 </body>
 </html>

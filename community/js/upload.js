@@ -52,7 +52,7 @@ $(function () {
         downloadTemplate: function (o) {
             var rows = $();
             $.each(o.files, function (index, file) {
-                var filename = file.name.split("^@#");
+                var filename = file.name.split("^@");
                 var row = $('<tr class="template-download fade">' +
                     '<td><span class="preview"></span></td>' +
                     '<td><p class="name"></p>' +
