@@ -121,13 +121,13 @@
 		</div><!-- /.row -->
 		<br/>
 		<br/>
-		<h1>> Breathe Diary<small class='pull-right'>View details>></small></h1>
+		<h1>> Breathe Diary<a href='./board/breatheBoard/index.php' class = 'btn btn-primary pull-right'>view details</a></h1>
 		<!-- START THE FEATURETTES -->
 		<br/>
 		<div class='container mediaBox'>
 			<?php
-				$diaryboard=new ImageBoard('diaryBoard');
-				$posts = $diaryboard->loadPostList(1);
+				$breatheBoard=new ImageBoard('breatheBoard');
+				$posts = $breatheBoard->loadPostList(1);
 				if (empty($posts)) { ?>
 					<div class='media'>
 						<div class='media-body'>
@@ -135,7 +135,7 @@
 						</div>
 					</div>
 				<?php } else {
-						foreach($posts as $post) { ?>
+						foreach($posts as $post) {	?>
 							<div class='media'>
 								<div class='media-left'>
 									<a href='#'>
