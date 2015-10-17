@@ -21,6 +21,31 @@ require_once(__DIR__.'/board.php');
 			));
 			return $pdo->lastInsertId();
 		}
+        public function loadPost($no) {
+			$table = $this->table;
+			$pdo = Database::getInstance();
+			$sql = "SELECT no, member.email as email, title, nickname, content, writtenTime, hits, picture
+			FROM {$table} JOIN member ON {$table}.email = member.email
+			WHERE no =:no";
+			$stmt = $pdo->prepare($sql);
+			$stmt->execute(array(':no' => $no));
+			$row = $stmt->fetch();
+			if($row){
+				$post = array(
+					'no' => $row['no'],
+					'email' => $row['email'],
+					'title' => $row['title'],
+					'content'=>$row['content'],
+					'nickname' => $row['nickname'],
+					'writtenTime' => date('Y/m/d H:i:s',strtotime($row['writtenTime'])),
+					'hits' => $row['hits'],
+                    'picture' => $row['picture']
+				);
+				return $post;
+			} else{
+				return false;
+			}
+		}
         public function addImage($fileName, $originFileName, $postNumber){
             $table = parent::getTable();
             $pdo = Database::getInstance();
@@ -33,19 +58,21 @@ require_once(__DIR__.'/board.php');
                 ':originFileName'=>$originFileName
             ));
         }
-        public function loadImages($postNumber) {
+
+        public function loadImages($no) {
             $table = parent::getTable();
             $pdo = Database::getInstance();
-            $stmt = $pdo->prepare('SELECT fileName, originFileName FROM pictures
+            $stmt = $pdo->prepare('SELECT no, fileName, originFileName FROM pictures
             WHERE tableName = :tableName AND postNumber = :postNumber ORDER BY no DESC');
             $stmt->execute(array(
                 ':tableName'=>$table,
-                'postNumber'=>$postNumber
+                'postNumber'=>$no
             ));
             $rows = $stmt->fetchAll();
             $images = array();
             foreach ($rows as $row){
                 $images[] = array(
+                    'no'=>$row['no'],
                     'fileName'=>$row['fileName'],
                     'originFileName'=>$row['originFileName']
                 );

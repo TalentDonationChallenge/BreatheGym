@@ -18,6 +18,6 @@ Header set Content-Disposition attachment
 Header set X-Content-Type-Options nosniff
 
 # Uncomment the following lines to prevent unauthorized download of files:
-AuthName "Authorization required"
-AuthType Basic
-require valid-user
+# AuthName "Authorization required"
+# AuthType Basic
+# require valid-user

@@ -521,7 +521,7 @@ class UploadHandler
         if (!$trim_name) {
             $trim_name = '';
         }
-        $name = $size.str_replace('.', '-', microtime(true)).'^@#'.$trim_name;
+        $name = $size.str_replace('.', '-', microtime(true)).'^@'.$trim_name;
         // }
         return $name;
     }
