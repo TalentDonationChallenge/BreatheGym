@@ -32,7 +32,7 @@ require_once(__DIR__.'/../../framework/framework.php');
 			<h5 class='text-center'>회원 정보 수정</h5>
 
 			<hr>
-			<form action="signFromWeb.php" method="POST" id='registerForm' class='form-horizontal'>
+			<form id='registerForm' class='form-horizontal'>
 				<div class="form-group" id='emailGroup'>
 					<label for="email" class='col-xs-2'>이메일</label>
 					<div class='col-xs-9'>
@@ -111,7 +111,7 @@ require_once(__DIR__.'/../../framework/framework.php');
 				</div>
 				<br/>
 				<div class='text-center'>
-					<button type='submit' class='btn btn-primary'>가입</button>
+					<a type='submit' class='btn btn-primary' id='modify'>수정</a>
 					<button type='reset' class='btn btn-default'>초기화</button>
 				</div>
 			</form>
@@ -129,6 +129,6 @@ require_once(__DIR__.'/../../framework/framework.php');
 		</div>
 
 	</div><!-- /.container -->
-	<?php scripts(array('/common/js/navigation.js','/common/js/register.js')) ?>
+	<?php scripts(array('/common/js/navigation.js','/member/js/modify.js')) ?>
 </body>
 </html>
