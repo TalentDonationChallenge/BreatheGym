@@ -118,7 +118,7 @@
 					</ul>
 					<ul class='nav navbar-nav navbar-right'>
 					<?php if (Utility::isLoggedIn() && !Utility::isManager()) { ?>
-					<li><a href='/member/index.php'>회원정보</a></li>
+					<li><a href='/member/edit'>회원정보</a></li>
 					<?php }
 					if (Utility::isLoggedIn()&&Utility::isManager()) { ?>
 					<li><a href='/admin/index.php'>관리자메뉴</a></li>

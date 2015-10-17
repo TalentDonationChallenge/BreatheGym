@@ -30,9 +30,21 @@
             $stmt->execute(array(
                 ':password'=>sha1($input[0]),
                 ':phone'=>$input[1],
-                'nickname'=>$input[2]
+                ':nickname'=>$input[2]
             ));
         }
+
+        public static function loadInfo() {
+            $pdo = Database::getInstance();
+            $sql = "SELECT name, sex, nickname, phone, birthday FROM member WHERE email = :email";
+            $stmt = $pdo->prepare($sql);
+            $stmt->execute(array(
+                ':email'=>$_SESSION['email']
+            ));
+            $row = $stmt->fetch();
+            return $row;
+        }
+
         public static function delete($email) { // 탈퇴
             $pdo = Database::getInstance();
             $stmt = $pdo->prepare("DELETE FROM member WHERE email = :email");

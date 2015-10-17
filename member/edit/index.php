@@ -13,6 +13,12 @@ require_once(__DIR__.'/../../framework/framework.php');
 	<?php
 	login();
 	navigation();
+	$memberInfo = Member::loadInfo();
+	if ($memberInfo[1] == 0) {
+		$memberInfo[1] = "남성";
+	} else {
+		$memberInfo[1] = "여성";
+	}
 	?>
 	<!-- Marketing messaging and featurettes
 	================================================== -->
@@ -31,7 +37,7 @@ require_once(__DIR__.'/../../framework/framework.php');
 					<label for="email" class='col-xs-2'>이메일</label>
 					<div class='col-xs-9'>
 						<!-- <input type='email' class="form-control" id='email' placeholder='Input Email' name = "userEmail"> -->
-						<p class="form-control-static">email@example.com</p>
+						<p class="form-control-static"><?=$_SESSION['email']?></p>
 						<!-- <span class='glyphicon glyphicon-ok form-control-feedback' aria-hidden='true'></span> -->
 						<span class='glyphicon glyphicon-danger-sign form-control-feedback' aria-hidden='true'></span>
 						<div class='alert alert-danger' id='emailAlert' role='alert' hidden='true'>올바른 이메일을 입력해주세요! 예시)email@breathegym.gym</div>
@@ -69,21 +75,14 @@ require_once(__DIR__.'/../../framework/framework.php');
 						<label for='name' class='col-xs-4 ml'>이름</label>
 						<div class='col-xs-6'>
 							<!-- <input type='text' class='form-control' id='name' placeholder='Input Name' name = "userName">	 -->
-							<p class="form-control-static">나익채</p>
+							<p class="form-control-static"><?=$memberInfo[0]?></p>
 						</div>
 					</div>
 
 					<div class='form-group col-xs-6'>
 						<label for='sex' class='col-xs-2'>성별</label>
 						<div class='radio col-xs-8 pr' id='sex'>
-							<label class='radio-inline'>
-								<input type='radio' name='sexRadio' id='optionSex1' value='male' name = "userSex" checked>
-								남자
-							</label>
-							<label class='radio-inline'>
-								<input type='radio' name='sexRadio' id='optionSex2' value='female' name = "userSex">
-								여자
-							</label>
+							<?=$memberInfo[1]?>
 						</div>
 					</div>
 				</div>
@@ -92,14 +91,14 @@ require_once(__DIR__.'/../../framework/framework.php');
 				<div class='form-group'>
 					<label for='닉네임' class='col-xs-2'>닉네임</label>
 					<div class='col-xs-9'>
-						<input type='text' class='form-control' id='nickname' placeholder='Input Nickname' name = "userNickName">
+						<input type='text' class='form-control' id='nickname' placeholder='Input Nickname' value=<?=$memberInfo[2]?> name = "userNickName">
 					</div>
 				</div>
 				<br/>
 				<div class='form-group'>
 					<label for='phone' class='col-xs-2'>전화번호</label>
 					<div class='col-xs-9'>
-						<input type='text' class='form-control' id='phone' placeholder='Input Phone number' name = "userPhone">
+						<input type='text' class='form-control' id='phone' placeholder='Input Phonenumber' value=<?=$memberInfo[3]?> name = "userPhone">
 					</div>
 				</div>
 				<br/>
@@ -107,7 +106,7 @@ require_once(__DIR__.'/../../framework/framework.php');
 					<label for='birthday' class='col-xs-2'>생년월일</label>
 					<div class='col-xs-9'>
 						<!-- <input type='date' class='form-control' id='birthday' name = "userBirthDay"> -->
-						<p class="form-control-static">1991년 12월 7일</p>
+						<p class="form-control-static"><?=$memberInfo[4]?></p>
 					</div>
 				</div>
 				<br/>
