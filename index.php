@@ -121,49 +121,11 @@
 		</div><!-- /.row -->
 		<br/>
 		<br/>
-		<h1>> Breathe Story<small class='pull-right'><a href="./board/breatheBoard/index.php">View details>></a></small></h1>
+		<h1>> Breathe Diary<small class='pull-right'>View details>></small></h1>
 		<!-- START THE FEATURETTES -->
 		<br/>
 		<div class='container mediaBox'>
 			<?php
-<<<<<<< HEAD
-				$pdo
-			?>
-			<div class='media'>
-				<div class='media-left'>
-					<a href='#'>
-						<img class='img-rounded' src='http://placehold.it/140x140' alt='...'/>
-					</a>
-				</div>
-
-				<div class='media-body'>
-					<h4 class='media-heading'>브리드짐 제 5회 정기 모임!</h4>
-					브리드짐 제 5회 정기 오프라인 모임이 머스커비에서 있었습니다. 운동은 열심히!
-					놀 때는 누구보다 즐겁게 노는 브리드짐 가족들! 앞으로도 열심히 해서 건강한
-					생활 하도록 해요~
-				</div>
-			</div>
-			<div class='media'>
-				<div class='media-left'>
-					<a href='#'>
-						<img class='img-rounded' src='http://placehold.it/140x140' alt='...'/>
-					</a>
-				</div>
-
-				<div class='media-body'>
-					<h4 class='media-heading'>오프라인 스파링데이</h4>
-					치열한 예선 전을 거치고 결승전까지 올라온 두 선수! 차진욱 VS 허재!!
-					두 선수의 불꽃 튀기는 마지막 승부를 브리드짐 2호점에서 확인하세요!
-					오는 23일 저녁 6시에 시작되는 경기를 놓치지 마세요~:)
-				</div>
-			</div>
-			<div class='media'>
-				<div class='media-left'>
-					<a href='#'>
-						<img class='img-rounded' src='http://placehold.it/140x140' alt='...'/>
-					</a>
-				</div>
-=======
 				$diaryboard=new ImageBoard('diaryBoard');
 				$posts = $diaryboard->loadPostList(1);
 				if (empty($posts)) { ?>
@@ -180,7 +142,6 @@
 										<img class='img-rounded' src='http://placehold.it/140x140' alt='...'/>
 									</a>
 								</div>
->>>>>>> 53604010d06b6e87b977b1b470662d5302a080e3
 
 								<div class='media-body'>
 									<h4 class='media-heading'><?=$post['title']?></h4>
