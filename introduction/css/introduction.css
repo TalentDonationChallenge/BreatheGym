@@ -113,11 +113,6 @@ a {
   text-align : center;
 }
 
-footer{
-  padding-top : 20px;
-  padding-bottom : 20px;
-}
-
 body{
   padding : 0;
 }
@@ -128,3 +123,21 @@ body{
   border : #8E8E8E 2px solid;
 }
 
+
+footer{
+  padding-top : 20px;
+  padding-bottom : 20px;
+}
+
+.contents {
+  max-width: 1400px;
+  margin-left: 20px;
+}
+
+.ml {
+  margin-left: 25px;
+}
+
+.mr {
+  margin-right: 90px;
+}

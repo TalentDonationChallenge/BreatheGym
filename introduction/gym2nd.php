@@ -48,15 +48,16 @@ require_once(__DIR__.'/../framework/framework.php');
 		
 	</div><!-- /.container -->
 	<footer class='grayBackground'>
-		<div class='row container'>
-			<div class='col-md-4 col-xs-12'>
-				<img src = "/resources/teambreathelogo.png"/>
+		<div class='row contents'>
+			<div class='col-md-3 col-xs-12'>
+				<img class="ml" src = "/resources/teambreathelogo.png"/>
 			</div>
-			<div class='col-md-8 col-xs-12'>
+			<div class='col-md-9 col-xs-12'>
+				<br>
 				<p>브리드 복싱 짐 &amp; 크로스핏</p>
 				<p>BreatheGym.com은 Team Breathe, Inc의 소유입니다.</p>
-				<p class='pull-right'><a href='#'>Back to top</a></p>
 				<p>Copyright © 2015 Breathe Boxing Gym &amp; Crossfit. All rights reserved.</p>
+				<p class='pull-right mr'><a href='#'>Back to top</a></p>
 			</div>
 		</div>
 	</footer>

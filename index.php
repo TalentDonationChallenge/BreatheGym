@@ -222,17 +222,20 @@
 		</div>
 	</div>
 		<!-- /END THE FEATURETTES -->
-	<div class='people grayBackground'>
-		<!-- FOOTER -->
-		<footer class='container'>
-			<img src = "./resources/teambreathelogo.png" class='pull-left'/>
-			<p>브리드 복싱 짐 &amp; 크로스핏</p>
-			<p>1호점 : 경기도 안산시 어쩌구저쩌구</p>
-			<p>2호점 : 경기도 안산시 상록구 어쩌구</p>
-			<p class='pull-right'><a href='#'>Back to top</a></p>
-			<p>Copyright © 2015 Breathe Boxing Gym &amp; Crossfit. All rights reserved.</p>
-		</footer>
-	</div>
+	<footer class='grayBackground'>
+		<div class='row contents'>
+			<div class='col-md-3 col-xs-12'>
+				<img class="ml" src = "/resources/teambreathelogo.png"/>
+			</div>
+			<div class='col-md-9 col-xs-12'>
+				<br>
+				<p>브리드 복싱 짐 &amp; 크로스핏</p>
+				<p>BreatheGym.com은 Team Breathe, Inc의 소유입니다.</p>
+				<p>Copyright © 2015 Breathe Boxing Gym &amp; Crossfit. All rights reserved.</p>
+				<p class='pull-right mr'><a href='#'>Back to top</a></p>
+			</div>
+		</div>
+	</footer>
 	<?php scripts(array('/common/js/navigation.js')) ?>
 </body>
 </html>

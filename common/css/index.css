@@ -96,3 +96,26 @@
 	text-align: center;
 	color: red;
 }
+
+a {
+	color: black;
+}
+
+footer {
+	padding-top : 20px;
+  	padding-bottom : 20px;
+  	padding-left: 120px;
+}
+
+.contents {
+  max-width: 1300px;
+  margin-left: 20px;
+}
+
+.ml {
+  margin-left: 25px;
+}
+
+.mr {
+  margin-right: 110px;
+}
