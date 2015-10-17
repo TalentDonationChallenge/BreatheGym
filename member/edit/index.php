@@ -88,14 +88,14 @@ require_once(__DIR__.'/../../framework/framework.php');
 				</div>
 
 				<br/>
-				<div class='form-group'>
+				<div class='form-group' id='nicknameGroup'>
 					<label for='닉네임' class='col-xs-2'>닉네임</label>
 					<div class='col-xs-9'>
 						<input type='text' class='form-control' id='nickname' placeholder='Input Nickname' value=<?=$memberInfo[2]?> name = "userNickName">
 					</div>
 				</div>
 				<br/>
-				<div class='form-group'>
+				<div class='form-group' id='phoneGroup'>
 					<label for='phone' class='col-xs-2'>전화번호</label>
 					<div class='col-xs-9'>
 						<input type='text' class='form-control' id='phone' placeholder='Input Phonenumber' value=<?=$memberInfo[3]?> name = "userPhone">
