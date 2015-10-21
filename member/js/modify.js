@@ -35,7 +35,7 @@ $('document').ready(function(){
     }
   });
 
-  
+
   $('#modify').click(function(){
     var values = $(':input');
     var allow = false;
