@@ -44,7 +44,7 @@ $(document).ready(function () {
                 no : postNo
             }
         }).done(function () {
-            location.reload();
+            location.replace("index.php");
         });
     });
     $('.box-reply .btn-option').click(function () { // 댓글 작성

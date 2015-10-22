@@ -20,8 +20,8 @@ require_once(__DIR__.'/../../framework/framework.php');
 		$comments = $freeboard->loadComments($_GET['no'], 'freeBoard');
 		$images = $posting['picture']=='1'?$freeboard->loadImages($_GET['no']):false;
 	}
-		login();
-		navigation();
+	login();
+	navigation();
 	$page=isset($_GET['page'])?$_GET['page']:1;
 	?>
 	<!--header start-->
