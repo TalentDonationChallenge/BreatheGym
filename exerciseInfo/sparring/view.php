@@ -14,7 +14,7 @@ require_once(__DIR__.'/../../framework/framework.php');
 </head>
 <body>
 	<?php if (isset($_GET['no'])) {
-		$sparring = new ImageBoard('sparring');
+		$sparring = new Board('sparring');
 		$posting = $sparring->loadPost($_GET['no']);
 		$comments = $sparring->loadComments($_GET['no'], 'sparring');
 	}
@@ -79,22 +79,17 @@ require_once(__DIR__.'/../../framework/framework.php');
 								<?php } ?>
 							</li>
 						</ul>
+						<button type="button" class="btn btn-default btn-option mt">확인</button>
 						<div class="write-comm mt">
 							<textarea class="form-control answer"></textarea>
 						</div>
-							<button type="button" class="btn btn-default btn-option mt">확인</button>
 					</div>
-					
+
 				</div>
-				
 				<div class="buttons mt">
-					<button class="btn btn-default" name="button">이전글</button>
-					<button class="btn btn-default" name="button">다음글</button>
-					<button class="btn btn-default" name="button">
-						<a href="index.php">
-							<span>목록</span>
-						</a>
-					</button>
+					<a href="index.php">
+						<button class="btn btn-default" name="button">목록</button>
+					</a>
 				</div>
 			</div>
 		</section>

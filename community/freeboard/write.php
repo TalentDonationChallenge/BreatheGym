@@ -20,9 +20,7 @@ require_once(__DIR__.'/../../framework/framework.php');
 	<section id="main-content">
 		<section class="wrapper">
 			<div class="container">
-			<h3><i class="fa fa-angle-right"></i> 자유게시판</h3>
-			<!-- <div class="col-lg-12 mt"> -->
-			<!-- <form action="add.php" method="post"> -->
+				<h3><i class="fa fa-angle-right"></i> 자유게시판</h3>
 				<div class="form-horizontal">
 					<div class="form-group mt">
 						<label for="title" class="col-sm-1 control-label">제목</label>
@@ -88,11 +86,9 @@ require_once(__DIR__.'/../../framework/framework.php');
 	<script src="/common/fileupload/js/jquery.fileupload.js"></script>
 	<script src="/common/fileupload/js/jquery.fileupload-process.js"></script>
 	<script src="/common/fileupload/js/jquery.fileupload-image.js"></script>
-	<script src="/common/fileupload/js/jquery.fileupload-audio.js"></script>
-	<script src="/common/fileupload/js/jquery.fileupload-video.js"></script>
 	<script src="/common/fileupload/js/jquery.fileupload-validate.js"></script>
 	<script src="/common/fileupload/js/jquery.fileupload-ui.js"></script>
 	<script src="../js/freeboard.js"></script>
-	<script src="../js/upload.js"></script>
+	<script src="/common/js/upload.js"></script>
 </body>
 </html>

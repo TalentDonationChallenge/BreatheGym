@@ -56,7 +56,7 @@
 									<tr>
 										<td><?=$post['no']?></td>
 										<td><a href="view.php?page=<?=$page?>&amp;no=<?=$post['no']?>">
-										<?=$post['title']?></a> (<?=$freeboard->countComments($post['no'],'freeBoard')?>)
+										<?=$post['title']?></a> (<?=$diaryboard->countComments($post['no'],'diaryBoard')?>)
 										</td>
 										<td><?=$post['nickname']?></td>
 										<td><?=$post['writtenTime']?></td>
@@ -92,7 +92,7 @@
 						</a>
 					</li>':''?>
 					</ul>
-					<?php if (Utility::isLoggedIn()) { 
+					<?php if (Utility::isLoggedIn()) {
 						if (Utility::isManager()) {?>
 					<a href="write.php">
 						<button type="button" class="btn pull-right btn-primary btn-write">

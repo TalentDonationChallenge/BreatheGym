@@ -24,14 +24,14 @@
 	<?php //communityHeader(); ?>
 	<!--header end-->
 	<!--sidebar start-->
-	<?php //communitySidebar("exerciesInfo/crossfitlecture"); ?>
+	<?php //communitySidebar("exerciseInfo/boxinglecture"); ?>
 	<!--sidebar end-->
 	<section id="main-content">
 		<section class="wrapper">
 
 			<!-- <div class="col-lg-12 mt"> -->
 			<div class="container">
-			<h3><i class="fa fa-angle-right"></i> 크로스핏 동작들</h3>
+			<h3><i class="fa fa-angle-right"></i> 크로스핏 강좌</h3>
 				<div class="panel panel-default mt">
 					<table class="table table-striped">
 						<thead>
@@ -45,17 +45,17 @@
 						</thead>
 						<tbody>
 							<?php
+								$posts = $crossfitlecture->loadPostList($page);
 								if (empty($posts)) { ?>
 									<tr>
 										<td colspan="5">게시글이 없습니다</td>
 									</tr>
 								<?php } else {
-								$posts = $crossfitlecture->loadPostList($page);
 								foreach($posts as $post) { ?>
 									<tr>
 										<td><?=$post['no']?></td>
 										<td><a href="view.php?page=<?=$page?>&amp;no=<?=$post['no']?>">
-										<?=$post['title']?></a> (<?=$freeboard->countComments($post['no'],'freeBoard')?>)
+										<?=$post['title']?></a> (<?=$crossfitlecture->countComments($post['no'],'crossfitLec')?>)
 										</td>
 										<td><?=$post['nickname']?></td>
 										<td><?=$post['writtenTime']?></td>
@@ -91,7 +91,7 @@
 						</a>
 					</li>':''?>
 					</ul>
-					<?php if (Utility::isLoggedIn() {?>
+					<?php if (Utility::isLoggedIn()) { ?>
 					<a href="write.php">
 						<button type="button" class="btn pull-right btn-primary btn-write">
 							글쓰기
@@ -105,7 +105,8 @@
 	<script src="/common/js/jquery-1.11.1.min.js"></script>
 	<script src="/common/js/bootstrap.min.js"></script>
 	<script src="/common/js/jquery.dcjqaccordion.2.7.js"></script>
+	<script src="/common/js/navigation.js"></script>
 	<script src="/common/js/common-scripts.js"></script>
-	<script src="../js/crossfitlecture.js"></script>
+	<!-- <script src="../js/board.js"></script> -->
 </body>
 </html>

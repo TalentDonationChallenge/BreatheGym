@@ -30,7 +30,6 @@ $(document).ready(function () {
                 // console.log(msg);
                 unload = false;
                 location.replace("index.php");
-                //msg로 글번호 불러와서 디비연결만 하면됨
             });
         }
     });
@@ -72,5 +71,5 @@ $(document).ready(function () {
         }).done(function () {
             location.reload();
         });
-    })
+    });
 });

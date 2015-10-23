@@ -104,6 +104,7 @@ create table breatheBoard(
 	content text not null,
 	writtenTime datetime not null,
 	hits int(6) not null default 0,
+	picture tinyint not null default 0,
 	foreign key (email) references member(email)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1;
 
@@ -126,6 +127,7 @@ create table exerciseEpilogue(
 	content text not null,
 	writtenTime datetime not null,
 	hits int(6) not null default 0,
+	picture tinyint not null default 0,
 	foreign key (email) references member(email)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1;
 
@@ -137,6 +139,7 @@ create table boxingLib(
 	content text not null,
 	writtenTime datetime not null,
 	hits int(6) not null default 0,
+	picture tinyint not null default 0,
 	foreign key (email) references member(email)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1;
 
@@ -148,6 +151,7 @@ create table boxingLec(
 	content text not null,
 	writtenTime datetime not null,
 	hits int(6) not null default 0,
+	picture tinyint not null default 0,
 	foreign key (email) references member(email)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1;
 
@@ -159,6 +163,7 @@ create table sparring(
 	content text not null,
 	writtenTime datetime not null,
 	hits int(6) not null default 0,
+	video varchar(50) not null,
 	foreign key (email) references member(email)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1;
 
@@ -170,6 +175,7 @@ create table crossfitLib(
 	content text not null,
 	writtenTime datetime not null,
 	hits int(6) not null default 0,
+	picture tinyint not null default 0,
 	foreign key (email) references member(email)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1;
 
@@ -181,6 +187,7 @@ create table crossfitLec(
 	content text not null,
 	writtenTime datetime not null,
 	hits int(6) not null default 0,
+	picture tinyint not null default 0,
 	foreign key (email) references member(email)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1;
 
@@ -193,6 +200,7 @@ create table diaryBoard(
 	content text not null,
 	writtenTime datetime not null,
 	hits int(6) not null default 0,
+	picture tinyint not null default 0,
 	foreign key (email) references member(email)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1;
 
