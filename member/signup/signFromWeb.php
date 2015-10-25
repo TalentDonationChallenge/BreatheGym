@@ -20,7 +20,7 @@
 		$userNickName = $_POST['userNickName'];
 		$userLevel = 0;
 
-		
+
 
 		$getUsercount = UserRegister::isUserExistFromRegisterInfo($userEmail);
 		echo $getUsercount;
