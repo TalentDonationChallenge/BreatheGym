@@ -21,8 +21,6 @@ require_once(__DIR__.'/../../framework/framework.php');
 		<section class="wrapper">
 			<div class="container">
 			<h3><i class="fa fa-angle-right"></i> 스파링영상</h3>
-			<!-- <div class="col-lg-12 mt"> -->
-
 				<div class="form-horizontal">
 					<div class="form-group mt">
 						<label for="title" class="col-sm-1 control-label">제목</label>
@@ -30,14 +28,16 @@ require_once(__DIR__.'/../../framework/framework.php');
 							<input type="text" class="form-control" id="title" placeholder="제목을 입력하세요.">
 						</div>
 					</div>
-					<div class="form-group">
-						<label for="attach" class="col-sm-1 control-label">이미지첨부</label>
+				</div>
+				<textarea class="write form-control" placeholder="내용을 입력하세요."></textarea>
+				<div class="form-horizontal">
+					<div class="form-group mt">
+						<label for="youtube" class="col-sm-1 control-label">유튜브</label>
 						<div class="col-sm-11">
-							<input id="attach" type="file" name="image">
+							<input id="youtube" type="text" name="youtube" class="form-control" placeholder="http://">
 						</div>
 					</div>
 				</div>
-				<textarea class="write form-control" placeholder="내용을 입력하세요."></textarea>
 				<nav>
 					<button class="btn mt mr btn-primary submit">확인</button>
 
@@ -52,6 +52,6 @@ require_once(__DIR__.'/../../framework/framework.php');
 	<script src="/common/js/bootstrap.min.js"></script>
 	<script src="/common/js/jquery.dcjqaccordion.2.7.js"></script>
 	<script src="/common/js/common-scripts.js"></script>
-	<script src="../js/review.js"></script>
+	<script src="../js/board.js"></script>
 </body>
 </html>

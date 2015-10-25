@@ -80,6 +80,31 @@ require_once(__DIR__.'/board.php');
             return $images;
         }
 
+        public function deleteImages($no) {
+            $table = parent::getTable();
+            $pdo = Database::getInstance();
+			$sql = "SELECT fileName FROM pictures
+            WHERE tableName = :tableName AND postNumber = :no";
+			$stmt = $pdo->prepare($sql);
+			$stmt->execute(array(
+                ':tableName'=>$table,
+                ':no' => $no
+            ));
+            $rows = $stmt->fetchAll();
+            foreach ($rows as $row) {
+                $filename = $row['fileName'];
+                unlink('upload/files/'.$filename);
+                unlink('upload/files/thumbnail/'.$filename);
+            }
+            $sql = "DELETE FROM pictures
+            WHERE tableName = :tableName AND postNumber = :no";
+            $stmt = $pdo->prepare($sql);
+            $stmt->execute(array(
+                ':tableName'=>$table,
+                ':no' => $no
+            ));
+        }
+
     }
 
 ?>

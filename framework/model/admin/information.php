@@ -33,7 +33,7 @@ class AdminInformation {
         $oneWeekAgo = strtotime('Y-m-d', "-1 week");
         $today = getdate();
 
-        $stmt = $pdo->prepare("SELECT name, registerDate, duration FROM gymMember WHERE active = 1");
+        $stmt = $pdo->prepare("SELECT name, registerDate, duration, phone FROM gymMember WHERE active = 1");
         $stmt->execute();
         $rows = $stmt->fetch();
 
@@ -44,8 +44,12 @@ class AdminInformation {
             $expireDate = date_modify($registerDate, "$duration months");
             if (($expireDate <= $today) && ($expireDate > $oneWeekAgo)) {
                 $memberArray[] = array(
+                    'barcode'=>$row['barcode'],
                     'name'=>$row['name'],
-                    'expireDate'=>$expireDate);
+                    'registerDate'=>$row['registerDate'],
+                    'expireDate'=>$expireDate,
+                    'phone'=>$row['phone']
+                );
             }
         }
         return $memberArray;
@@ -73,11 +77,11 @@ class AdminInformation {
         // 지난 일주일간 출석 회원수 count 이건 쉽지
         $pdo = Database::getInstance();
         $sevenDaysAgo = date('Y-m-d', strtotime('-5 day')); // 2015-10-05
-        $stmt = $pdo->prepare("SELECT count(barcode) FROM attendance WHERE date > :day");
+        $stmt = $pdo->prepare("SELECT count(barcode) as count FROM attendance WHERE date > :day");
         $stmt->execute(array(':day'=>$sevenDaysAgo));
-        $rows = $stmt->fetchAll();
+        $row = $stmt->fetch();
 
-        return $rows['count(barcode)']; // 두번 출석하면 두번온걸로 되긴 하지만 조회수 조사하고 그런거 보면 여러번 방문해도 다 체크 되니까 이렇게 짜놓음
+        return $row['count']; // 두번 출석하면 두번온걸로 되긴 하지만 조회수 조사하고 그런거 보면 여러번 방문해도 다 체크 되니까 이렇게 짜놓음
     }
     public static function attendTimeStatistics() { // 시간대별 출석 회원수 (어제)
         // 10시부터 2시, 2시부터 6시, 6시부터 11시로 나눠서 그룹바이 이용해서 리턴좀
@@ -96,7 +100,7 @@ class AdminInformation {
         $stmt->execute(array(':yesterday'=>$yesterday,
             ':today'=>$today));
         $rows = $stmt->fetchAll();
-        
+
         foreach($rows as $row) {
             $currentTime = $row['date'];
             if ($currentTime > $eveningTime) {
@@ -107,19 +111,19 @@ class AdminInformation {
                 $morningCounter++;
             }
         }
-        
+
         return array($morningCounter, $afternoonCounter, $eveningCounter);
     }
     public static function monthlyGymMemberCount() { // 월별 전체 회원수
         $pdo = Database::getInstance();
-        
+
         $sixMonthAgo = date('Y-m-d', strtotime("-6 month"));
         $fiveMonthAgo = date('Y-m-d', strtotime("-5 month"));
         $fourMonthAgo = date('Y-m-d', strtotime("-4 month"));
         $threeMonthAgo = date('Y-m-d', strtotime("-3 month"));
         $twoMonthAgo = date('Y-m-d', strtotime("-2 month"));
         $oneMonthAgo = date('Y-m-d', strtotime("-1 month"));
-        
+
         $stmt = $pdo->prepare("SELECT registerDate, duration FROM gymMember");
         $stmt->execute();
         $rows = $stmt->fetchAll();

@@ -22,6 +22,7 @@ $(document).ready(function () {
         url:'load.php'
     }).done(function (msg) {
         //월별 가입 회원수 가져오기
+        console.log(msg.attendTimeStatistics);
         var joinedData = [];
         for (var i = 0; i < 6; i++) { //최근 6개월내 값이 없을시 0을 할당
             var flag = true;

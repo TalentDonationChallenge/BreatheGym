@@ -56,7 +56,7 @@
 									<tr>
 										<td><?=$post['no']?></td>
 										<td><a href="view.php?page=<?=$page?>&amp;no=<?=$post['no']?>">
-										<?=$post['title']?></a> (<?=$freeboard->countComments($post['no'],'freeBoard')?>)
+										<?=$post['title']?></a> (<?=$review->countComments($post['no'],'exerciseEpilogue')?>)
 										</td>
 										<td><?=$post['nickname']?></td>
 										<td><?=$post['writtenTime']?></td>
@@ -108,6 +108,5 @@
 	<script src="/common/js/jquery.dcjqaccordion.2.7.js"></script>
 	<script src="/common/js/navigation.js"></script>
 	<script src="/common/js/common-scripts.js"></script>
-	<script src="../js/review.js"></script>
 </body>
 </html>

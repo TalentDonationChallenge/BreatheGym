@@ -31,7 +31,7 @@
 
 			<!-- <div class="col-lg-12 mt"> -->
 			<div class="container">
-			<h3><i class="fa fa-angle-right"></i> 복싱강좌</h3>
+			<h3><i class="fa fa-angle-right"></i> 복싱운동강좌</h3>
 				<div class="panel panel-default mt">
 					<table class="table table-striped">
 						<thead>
@@ -55,7 +55,7 @@
 									<tr>
 										<td><?=$post['no']?></td>
 										<td><a href="view.php?page=<?=$page?>&amp;no=<?=$post['no']?>">
-										<?=$post['title']?></a> (<?=$freeboard->countComments($post['no'],'freeBoard')?>)
+										<?=$post['title']?></a> (<?=$boxinglecture->countComments($post['no'],'boxingLec')?>)
 										</td>
 										<td><?=$post['nickname']?></td>
 										<td><?=$post['writtenTime']?></td>
@@ -107,6 +107,6 @@
 	<script src="/common/js/jquery.dcjqaccordion.2.7.js"></script>
 	<script src="/common/js/navigation.js"></script>
 	<script src="/common/js/common-scripts.js"></script>
-	<script src="../js/boxinglecture.js"></script>
+	<!-- <script src="../js/board.js"></script> -->
 </body>
 </html>

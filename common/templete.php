@@ -98,7 +98,8 @@
 						<li><a href='/exerciseInfo/boxingLecture/index.php'>복싱운동강좌</a></li>
 						<li><a href='/exerciseInfo/sparring/index.php'>스파링영상</a></li>
 						<li class='divider'></li>
-						<li><a href='/exerciseInfo/crossfitLibrary/index.php'>크로스핏 사진/영상</a></li>
+						<li><a href='/exerciseInfo/crossfitLibrary/index.php'>크로스핏 자료실</a></li>
+						<li><a href='/exerciseInfo/crossfitLecture/index.php'>크로스핏 강좌</a></li>
 						</ul>
 					</li>
 					<?php if (Utility::isLoggedIn() && !Utility::isManager()) {?>

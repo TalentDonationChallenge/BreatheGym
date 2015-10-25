@@ -78,18 +78,18 @@
 							</tr>
 						</thead>
 						<tbody>
+						<?php
+						$endedMembers = AdminInformation::endedMembers();
+						foreach ($endedMembers as $endedMember) { ?>
 							<tr>
-								<td>나익채</td>
-								<td>7월 20일</td>
-								<td>8월 20일</td>
-								<td>010-5388-7127</td>
+								<td><a href="/admin/member/profile.php?type=gym&amp;barcode=<?=$endedMember['barcode']?>">
+									<?=$endedMember['name']?></a>
+								</td>
+								<td><?=$endedMember['registerDate']?></td>
+								<td><?=$endedMember['expireDate']?></td>
+								<td><?=$endedMember['phone']?></td>
 							</tr>
-							<tr>
-								<td>김가연</td>
-								<td>7월 20일</td>
-								<td>8월 20일</td>
-								<td>010-4045-9103</td>
-							</tr>
+						<?php } ?>
 						</tbody>
 					</table>
 				</div>

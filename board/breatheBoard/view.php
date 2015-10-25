@@ -5,7 +5,7 @@ require_once(__DIR__.'/../../framework/framework.php');
 <html>
 <head>
 	<?php head('브리드 복싱 &amp; 크로스핏 - 관리자메뉴',
-		array('/common/font-awesome/css/font-awesome.css',
+		array('/common/font-awesome/css/font-awesome.css', '../css/breatheboard.css',
 			'/common/css/table-responsive.css','/community/css/community.css'));?>
 	<!--[if lt IE 9]>
 	<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
@@ -46,16 +46,17 @@ require_once(__DIR__.'/../../framework/framework.php');
 							"nbsp;":str_replace("\n", '<br />', htmlspecialchars($posting['content']));?>
 						</p>
 					</div>
+					<div class="fb-like" data-href="http://localhost/board/breatheboard/view.php?page=<?=$_GET['page']?>&amp;no=<?=$_GET['no']?>" data-layout="standard" data-action="like" data-show-faces="true" data-share="true"></div>
+					<div class="fb-send" data-href="http://localhost/board/breatheboard/view.php?page=<?=$_GET['page']?>&amp;no=<?=$_GET['no']?>"></div>
 					<div class="hit-reply hit-style">
 						<span class="pull-right">
-						<span class="mouse-over">수정 </span>&#124;
-						<span class="mouse-over">신고(or 삭제)</span>
+						<span class="mouse-over edit">수정</span> &#124;
+						<?=($_SESSION['email']===$posting['email'])||Utility::isManager()?
+						'<span class="mouse-over delete">삭제</span>':
+						'<span class="mouse-over report">신고</span>'?>
 						</span>
 						<span>댓글 <?php echo count($comments) ?></span>
 						<span> &#124; 조회 <?=$posting['hits']?></span>
-						<div width="400px" class="fb-like" data-href="http://localhost/board/breatheboard/view.php?page=<?=$_GET['page']?>&amp;no=<?=$_GET['no']?>" data-layout="standard" data-action="like" data-show-faces="true" data-share="true"></div>
-						<!-- Your send button code -->
-    				<div class="fb-send" data-href="http://localhost/board/breatheboard/view.php?page=<?=$_GET['page']?>&amp;no=<?=$_GET['no']?>"></div>
 					<div class="box-reply bg-color">
 						<ul class="del-padding">
 							<?php
@@ -88,15 +89,13 @@ require_once(__DIR__.'/../../framework/framework.php');
 
 					</div>
 				</div>
-				<div class="buttons mt">
-					<button class="btn btn-default" name="button">이전글</button>
-					<button class="btn btn-default" name="button">다음글</button>
+			</div>
+			<div class="buttons mt">
+				<a href="index.php">
 					<button class="btn btn-default" name="button">
-						<a href="index.php">
-							<span>목록</span>
-						</a>
+						<span>목록</span>
 					</button>
-				</div>
+				</a>
 			</div>
 		</section>
 	</section>
@@ -105,5 +104,6 @@ require_once(__DIR__.'/../../framework/framework.php');
 	<script src="/common/js/jquery.dcjqaccordion.2.7.js"></script>
 	<script src="/common/js/common-scripts.js"></script>
 	<script src="/common/js/facebook.js"></script>
+	<script src="../js/board.js"></script>
 </body>
 </html>

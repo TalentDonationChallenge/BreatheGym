@@ -31,7 +31,7 @@ require_once(__DIR__.'/../../framework/framework.php');
 		<section class="wrapper">
 			<!-- <div class="col-lg-12 mt"> -->
 			<div class="container">
-			<h3><i class="fa fa-angle-right"></i> 복싱강좌</h3>
+			<h3><i class="fa fa-angle-right"></i> 복싱운동강좌</h3>
 				<div class="panel panel-default mb mt">
 					<div class="panel-heading">
 						<span class="pull-right hidden-phone time">
@@ -79,22 +79,18 @@ require_once(__DIR__.'/../../framework/framework.php');
 								<?php } ?>
 							</li>
 						</ul>
+						<button type="button" class="btn btn-default btn-option mt">확인</button>
 						<div class="write-comm mt">
 							<textarea class="form-control answer"></textarea>
 						</div>
-							<button type="button" class="btn btn-default btn-option mt">확인</button>
 					</div>
-					
+
 				</div>
-				
+
 				<div class="buttons mt">
-					<button class="btn btn-default" name="button">이전글</button>
-					<button class="btn btn-default" name="button">다음글</button>
-					<button class="btn btn-default" name="button">
-						<a href="index.php">
-							<span>목록</span>
-						</a>
-					</button>
+					<a href="index.php">
+						<button class="btn btn-default" name="button">목록</button>
+					</a>
 				</div>
 			</div>
 		</section>
