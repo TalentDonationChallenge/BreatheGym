@@ -15,6 +15,7 @@ require_once(__DIR__.'/../../framework/framework.php');
 <body>
 	<?php if (isset($_GET['no'])) {
 		$breatheboard = new ImageBoard('breatheBoard');
+		$breatheboard->addHitCounter($_GET['no']);
 		$posting = $breatheboard->loadPost($_GET['no']);
 		$comments = $breatheboard->loadComments($_GET['no'], 'breatheBoard');
 		$images = $breatheboard->loadImages($_GET['no']);
@@ -33,67 +34,66 @@ require_once(__DIR__.'/../../framework/framework.php');
 			<!-- <div class="col-lg-12 mt"> -->
 			<div class="container">
 			<h3><i class="fa fa-angle-right"></i> 브리드이야기</h3>
-				<div class="panel panel-default mb mt">
-					<div class="panel-heading" no='<?=$_GET["no"]?>'>
-						<span class="pull-right hidden-phone time">
-							<?=$posting['writtenTime']?>
-						</span>
-						<span class="pull-right author"><?=$posting['nickname']?></span>
-						<h2 class="panel-title"><?=htmlspecialchars($posting['title'])?></h2>
-					</div>
-					<div class="panel-body">
-						<p>
-							<?php foreach ($images as $image) {
-								$address = $image['fileName']?>
-							<img src='upload/files/<?=$address?>' alt="attach image"><br /><br />
+			<div class="panel panel-default mb mt">
+				<div class="panel-heading" no='<?=$_GET["no"]?>'>
+					<span class="pull-right hidden-phone time">
+						<?=$posting['writtenTime']?>
+					</span>
+					<span class="pull-right author"><?=$posting['nickname']?></span>
+					<h2 class="panel-title"><?=htmlspecialchars($posting['title'])?></h2>
+				</div>
+				<div class="panel-body">
+					<p>
+						<?php foreach ($images as $image) {
+							$address = $image['fileName']?>
+						<img src='upload/files/<?=$address?>' alt="attach image"><br /><br />
+						<?php } ?>
+					</p>
+					<p>
+						<?=preg_match("/^ *$/", $posting['content'])?
+						"nbsp;":str_replace("\n", '<br />', htmlspecialchars($posting['content']));?>
+					</p>
+				</div>
+				<div class="fb-like" data-href="http://localhost/board/breatheboard/view.php?page=<?=$_GET['page']?>&amp;no=<?=$_GET['no']?>" data-layout="standard" data-action="like" data-show-faces="true" data-share="true"></div>
+				<div class="fb-send" data-href="http://localhost/board/breatheboard/view.php?page=<?=$_GET['page']?>&amp;no=<?=$_GET['no']?>"></div>
+				<div class="hit-reply hit-style">
+					<span class="pull-right">
+					<span class="mouse-over edit">수정</span> &#124;
+					<?=Utility::isLoggedIn()&&($_SESSION['email']===$posting['email']||Utility::isManager())?
+					'<span class="mouse-over delete">삭제</span>':
+					'<span class="mouse-over report">신고</span>'?>
+					</span>
+					<span>댓글 <?= count($comments) ?></span>
+					<span> &#124; 조회 <?=$posting['hits']?></span>
+				</div>
+				<div class="box-reply bg-color">
+					<ul class="del-padding">
+						<?php
+						if ($comments) {
+							foreach($comments as $comment) { ?>
+						<li> <!-- 여기서부터 다음까지 댓글임 -->
+							<div class="<?=$comment["no"]?>">
+								<span class="nick-area">
+									<a href="#"><?=$comment['nickname']?></a>
+								</span>
+								<span class="date"><?=$comment['writtenTime']?></span>
+								<span></span>
+								<a href="#" class="report">신고</a>
+							</div>
+
+							<div class="comm-content">
+								<span><?=$comment['content']?></span>
+							</div>
+							<li class="comm-line"></li>
+							<?php } } else { ?>
+							<?="아직 댓글이 없습니다!"?>
+							<li class="comm-line"></li>
 							<?php } ?>
-						</p>
-						<p>
-							<?=preg_match("/^ *$/", $posting['content'])?
-							"nbsp;":str_replace("\n", '<br />', htmlspecialchars($posting['content']));?>
-						</p>
-					</div>
-					<div class="fb-like" data-href="http://localhost/board/breatheboard/view.php?page=<?=$_GET['page']?>&amp;no=<?=$_GET['no']?>" data-layout="standard" data-action="like" data-show-faces="true" data-share="true"></div>
-					<div class="fb-send" data-href="http://localhost/board/breatheboard/view.php?page=<?=$_GET['page']?>&amp;no=<?=$_GET['no']?>"></div>
-					<div class="hit-reply hit-style">
-						<span class="pull-right">
-						<span class="mouse-over edit">수정</span> &#124;
-						<?=Utility::isLoggedIn()&&($_SESSION['email']===$posting['email']||Utility::isManager())?
-						'<span class="mouse-over delete">삭제</span>':
-						'<span class="mouse-over report">신고</span>'?>
-						</span>
-						<span>댓글 <?php echo count($comments) ?></span>
-						<span> &#124; 조회 <?=$posting['hits']?></span>
-					<div class="box-reply bg-color">
-						<ul class="del-padding">
-							<?php
-							if ($comments) {
-								foreach($comments as $comment) { ?>
-							<li> <!-- 여기서부터 다음까지 댓글임 -->
-								<div class="">
-									<span class="nick-area">
-										<a href="#"><?=$comment['nickname']?></a>
-									</span>
-									<span class="date"><?=$comment['writtenTime']?></span>
-									<span></span>
-									<a href="#" class="report">신고</a>
-								</div>
-
-								<div class="comm-content">
-									<span><?=$comment['content']?></span>
-								</div>
-								<li class="comm-line"></li>
-								<?php } } else { ?>
-								<?="아직 댓글이 없습니다!"?>
-								<li class="comm-line"></li>
-								<?php } ?>
-							</li>
-						</ul>
-						<button type="button" class="btn btn-default btn-option mt">확인</button>
-						<div class="write-comm mt">
-							<textarea class="form-control answer"></textarea>
-						</div>
-
+						</li>
+					</ul>
+					<button type="button" class="btn btn-default btn-option mt">확인</button>
+					<div class="write-comm mt">
+						<textarea class="form-control answer"></textarea>
 					</div>
 				</div>
 			</div>

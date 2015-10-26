@@ -15,6 +15,7 @@ require_once(__DIR__.'/../../framework/framework.php');
 <body>
 	<?php if (isset($_GET['no'])) {
 		$boxinglibrary = new ImageBoard('boxingLib');
+		$boxinglibrary->addHitCounter($_GET['no']);
 		$posting = $boxinglibrary->loadPost($_GET['no']);
 		$comments = $boxinglibrary->loadComments($_GET['no'], 'boxingLib');
 		$images = $boxinglibrary->loadImages($_GET['no']);
@@ -35,12 +36,6 @@ require_once(__DIR__.'/../../framework/framework.php');
 			<h3><i class="fa fa-angle-right"></i> 복싱자료실</h3>
 				<div class="panel panel-default mb mt">
 					<div class="panel-heading"  no='<?=$_GET["no"]?>'>
-						<p>
-							<?php foreach ($images as $image) {
-								$address = $image['fileName']?>
-							<img src='upload/files/<?=$address?>' alt="attach image"><br /><br />
-							<?php } ?>
-						</p>
 						<span class="pull-right hidden-phone time">
 							<?=$posting['writtenTime']?>
 						</span>
@@ -48,6 +43,17 @@ require_once(__DIR__.'/../../framework/framework.php');
 						<h2 class="panel-title"><?=htmlspecialchars($posting['title'])?></h2>
 					</div>
 					<div class="panel-body">
+						<?php if($posting['video'] == 1) { ?>
+							<div class="embed-responsive embed-responsive-16by9">
+								<iframe class="embed-responsive-item" src='<?=$boxinglibrary->loadVideo($_GET["no"])?>'></iframe>
+							</div>
+						<?php } ?>
+						<p>
+							<?php foreach ($images as $image) {
+								$address = $image['fileName']?>
+							<img src='upload/files/<?=$address?>' alt="attach image"><br /><br />
+							<?php } ?>
+						</p>
 						<p>
 							<?=preg_match("/^ *$/", $posting['content'])?
 							"nbsp;":str_replace("\n", '<br />', htmlspecialchars($posting['content']));?>
@@ -108,5 +114,6 @@ require_once(__DIR__.'/../../framework/framework.php');
 	<script src="/common/js/bootstrap.min.js"></script>
 	<script src="/common/js/jquery.dcjqaccordion.2.7.js"></script>
 	<script src="/common/js/common-scripts.js"></script>
+	<script src="../js/board.js"></script>
 </body>
 </html>

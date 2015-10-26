@@ -24,7 +24,8 @@ $(document).ready(function () {
                     requestType: 'posting',
                     title: $("#title").val(),
                     content : $("textarea").val(),
-                    files : files
+                    files : files,
+                    youtube : $("#youtube").val()
                 }
             }).done(function (msg) {
                 console.log(msg);

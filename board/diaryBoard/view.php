@@ -15,6 +15,7 @@ require_once(__DIR__.'/../../framework/framework.php');
 <body>
 	<?php if (isset($_GET['no'])) {
 		$diaryboard = new ImageBoard('diaryBoard');
+		$diaryboard->addHitCounter($_GET['no']);
 		$posting = $diaryboard->loadPost($_GET['no']);
 		$comments = $diaryboard->loadComments($_GET['no'], 'diaryboard');
 		$images = $diaryboard->loadImages($_GET['no']);
@@ -69,7 +70,7 @@ require_once(__DIR__.'/../../framework/framework.php');
 							if ($comments) {
 								foreach($comments as $comment) { ?>
 							<li> <!-- 여기서부터 다음까지 댓글임 -->
-								<div class="">
+								<div class='<?=$comment["no"]?>'>
 									<span class="nick-area">
 										<a href="#"><?=$comment['nickname']?></a>
 									</span>
@@ -88,22 +89,20 @@ require_once(__DIR__.'/../../framework/framework.php');
 								<?php } ?>
 							</li>
 						</ul>
+						<button type="button" class="btn btn-default btn-option mt">확인</button>
 						<div class="write-comm mt">
 							<textarea class="form-control answer"></textarea>
 						</div>
-							<button type="button" class="btn btn-default btn-option mt">확인</button>
 					</div>
 
 				</div>
 
 				<div class="buttons mt">
-					<button class="btn btn-default" name="button">이전글</button>
-					<button class="btn btn-default" name="button">다음글</button>
-					<button class="btn btn-default" name="button">
-						<a href="index.php">
+					<a href="index.php">
+						<button class="btn btn-default" name="button">
 							<span>목록</span>
-						</a>
-					</button>
+						</button>
+					</a>
 				</div>
 			</div>
 		</section>
@@ -112,5 +111,6 @@ require_once(__DIR__.'/../../framework/framework.php');
 	<script src="/common/js/bootstrap.min.js"></script>
 	<script src="/common/js/jquery.dcjqaccordion.2.7.js"></script>
 	<script src="/common/js/common-scripts.js"></script>
+	<script src="../js/board.js"></script>
 </body>
 </html>

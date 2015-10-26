@@ -8,23 +8,25 @@ require_once(__DIR__.'/board.php');
         function __construct($type) {
             parent::setTable($type);
         }
-        public function insertImagePost($email, $title, $content) {
+        public function insertImagePost($email, $title, $content, $image, $video) {
 			$table = $this->table;
 			$pdo = Database::getInstance();
-			$sql = "INSERT INTO {$table} (email, title, content, writtenTime, picture)
-				VALUES (:email, :title, :content, NOW(), 1)";
+			$sql = "INSERT INTO {$table} (email, title, content, writtenTime, picture, video)
+				VALUES (:email, :title, :content, NOW(), :picture, :video)";
 			$stmt = $pdo->prepare($sql);
 			$stmt->execute(array(
 				':email'=>$email,
 				':title'=>$title,
-				':content'=>$content
+				':content'=>$content,
+                ':picture'=>$image,
+                ':video'=>$video
 			));
 			return $pdo->lastInsertId();
 		}
         public function loadPost($no) {
 			$table = $this->table;
 			$pdo = Database::getInstance();
-			$sql = "SELECT no, member.email as email, title, nickname, content, writtenTime, hits, picture
+			$sql = "SELECT no, member.email as email, title, nickname, content, writtenTime, hits, video
 			FROM {$table} JOIN member ON {$table}.email = member.email
 			WHERE no =:no";
 			$stmt = $pdo->prepare($sql);
@@ -39,7 +41,7 @@ require_once(__DIR__.'/board.php');
 					'nickname' => $row['nickname'],
 					'writtenTime' => date('Y/m/d H:i:s',strtotime($row['writtenTime'])),
 					'hits' => $row['hits'],
-                    'picture' => $row['picture']
+                    'video' => $row['video']
 				);
 				return $post;
 			} else{
@@ -104,7 +106,30 @@ require_once(__DIR__.'/board.php');
                 ':no' => $no
             ));
         }
-
+        public function insertVideo($url, $no) {
+            $table = parent::getTable();
+            $pdo = Database::getInstance();
+            $stmt = $pdo->prepare("INSERT INTO videos (tableName, postNumber, url)
+            VALUES (:tableName, :postNumber, :url)");
+            $stmt->execute(array(
+                ':tableName'=>$table,
+                ':postNumber'=>$no,
+                ':url'=>$url
+            ));
+            return $pdo->lastInsertId();
+        }
+        public function loadVideo($no) {
+            $table = parent::getTable();
+            $pdo = Database::getInstance();
+            $stmt = $pdo->prepare("SELECT url FROM videos
+                WHERE tableName = :tableName AND postNumber = :postNumber");
+            $stmt->execute(array(
+                ":tableName"=>$table,
+                ":postNumber"=>$no
+            ));
+            $row = $stmt->fetch();
+            return $row['url'];
+        }
     }
 
 ?>

@@ -15,6 +15,7 @@ require_once(__DIR__.'/../../framework/framework.php');
 <body>
 	<?php if (isset($_GET['no'])) {
 		$crossfitlecture = new ImageBoard('crossfitLec');
+		$crossfitlecture->addHitCounter($_GET['no']);
 		$posting = $crossfitlecture->loadPost($_GET['no']);
 		$comments = $crossfitlecture->loadComments($_GET['no'], 'crossfitLec');
 		$images = $crossfitlecture->loadImages($_GET['no']);
@@ -106,5 +107,6 @@ require_once(__DIR__.'/../../framework/framework.php');
 	<script src="/common/js/bootstrap.min.js"></script>
 	<script src="/common/js/jquery.dcjqaccordion.2.7.js"></script>
 	<script src="/common/js/common-scripts.js"></script>
+	<script src="../js/board.js"></script>
 </body>
 </html>

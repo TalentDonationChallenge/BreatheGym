@@ -90,7 +90,7 @@ require_once(__DIR__.'/../../framework/framework.php');
 					<div class="col-sm-3 mt">
 						<div class="panel panel-default cross-panel">
 							<div class="panel-body">
-								<img src="/introduction/images/ali.jpg" alt="Boxer Ali">
+								<img src="/resources/crossfit.jpg" alt="Boxer Ali" height="100%">
 							</div>
 							<div class="panel-footer">
 								<span class="inline-to-block">제목</span>
@@ -148,7 +148,7 @@ require_once(__DIR__.'/../../framework/framework.php');
 				<nav>
 					<ul class="pagination">
 					<?php
-					$allPages = $crossfitlibrary->pageCount(15); // 다음부터 수정(a.k.a. 복붙)할때 이부분에 게시판 이름을 수정하면 된다
+					$allPages = $crossfitlibrary->pageCount(8); // 다음부터 수정(a.k.a. 복붙)할때 이부분에 게시판 이름을 수정하면 된다
 					$pagingStart = $page%5==0?$page-4:$page-($page%5)+1; ?>
 					<?=$page<=5?'':
 					'<li>

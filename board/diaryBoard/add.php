@@ -12,10 +12,10 @@
                 $board->addImage($file['saved'], $file['filename'], $id);
             }
         }
-        $msg['no'] = $id;
     } else if($_POST['requestType']==='comment'){
-        $board->submitComments($_SESSION['email'], $_POST['content'], $_POST['postNumber']);
+        $id = $board->submitComments($_SESSION['email'], $_POST['content'], $_POST['postNumber']);
     }
+    $msg['no'] = $id;
     header('Content-Type: application/json');
 	print(json_encode($msg));
 ?>

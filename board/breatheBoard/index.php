@@ -25,7 +25,7 @@ require_once(__DIR__.'/../../framework/framework.php');
 
 	<section class='wrapper content'>
 		<div class='container'>
-			<h1>브리드 이야기</h1>
+			<h3><i class="fa fa-angle-right"></i> 브리드 이야기</h3>
 			<div class='row'>
 			<?php
 				$posts= $breatheBoard->loadPostList($page, 8);
