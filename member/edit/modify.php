@@ -4,7 +4,7 @@
 	//클라이언트에서 양식 폼에 맞게 작성한 데이터를 받아 db에 등록된 회원인지의 여부를 살펴보고 그 결과에 따라 다른 메세지를 클리이언트로 보내주는것이 목적입니다.
 
 	require_once(__DIR__.'/../../framework/framework.php');
-
+  
 	//submit 버튼을 통해 클라이언트에서 데이터를 보내면 그 데이터를 받아서 처리합니다.
 	if(isset($_POST['nickname']) && isset($_POST['phone']) && isset($_POST['password'])){
 

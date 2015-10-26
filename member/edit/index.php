@@ -92,6 +92,7 @@ require_once(__DIR__.'/../../framework/framework.php');
 					<label for='닉네임' class='col-xs-2'>닉네임</label>
 					<div class='col-xs-9'>
 						<input type='text' class='form-control' id='nickname' placeholder='Input Nickname' value=<?=$memberInfo[2]?> name = "userNickName">
+						<div class='alert alert-danger' role='alert' id='nicknameAlert' hidden='true'>닉네임을 입력해주세요</div>
 					</div>
 				</div>
 				<br/>
@@ -99,6 +100,7 @@ require_once(__DIR__.'/../../framework/framework.php');
 					<label for='phone' class='col-xs-2'>전화번호</label>
 					<div class='col-xs-9'>
 						<input type='text' class='form-control' id='phone' placeholder='Input Phonenumber' value=<?=$memberInfo[3]?> name = "userPhone">
+						<div class='alert alert-danger' role='alert' id='phoneAlert' hidden='true'>전화번호를 입력해주세요</div>
 					</div>
 				</div>
 				<br/>
