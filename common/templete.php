@@ -6,6 +6,7 @@
 	<meta charset='utf-8'>
 	<title><?=$title?></title>
 	<meta name='viewport' content='width=device-width, initial-scale=1, maximum-scale=1'>
+	<link rel="shortcut icon" href="/resources/favicon.png" type="image/png">
 	<link rel='stylesheet' href='/common/css/bootstrap.min.css'>
 	<div id="fb-root"></div>
 	<?php
