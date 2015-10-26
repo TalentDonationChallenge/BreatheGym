@@ -17,6 +17,7 @@ require_once(__DIR__.'/../../framework/framework.php');
 		$diaryboard = new ImageBoard('diaryBoard');
 		$posting = $diaryboard->loadPost($_GET['no']);
 		$comments = $diaryboard->loadComments($_GET['no'], 'diaryboard');
+		$images = $diaryboard->loadImages($_GET['no']);
 	}
 		login();
 		navigation();
@@ -33,7 +34,7 @@ require_once(__DIR__.'/../../framework/framework.php');
 			<div class="container">
 			<h3><i class="fa fa-angle-right"></i> 사부님의 노트</h3>
 				<div class="panel panel-default mb mt">
-					<div class="panel-heading">
+					<div class="panel-heading"  no='<?=$_GET["no"]?>'>
 						<span class="pull-right hidden-phone time">
 							<?=$posting['writtenTime']?>
 						</span>
@@ -41,6 +42,12 @@ require_once(__DIR__.'/../../framework/framework.php');
 						<h2 class="panel-title"><?=htmlspecialchars($posting['title'])?></h2>
 					</div>
 					<div class="panel-body">
+						<p>
+							<?php foreach ($images as $image) {
+								$address = $image['fileName']?>
+							<img src='upload/files/<?=$address?>' alt="attach image"><br /><br />
+							<?php } ?>
+						</p>
 						<p>
 							<?=preg_match("/^ *$/", $posting['content'])?
 							"nbsp;":str_replace("\n", '<br />', htmlspecialchars($posting['content']));?>
@@ -51,7 +58,9 @@ require_once(__DIR__.'/../../framework/framework.php');
 						<span> &#124; 조회 <?=$posting['hits']?></span>
 						<span class="pull-right">
 						<span class="mouse-over">수정 </span>&#124;
-						<span class="mouse-over">신고(or 삭제)</span>
+						<?=Utility::isLoggedIn()&&($_SESSION['email']===$posting['email']||Utility::isManager())?
+						'<span class="mouse-over delete">삭제</span>':
+						'<span class="mouse-over report">신고</span>'?>
 						</span>
 					</div>
 					<div class="box-reply bg-color">
@@ -84,9 +93,9 @@ require_once(__DIR__.'/../../framework/framework.php');
 						</div>
 							<button type="button" class="btn btn-default btn-option mt">확인</button>
 					</div>
-					
+
 				</div>
-				
+
 				<div class="buttons mt">
 					<button class="btn btn-default" name="button">이전글</button>
 					<button class="btn btn-default" name="button">다음글</button>

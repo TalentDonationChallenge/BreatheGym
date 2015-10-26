@@ -29,7 +29,7 @@ $(document).ready(function () {
             }).done(function (msg) {
                 // console.log(msg);
                 unload = false;
-                // location.replace("index.php");
+                location.replace("index.php");
             });
         }
     });

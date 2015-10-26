@@ -18,7 +18,7 @@ require_once(__DIR__.'/../../framework/framework.php');
 		$freeboard->addHitCounter($_GET['no']); //조회수 ++
 		$posting = $freeboard->loadPost($_GET['no']);
 		$comments = $freeboard->loadComments($_GET['no'], 'freeBoard');
-		$images = $posting['picture']=='1'?$freeboard->loadImages($_GET['no']):false;
+		$images = $freeboard->loadImages($_GET['no']);
 	}
 	login();
 	navigation();
@@ -46,7 +46,7 @@ require_once(__DIR__.'/../../framework/framework.php');
 						<p>
 							<?php foreach ($images as $image) {
 								$address = $image['fileName']?>
-							<img src='upload/files/<?=$address?>' alt="attach image"><br /><br />
+								<img src='upload/files/<?=$address?>' alt="attach image"><br /><br />
 							<?php } ?>
 						</p>
 						<p>
@@ -59,7 +59,7 @@ require_once(__DIR__.'/../../framework/framework.php');
 							<span> &#124; 조회 <?=$posting['hits']?></span>
 							<span class="pull-right">
 							<span class="mouse-over edit">수정</span> &#124;
-							<?=($_SESSION['email']===$posting['email'])||Utility::isManager()?
+							<?=Utility::isLoggedIn()&&($_SESSION['email']===$posting['email']||Utility::isManager())?
 							'<span class="mouse-over delete">삭제</span>':
 							'<span class="mouse-over report">신고</span>'?>
 							</span>

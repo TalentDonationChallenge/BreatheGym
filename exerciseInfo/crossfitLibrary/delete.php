@@ -1,5 +1,5 @@
 <?php require_once(__DIR__.'/../../framework/framework.php');
-    $board = new ImageBoard('breatheBoard');
+    $board = new ImageBoard('crossfitLib');
     //세션으로 권한 체크 한번 더 해야해요!
     if ($_POST['requestType']==='posting') {
         $board->deletePost($_POST['no']);

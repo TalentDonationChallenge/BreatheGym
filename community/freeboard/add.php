@@ -1,13 +1,4 @@
 <?php require_once(__DIR__.'/../../framework/framework.php');
-    // print_r($_POST);
-    // $msg = array(
-    //     'status' => 'ok'
-    // );
-    // try{
-    //
-    // } catch(Exception $ex){
-    //
-    // }
     $board = new ImageBoard('freeboard');
     if ($_POST['requestType']==='posting') {
         if(!isset($_POST['files'])) {

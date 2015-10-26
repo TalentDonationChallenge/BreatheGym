@@ -239,7 +239,7 @@ create table pictures(
 	tableName enum('breatheBoard', 'freeBoard', 'diaryBoard', 'consulting',
 		'exerciseEpilogue', 'boxingLib', 'boxingLec', 'sparring', 'crossfitLec', 'crossfitLib') not null,
 	postNumber int(6) not null,
-	fileName varchar(50) not null,
+	fileName varchar(100) not null,
 	originFileName varchar(50) not null
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1;
 
