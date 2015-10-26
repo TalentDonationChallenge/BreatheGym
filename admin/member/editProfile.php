@@ -47,7 +47,7 @@
 			<h3><i class="fa fa-angle-right"></i> 회원 프로필</h3>
 			<div class="col-lg-12 mt">
                 <div class="content-panel mb">
-                    <img class="profile-pic" src="." alt=""/>
+                    <img class="profile-pic" src="/resources/default.png" alt="profile picture"/>
 					<div class="profile-info">
 						<table class="table">
 							<tbody>
@@ -102,7 +102,7 @@
 										</label>
 										<label class="checkbox-inline">
 											<input type="checkbox" id="inlineCheckbox1" value="option1"> 여
-										</label>	
+										</label>
 										</div>
 										</td>
 										<td class="hidden-xs">신장</td>
