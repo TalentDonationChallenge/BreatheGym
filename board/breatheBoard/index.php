@@ -28,7 +28,7 @@ require_once(__DIR__.'/../../framework/framework.php');
 			<h1>브리드 이야기</h1>
 			<div class='row'>
 			<?php
-				$posts= $breatheBoard->loadPostList($page);
+				$posts= $breatheBoard->loadPostList($page, 8);
 				if (empty($posts)) { ?>
 					<div class='col-md-12 col-xs-12'>
 						포스트가 없습니다.
@@ -123,7 +123,7 @@ require_once(__DIR__.'/../../framework/framework.php');
 			<nav>
 				<ul class="pagination">
 				<?php
-				$allPages = $breatheBoard->pageCount(); // 다음부터 수정(a.k.a. 복붙)할때 이부분에 게시판 이름을 수정하면 된다
+				$allPages = $breatheBoard->pageCount(8); // 다음부터 수정(a.k.a. 복붙)할때 이부분에 게시판 이름을 수정하면 된다
 				$pagingStart = $page%5==0?$page-4:$page-($page%5)+1; ?>
 				<?=$page<=5?'':
 				'<li>

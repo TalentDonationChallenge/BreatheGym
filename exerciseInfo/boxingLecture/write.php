@@ -30,6 +30,14 @@ require_once(__DIR__.'/../../framework/framework.php');
 					</div>
 				</div>
 				<textarea name="content" class="write form-control" placeholder="내용을 입력하세요."></textarea>
+				<div class="form-horizontal">
+					<div class="form-group mt">
+						<label for="youtube" class="col-sm-1 control-label">유튜브</label>
+						<div class="col-sm-11">
+							<input id="youtube" type="text" name="youtube" class="form-control" placeholder="http://">
+						</div>
+					</div>
+				</div>
 				<form id="fileupload" method="POST" enctype="multipart/form-data">
 					<!-- Redirect browsers with JavaScript disabled to the origin page -->
 					<noscript><input type="hidden" name="redirect" value="/community/freeboard/write.php"></noscript>

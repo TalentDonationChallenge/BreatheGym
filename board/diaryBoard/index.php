@@ -45,7 +45,7 @@
 						</thead>
 						<tbody>
 							<?php
-								$posts = $diaryboard->loadPostList($page);
+								$posts = $diaryboard->loadPostList($page, 15);
 								if (empty($posts)) { ?>
 									<tr>
 										<td colspan="5">게시글이 없습니다</td>
@@ -70,7 +70,7 @@
 				<nav>
 					<ul class="pagination">
 					<?php
-					$allPages = $diaryboard->pageCount(); // 다음부터 수정(a.k.a. 복붙)할때 이부분에 게시판 이름을 수정하면 된다
+					$allPages = $diaryboard->pageCount(15); // 다음부터 수정(a.k.a. 복붙)할때 이부분에 게시판 이름을 수정하면 된다
 					$pagingStart = $page%5==0?$page-4:$page-($page%5)+1; ?>
 					<?=$page<=5?'':
 					'<li>
