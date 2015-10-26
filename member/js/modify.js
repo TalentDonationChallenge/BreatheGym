@@ -39,16 +39,25 @@ $('document').ready(function(){
 
 
   $('#modify').click(function(){
-		$.ajax({
-				url: 'signin.php',
-				method: 'post',
-				data : {
-						requestType: 'modify',
-						content : $('.write-comm textarea').val(),
-						postNumber : $('.panel-heading').attr('no')
-				}
-		}).done(function () {
-				location.reload();
+			var phone = $('#phone').val();
+			var password = $('#password').val();
+			var nickname = $('#nickname').val();
+			if(passwordTest(password) && nickname != null && phone != null){
+				$.ajax({
+						url: '../edit/modify.php',
+						method: 'post',
+						data : {
+								requestType: 'modify',
+								password : $('#password').val(),
+								nickname : $('#nickname').val(),
+								phone : $('#phone').val()
+						}
+				}).done(function () {
+						location.reload();
+			} else {
+				alert('Check your form!');
+			}
 		});
+
   });
 });
