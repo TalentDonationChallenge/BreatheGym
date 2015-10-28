@@ -130,6 +130,16 @@ require_once(__DIR__.'/board.php');
             $row = $stmt->fetch();
             return $row['url'];
         }
+        public function deleteVideo($no) {
+            $table = parent::getTable();
+            $pdo = Database::getInstance();
+            $stmt = $pdo->prepare("DELETE FROM videos
+                WHERE tableName = :tableName AND postNumber = :postNumber");
+            $stmt->execute(array(
+                ":tableName"=>$table,
+                ":postNumber"=>$no
+            ));
+        }
     }
 
 ?>

@@ -6,10 +6,17 @@
             $id = $board->insertPost($_SESSION['email'], $_POST['title'], $_POST['content']);
         } else {
             //이미지가 있을 때
-            $id = $board->insertImagePost($_SESSION['email'], $_POST['title'], $_POST['content']);
-            $files = $_POST['files'];
-            foreach ($files as $file) {
-                $board->addImage($file['saved'], $file['filename'], $id);
+            $imageFlag = isset($_POST['files'])?1:0;
+            $videoFlag = !empty($_POST['youtube'])?1:0;
+            $id = $board->insertImagePost($_SESSION['email'], $_POST['title'], $_POST['content'], $imageFlag, $videoFlag);
+            if($imageFlag) {
+                $files = $_POST['files'];
+                foreach ($files as $file) {
+                    $board->addImage($file['saved'], $file['filename'], $id);
+                }
+            }
+            if($videoFlag) {
+                $board->insertVideo($_POST['youtube'], $id);
             }
         }
     } else if($_POST['requestType']==='comment'){

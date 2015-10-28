@@ -2,12 +2,11 @@
     $board = new ImageBoard('boxingLib');
     if ($_POST['requestType']==='posting') {
         if(!isset($_POST['files'])&&!isset($_POST['youtube'])) {
-            //이미지가 없을 때
+            //이미지와 동영상이 없을 때
             $id = $board->insertPost($_SESSION['email'], $_POST['title'], $_POST['content']);
         } else {
-            //이미지가 있을 때
             $imageFlag = isset($_POST['files'])?1:0;
-            $videoFlag = isset($_POST['youtube'])?1:0;
+            $videoFlag = !empty($_POST['youtube'])?1:0;
             $id = $board->insertImagePost($_SESSION['email'], $_POST['title'], $_POST['content'], $imageFlag, $videoFlag);
             if($imageFlag) {
                 $files = $_POST['files'];

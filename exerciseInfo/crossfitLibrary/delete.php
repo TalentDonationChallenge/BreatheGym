@@ -4,6 +4,7 @@
     if ($_POST['requestType']==='posting') {
         $board->deletePost($_POST['no']);
         $board->deleteImages($_POST['no']);
+        $board->deleteVideo($_POST['no']);
     } else if($_POST['requestType']==='comment'){
         $board->deleteComments($_POST['no']);
     }
