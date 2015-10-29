@@ -17,6 +17,7 @@ require_once(__DIR__.'/../../framework/framework.php');
 		$sparring = new Board('sparring');
 		$posting = $sparring->loadPost($_GET['no']);
 		$comments = $sparring->loadComments($_GET['no'], 'sparring');
+		$video = $boxinglibrary->loadVideo($_GET["no"]);
 	}
 		login();
 		navigation();
@@ -41,6 +42,12 @@ require_once(__DIR__.'/../../framework/framework.php');
 						<h2 class="panel-title"><?=htmlspecialchars($posting['title'])?></h2>
 					</div>
 					<div class="panel-body">
+						<?php if(!empty($video)) { ?>
+							<div class="embed-responsive embed-responsive-16by9">
+								<iframe class="embed-responsive-item" src='<?=$video?>'></iframe>
+							</div>
+							<br /><br />
+						<?php } ?>
 						<p>
 							<?=preg_match("/^ *$/", $posting['content'])?
 							"nbsp;":str_replace("\n", '<br />', htmlspecialchars($posting['content']));?>

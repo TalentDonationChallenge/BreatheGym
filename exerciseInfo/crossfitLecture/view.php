@@ -19,6 +19,7 @@ require_once(__DIR__.'/../../framework/framework.php');
 		$posting = $crossfitlecture->loadPost($_GET['no']);
 		$comments = $crossfitlecture->loadComments($_GET['no'], 'crossfitLec');
 		$images = $crossfitlecture->loadImages($_GET['no']);
+		$video = $boxinglibrary->loadVideo($_GET["no"]);
 	}
 		login();
 		navigation();
@@ -43,9 +44,9 @@ require_once(__DIR__.'/../../framework/framework.php');
 						<h2 class="panel-title"><?=htmlspecialchars($posting['title'])?></h2>
 					</div>
 					<div class="panel-body">
-						<?php if($posting['video'] == 1) { ?>
+						<?php if(!empty($video)) { ?>
 							<div class="embed-responsive embed-responsive-16by9">
-								<iframe class="embed-responsive-item" src='<?=$boxinglibrary->loadVideo($_GET["no"])?>'></iframe>
+								<iframe class="embed-responsive-item" src='<?=$video?>'></iframe>
 							</div>
 							<br /><br />
 						<?php } ?>

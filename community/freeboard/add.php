@@ -6,7 +6,7 @@
             $id = $board->insertPost($_SESSION['email'], $_POST['title'], $_POST['content']);
         } else {
             //이미지가 있을 때
-            $id = $board->insertImagePost($_SESSION['email'], $_POST['title'], $_POST['content']);
+            $id = $board->insertPost($_SESSION['email'], $_POST['title'], $_POST['content']);
             $files = $_POST['files'];
             foreach ($files as $file) {
                 $board->addImage($file['saved'], $file['filename'], $id);

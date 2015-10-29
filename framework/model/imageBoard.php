@@ -8,25 +8,10 @@ require_once(__DIR__.'/board.php');
         function __construct($type) {
             parent::setTable($type);
         }
-        public function insertImagePost($email, $title, $content, $image, $video) {
-			$table = $this->table;
-			$pdo = Database::getInstance();
-			$sql = "INSERT INTO {$table} (email, title, content, writtenTime, picture, video)
-				VALUES (:email, :title, :content, NOW(), :picture, :video)";
-			$stmt = $pdo->prepare($sql);
-			$stmt->execute(array(
-				':email'=>$email,
-				':title'=>$title,
-				':content'=>$content,
-                ':picture'=>$image,
-                ':video'=>$video
-			));
-			return $pdo->lastInsertId();
-		}
         public function loadPost($no) {
 			$table = $this->table;
 			$pdo = Database::getInstance();
-			$sql = "SELECT no, member.email as email, title, nickname, content, writtenTime, hits, video
+			$sql = "SELECT no, member.email as email, title, nickname, content, writtenTime, hits
 			FROM {$table} JOIN member ON {$table}.email = member.email
 			WHERE no =:no";
 			$stmt = $pdo->prepare($sql);
@@ -40,22 +25,23 @@ require_once(__DIR__.'/board.php');
 					'content'=>$row['content'],
 					'nickname' => $row['nickname'],
 					'writtenTime' => date('Y/m/d H:i:s',strtotime($row['writtenTime'])),
-					'hits' => $row['hits'],
-                    'video' => $row['video']
+					'hits' => $row['hits']
 				);
 				return $post;
 			} else{
 				return false;
 			}
 		}
-        public function addImage($fileName, $originFileName, $postNumber){
+        public function addImage($fileName, $originFileName, $no){
             $table = parent::getTable();
             $pdo = Database::getInstance();
+            $stmt = $pdo->prepare("UPDATE {$table} SET picture=1 WHERE no = :postNumber");
+            $stmt->execute(array(':postNumber'=>$no));
             $stmt = $pdo->prepare('INSERT INTO pictures(tableName, postNumber, fileName, originFileName)
             VALUES (:tableName, :postNumber, :fileName, :originFileName)');
             $stmt->execute(array(
                 ':tableName'=>$table,
-                ':postNumber'=>$postNumber,
+                ':postNumber'=>$no,
                 ':fileName'=>$fileName,
                 ':originFileName'=>$originFileName
             ));
@@ -109,6 +95,8 @@ require_once(__DIR__.'/board.php');
         public function insertVideo($url, $no) {
             $table = parent::getTable();
             $pdo = Database::getInstance();
+            $stmt = $pdo->prepare("UPDATE {$table} SET video=1 WHERE no = :postNumber");
+            $stmt->execute(array(':postNumber'=>$no));
             $stmt = $pdo->prepare("INSERT INTO videos (tableName, postNumber, url)
             VALUES (:tableName, :postNumber, :url)");
             $stmt->execute(array(
