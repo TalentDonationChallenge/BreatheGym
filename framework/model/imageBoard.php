@@ -116,7 +116,15 @@ require_once(__DIR__.'/board.php');
                 ":postNumber"=>$no
             ));
             $row = $stmt->fetch();
-            return $row['url'];
+            if(!empty($row)){
+                $video_id = substr(strrchr($row['url'], "/"), 1);
+                $video = array(
+                    'url' => $row['url'],
+                    'thumbnail' => 'http://img.youtube.com/vi/'.$video_id.'/0.jpg'
+                );
+                return $video;
+            }
+            return $row;
         }
         public function deleteVideo($no) {
             $table = parent::getTable();

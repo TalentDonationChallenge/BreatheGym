@@ -14,3 +14,9 @@
 .ml {
 	margin-left: 15px;
 }
+.panel-footer>span:first-child {
+    font-weight: bold;
+}
+a:hover {
+    text-decoration: none!important;
+}
