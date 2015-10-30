@@ -30,12 +30,12 @@ class AdminInformation {
 
     public static function endedMembers() { // 1주일 동안 만료될 사람들!
         $pdo = Database::getInstance();
-        $oneWeekAgo = strtotime('Y-m-d', "-1 week");
+        $oneWeekAgo = date('Y-m-d', strtotime("-1 week"));
         $today = getdate();
 
         $stmt = $pdo->prepare("SELECT name, registerDate, duration, phone FROM gymMember WHERE active = 1");
         $stmt->execute();
-        $rows = $stmt->fetch();
+        $rows = $stmt->fetchAll();
 
         $memberArray = array();
         foreach ($rows as $row) {
@@ -86,18 +86,22 @@ class AdminInformation {
     public static function attendTimeStatistics() { // 시간대별 출석 회원수 (어제)
         // 10시부터 2시, 2시부터 6시, 6시부터 11시로 나눠서 그룹바이 이용해서 리턴좀
         $pdo = Database::getInstance();
-        $yesterday = date('Y-m-d', strtotime('-1 day'));
-        $today = getdate();
-        $morningTime = date_time_set($yesterDay, 10, 00);
-        $afternoonTime = date_time_set($yesterDay, 14, 00);
-        $eveningTime = date_time_set($yesterDay, 18, 00);
+        $yesterDay = new DateTime(date('Y-m-d', strtotime('-1 day')));
+        $yesterDay = $yesterDay->format('Y-m-d');
+
+        $today = new DateTime();
+        $today = $today->format('Y-m-d');
+
+        $morningTime = $yesterDay." 10:00:00";
+        $afternoonTime = $yesterDay." 14:00:00";
+        $eveningTime = $yesterDay." 18:00:00";
 
         $morningCounter = 0;
         $afternoonCounter = 0;
         $eveningCounter = 0;
 
         $stmt = $pdo->prepare("SELECT date FROM attendance WHERE date >:yesterday AND date < :today");
-        $stmt->execute(array(':yesterday'=>$yesterday,
+        $stmt->execute(array(':yesterday'=>$yesterDay,
             ':today'=>$today));
         $rows = $stmt->fetchAll();
 
@@ -136,7 +140,7 @@ class AdminInformation {
         $oneMonthAgoCounter = 0;
 
         foreach($rows as $row) {
-            $registerDate = date('Y-m-d', strtotime($row['registerDate']));
+            $registerDate = new DateTime(date('Y-m-d', strtotime($row['registerDate'])));
             $duration = $row['duration'];
             $expireDate = date_modify($registerDate, "$duration months");
             if ($expireDate > $oneMonthAgo) {
