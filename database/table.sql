@@ -43,7 +43,7 @@ create table member(
 	password varchar(50) not null default '',
 	name varchar(30) not null default '',
 	phone varchar(12) not null default '00000000000',
-	barcode varchar(30) null default '',
+	barcode varchar(30),
 	birthday date not null default '2000-01-01',
 	facebook int(1) not null default 0 check (facebook = 0 or facebook = 1),
 	sex int(1) not null default 0 check (sex = 0 or sex = 1),
