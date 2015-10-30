@@ -17,7 +17,7 @@ require_once(__DIR__.'/../../framework/framework.php');
 		$sparring = new Board('sparring');
 		$posting = $sparring->loadPost($_GET['no']);
 		$comments = $sparring->loadComments($_GET['no'], 'sparring');
-		$video = $boxinglibrary->loadVideo($_GET["no"]);
+		$video = $sparring->loadVideo($_GET["no"]);
 	}
 		login();
 		navigation();

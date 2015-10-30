@@ -19,7 +19,7 @@ require_once(__DIR__.'/../../framework/framework.php');
 		$posting = $boxinglecture->loadPost($_GET['no']);
 		$comments = $boxinglecture->loadComments($_GET['no'], 'boxingLec');
 		$images = $boxinglecture->loadImages($_GET['no']);
-		$video = $boxinglibrary->loadVideo($_GET["no"]);
+		$video = $boxinglecture->loadVideo($_GET["no"]);
 	}
 		login();
 		navigation();

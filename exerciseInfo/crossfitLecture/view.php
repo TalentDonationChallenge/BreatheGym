@@ -19,7 +19,7 @@ require_once(__DIR__.'/../../framework/framework.php');
 		$posting = $crossfitlecture->loadPost($_GET['no']);
 		$comments = $crossfitlecture->loadComments($_GET['no'], 'crossfitLec');
 		$images = $crossfitlecture->loadImages($_GET['no']);
-		$video = $boxinglibrary->loadVideo($_GET["no"]);
+		$video = $crossfitlecture->loadVideo($_GET["no"]);
 	}
 		login();
 		navigation();
