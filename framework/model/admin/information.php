@@ -76,10 +76,15 @@ class AdminInformation {
     public static function dailyAttendMemberCount() { // 이부분 코딩점
         // 지난 일주일간 출석 회원수 count 이건 쉽지
         $pdo = Database::getInstance();
-        $sevenDaysAgo = date('Y-m-d', strtotime('-5 day')); // 2015-10-05
-        $stmt = $pdo->prepare("SELECT count(barcode) as count FROM attendance WHERE date > :day");
-        $stmt->execute(array(':day'=>$sevenDaysAgo));
-        $row = $stmt->fetch();
+        $returnArray = array();
+
+        for ($i = 7; $i > 0; $i--) {
+            $day = date('Y-m-d', strtotime('-$i day'));
+            $stmt = $pdo->prepare("SELECT count(barcode) as count FROM attendance WHERE date > :day");
+            $stmt->execute(array(':day'=>$day));
+            $row = $stmt->fetch();
+            array_push($returnArray, $row['count']);
+        }
 
         return $row['count']; // 두번 출석하면 두번온걸로 되긴 하지만 조회수 조사하고 그런거 보면 여러번 방문해도 다 체크 되니까 이렇게 짜놓음
     }
