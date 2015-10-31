@@ -8,23 +8,10 @@ require_once(__DIR__.'/board.php');
         function __construct($type) {
             parent::setTable($type);
         }
-        public function insertImagePost($email, $title, $content) {
-			$table = $this->table;
-			$pdo = Database::getInstance();
-			$sql = "INSERT INTO {$table} (email, title, content, writtenTime, picture)
-				VALUES (:email, :title, :content, NOW(), 1)";
-			$stmt = $pdo->prepare($sql);
-			$stmt->execute(array(
-				':email'=>$email,
-				':title'=>$title,
-				':content'=>$content
-			));
-			return $pdo->lastInsertId();
-		}
         public function loadPost($no) {
 			$table = $this->table;
 			$pdo = Database::getInstance();
-			$sql = "SELECT no, member.email as email, title, nickname, content, writtenTime, hits, picture
+			$sql = "SELECT no, member.email as email, title, nickname, content, writtenTime, hits
 			FROM {$table} JOIN member ON {$table}.email = member.email
 			WHERE no =:no";
 			$stmt = $pdo->prepare($sql);
@@ -38,22 +25,23 @@ require_once(__DIR__.'/board.php');
 					'content'=>$row['content'],
 					'nickname' => $row['nickname'],
 					'writtenTime' => date('Y/m/d H:i:s',strtotime($row['writtenTime'])),
-					'hits' => $row['hits'],
-                    'picture' => $row['picture']
+					'hits' => $row['hits']
 				);
 				return $post;
 			} else{
 				return false;
 			}
 		}
-        public function addImage($fileName, $originFileName, $postNumber){
+        public function addImage($fileName, $originFileName, $no){
             $table = parent::getTable();
             $pdo = Database::getInstance();
+            $stmt = $pdo->prepare("UPDATE {$table} SET picture=1 WHERE no = :postNumber");
+            $stmt->execute(array(':postNumber'=>$no));
             $stmt = $pdo->prepare('INSERT INTO pictures(tableName, postNumber, fileName, originFileName)
             VALUES (:tableName, :postNumber, :fileName, :originFileName)');
             $stmt->execute(array(
                 ':tableName'=>$table,
-                ':postNumber'=>$postNumber,
+                ':postNumber'=>$no,
                 ':fileName'=>$fileName,
                 ':originFileName'=>$originFileName
             ));
@@ -104,7 +92,50 @@ require_once(__DIR__.'/board.php');
                 ':no' => $no
             ));
         }
-
+        public function insertVideo($url, $no) {
+            $table = parent::getTable();
+            $pdo = Database::getInstance();
+            $stmt = $pdo->prepare("UPDATE {$table} SET video=1 WHERE no = :postNumber");
+            $stmt->execute(array(':postNumber'=>$no));
+            $stmt = $pdo->prepare("INSERT INTO videos (tableName, postNumber, url)
+            VALUES (:tableName, :postNumber, :url)");
+            $stmt->execute(array(
+                ':tableName'=>$table,
+                ':postNumber'=>$no,
+                ':url'=>$url
+            ));
+            return $pdo->lastInsertId();
+        }
+        public function loadVideo($no) {
+            $table = parent::getTable();
+            $pdo = Database::getInstance();
+            $stmt = $pdo->prepare("SELECT url FROM videos
+                WHERE tableName = :tableName AND postNumber = :postNumber");
+            $stmt->execute(array(
+                ":tableName"=>$table,
+                ":postNumber"=>$no
+            ));
+            $row = $stmt->fetch();
+            if(!empty($row)){
+                $video_id = substr(strrchr($row['url'], "/"), 1);
+                $video = array(
+                    'url' => $row['url'],
+                    'thumbnail' => 'http://img.youtube.com/vi/'.$video_id.'/0.jpg'
+                );
+                return $video;
+            }
+            return $row;
+        }
+        public function deleteVideo($no) {
+            $table = parent::getTable();
+            $pdo = Database::getInstance();
+            $stmt = $pdo->prepare("DELETE FROM videos
+                WHERE tableName = :tableName AND postNumber = :postNumber");
+            $stmt->execute(array(
+                ":tableName"=>$table,
+                ":postNumber"=>$no
+            ));
+        }
     }
 
 ?>

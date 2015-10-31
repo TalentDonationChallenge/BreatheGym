@@ -24,12 +24,13 @@ $(document).ready(function () {
                     requestType: 'posting',
                     title: $("#title").val(),
                     content : $("textarea").val(),
-                    files : files
+                    files : files,
+                    youtube : $("#youtube").val()
                 }
             }).done(function (msg) {
                 console.log(msg);
                 unload = false;
-                // location.replace("index.php");
+                location.replace("index.php");
             });
         }
     });

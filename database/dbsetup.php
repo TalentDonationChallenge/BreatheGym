@@ -63,22 +63,22 @@
 
 	// 출석도 만들어봅시다 오늘부터 5일간 모두가 출석해버림 데헷
 
-	for ($i=0; $i < 5; $i++) {
-		$barcodes = array();
-		foreach ($members as $member) {
-			array_push($barcodes, $member['barcode']);
-		}
-		foreach ($barcodes as $barcode) {
-			$date = date('Y-m-d', strtotime("-".$i."day"));
-			$time = mt_rand(0,23).":".mt_rand(0,59).":".mt_rand(0,59);
-			$stmt = $pdo->prepare("INSERT INTO attendance(barcode, date)
-			VALUES (:barcode, :date)");
-			$stmt->execute(array(
-				':barcode'=>$barcode,
-				':date'=>$date." ".$time
-			));
-		}
-	}
+	// for ($i=0; $i < 5; $i++) {
+	// 	$barcodes = array();
+	// 	foreach ($members as $member) {
+	// 		array_push($barcodes, $member['barcode']);
+	// 	}
+	// 	foreach ($barcodes as $barcode) {
+	// 		$date = date('Y-m-d', strtotime("-".$i."day"));
+	// 		$time = mt_rand(0,23).":".mt_rand(0,59).":".mt_rand(0,59);
+	// 		$stmt = $pdo->prepare("INSERT INTO attendance(barcode, date)
+	// 		VALUES (:barcode, :date)");
+	// 		$stmt->execute(array(
+	// 			':barcode'=>$barcode,
+	// 			':date'=>$date." ".$time
+	// 		));
+	// 	}
+	// }
 		// 운동기록 임시로 테이블에 저장해보
 	//  $exerciseRecords= json_decode(file_get_contents("exerciseRecord.json"), true);
 	 //

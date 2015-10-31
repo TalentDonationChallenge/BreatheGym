@@ -112,7 +112,7 @@
 						</a>
 						<ul class='dropdown-menu'>
 						<li><a href='/community/freeboard/index.php'>자유게시판</a></li>
-						<?php if (Utility::isLoggedIn()) {?>
+						<?php if (Utility::isLoggedIn()&&!Utility::isManager()) {?>
 						<li><a href='/community/consulting/index.php'>상담</a></li>
 						<?php } ?>
 						</ul>

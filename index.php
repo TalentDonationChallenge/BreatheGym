@@ -127,7 +127,7 @@
 		<div class='container mediaBox'>
 			<?php
 				$breatheBoard=new ImageBoard('breatheBoard');
-				$posts = $breatheBoard->loadPostList(1);
+				$posts = $breatheBoard->loadPostList(1,5);
 				if (empty($posts)) { ?>
 					<div class='media'>
 						<div class='media-body'>

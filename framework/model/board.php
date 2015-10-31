@@ -35,15 +35,16 @@
 			$stmt->execute(array(':no' => $no));
 		}
 
-		public function loadPostList($page) {
+		public function loadPostList($page, $count) {
 			$table = $this->table;
 			$pdo = Database::getInstance();
 			$sql = "SELECT no, title, nickname, content, writtenTime, hits
 			FROM {$table} JOIN member ON {$table}.email = member.email
-			ORDER BY no DESC LIMIT 15 OFFSET :offset";
+			ORDER BY no DESC LIMIT :count OFFSET :offset";
 			$stmt = $pdo->prepare($sql);
-			$offset = ($page-1)*15;
+			$offset = ($page-1)*$count;
 			$stmt->bindParam(":offset", $offset , PDO::PARAM_INT);
+			$stmt->bindParam(":count", $count , PDO::PARAM_INT);
 			$stmt->execute();
 			$rows = $stmt->fetchAll();
 
@@ -101,12 +102,12 @@
 			return $pdo->lastInsertId();
 		}
 
-		public function pageCount() { //총 페이지 갯수 구하기
+		public function pageCount($count) { //총 페이지 갯수 구하기
 			$table = $this->table;
 			$pdo = Database::getInstance();
-			$sql = "SELECT count(no)/15 as pages FROM {$table}";
+			$sql = "SELECT count(no)/:count as pages FROM {$table}";
 			$stmt = $pdo->prepare($sql);
-			$stmt->execute();
+			$stmt->execute(array(':count'=>$count));
 			$row = $stmt->fetch();
 			return ceil($row['pages']);
 		}

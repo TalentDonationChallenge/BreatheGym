@@ -7,7 +7,7 @@ require_once(__DIR__.'/board.php');
         function __construct() {
             parent::setTable('consulting');
         }
-        public function loadPostList($page) {
+        public function loadConsultingList($page) {
 			$pdo = Database::getInstance();
 			$sql = "SELECT no, title, nickname, writtenTime
 			FROM consulting NATURAL JOIN member

@@ -18,6 +18,7 @@ drop table if exists crossfitLib;
 drop table if exists crossfitLec;
 drop table if exists comments;
 drop table if exists pictures;
+drop table if exists videos;
 drop table if exists member;
 drop table if exists gymMember;
 drop table if exists visitRecord;
@@ -42,7 +43,7 @@ create table member(
 	password varchar(50) not null default '',
 	name varchar(30) not null default '',
 	phone varchar(12) not null default '00000000000',
-	barcode varchar(30) null default '',
+	barcode varchar(30),
 	birthday date not null default '2000-01-01',
 	facebook int(1) not null default 0 check (facebook = 0 or facebook = 1),
 	sex int(1) not null default 0 check (sex = 0 or sex = 1),
@@ -140,6 +141,7 @@ create table boxingLib(
 	writtenTime datetime not null,
 	hits int(6) not null default 0,
 	picture tinyint not null default 0,
+	video tinyint not null default 0,
 	foreign key (email) references member(email)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1;
 
@@ -152,6 +154,7 @@ create table boxingLec(
 	writtenTime datetime not null,
 	hits int(6) not null default 0,
 	picture tinyint not null default 0,
+	video tinyint not null default 0,
 	foreign key (email) references member(email)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1;
 
@@ -163,7 +166,7 @@ create table sparring(
 	content text not null,
 	writtenTime datetime not null,
 	hits int(6) not null default 0,
-	video varchar(50) not null,
+	video tinyint not null default 1, -- 스파링 영상 게시판에 스파링 영상안올리면 이상하니까
 	foreign key (email) references member(email)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1;
 
@@ -176,6 +179,7 @@ create table crossfitLib(
 	writtenTime datetime not null,
 	hits int(6) not null default 0,
 	picture tinyint not null default 0,
+	video tinyint not null default 0,
 	foreign key (email) references member(email)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1;
 
@@ -188,6 +192,7 @@ create table crossfitLec(
 	writtenTime datetime not null,
 	hits int(6) not null default 0,
 	picture tinyint not null default 0,
+	video tinyint not null default 0,
 	foreign key (email) references member(email)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1;
 
@@ -239,8 +244,15 @@ create table pictures(
 	tableName enum('breatheBoard', 'freeBoard', 'diaryBoard', 'consulting',
 		'exerciseEpilogue', 'boxingLib', 'boxingLec', 'sparring', 'crossfitLec', 'crossfitLib') not null,
 	postNumber int(6) not null,
-	fileName varchar(50) not null,
+	fileName varchar(100) not null,
 	originFileName varchar(50) not null
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1;
+
+create table videos(
+	no int(6) not null primary key AUTO_INCREMENT,
+	tableName enum('boxingLib', 'boxingLec', 'sparring', 'crossfitLec', 'crossfitLib') not null,
+	postNumber int(6) not null,
+	url varchar(100) not null
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1;
 
 create table visitRecord(

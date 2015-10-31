@@ -29,7 +29,7 @@ $(document).ready(function () {
             }).done(function (msg) {
                 // console.log(msg);
                 unload = false;
-                // location.replace("index.php");
+                location.replace("index.php");
             });
         }
     });
@@ -55,7 +55,8 @@ $(document).ready(function () {
                 content : $('.write-comm textarea').val(),
                 postNumber : $('.panel-heading').attr('no')
             }
-        }).done(function () {
+        }).done(function (msg) {
+            console.log(msg);
             location.reload();
         });
     });

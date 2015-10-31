@@ -20,12 +20,12 @@
 	<?php
 	login();
 	navigation();
-	$freeboard=new Consulting();
+	$consulting=new Consulting();
 	$page = isset($_GET['page'])?$_GET['page']:1;
 	?>
 
 	<section id="main-content">
-		<section class="wrapper">	
+		<section class="wrapper">
 			<!-- <div class="col-lg-12 mt"> -->
 
 			<div class="container">
@@ -56,7 +56,7 @@
 						</thead>
 						<tbody>
 							<?php
-							$posts = $freeboard->loadPostList($page);
+							$posts = $consulting->loadConsultingList($page);
 							foreach($posts as $post) { ?>
 							<tr>
 								<td><?=$post['no']?></td>
@@ -73,7 +73,7 @@
 				<nav>
 					<ul class="pagination">
 						<?php
-					$allPages = $freeboard->pageCount(); // 다음부터 수정(a.k.a. 복붙)할때 이부분에 게시판 이름을 수정하면 된다
+					$allPages = $consulting->pageCount(15); // 다음부터 수정(a.k.a. 복붙)할때 이부분에 게시판 이름을 수정하면 된다
 					$pagingStart = $page%5==0?$page-4:$page-($page%5)+1; ?>
 					<?=$page<=5?'':
 					'<li>

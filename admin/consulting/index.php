@@ -39,7 +39,7 @@
 						</thead>
 						<tbody>
 						<?php
-						$posts = $consulting->loadPostList($page);
+						$posts = $consulting->loadConsultingList($page);
 						foreach ($posts as $post) { ?>
 						<tr>
 							<td><?=$post['no']?></td>
@@ -56,7 +56,7 @@
 				<nav>
 					<ul class="pagination">
 					<?php
-					$allPages = $consulting->pageCount();
+					$allPages = $consulting->pageCount(15);
 					$pagingStart = $page%5==0?$page-4:$page-($page%5)+1; ?>
 					<?=$page<=5?'':
 					'<li>

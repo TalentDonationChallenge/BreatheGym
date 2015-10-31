@@ -32,44 +32,43 @@
 			<!-- <div class="col-lg-12 mt"> -->
 			<div class="container">
 			<h3><i class="fa fa-angle-right"></i> 복싱자료실</h3>
-				<div class="panel panel-default mt">
-					<table class="table table-striped">
-						<thead>
-							<tr>
-								<th class="hidden-phone">번호</th>
-								<th>제목</th>
-								<th>글쓴이</th>
-								<th class="hidden-phone">작성일</th>
-								<th>조회</th>
-							</tr>
-						</thead>
-						<tbody>
-							<?php
-								$posts = $boxinglibrary->loadPostList($page);
-								if (empty($posts)) { ?>
-									<tr>
-										<td colspan="5">게시글이 없습니다</td>
-									</tr>
-								<?php } else {
-								foreach($posts as $post) { ?>
-									<tr>
-										<td><?=$post['no']?></td>
-										<td><a href="view.php?page=<?=$page?>&amp;no=<?=$post['no']?>">
-										<?=$post['title']?></a> (<?=$boxinglibrary->countComments($post['no'],'boxingLib')?>)
-										</td>
-										<td><?=$post['nickname']?></td>
-										<td><?=$post['writtenTime']?></td>
-										<td><?=$post['hits']?></td>
-									</tr>
-									<?php }?>
-							<?php }?>
-						</tbody>
-					</table>
-				</div>
+			<div class="row">
+			<?php
+				$posts = $boxinglibrary->loadPostList($page, 8);
+				if (empty($posts)) { ?>
+					<div class='col-md-12 col-xs-12'>
+						포스트가 없습니다.
+					</div>
+				<?php } else {
+					foreach ($posts as $post) {
+						$video = $boxinglibrary->loadVideo($post['no']);
+						$images = $boxinglibrary->loadImages($post['no']);
+						if (empty($video)) {
+							if(empty($images)) $thumbnail = "/resources/crossfit.jpg";
+							else $thumbnail = $images[0]['fileName'];
+						} else {
+							$thumbnail = $video['thumbnail'];
+						} ?>
+						<div class="col-sm-3 mt">
+							<a href="view.php?page=<?=$page?>&amp;no=<?=$post['no']?>">
+								<div class="panel panel-default cross-panel">
+									<div class="panel-body">
+										<img src="<?=$thumbnail?>" alt="post image">
+									</div>
+									<div class="panel-footer">
+										<span class="inline-to-block"><?=$post['title']?></span>
+										<span>조회수 <?=$post['hits']?> &#124; <?=$post['writtenTime']?></span>
+										<span class="inline-to-block"><?=$post['nickname']?></span>
+									</div>
+								</div>
+							</a>
+						</div>
+				<?php } }?>
+			</div>
 				<nav>
 					<ul class="pagination">
 					<?php
-					$allPages = $boxinglibrary->pageCount(); // 다음부터 수정(a.k.a. 복붙)할때 이부분에 게시판 이름을 수정하면 된다
+					$allPages = $boxinglibrary->pageCount(15); // 다음부터 수정(a.k.a. 복붙)할때 이부분에 게시판 이름을 수정하면 된다
 					$pagingStart = $page%5==0?$page-4:$page-($page%5)+1; ?>
 					<?=$page<=5?'':
 					'<li>

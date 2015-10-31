@@ -22,24 +22,25 @@ require_once(__DIR__.'/../../framework/framework.php');
 	$breatheBoard=new ImageBoard('breatheBoard');
 	$page = isset($_GET['page'])?$_GET['page']:1;
 	?>
-	
+
 	<section class='wrapper content'>
 		<div class='container'>
-			<h1>브리드 이야기</h1>
+			<h3><i class="fa fa-angle-right"></i> 브리드 이야기</h3>
 			<div class='row'>
 			<?php
-				$posts= $breatheBoard->loadPostList($page);
+				$posts= $breatheBoard->loadPostList($page, 8);
 				if (empty($posts)) { ?>
 					<div class='col-md-12 col-xs-12'>
 						포스트가 없습니다.
 					</div>
 				<?php } else {
-					foreach($posts as $post) { ?>
+					foreach($posts as $post) {
+						$images = $breatheBoard->loadImages($post['no']); ?>
 						<div class='col-md-3 col-xs-12'>
 							<a href='view.php?page=<?=$page?>&amp;no=<?=$post['no']?>'>
 								<div class='panel panel-default' id='item'>
 									<div class='panel-body item'>
-										<img src='/resources/crossfit.jpg' height ='100%'/>
+										<img src='<?=empty($images)?"/resources/crossfit.jpg":"upload/files/".$images[0]['fileName']?>' height ='100%'/>
 									</div>
 									<div class='panel-footer'>
 										<?=$post['title']?>(<?=$breatheBoard->countComments($post['no'], 'breatheBoard')?>)
@@ -120,47 +121,47 @@ require_once(__DIR__.'/../../framework/framework.php');
 			-->
 
 			<nav>
-					<ul class="pagination">
-					<?php
-					$allPages = $breatheBoard->pageCount(); // 다음부터 수정(a.k.a. 복붙)할때 이부분에 게시판 이름을 수정하면 된다
-					$pagingStart = $page%5==0?$page-4:$page-($page%5)+1; ?>
-					<?=$page<=5?'':
-					'<li>
-						<a href="index.php?page='.($pagingStart-1).'" aria-label="Previous">
-						<span aria-hidden="true">&laquo;</span>
-						</a>
-					</li>'?>
-					<?php
-					for ($i=$pagingStart; $i < $pagingStart+5 ; $i++) {
-						if ($i==$allPages+1) break;?>
-						<li class="<?=$page==$i?"active":""?>">
-							<a href="index.php?page=<?=$i?>"><?=$i?></a>
-						</li>
-					<?php }?>
-					<?=$pagingStart+4<$allPages?
-					'<li>
-						<a href="index.php?page='.($pagingStart+5).'" aria-label="Next">
-						<span aria-hidden="true">&raquo;</span>
-						</a>
-					</li>':''?>
-					</ul>
-					<?php if (Utility::isLoggedIn()) {
-						if (Utility::isManager()) { ?>
-					<a href="write.php">
-						<button type="button" class="btn pull-right btn-primary btn-write">
-							글쓰기
-						</button>
+				<ul class="pagination">
+				<?php
+				$allPages = $breatheBoard->pageCount(8); // 다음부터 수정(a.k.a. 복붙)할때 이부분에 게시판 이름을 수정하면 된다
+				$pagingStart = $page%5==0?$page-4:$page-($page%5)+1; ?>
+				<?=$page<=5?'':
+				'<li>
+					<a href="index.php?page='.($pagingStart-1).'" aria-label="Previous">
+					<span aria-hidden="true">&laquo;</span>
 					</a>
-					<?php } } ?>
-				</nav>
+				</li>'?>
+				<?php
+				for ($i=$pagingStart; $i < $pagingStart+5 ; $i++) {
+					if ($i==$allPages+1) break;?>
+					<li class="<?=$page==$i?"active":""?>">
+						<a href="index.php?page=<?=$i?>"><?=$i?></a>
+					</li>
+				<?php }?>
+				<?=$pagingStart+4<$allPages?
+				'<li>
+					<a href="index.php?page='.($pagingStart+5).'" aria-label="Next">
+					<span aria-hidden="true">&raquo;</span>
+					</a>
+				</li>':''?>
+				</ul>
+				<?php if (Utility::isLoggedIn()) {
+					if (Utility::isManager()) { ?>
+				<a href="write.php">
+					<button type="button" class="btn pull-right btn-primary btn-write">
+						글쓰기
+					</button>
+				</a>
+				<?php } } ?>
+			</nav>
 		</div>
 	</section>
 	<script src='/common/js/jquery-1.11.1.min.js'></script>
 	<script src='/common/js/jquery-ui.custom.min.js'></script>
 	<script src='/common/js/jquery.dcjqaccordion.2.7.js'></script>
-	<script src='/common/js/bootstrap.min.js'></script>	
+	<script src='/common/js/bootstrap.min.js'></script>
 	<script src='/common/js/navigation.js'></script>
-	<script src='/board/js/breatheBoard.js'></script>
+	<script src='/board/js/board.js'></script>
 	<script src='/common/js/facebook.js'></script>
 	<!--<script src="/common/js/common-scripts.js"></script>-->
 </body>
