@@ -28,7 +28,7 @@
                 nickname = :nickname
                 WHERE email = $email");
             $stmt->execute(array(
-                ':password'=>sha1($input[0]),
+                ':password'=>$input[0],
                 ':phone'=>$input[1],
                 ':nickname'=>$input[2]
             ));
