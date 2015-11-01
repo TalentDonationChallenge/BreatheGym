@@ -160,6 +160,56 @@
 			<h1>> Breathe Gallery</h1>
 			<div class='row gallery'>
 				<div class='col-md-3 col-xs-6 gallery'>
+					<div class='col-md-12 col-xs-12 gallery galleryBox first'>
+						<img class='img-rounded galleryImage first' src='./resources/note_2.jpg' alt='...'/>
+						<a href='/board/diaryBoard/index.php'>
+							<div class='gradientImage first'>
+								싸부님의 노트
+							</div>
+						</a>
+					</div>
+
+				</div>
+				<div class='col-md-3 col-xs-6'>
+					<div class='col-md-12 col-xs-12 gallery galleryBox'>
+						<img class='img-rounded galleryImage' src='./resources/fitness_2.jpg' alt='...'/>
+						<a href='/exerciseInfo/crossfitLecture/index.php'>
+							<div class='gradientImage'>
+								크로스핏 강좌 - 플랭크
+							</div>
+						</a>
+					</div>
+					<div class='col-md-12 col-xs-12 gallery galleryBox'>
+						<img class='img-rounded galleryImage' src='./resources/man.jpg' alt='.../'/>
+						<a href = '/board/review/index.php'>
+							<div class='gradientImage'>
+								운동후기<br/>
+								나는 나와의 싸움에서<br/>
+								승리하고 싶다 - 허 재
+							</div>
+						</a>
+					</div>
+				</div>
+				<div class='col-md-3 col-xs-6'>
+					<div class='col-md-12 col-xs-12 gallery galleryBox'>
+						<img class='img-rounded galleryImage' src='./resources/boxing_2.jpg' alt='...'/>
+						<a href='/exerciseInfo/crossfitLecture/index.php'>
+							<div class='gradientImage'>
+								복싱 강좌 - 4. 원투 스트레이트
+							</div>
+						</a>
+					</div>
+					<div class='col-md-12 col-xs-12 gallery galleryBox'>
+						<img class='img-rounded galleryImage' src='./resources/breathecafe.png' alt='.../'/>
+						<a href='http://cafe.naver.com/breathegym'>
+							<div class='gradientImage'>
+								BreatheGym <네이버 공식 까페><br/>
+								유익한 정보와 소식들!
+							</div>
+						</a>
+					</div>
+				</div>
+				<div class='col-md-3 col-xs-6'>
 					<div class='col-md-12 col-xs-12 gallery galleryBox'>
 						<img class='img-rounded galleryImage' src='./resources/crossfit.jpg' alt='...'/>
 						<div class='gradientImage'>
@@ -167,55 +217,13 @@
 						</div>
 					</div>
 					<div class='col-md-12 col-xs-12 gallery galleryBox'>
-						<img class='img-rounded galleryImage' src='./resources/man.jpg' alt='.../'/>
-						<div class='gradientImage'>
-							어깨 근육 발달에<br/>
-							좋은 운동!
-						</div>
-					</div>
-				</div>
-				<div class='col-md-3 col-xs-6'>
-					<div class='col-md-12 col-xs-12 gallery galleryBox'>
-						<img class='img-rounded galleryImage' src='./resources/crossfit.jpg' alt='...'/>
-						<div class='gradientImage'>
-							싸부님의 다이어리
-						</div>
-					</div>
-					<div class='col-md-12 col-xs-12 gallery galleryBox'>
-						<img class='img-rounded galleryImage' src='./resources/man.jpg' alt='.../'/>
-						<div class='gradientImage'>
-							오늘의 크로스핏 강좌
-						</div>
-					</div>
-				</div>
-				<div class='col-md-3 col-xs-6'>
-					<div class='col-md-12 col-xs-12 gallery galleryBox'>
-						<img class='img-rounded galleryImage' src='./resources/crossfit.jpg' alt='...'/>
-						<div class='gradientImage'>
-							오늘의 복싱 강좌
-						</div>
-					</div>
-					<div class='col-md-12 col-xs-12 gallery galleryBox'>
-						<img class='img-rounded galleryImage' src='./resources/man.jpg' alt='.../'/>
-						<div class='gradientImage'>
-							어깨 근육 발달에<br/>
-							좋은 운동!
-						</div>
-					</div>
-				</div>
-				<div class='col-md-3 col-xs-6'>
-					<div class='col-md-12 col-xs-12 gallery galleryBox'>
-						<img class='img-rounded galleryImage' src='./resources/crossfit.jpg' alt='...'/>
-						<div class='gradientImage'>
-							크로스핏의 효과와 장점
-						</div>
-					</div>
-					<div class='col-md-12 col-xs-12 gallery galleryBox'>
-						<img class='img-rounded galleryImage' src='./resources/man.jpg' alt='.../'/>
-						<div class='gradientImage'>
-							어깨 근육 발달에<br/>
-							좋은 운동!
-						</div>
+						<img class='img-rounded galleryImage' src='./resources/breatheblog.png' alt='.../'/>
+						<a href='http://blog.naver.com/jinhee465'>
+							<div class='gradientImage'>
+								브리드짐의 모든 소식들을<br/>
+								<브리드짐 공식 블로그!!>에서
+							</div>
+						</a>
 					</div>
 				</div>
 			</div>

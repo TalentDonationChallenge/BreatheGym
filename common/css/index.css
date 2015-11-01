@@ -78,6 +78,16 @@
 	min-height : 200px;
 	margin-bottom : 10px;
 }
+.galleryBox :hover{
+	border-style : solid;
+	border-color : white;
+	border-width : 5px;
+}
+
+.first {
+	min-height : 410px;
+	height : 100%;
+}
 /*갤러리 판넬*/
 .gallery{
 	position : relative;
