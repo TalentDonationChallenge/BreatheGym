@@ -70,7 +70,6 @@
 	<script src="/common/js/common-scripts.js"></script>
 	<script src="/common/js/Chart.min.js"></script>
 	<script src="/common/js/moment.min.js"></script>
-	<script src="/common/js/ko.js"></script>
 	<script src="/admin/js/analysis.js"></script>
 </body>
 </html>

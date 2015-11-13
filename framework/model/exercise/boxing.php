@@ -20,7 +20,7 @@
 
         public static function getBoxingProgress($barcode) {
             $pdo = Database::getInstance();
-            $stmt = $pdo->prepare("SELECT no, name FROM boxingLevel NATURAL JOIN boxingList
+            $stmt = $pdo->prepare("SELECT boxingLevel.no as no, name FROM boxingLevel NATURAL JOIN boxingList
                 WHERE barcode=:barcode");
             $stmt -> execute(array(':barcode'=> $barcode));
     		$row = $stmt -> fetch();

@@ -9,8 +9,8 @@
     $msg['dailyAttendMemberCount']=AdminInformation::dailyAttendMemberCount();
     $msg['attendTimeStatistics']=AdminInformation::attendTimeStatistics();
     $msg['monthlyGymMemberCount']=AdminInformation::monthlyGymMemberCount();
-    $msg['endedMembers']=AdminInformation::endedMembers();
-
 
     header('Content-Type: application/json');
+    print(json_encode($msg));
+
 ?>

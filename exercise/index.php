@@ -2,7 +2,6 @@
 	require_once(__DIR__.'/../framework/framework.php');
 	if (!Utility::isLoggedIn()) {
 		header("Location: /error.php");
-		print "hi";
 	} else {
 ?>
 <!DOCTYPE html>
@@ -21,7 +20,7 @@
 	<![endif]-->
 </head>
 <body>
-	<?php 
+	<?php
 	memberHeader();
 	memberSidebar("index");
 	$barcode = $_SESSION['barcode'];
@@ -47,7 +46,7 @@
 								<h5>복싱 진도</h5>
 							</div>
 							<h1><i class="fa fa-server icon"></i></h1>
-							<h3><?=$progress['name']?></h3>
+							<h3>원투 스트레이트</h3>
 						</div>
 					</div>
 					<div class = "col-md-3 col-sm-6 mb">
@@ -83,17 +82,16 @@
 							</div>
 							<div class ="progress">
 							<?php
-							$progressList = MemberBoxingManage::getBoxingProgressList($progress['no']);
-							$hidden = count($progressList)<3?0:count($progressList)-2;
-							$i = 0;
-							foreach ($progressList as $progressElem) { ?>
-								<div class='progress-bar progress-bar-<?=$progressElem["color"]?> <?=
-								$i>=$hidden?"":"visible-lg"?>'>
-									<span><?=$progressElem['name']?></span>
+							// $progressList = MemberBoxingManage::getBoxingProgressList($progress['no']);
+							// $hidden = count($progressList)<3?0:count($progressList)-2;
+							// $i = 0;
+							// foreach ($progressList as $progressElem) { ?>
+								<div class='progress-bar progress-bar-primary visible-lg'>
+									<span>원투 스트레이트</span>
 								</div>
 							<?php
-								$i++;
-							} ?>
+								// $i++;
+							//} ?>
 							</div>
 						</div>
 					</div>
@@ -121,6 +119,6 @@
 	<script src="/common/js/jquery.dcjqaccordion.2.7.js"></script>
 	<script src="/common/js/bootstrap.min.js"></script>
 	<script src="/common/js/common-scripts.js"></script>
-<?php }?>
+<?php } ?>
 </body>
 </html>

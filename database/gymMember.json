@@ -5,8 +5,8 @@
 		"sex":1,
 		"height":145,
 		"weight":41,
-		"registerDate":"2015-07-19",
-		"duration":2,
+		"registerDate":"2015-10-06",
+		"duration":1,
 		"branch":1,
 		"active":1
 	},
@@ -16,8 +16,8 @@
 		"sex":0,
 		"height":176,
 		"weight":65,
-		"registerDate":"2015-07-21",
-		"duration":3,
+		"registerDate":"2015-07-10",
+		"duration":4,
 		"branch":1,
 		"active":1
 	},
@@ -28,7 +28,7 @@
 		"height":160,
 		"weight":56,
 		"registerDate":"2015-07-13",
-		"duration":1,
+		"duration":4,
 		"branch":1,
 		"active":1
 	},
@@ -72,7 +72,7 @@
 		"height":180,
 		"weight":65,
 		"registerDate":"2015-01-12",
-		"duration":7,
+		"duration":10,
 		"branch":1,
 		"active":1
 	},

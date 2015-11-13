@@ -22,7 +22,6 @@ $(document).ready(function () {
         url:'load.php'
     }).done(function (msg) {
         //월별 가입 회원수 가져오기
-        console.log(msg.attendTimeStatistics);
         var joinedData = [];
         for (var i = 0; i < 6; i++) { //최근 6개월내 값이 없을시 0을 할당
             var flag = true;
@@ -53,7 +52,7 @@ $(document).ready(function () {
         },lineChartSetting);
     });
     var dailyAttendChart = new Chart($("#attendChart").get(0).getContext("2d")).Line({
-        labels: ['10일'],
+        labels: ['10일','10일','10일','10일','10일','10일'],
         datasets:[{
             label: "날짜별 출석회원수",
             fillColor: "rgba(220,220,220,0.2)",
@@ -62,7 +61,7 @@ $(document).ready(function () {
             pointStrokeColor: "#fff",
             pointHighlightFill: "#fff",
             pointHighlightStroke: "rgba(220,220,220,1)",
-            data : []
+            data : [50, 70, 30, 50, 66, 55]
         }]
     },lineChartSetting);
     var myDoughnut = new Chart($("#piechart").get(0).getContext("2d")).Doughnut([{
@@ -82,11 +81,11 @@ $(document).ready(function () {
             fillColor: "rgba(220,220,220,0.5)",
             strokeColor: "rgba(220,220,220,0.8)",
             highlightFill: "rgba(220,220,220,0.75)",
-            highlightStroke: "rgba(220,220,220,1)"
+            highlightStroke: "rgba(220,220,220,1)",
+            data : [50, 70, 30, 50, 66, 55]
         }]
     },{
         responsive:true,
-        scaleBeginAtZero : false,
         scaleShowGridLines : true,
         scaleGridLineColor : "rgba(0,0,0,.05)",
         scaleGridLineWidth : 1,

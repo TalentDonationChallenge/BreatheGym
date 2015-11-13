@@ -135,11 +135,12 @@
 						</div>
 					</div>
 				<?php } else {
-						foreach($posts as $post) {	?>
+						foreach($posts as $post) {
+							$images = $breatheBoard->loadImages($post['no']); ?>
 							<div class='media'>
 								<div class='media-left'>
 									<a href='#'>
-										<img class='img-rounded' src='http://placehold.it/140x140' alt='...'/>
+										<img class="img-rounded" src='<?=empty($images)?"/resources/crossfit.jpg":"/board/breatheBoard/upload/files/".$images[0]['fileName']?>' height="100%"/>
 									</a>
 								</div>
 
@@ -148,7 +149,8 @@
 									<?=$post['content']?>
 								</div>
 							</div>
-							<?php } } ?>
+							<?php }
+						} ?>
 		</div>
 		<br/>
 		<br/>

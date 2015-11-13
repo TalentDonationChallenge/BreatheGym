@@ -56,17 +56,22 @@
 								</tr>
 								</thead>
 								<tbody>
-								<?php $exercises = AdminRecordManage::getExercises(date("Y-m-d"));
-								foreach ($exercises as $exercise) {
-									$userRecord =
-									MemberCrossfitManagement::getUserRecord($_SESSION['barcode'], $exercise);
-									if(!$userRecord) continue;?>
+								<?php //$exercises = AdminRecordManage::getExercises(date("Y-m-d"));
+							//	foreach ($exercises as $exercise) {
+							//		$userRecord =
+							//		MemberCrossfitManagement::getUserRecord($_SESSION['barcode'], $exercise);
+							//		if(!$userRecord) continue;?>
 								<tr>
-									<td><?=$exercise['name']?></td>
-									<td><?=$userRecord['record']?></td>
-									<td><?=$userRecord['percentage']?>%</td>
+									<td>윗몸일으키기</td>
+									<td>23</td>
+									<td>10%</td>
 								</tr>
-								<?php } ?>
+								<tr>
+									<td>케틀벨</td>
+									<td>42</td>
+									<td>5%</td>
+								</tr>
+								<?php //} ?>
 								</tbody>
 							</table>
 						</div>
@@ -75,7 +80,9 @@
 						<div class="content-panel">
 							<h4>운동 기록 추이</h4>
 							<div class="panel-body">
-								<div id="line-graph" class="graph"></div>
+								<div>
+									<canvas id="line-graph" class="graph"></canvas>
+								</div>
 							</div>
 						</div>
 					</div>
@@ -83,13 +90,11 @@
 			</div><!-- /col-md-12 -->
 		</section> <!--wrapper-->
 	</section> <!-- MAIN CONTENT-->
-
 	<script src="/common/js/jquery-1.11.1.min.js"></script>
 	<script src="/common/js/jquery.dcjqaccordion.2.7.js"></script>
 	<script src="/common/js/bootstrap.min.js"></script>
 	<script src="/common/js/common-scripts.js"></script>
-	<script src="/common/js/raphael-min.js"></script>
-	<script src="/common/js/morris.min.js"></script>
+	<script src="/common/js/Chart.min.js"></script>
 	<script src="/exercise/js/crossfit.js"></script>
 </body>
 </html>

@@ -30,10 +30,10 @@ class AdminInformation {
 
     public static function endedMembers() { // 1주일 동안 만료될 사람들!
         $pdo = Database::getInstance();
-        $oneWeekAgo = date('Y-m-d', strtotime("-1 week"));
-        $today = getdate();
+        $oneWeekAgo = date('Y-m-d', strtotime("+1 week"));
+        $today = date('Y-m-d');
 
-        $stmt = $pdo->prepare("SELECT name, registerDate, duration, phone FROM gymMember WHERE active = 1");
+        $stmt = $pdo->prepare("SELECT barcode, name, registerDate, duration, phone FROM gymMember WHERE active = 1");
         $stmt->execute();
         $rows = $stmt->fetchAll();
 
@@ -41,8 +41,8 @@ class AdminInformation {
         foreach ($rows as $row) {
             $registerDate = date('Y-m-d', strtotime($row['registerDate']));
             $duration = $row['duration'];
-            $expireDate = date_modify($registerDate, "$duration months");
-            if (($expireDate <= $today) && ($expireDate > $oneWeekAgo)) {
+            $expireDate = date('Y-m-d', strtotime($registerDate." +".$duration." months"));
+            if (($expireDate >= $today) && ($expireDate < $oneWeekAgo)) {
                 $memberArray[] = array(
                     'barcode'=>$row['barcode'],
                     'name'=>$row['name'],

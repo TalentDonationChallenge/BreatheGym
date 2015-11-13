@@ -54,17 +54,27 @@ $(document).ready(function () {
 		// $('ul.exercises').append('<li><i class="fa fa-pencil-square-o"></i> 수정</li>')
 		$('ul.exercises>li:first-child').each(loadRankers);
 	});
-    // Morris.Line({
-    //     element:'line-graph',
-    //     data:[
-    //         {y:'2015-08-20', a:25},
-    //         {y:'2015-08-21', a:30},
-    //         {y:'2015-08-22', a:20},
-    //         {y:'2015-08-23', a:10}
-    //     ],
-    //     xkey:'y',
-    //     ykeys:['a'],
-    //     labels:['백분위'],
-    //     xLabels:"day"
-    // });
+    var lineChartSetting = { //꺾은선 그래프 설정
+        animation: false,
+        showScale: false,
+        responsive: true,
+        scaleShowGridLines : false,
+        bezierCurve : false,
+        pointDot : true,
+        datasetStroke : false,
+        datasetFill : false
+    };
+    var monthlyJoinedChart = new Chart($("#line-graph").get(0).getContext("2d")).Line({
+        labels: ['10일','10일','10일','10일','10일','10일','10일','10일','10일','10일'],
+        datasets:[{
+            label: "월별 가입회원수",
+            fillColor: "rgba(220,220,220,0.2)",
+            strokeColor: "rgba(220,220,220,1)",
+            pointColor: "rgba(220,220,220,1)",
+            pointStrokeColor: "#fff",
+            pointHighlightFill: "#fff",
+            pointHighlightStroke: "rgba(220,220,220,1)",
+            data : [20, 40, 36, 37, 65, 49, 36, 50, 50, 66, 55, 68]
+        }]
+    },lineChartSetting);
 });
