@@ -7,6 +7,29 @@ require_once(__DIR__.'/board.php');
         function __construct() {
             parent::setTable('consulting');
         }
+        public function loadPost($no) {
+			$table = $this->table;
+			$pdo = Database::getInstance();
+			$sql = "SELECT no, member.email as email, title, nickname, content, writtenTime
+			FROM {$table} JOIN member ON {$table}.email = member.email
+			WHERE no =:no";
+			$stmt = $pdo->prepare($sql);
+			$stmt->execute(array(':no' => $no));
+			$row = $stmt->fetch();
+			if($row){
+				$post = array(
+					'no' => $row['no'],
+					'email' => $row['email'],
+					'title' => $row['title'],
+					'content'=>$row['content'],
+					'nickname' => $row['nickname'],
+					'writtenTime' => date('Y/m/d H:i:s',strtotime($row['writtenTime']))
+				);
+				return $post;
+			} else{
+				return false;
+			}
+		}
         public function loadConsultingList($page) {
 			$pdo = Database::getInstance();
 			$sql = "SELECT no, title, nickname, writtenTime

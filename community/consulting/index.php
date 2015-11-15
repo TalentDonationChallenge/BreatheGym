@@ -34,7 +34,7 @@
 					<div class="form-group mt">
 						<label for="inputEmail3" class="col-sm-1 control-label">제목</label>
 						<div class="col-sm-6">
-							<input type="text" class="form-control" id="inputEmail3" placeholder="제목을 입력하세요.">
+							<input type="text" class="form-control" id="title" placeholder="제목을 입력하세요.">
 						</div>
 					</div>
 				</div>
@@ -104,6 +104,7 @@
 <script src="/common/js/jquery.dcjqaccordion.2.7.js"></script>
 <script src="/common/js/navigation.js"></script>
 <script src="/common/js/common-scripts.js"></script>
+<script src="../js/consulting.js"></script>
 </body>
 </html>
 <?php }?>

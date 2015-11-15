@@ -46,16 +46,16 @@
 								<h5>복싱 진도</h5>
 							</div>
 							<h1><i class="fa fa-server icon"></i></h1>
-							<h3>원투 스트레이트</h3>
+							<h3><?=MemberBoxingManage::getBoxingProgress($barcode)['name']?></h3>
 						</div>
 					</div>
 					<div class = "col-md-3 col-sm-6 mb">
 						<div class="white-panel pn">
 							<div class = "white-header">
-								<h5>연속출석일</h5>
+								<h5>지난주 출석일</h5>
 							</div>
 							<h1><i class="fa fa-trophy icon"></i></h1>
-							<h3>5일</h3>
+							<h3><?=UserExerciseInfo::getLastWeekAttendance($barcode)?>일</h3>
 						</div>
 					</div>
 					<div class = "col-md-3 col-sm-6 mb">

@@ -13,9 +13,14 @@ require_once(__DIR__.'/../../framework/framework.php');
 	<![endif]-->
 </head>
 <body>
-	<?php
-		login();
-		navigation();
+	<?php if (isset($_GET['no'])) {
+		$consulting = new Consulting();
+		$posting = $consulting->loadPost($_GET['no']);
+		$reply = $consulting->loadReply($_GET['no']);
+	}
+	login();
+	navigation();
+	$page=isset($_GET['page'])?$_GET['page']:1;
 	?>
 	<!--header start-->
 	<!--header end-->
@@ -28,24 +33,17 @@ require_once(__DIR__.'/../../framework/framework.php');
 			<div class="container">
 			<h3><i class="fa fa-angle-right"></i> 상담</h3>
 				<div class="panel panel-default mb mt">
-					<div class="panel-heading">
-						<span class="pull-right hidden-phone time">2015/09/03 10:21:58</span>
-						<span class="pull-right author">아이유</span>
-						<h2 class="panel-title">티키타 리듬에 맞춰 스핀 기타 리프의 테마는 스팅의 쉡오마핱</h2>
+					<div class="panel-heading"  no='<?=$_GET["no"]?>'>
+						<span class="pull-right hidden-phone time">
+							<?=$posting['writtenTime']?>
+						</span>
+						<span class="pull-right author"><?=$posting['nickname']?></span>
+						<h2 class="panel-title"><?=htmlspecialchars($posting['title'])?></h2>
 					</div>
 					<div class="panel-body">
 						<p>
-							투명 드래곤 텍본<br/>
-							by 라크<br/><br/>
-							"크아아아아"<br/><br/>
-							드래곤중에서도 최강의 투명드래곤이 울부짓었다<br/>
-							투명드래곤은 졸라짱쎄서 드래곤중에서 최강이엇다<br/>
-							신이나 마족도 이겼따 다덤벼도 이겼따 투명드래곤은<br/>
-							새상에서 하나였다 어쨌든 걔가 울부짓었다<br/><br/>
-							"으악 제기랄 도망가자"<br/><br/>
-							발록들이 도망갔다 투명드래곤이 짱이었따<br/>
-							그래서 발록들은 도망간 것이다.<br/><br/>
-							투명드래곤은 심심햇다<br/>
+							<?=preg_match("/^ *$/", $posting['content'])?
+							"&nbsp;":str_replace("\n", '<br />', htmlspecialchars($posting['content']));?>
 						</p>
 					</div>
 				</div>
@@ -54,30 +52,19 @@ require_once(__DIR__.'/../../framework/framework.php');
 				<div class="panel panel-default mb mt">
 					<div class="panel-body">
 						<p>
-							투명 드래곤 텍본<br/>
-							by 라크<br/><br/>
-							"크아아아아"<br/><br/>
-							드래곤중에서도 최강의 투명드래곤이 울부짓었다<br/>
-							투명드래곤은 졸라짱쎄서 드래곤중에서 최강이엇다<br/>
-							신이나 마족도 이겼따 다덤벼도 이겼따 투명드래곤은<br/>
-							새상에서 하나였다 어쨌든 걔가 울부짓었다<br/><br/>
-							"으악 제기랄 도망가자"<br/><br/>
-							발록들이 도망갔다 투명드래곤이 짱이었따<br/>
-							그래서 발록들은 도망간 것이다.<br/><br/>
-							투명드래곤은 심심햇다<br/>
+							<?php if($reply){ ?>
+								<?= preg_match("/^ *$/", $reply['content'])?
+								"&nbsp;":str_replace("\n", '<br />', htmlspecialchars($reply['content'])); ?>
+							<?php } else { ?>
+								아직 답변이 작성되지 않았습니다.
+							<? } ?>
 						</p>
 					</div>
 				</div>
-
-
 				<div class="buttons mt">
-					<button class="btn btn-default" name="button">이전글</button>
-					<button class="btn btn-default" name="button">다음글</button>
-					<button class="btn btn-default" name="button">
-						<a href="index.php">
-							<span>목록</span>
-						</a>
-					</button>
+					<a href="index.php">
+						<button class="btn btn-default" name="button">목록</button>
+					</a>
 				</div>
 			</div>
 		</section>

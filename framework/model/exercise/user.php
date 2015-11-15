@@ -13,10 +13,25 @@
                 strtotime($row['registerDate'])));
             return $durationDate;
         }
+        public static function getLastWeekAttendance($barcode) {
+            $pdo = Database::getInstance();
+            $lastMonday = date("Y-m-d", strtotime("last Monday"));
+            $lastFriday = date("Y-m-d", strtotime("last Friday"));
+            $stmt = $pdo->prepare("SELECT count(barcode) as count FROM attendance
+            WHERE barcode=:barcode AND date >= :lastMonday AND date<=:lastFriday");
+            $stmt->execute(array(
+                ":barcode" => $barcode,
+                ":lastMonday" => $lastMonday,
+                ":lastFriday" => $lastFriday
+            ));
+            $row = $stmt->fetch();
+            return $row['count'];
+        }
 
-        //연속출석같은 경우, 공휴일이나 여기 쉬는날은 어떻게해?!
-        //출석률도 좀 이상할것같고... ㅠㅠ
-
+        public static function getCrossfitRank($barcode) {
+            $pdo = Database::getInstance();
+            AdminRecordManage::getExercises(date("Y-m-d")); // 오늘한 운동들
+        }
     }
 // 	function getUserexerciseRecord($barcode){
 //

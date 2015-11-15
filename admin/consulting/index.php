@@ -86,5 +86,6 @@
 	<script src="/common/js/bootstrap.min.js"></script>
 	<script src="/common/js/jquery.dcjqaccordion.2.7.js"></script>
 	<script src="/common/js/common-scripts.js"></script>
+	<script src="../js/consulting.js"></script>
 </body>
 </html>
